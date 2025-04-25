@@ -1,0 +1,4 @@
+wang2025_lexicaldecision/original_data/fullresult.csv !text !filter !merge !diff
+wang2025_lexicaldecision/processed_data/exp.csv !text !filter !merge !diff
+wang2025_lexicaldecision/CODEBOOK.csv !text !filter !merge !diff
+wang2025_lexicaldecision/prompts.jsonl.zip !text !filter !merge !diff
