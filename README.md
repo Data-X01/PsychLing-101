@@ -1,8 +1,8 @@
 # PsychLing-101
 
-**PsychLing-101** is a community-driven effort to build a unified dataset of psycholinguistic experiments, inspired by [Psych-201](https://github.com/marcelbinz/Psych-201). While Psych-201 spans general cognitive psychology, **PsychLing-001 focuses specifically on psycholinguistics**, including tasks like lexical decision, priming, sentence processing, and more.
+**PsychLing-101** is a community-driven effort to build a unified dataset of psycholinguistic experiments, inspired by [Psych-201](https://github.com/marcelbinz/Psych-201). While Psych-201 spans general cognitive psychology, **PsychLing-101 focuses specifically on psycholinguistics**, including tasks like lexical decision, priming, sentence processing, and more. 
 
-Our goal is to standardize and convert psycholinguistic experiments into a format that can be used to fine-tune and evaluate large language models (LLMs).
+Our goal is to standardize and convert psycholinguistic experiments into a format that can be used to fine-tune and evaluate large language models (LLMs). We want to write the paper and send to the ACL Language Resources and Evaluation (LREC). 
 
 Because this is a large collaborative project, it is necessary to define some **ground rules** to avoid chaos:
 
@@ -10,13 +10,35 @@ Because this is a large collaborative project, it is necessary to define some **
 2. If you put data into this repository, it is free to use immediately (we cannot take publication timelines of other projects into account).
 3. You may not use the data from this project before the corresponding paper is published.
 
-## Scope of Psycholinguistic Experiments
+   just mention Psych-201 in the end.
+   downplay the LLM part. they are just interested in the data. collect and organise the existing data.
+   be explicit about both of the purposes.
+   1. organising data and making it available
+   2. llms preprocessing
+  
+THEY NEED TO REACH OUT TO US. 
+we need to give ok either way. for existing and the new experiment. 
+create an issue? email? create the google adress? 
+
+
+The project is run by so and so and supported by so and so. 
+
+## Scope of Psycholinguistic Data
+
+defining the space 
 
 [TO BE COMPLETED] 
 
 For the list of datasets currently being processed and datasets that are open for contribution, please refer to the “List of Datasets in Progress” and “List of Open Datasets” sections in CONTRIBUTING.md.
- 
-## Progress
+
+we need help from friz and marco with coming up with the list of possible experiments. possibly haccaton? we invite people from the workshop to help? - so they can put their own name to those papers. 
+we need the list before it goes life (like 20 papers?) 
+
+## Timeline 
+
+clear goal like how much data, the deadline, the intention to write the paper. 
+there possibly can be 201, 301... 
+contribution until the end of 2025?
 
 **We are corrently in the process of collecting the data:** The deadline for the final submittions is ... 
 
@@ -41,7 +63,7 @@ This guide describes how to transform existing experimental datasets into a stan
    - Convert them into a **standardized CSV format**, following these rules:
      - Each experiment corresponds to a single CSV file: `exp1.csv`, `exp2.csv`, etc.
      - Each row must represent a single trial.
-     - Required columns: `['participant', 'task', 'trial', 'choice', 'reward']`
+     - Required columns: `['participant', 'task', 'trial', 'choice', 'reward']` # discuss it with marcel 
      - Additional columns may be added if necessary.
      - Use zero-based indexing by default.
      - If no reward value is provided: assign `+1` for correct, `-1` for incorrect, and `0` for neutral responses.
@@ -101,6 +123,8 @@ Following this pipeline ensures consistency across experiments and enables scala
 
 ### Setup
 
+DISCOURAGE 
+
 1. Fork the repository.
    
 3. Clone the forked repository:
@@ -131,3 +155,7 @@ We accept experiments that fulfill the following requirements:
 * Temporal ordering should follow the original experiment.
 
 
+
+add the reference of the "board", Fritz, Marco... social proof for the psycholinguists. link to the webcite? 
+
+some words about the licence. they cant cite us!! tight timeline? 
