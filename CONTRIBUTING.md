@@ -18,12 +18,11 @@
 
 ---
 
-##  How to Add Your Experiment to the Table
+Before working with any dataset, please request approval via one of the following:
 
-1. **Fork the repository** and clone it locally.
+   Create a GitHub Issue briefly describing the dataset you'd like to contribute
 
-2. **Update the table** in the relevant section above:
-   - If you're starting a new dataset, add it to **“List of Datasets in Progress”**.
-   - If you want to take up a dataset from the **“List of Open Datasets”** put your name into the corresponding column.
+   Email us at psychling101@gmail.com (TBD)
 
-6. **Submit a pull request**.
+Once approved, you may begin formatting and structuring your data.
+
