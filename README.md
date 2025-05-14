@@ -1,33 +1,66 @@
 # PsychLing-101
 
-**PsychLing-101** is a community-driven effort to build a unified dataset of psycholinguistic experiments, inspired by [Psych-201](https://github.com/marcelbinz/Psych-201). While Psych-201 spans general cognitive psychology, **PsychLing-001 focuses specifically on psycholinguistics**, including tasks like lexical decision, priming, sentence processing, and more.
+PsychLing-101 is a community-driven effort to collect, organize, and standardize datasets from psycholinguistic studies. PsychLing-101 focuses specifically on tasks central to psycholinguistics — such as lexical decision, priming, sentence processing, and related paradigms.
 
-Our goal is to standardize and convert psycholinguistic experiments into a format that can be used to fine-tune and evaluate large language models (LLMs).
+Our goals are:
+
+1. Organize and preserve psycholinguistic data: Convert existing experiments into a unified, standardized format.
+
+2. Convert psycholinguistic experiments into a format that can be used to fine-tune and evaluate large language models (LLMs).
+
+This repository is a part of a collaborative publication effort. We intend to submit a comprehensive description of the dataset and associated methodology to the ACL Language Resources and Evaluation Conference (LREC).
+
 
 Because this is a large collaborative project, it is necessary to define some **ground rules** to avoid chaos:
 
-1. Everybody contributing to the data preprocessing will be part of the final paper.
-2. If you put data into this repository, it is free to use immediately (we cannot take publication timelines of other projects into account).
-3. You may not use the data from this project before the corresponding paper is published.
+1. All contributors to data preprocessing will be co-authors on the final paper.
 
-## Scope of Psycholinguistic Experiments
+2. By contributing datasets to this repository, you agree to make them immediately available under our license (see below). We cannot delay availability to align with other projects' publication timelines.
+
+3. **Importantly: you may not use any dataset in this repository for publication purposes before the official PsychLing-101 paper is released.**
+
+4. Anyone who wants to contribute data—either new or existing—must contact us first to obtain approval. You can do this by:
+
+   Creating an issue in this repository
+
+   Sending an email to psychling101@gmail.com (TBD)
+
+The project is currently coordinated by Dirk Wulff and Taisiia Tikhomirova, with support from Marco Marelli, Fritz Günther and Marcel Binz. 
+
+
+## Scope of Psycholinguistic Data
 
 [TO BE COMPLETED] 
 
 For the list of datasets currently being processed and datasets that are open for contribution, please refer to the “List of Datasets in Progress” and “List of Open Datasets” sections in CONTRIBUTING.md.
- 
-## Progress
+
+
+## Timeline 
+
+We aim to finalize the data collection by end of 2025 and submit our first paper shortly thereafter.
+Future repositories (PsychLing-201, PsychLing-301) may follow.
 
 **We are corrently in the process of collecting the data:** The deadline for the final submittions is ... 
 
+
 ## How to contribute
 
-This guide describes how to transform existing experimental datasets into a standardized format and convert them into text-based prompts suitable for LLM fine-tuning.
+We welcome contributions of psycholinguistic experiments, whether newly collected or pre-existing. To maintain consistency and transparency, please follow the workflow below. All contributors must first contact the project team before submitting any experiment.
+
+### Step 0: Get Approval Before You Start
+
+Before working with any dataset, please request approval via one of the following:
+
+1. Create a GitHub Issue briefly describing the dataset you'd like to contribute
+
+2. Email us at psychling101@gmail.com (TBD)
+
+Once approved, you may begin formatting and structuring your data.
 
 
 ### Step 1: Organize Raw Data
 
-1. Create a new folder named using the format: `authorYEAR_title` (e.g., `smith2021_decisiontask`).
+1. Create a new folder named using the format: `authorYEAR_title` (e.g., `smith2000_priming`).
 2. Inside this folder, create a subfolder named `original_data/`.
 3. Place **all raw files** from the source (e.g., OSF, author websites, repositories) into `original_data/`. Supported formats include `.csv`, `.tsv`, `.xlsx`, `.mat`, and `.json`.
 4. If raw data exceeds GitHub's file size limit, use [Git LFS](https://git-lfs.com/) to store and track these files.
@@ -82,7 +115,8 @@ Trial 8: The word pair is 'cheef' and 'grass'. You press <<l>>. Correct.
 
 Ensure your experiment folder includes the following:
 
-- `README.md`: Includes a paper reference and link to original data. 
+- `README.md`: Includes a paper reference and link to original data.
+- `original_data/`: Raw source files in their original format.
 - `preprocess_data.py`: Script for standardizing raw data.
 - `generate_prompts.py`: Script for creating text-based prompts.
 - `prompts.jsonl.zip`: A zipped JSONL file with one line per participant. Each line should include:
@@ -94,24 +128,19 @@ Ensure your experiment folder includes the following:
     - `"age"`, `"diagnosis"`, `"nationality"`, or questionnaire-derived statistics like `"STICSA-T somatic"`.
 
 
-Following this pipeline ensures consistency across experiments and enables scalable use of the data for large language model fine-tuning.
-
-
-
-
-### Setup
+### Submission 
 
 1. Fork the repository.
    
 3. Clone the forked repository:
 ~~~
-git clone https://github.com/YOUR-USERNAME/Psych-201
+git clone https://github.com/YOUR-USERNAME/PsychLing-101
 ~~~
 
 3. Add your experiments and push:
 
 ~~~
-cd Psych-201/
+cd PsychLing-101/
 (add your experiments)
 git push
 ~~~
@@ -123,11 +152,11 @@ git push
 
 There will be a lightweight review process ensuring that requirements are fulfilled. The communication for this will be done via the corresponding pull request.
 
-We accept experiments that fulfill the following requirements:
 
-* Data comes from an experiment with human subjects.
-* Data is given on a trial-by-trial level (i.e., no aggregated data).
-* Experiment can be translated into language without a major loss of information.
-* Temporal ordering should follow the original experiment.
+### Licensing
 
+Data is shared under CC BY-NC-SA 4.0, with an additional restriction:
 
+You may not use the datasets for publication or presentation purposes until the official PsychLing-101 paper is released.
+
+All contributors and users are expected to comply.
