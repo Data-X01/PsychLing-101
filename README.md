@@ -125,7 +125,7 @@ cd PsychLing-101/
 git push
 ~~~
 
-4. On https://github.com/YOUR-USERNAME/PsychLing-101 click on "Pull requests", then "New pull request", finally "Create pull request".
+4. Click on [Pull requests](https://github.com/YOUR-USERNAME/PsychLing-101), then "New pull request", finally "Create pull request".
 
 
 ### Review process
@@ -135,8 +135,6 @@ There will be a lightweight review process ensuring that requirements are fulfil
 
 ### Licensing
 
-This repository is shared under CC BY-NC-SA 4.0.
-
-You may not use the datasets for publication or presentation purposes until the official PsychLing-101 paper is released.
+This repository is shared under CC BY-NC-SA 4.0, with the following additional restrictions: You may not use the data in this repository for publication or presentation purposes until the official PsychLing-101 paper is released.
 
 All contributors and users are expected to comply.
