@@ -25,7 +25,7 @@ Currently, PsychLing-101 includes the data from XX studies, XX participants, and
 
 [TO BE COMPLETED] 
 
-For the list of datasets currently being processed and datasets that are open for contribution, please refer to the “List of Datasets in Progress” and “List of Open Datasets” sections in CONTRIBUTING.md.
+For the list of datasets currently being processed and datasets that are open for contribution, please consult [CONTRIBUTING.md](https://github.com/Data-X01/PsychLing-101/blob/main/CONTRIBUTING.md).
 
 ## How to contribute
 
