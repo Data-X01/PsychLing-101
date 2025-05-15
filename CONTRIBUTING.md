@@ -18,11 +18,4 @@
 
 ---
 
-Before working with any dataset, please request approval via one of the following:
-
-   Create a GitHub Issue briefly describing the dataset you'd like to contribute
-
-   Email us at psychling101@gmail.com (TBD)
-
-Once approved, you may begin formatting and structuring your data.
-
+Before working with any dataset, please contact us by creating an [issue](https://github.com/Data-X01/PsychLing-101/issues/new/choose) or sending us an [email](mailto:psychling101@gmail.com).
