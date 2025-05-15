@@ -29,14 +29,14 @@ For the list of datasets currently being processed and datasets that are open fo
 
 ## How to contribute
 
-We welcome contributions of psycholinguistic experiments, whether newly collected or pre-existing. To maintain consistency and transparency, please follow the workflow below. All contributors must first contact the project team before submitting any experiment.
+We welcome contributions of psycholinguistic experiments, whether newly collected or pre-existing. To maintain consistency and transparency, please follow the workflow below. All contributors must first contact the project team before submitting any datasets.
 
-### Step 0: Get Approval Before You Start
+### Step 0: Before You Start
 
 Before working on your submission, please do the following:
 
-1. Consult the "List of Datasets in Progress" to make sure others aren't already working on the dataset you'd like to contribute.
-2. Contact us via GitHub Issue or Email (mailto:psychling101@gmail.com), describing the dataset you would like to contribute.   
+1. Consult [CONTRIBUTING.md](https://github.com/Data-X01/PsychLing-101/blob/main/CONTRIBUTING.md) to make sure others aren't already working on the dataset you'd like to contribute.
+2. Contact us via a [Github issue](https://github.com/Data-X01/PsychLing-101/issues/new/choose) or [email](mailto:psychling101@gmail.com), describing the dataset you would like to contribute.   
 
 ### Step 1: Organize Raw Data
 
