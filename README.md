@@ -29,7 +29,7 @@ For the list of datasets currently being processed and datasets that are open fo
 
 ## How to contribute
 
-We welcome contributions of psycholinguistic experiments, whether newly collected or pre-existing. To maintain consistency and transparency, please follow the workflow below. All contributors must first contact the project team before submitting any datasets.
+We welcome contributions of psycholinguistic datasets, whether newly collected or pre-existing. To maintain consistency and transparency, please follow the workflow below. All contributors must first contact the project team before submitting any datasets.
 
 ### Step 0: Before You Start
 
