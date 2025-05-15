@@ -1,32 +1,25 @@
 # PsychLing-101
 
-PsychLing-101 is a community-driven effort to collect, organize, and standardize datasets from psycholinguistic studies. PsychLing-101 focuses specifically on tasks central to psycholinguistics — such as lexical decision, priming, sentence processing, and related paradigms.
+PsychLing-101 is a community-driven effort to compile a database of psycholinguistic data. 
 
 Our goals are:
 
-1. Organize and preserve psycholinguistic data: Convert existing experiments into a unified, standardized format.
+1. Organize and make available psycholinguistic data by converting existing data into a unified, standardized format.
+2. Convert psycholinguistic data into a format that can be used to fine-tune and evaluate large language models (LLMs).
+3. Collaboratively produce an article describing the database to be sent to a leading psycholinguistic outlet (e.g., ACL).  
 
-2. Convert psycholinguistic experiments into a format that can be used to fine-tune and evaluate large language models (LLMs).
+The project is led by Taisiia Tikhomirova and Dirk U. Wulff at the Center for Adaptive Rationality at the Max Planck Institute for Human Development and supported by: Valentin Kriegmair (MPI for Human Development), Fritz Günther (Humboldt University), Marco Marelli (University of Milano-Bicocca), and Marcel Binz (Helmholtz Munich). 
 
-This repository is a part of a collaborative publication effort. We intend to submit a comprehensive description of the dataset and associated methodology to the ACL Language Resources and Evaluation Conference (LREC).
+PsychLing-101 will be open for contributions until December 1st, 2025. Future projects (PsychLing-201, PsychLing-301) may follow.
 
+Currently, PsychLing-101 includes the data from XX studies, XX participants, and XX trials.  
 
-Because this is a large collaborative project, it is necessary to define some **ground rules** to avoid chaos:
+## Participation rules
 
-1. All contributors to data preprocessing will be co-authors on the final paper.
-
+1. All data contributors will be co-authors on the final paper.
 2. By contributing datasets to this repository, you agree to make them immediately available under our license (see below). We cannot delay availability to align with other projects' publication timelines.
-
-3. **Importantly: you may not use any dataset in this repository for publication purposes before the official PsychLing-101 paper is released.**
-
-4. Anyone who wants to contribute data—either new or existing—must contact us first to obtain approval. You can do this by:
-
-   Creating an issue in this repository
-
-   Sending an email to psychling101@gmail.com (TBD)
-
-The project is currently coordinated by Dirk Wulff and Taisiia Tikhomirova, with support from Marco Marelli, Fritz Günther and Marcel Binz. 
-
+3. You may not use any dataset in this repository for publication purposes before the official PsychLing-101 paper is released.
+4. Anyone who wants to contribute data—either new or existing—must contact us first (see below). 
 
 ## Scope of Psycholinguistic Data
 
@@ -34,29 +27,16 @@ The project is currently coordinated by Dirk Wulff and Taisiia Tikhomirova, with
 
 For the list of datasets currently being processed and datasets that are open for contribution, please refer to the “List of Datasets in Progress” and “List of Open Datasets” sections in CONTRIBUTING.md.
 
-
-## Timeline 
-
-We aim to finalize the data collection by end of 2025 and submit our first paper shortly thereafter.
-Future repositories (PsychLing-201, PsychLing-301) may follow.
-
-**We are corrently in the process of collecting the data:** The deadline for the final submittions is ... 
-
-
 ## How to contribute
 
 We welcome contributions of psycholinguistic experiments, whether newly collected or pre-existing. To maintain consistency and transparency, please follow the workflow below. All contributors must first contact the project team before submitting any experiment.
 
 ### Step 0: Get Approval Before You Start
 
-Before working with any dataset, please request approval via one of the following:
+Before working on your submission, please do the following:
 
-1. Create a GitHub Issue briefly describing the dataset you'd like to contribute
-
-2. Email us at psychling101@gmail.com (TBD)
-
-Once approved, you may begin formatting and structuring your data.
-
+1. Consult the "List of Datasets in Progress" to make sure others aren't already working on the dataset you'd like to contribute.
+2. Contact us via GitHub Issue or Email (mailto:psychling101@gmail.com), describing the dataset you would like to contribute.   
 
 ### Step 1: Organize Raw Data
 
@@ -155,7 +135,7 @@ There will be a lightweight review process ensuring that requirements are fulfil
 
 ### Licensing
 
-Data is shared under CC BY-NC-SA 4.0, with an additional restriction:
+This repository is shared under CC BY-NC-SA 4.0.
 
 You may not use the datasets for publication or presentation purposes until the official PsychLing-101 paper is released.
 
