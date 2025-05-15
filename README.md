@@ -108,7 +108,7 @@ Ensure your experiment folder includes the following:
     - `"age"`, `"diagnosis"`, `"nationality"`, or questionnaire-derived statistics like `"STICSA-T somatic"`.
 
 
-### Submission 
+### Step 5: Submission 
 
 1. Fork the repository.
    
@@ -128,12 +128,12 @@ git push
 4. Click on [Pull requests](https://github.com/YOUR-USERNAME/PsychLing-101), then "New pull request", finally "Create pull request".
 
 
-### Review process
+### Step 6: Review process
 
 There will be a lightweight review process ensuring that requirements are fulfilled. The communication for this will be done via the corresponding pull request.
 
 
-### Licensing
+## Licensing
 
 This repository is shared under CC BY-NC-SA 4.0, with the following additional restrictions: You may not use the data in this repository for publication or presentation purposes until the official PsychLing-101 paper is released.
 
