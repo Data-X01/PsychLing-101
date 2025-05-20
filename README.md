@@ -112,7 +112,26 @@ Trial 8: The word pair is 'cheef' and 'grass'. You press <<l>>. Correct.
 
 ~~~
 
-### Step 4: Structure Your Repository
+### Step 4: (Optional) Host Image Stimuli Externally
+
+If your dataset includes image stimuli:
+
+1. Create a free account on OSF.io and set up a new project named after your experiment (e.g., smith2000_priming_stimuli).
+
+2. Upload all relevant images to the OSF project.
+
+3. Copy the direct download link (ending in /download/) for each uploaded image.
+
+4. In your CSV file (e.g., exp1.csv), add a new column named image_url. For each trial using an image, insert the corresponding OSF download link in this column.
+
+5. In your README.md, include:
+
+      A brief explanation of how image stimuli were used.
+
+      The OSF project link hosting the images.
+      
+
+### Step 5: Structure Your Repository
 
 Ensure your experiment folder includes the following:
 
