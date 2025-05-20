@@ -19,13 +19,34 @@ Currently, PsychLing-101 includes the data from XX studies, XX participants, and
 1. All data contributors will be co-authors on the final paper.
 2. By contributing datasets to this repository, you agree to make them immediately available under our license (see below). We cannot delay availability to align with other projects' publication timelines.
 3. You may not use any dataset in this repository for publication purposes before the official PsychLing-101 paper is released.
-4. Anyone who wants to contribute data—either new or existing—must contact us first (see below). 
+4. Anyone who wants to contribute data—either new or existing—must contact us first (see below).
 
-## Scope of Psycholinguistic Data
+   
 
-[TO BE COMPLETED] 
+## Data Scope and Inclusion Criteria
+
+[WIP] 
+
+We welcome a broad range of psycholinguistic data. Each submission is evaluated individually, and we’re happy to discuss edge cases or special formats. The following guidelines serve as a starting point:
+
+# Scope
+
+The study should primarily investigate language processing (e.g., lexical access, sentence comprehension, priming).
+
+Multilingual datasets are allowed, but metadata such as column headers, participant IDs, task labels, and trial numbers should be provided in English.
+
+Brain imaging data (EEG, fMRI) is welcome if formatted as CSV or other tabular files.
+
+Images used as stimuli may be included. (need to think about the format) Audio or video files are currently not supported.
+
+# Requirements
+
+Data must include raw, trial-level information (no aggregated results).
+
+Data must be convertible into a structured, text-based format.
 
 For the list of datasets currently being processed and datasets that are open for contribution, please consult [CONTRIBUTING.md](https://github.com/Data-X01/PsychLing-101/blob/main/CONTRIBUTING.md).
+
 
 ## How to contribute
 
