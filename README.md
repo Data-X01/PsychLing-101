@@ -126,9 +126,9 @@ If your dataset includes image stimuli:
 
 5. In your README.md, include:
 
-      A brief explanation of how image stimuli were used.
+   -  A brief explanation of how image stimuli were used.
 
-      The OSF project link hosting the images.
+   -  The OSF project link hosting the images.
       
 
 ### Step 5: Structure Your Repository
