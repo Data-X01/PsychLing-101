@@ -31,19 +31,19 @@ We welcome a broad range of psycholinguistic data. Each submission is evaluated 
 
 ### Scope
 
-The study should primarily investigate language processing (e.g., lexical access, sentence comprehension, priming).
+1. The study should primarily investigate language processing (e.g., lexical access, sentence comprehension, priming).
 
-Multilingual datasets are allowed, but metadata such as column headers, participant IDs, task labels, and trial numbers should be provided in English.
+2. Multilingual datasets are allowed, but metadata such as column headers, participant IDs, task labels, and trial numbers should be provided in English.
 
-Brain imaging data (EEG, fMRI) is welcome if formatted as CSV or other tabular files.
+3. Brain imaging data (EEG, fMRI) is welcome if formatted as CSV or other tabular files.
 
-Images used as stimuli may be included. (need to think about the format) Audio or video files are currently not supported.
+4. Images used as stimuli may be included. (need to think about the format) Audio or video files are currently not supported.
 
 ### Requirements
 
-Data must include raw, trial-level information (no aggregated results).
+1. Data must include raw, trial-level information (no aggregated results).
 
-Data must be convertible into a structured, text-based format.
+2. Data must be convertible into a structured, text-based format.
 
 For the list of datasets currently being processed and datasets that are open for contribution, please consult [CONTRIBUTING.md](https://github.com/Data-X01/PsychLing-101/blob/main/CONTRIBUTING.md).
 
