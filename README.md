@@ -19,13 +19,34 @@ Currently, PsychLing-101 includes the data from XX studies, XX participants, and
 1. All data contributors will be co-authors on the final paper.
 2. By contributing datasets to this repository, you agree to make them immediately available under our license (see below). We cannot delay availability to align with other projects' publication timelines.
 3. You may not use any dataset in this repository for publication purposes before the official PsychLing-101 paper is released.
-4. Anyone who wants to contribute data—either new or existing—must contact us first (see below). 
+4. Anyone who wants to contribute data—either new or existing—must contact us first (see below).
 
-## Scope of Psycholinguistic Data
+   
 
-[TO BE COMPLETED] 
+## Data Scope and Inclusion Criteria
+
+[WIP] 
+
+We welcome a broad range of psycholinguistic data. Each submission is evaluated individually, and we’re happy to discuss edge cases or special formats. The following guidelines serve as a starting point:
+
+### Scope
+
+1. The study should primarily investigate language processing (e.g., lexical access, sentence comprehension, priming).
+
+2. Multilingual datasets are allowed, but metadata such as column headers, participant IDs, task labels, and trial numbers should be provided in English.
+
+3. Brain imaging data (EEG, fMRI) is welcome if formatted as CSV.
+
+4. Images used as stimuli may be included. Audio or video files are currently not supported.
+
+### Requirements
+
+1. Data must include raw, trial-level information (no aggregated results).
+
+2. Data must be convertible into a structured, text-based format.
 
 For the list of datasets currently being processed and datasets that are open for contribution, please consult [CONTRIBUTING.md](https://github.com/Data-X01/PsychLing-101/blob/main/CONTRIBUTING.md).
+
 
 ## How to contribute
 
@@ -91,7 +112,26 @@ Trial 8: The word pair is 'cheef' and 'grass'. You press <<l>>. Correct.
 
 ~~~
 
-### Step 4: Structure Your Repository
+### Step 4: (Optional) Host Image Stimuli Externally
+
+If your dataset includes image stimuli:
+
+1. Create a free account on OSF.io and set up a new project named after your experiment (e.g., smith2000_priming_stimuli).
+
+2. Upload all relevant images to the OSF project.
+
+3. Copy the direct download link (ending in /download/) for each uploaded image.
+
+4. In your CSV file (e.g., exp1.csv), add a new column named image_url. For each trial using an image, insert the corresponding OSF download link in this column.
+
+5. In your README.md, include:
+
+   -  A brief explanation of how image stimuli were used.
+
+   -  The OSF project link hosting the images.
+      
+
+### Step 5: Structure Your Repository
 
 Ensure your experiment folder includes the following:
 
