@@ -29,7 +29,7 @@ Currently, PsychLing-101 includes the data from XX studies, XX participants, and
 
 We welcome a broad range of psycholinguistic data. Each submission is evaluated individually, and we’re happy to discuss edge cases or special formats. The following guidelines serve as a starting point:
 
-# Scope
+### Scope
 
 The study should primarily investigate language processing (e.g., lexical access, sentence comprehension, priming).
 
@@ -39,7 +39,7 @@ Brain imaging data (EEG, fMRI) is welcome if formatted as CSV or other tabular f
 
 Images used as stimuli may be included. (need to think about the format) Audio or video files are currently not supported.
 
-# Requirements
+### Requirements
 
 Data must include raw, trial-level information (no aggregated results).
 
