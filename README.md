@@ -37,7 +37,7 @@ We welcome a broad range of psycholinguistic data. Each submission is evaluated 
 
 3. Brain imaging data (EEG, fMRI) is welcome if formatted as CSV.
 
-4. Images used as stimuli may be included. (need to think about the format) Audio or video files are currently not supported.
+4. Images used as stimuli may be included. Audio or video files are currently not supported.
 
 ### Requirements
 
