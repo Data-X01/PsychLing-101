@@ -1,0 +1,14 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant.
+age,Age of the participant at the time of the experiment.
+gender,Self-reported or observed gender identity of the participant.
+education,Highest completed education level of the participant.
+clinical_diagnoses,"Any reported or documented clinical conditions relevant to cognitive, language, or psychological functioning."
+first_language,Participant's native or first-acquired language.
+other_languages,"Languages learned after the first language, optionally with proficiency level."
+trial_id,Unique identifier for a single trial within a session or condition.
+phase_id,"Identifier for the experimental phase or block a trial belongs to (e.g., practice, test, recall)."
+accuracy,Binary indicator of whether the participant's response was correct.
+condition,Experimental condition assigned to the trial.
+stimulus,The linguistic or visual stimulus presented to the participant in a given trial.
+rt,"Time taken by the participant to respond, in milliseconds."
