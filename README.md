@@ -1,4 +1,4 @@
-# PsychLing-101
+# PsychLing-101 edit 
 
 PsychLing-101 is a community-driven effort to compile a database of psycholinguistic data. 
 
