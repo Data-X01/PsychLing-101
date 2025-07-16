@@ -48,7 +48,7 @@ Key guidlines:
 
 # How to contribute
 
-## 0. Check & Contact 
+## 0. Check & сontact 
 
 1. Read **CONTRIBUTING.md** to make sure no one is already processing your dataset.
 2. Open a [new issue](https://github.com/Data-X01/PsychLing-101/issues/new/choose) (*or* email [psychling101@gmail.com](mailto:psychling101@gmail.com)) describing the dataset.
