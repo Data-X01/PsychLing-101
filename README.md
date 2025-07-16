@@ -184,7 +184,7 @@ Before opening a pull request, confirm all of the following:
 * [ ] `CODEBOOK.csv`
 * [ ] `preprocess_data.py`
 * [ ] `generate_prompts.py`
-* [ ] `prompts.jsonl(.zip)`
+* [ ] `prompts.jsonl.zip`
 * [ ] *(optional)* `images.zip`
 
 ### Validation 
@@ -195,7 +195,7 @@ Before opening a pull request, confirm all of the following:
 ## 5. Commit, push & open a pull request
 
 ⚠️ Large‑file warning!
-GitHub rejects individual files ≥ 100 MB unless they are stored with Git LFS [Git LFS](https://git-lfs.com/). If any file in your experiment folder is ≥ 100 MB (for example images.zip), you need to track it with [Git LFS](https://git-lfs.com/). For this follow the "Optional" steps in the code snippet below. 
+GitHub rejects individual files ≥ 100 MB unless they are stored with [Git LFS](https://git-lfs.com/). If any file in your experiment folder is ≥ 100 MB (for example images.zip), you need to track it with [Git LFS](https://git-lfs.com/). For this follow the "Optional" steps in the code snippet below. 
 
 ```bash
 # Stage the entire experiment folder
