@@ -25,8 +25,6 @@ PsychLing-101 will be open for contributions until December 1st, 2025. Future pr
 3. **Publication restrictions** – You may not publish analyses based on PsychLing‑101 data until the official paper is released.
 4. **Contact first** – Open an issue or email us **before** you start working on a dataset (see below).
 
----
-
 ## Data scope and inclusion criteria
 
 We welcome a broad range of psycholinguistic paradigms. For the list of datasets currently being processed and datasets that are open for contribution, please consult [CONTRIBUTING.md](https://github.com/Data-X01/PsychLing-101/blob/main/CONTRIBUTING.md). 
@@ -144,7 +142,6 @@ Trial 6: The word pair is 'dog' and 'fleeb'. You press <<l>>. Correct.
 Trial 7: The word pair is 'sun' and 'cloud'. You press <<a>>. Correct.
 Trial 8: The word pair is 'cheef' and 'grass'. You press <<l>>. Correct.
 ~~~
-
 
 ```
 <authorYEAR_title>/
