@@ -14,7 +14,7 @@ PsychLing-101 will be open for contributions until December 1st, 2025. Future pr
 
 > **Current coverage** 
 >
-> *XX* studies | *XX* participants | *XX* trials
+> *00* studies | *00* participants | *00* trials
 
 ---
 
