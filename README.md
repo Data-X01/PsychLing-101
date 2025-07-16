@@ -18,7 +18,7 @@ PsychLing-101 will be open for contributions until December 1st, 2025. Future pr
 
 ---
 
-## Participation Rules
+## Participation rules
 
 1. **Co‑authorship** – All data contributors will be co‑authors on the final paper.
 2. **Immediate openness** – By contributing, you agree that the dataset becomes publicly available under the project license upon merge.
@@ -27,7 +27,7 @@ PsychLing-101 will be open for contributions until December 1st, 2025. Future pr
 
 ---
 
-## Data Scope and Inclusion Criteria
+## Data scope and inclusion criteria
 
 We welcome a broad range of psycholinguistic paradigms. For the list of datasets currently being processed and datasets that are open for contribution, please consult [CONTRIBUTING.md](https://github.com/Data-X01/PsychLing-101/blob/main/CONTRIBUTING.md). 
 
@@ -41,65 +41,65 @@ Key guidlines:
 3. **EEG/fMRI** data are welcome if exported to a row‑wise CSV format.
 4. **Images** may be included; **audio/video** are not (yet) supported.
 
-### Minimum Requirements
+### Minimum requirements
 
 1. Data must include raw, trial-level information (no aggregated results).
 2. Data must be convertible into a structured, text‑based format.
 
-
 ---
 
-## How to Contribute
+# How to contribute
 
-### 0. Check & Contact #todo: capitalise only the first everywhere 
+## 0. Check & Contact 
 
 1. Read **CONTRIBUTING.md** to make sure no one is already processing your dataset.
 2. Open a [new issue](https://github.com/Data-X01/PsychLing-101/issues/new/choose) (*or* email [psychling101@gmail.com](mailto:psychling101@gmail.com)) describing the dataset.
 
-### 1. Fork the Repository
+## 1. Fork the repository
 
-1. In the upper‑right corner of the project page, click **Fork ▸ Create fork**.
-2. Enable **Git LFS** [Git LFS](https://git-lfs.com/) on your fork if you plan to add large files (>100 MB). # remove this step 
+In the upper‑right corner of the project page, click **Fork ▸ Create fork**.
 
-### 2. Clone & Create a Feature Branch
+## 2. Clone & create a feature branch
 
-Create a new folder named using the format: `authorYEAR_title` (e.g., `smith2000_priming`).
+On your local mashine create a new folder named using the format: `authorYEAR_title` (e.g., `smith2000_priming`).
 
 ```bash
 # Replace YOUR‑USERNAME with your GitHub handle and <authorYEAR_title> with your folder name
+# Clone your fork to the local machine
 $ git clone https://github.com/YOUR-USERNAME/PsychLing-101.git
+
+# Move into the cloned repository
 $ cd PsychLing-101
+
+# Create & switch to a feature branch named after your dataset
 $ git checkout -b add_<authorYEAR_title>
 ```
 
-### 3. Organize Raw Data #make it overarching for 3,4,5 - on the top of 3 we say what we want from their data format-wise. Compiling the data 
+## 3. Prepare your dataset
+
+In Steps 3.1 – 3.4 you transform the raw files of the original_data into standardized CSVs and then generate participant-level LLM prompts.
+
+### 3.1. Organise raw data 
 
 1. Inside the main folder, create a subfolder named `original_data/`.
-2. Place **all raw files** into `original_data/`. Supported formats include `.csv`, `.tsv`, and `.json`. #add the sentence please conv proprietary data into the open 
+2. Place **all raw files** into `original_data/`. If your data are in a proprietary format, export them to one of the open formats before committing.
 
 ```
 <authorYEAR_title>/
 └──  original_data/    ← **all** raw source files (.csv, .xlsx, .mat, …)
 ```
-3. If raw data exceeds GitHub's file size limit (>100 MB), use [Git LFS](https://git-lfs.com/) to store and track these files.
 
-```bash
-$ git lfs track "*.csv"
-```
+### 3.2. Preprocess raw data 
 
-### 4. Preprocess Raw Data 
-
-Convert the raw files in original_data/ into clean, trial‑level CSVs stored in processed_data/.
-
-1. Create a script named preprocess_data.py in the root of your experiment folder (i.e., next to original_data/).
+1. Create a script named preprocess_data.py in the root of your experiment folder (next to original_data/).
 
 2. Inside the script:
 
-- Read every file inside original_data/ (e.g., using Path.glob("*")).
+- Read every file inside original_data/.
 
-- Tidy the data: rename or recode columns so they match the canonical names in CODEBOOK.csv. If a required variable is missing, first add it to CODEBOOK.csv with a short description.
+- Tidy the data: rename or recode columns so they match the canonical names in [CODEBOOK.csv](https://github.com/Data-X01/PsychLing-101/blob/main/CODEBOOK.csv). If a required variable is missing, first add it to CODEBOOK.csv with a short description.
 
-- Write one or more cleaned files (exp1.csv, exp2.csv, …) into a new folder called processed_data/.
+- Write one or more cleaned files (exp1.csv, exp2.csv, …) into a new folder processed_data/ folder.
 
 ```
 <authorYEAR_title>/
@@ -109,11 +109,9 @@ Convert the raw files in original_data/ into clean, trial‑level CSVs stored in
 └── CODEBOOK.csv          # reference for standardized column names
 ```
 
-### 5. Generate LLM Prompts
+### 3.3. Generate LLM prompts
 
-example - https://github.com/marcelbinz/Psych-201/tree/main/guenther2024associations_sentences_texts ? 
-
-1. In the experiment folder, create a script named `generate_prompts.py`.
+1. In the experiment folder, create a script named `generate_prompts.py` (for the example, see [guenther2024associations_sentences_texts/generate_prompts.py](https://github.com/marcelbinz/Psych-201/blob/main/guenther2024associations_sentences_texts/generate_prompts.py)).
 2. This script should:
 - Read the standardized CSV file(s).
 - Generate a JSONL file (`prompts.jsonl`) with one line per participant.
@@ -122,7 +120,7 @@ example - https://github.com/marcelbinz/Psych-201/tree/main/guenther2024associat
    - Include trial-by-trial data.
    - Begin with the instructions. Use original instructions, if available.
    - Mark human responses with `<< >>` (do not use these symbols elsewhere).
-   - For discrete choice tasks, randomize the naming of options per participant (see [binz2022heuristics/generate_prompts.py](https://github.com/marcelbinz/Psych-201/tree/main/binz2022heuristics/generate_prompts.py)). #choose the psycholing one 
+   - For discrete choice tasks, randomize the naming of options per participant (see [binz2022heuristics/generate_prompts.py](https://github.com/marcelbinz/Psych-201/tree/main/binz2022heuristics/generate_prompts.py)).
    - Stay within a 32K token limit per participant.
 
 In resulting `prompts.jsonl.zip` each line should have the following three fields:
@@ -134,9 +132,7 @@ In resulting `prompts.jsonl.zip` each line should have the following three field
    - `"age"`, `"diagnosis"`, `"nationality"`, or questionnaire-derived statistics.
    
 Example prompt:
-
 ~~~
-
 In this task, you will see two words at the time. If both words are REAL ENGLISH words, you press the button \"a\". If ONE or BOTH words are non-sense words (for example \"FLUMMOL\"), you press the button \"l\". Respond within 2 seconds.
 
 Trial 1: The word pair is 'table' and 'mirror'. You press <<a>>. Correct.
@@ -161,28 +157,27 @@ Trial 8: The word pair is 'cheef' and 'grass'. You press <<l>>. Correct.
 ```
 
 
-### 6. (Optional) Images
+### 3.4. (Optional) Images
 
 If your dataset includes images:
 
-1. Prepare a lower-resolution version (specify no tifs - pngs, jpegs only. every image belov 100 KB. If anything reach out) of the images to minimize file size.
+1. Prepare a lower-resolution version (PNG or JPEG only; ≤ 100 KB each) of the images to minimize file size. Contact us if this limit is problematic for your stimuli. 
 
 2. Place all relevant images into a single folder and compress them into a images.zip file.
 
-remove 3. Add the archive to your main experiment folder. If the zipped file exceeds GitHub’s size limit, use Git LFS to track and store it.
+3. In your CSV file (e.g., exp1.csv), add a column named image_filename that matches each trial’s image (e.g., apple.jpg, scene1.png).
 
-4. In your CSV file (e.g., exp1.csv), add a column named image_filename that matches each trial’s image (e.g., apple.jpg, scene1.png).
-
-5. In your README.md, briefly describe:
+4. In your README.md, briefly describe:
 
 - How images were used in the experiment (e.g., as stimuli, options, or cues)
 
 - Any preprocessing applied to reduce image resolution or format
 
-### 7. Final folder Checklist 
+## 4. Final folder checklist 
 
-Now your folder should cosist from: 
+Before opening a pull request, confirm all of the following:
 
+### Files present
 * [ ] `README.md` with citation and data source link
 * [ ] `original_data/`
 * [ ] `processed_data/` (`exp1.csv`, `exp2.csv`, …)
@@ -192,38 +187,35 @@ Now your folder should cosist from:
 * [ ] `prompts.jsonl(.zip)`
 * [ ] *(optional)* `images.zip`
 
-### 8. Commit & Push #8,9,10 also together - sharing the data 
-
-WARNING THE IMAGE ZIP. Put the GitLFS here! Seperate point. !. check if your files are larger - IF SO... 
-
-
-#add comments on what those things are doing 
-```bash
-$ git add <authorYEAR_title>
-$ git commit -m "Add <authorYEAR_title> dataset"
-$ git push -u origin HEAD
-```
-
-### 9. Open a Pull Request
-
-1. Navigate to **Your fork ▸ Pull requests ▸ *Compare & pull request***.
-2. Fill in a short description; the pull requests template will remind you of the checklist above.
-
-### 10. Review Process
-
-A project maintainer will run the checks and leave comments directly in your pull requests. Small fixes can be pushed to the same branch; the pull requests updates automatically.
-
----
-
-## Pre‑Submission Validation Checklist # ### 7. Final folder Checklist  add into it 
-
-Before opening your pull request, double‑check that:
-
-* [ ] All required files are present (see Section 7).
+### Validation 
 * [ ] `preprocess_data.py` runs without errors *from a clean repo clone*.
 * [ ] Generated CSVs follow the column names in `CODEBOOK.csv`.
 * [ ] `generate_prompts.py` produces `prompts.jsonl` without exceeding 32 K tokens per participant.
-* [ ] No file larger than 100 MB is committed without Git LFS.
+
+## 5. Commit, push & open a pull request
+
+⚠️ Large‑file warning!
+GitHub rejects individual files ≥ 100 MB unless they are stored with Git LFS [Git LFS](https://git-lfs.com/). If any file in your experiment folder is ≥ 100 MB (for example images.zip), you need to track it with [Git LFS](https://git-lfs.com/). For this follow the "Optional" steps in the code snippet below. 
+
+```bash
+# Stage the entire experiment folder
+$ git add <authorYEAR_title>
+
+# OPTIONAL - command Git LFS to manage all CSV files larger than 100 MB
+$ git lfs track "*.csv"
+
+# OPTIONAL - stage the .gitattributes file Git LFS just created
+$ git add .gitattributes
+
+# Create a commit
+$ git commit -m "Add <authorYEAR_title> dataset"
+
+# Push the branch to your fork on GitHub
+$ git push -u origin HEAD
+```
+
+Next, navigate to **Your fork ▸ Pull requests ▸ *Compare & pull request***. Fill in a short description and click **Create pull request**. A project maintainer will run the checks and leave comments directly in your pull requests. Small fixes can be pushed to the same branch; the pull requests updates automatically.
+
 ---
 
 ## License
