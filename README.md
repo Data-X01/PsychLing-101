@@ -30,7 +30,7 @@ PsychLing-101 will be open for contributions until December 1st, 2025. Future pr
 We welcome a broad range of psycholinguistic paradigms. For the list of datasets currently being processed and datasets that are open for contribution, please consult [CONTRIBUTING.md](https://github.com/Data-X01/PsychLing-101/blob/main/CONTRIBUTING.md). 
 
 Each submission is evaluated individually, and we’re happy to discuss edge cases or special formats!
-Key guidlines: 
+Key guidelines: 
 
 ### Scope
 
@@ -59,7 +59,7 @@ In the upper‑right corner of the project page, click **Fork ▸ Create fork**
 
 ## 2. Clone & create a feature branch
 
-On your local mashine create a new folder named using the format: `authorYEAR_title` (e.g., `smith2000_priming`).
+On your local machine create a new folder named using the format: `authorYEAR_title` (e.g., `smith2000_priming`).
 
 ```bash
 # Replace YOUR‑USERNAME with your GitHub handle and <authorYEAR_title> with your folder name
@@ -150,7 +150,7 @@ Trial 8: The word pair is 'cheef' and 'grass'. You press <<l>>. Correct.
 ├── processed_data/ 
 ├── CODEBOOK.csv 
 ├── generate_prompts.py ← script for creating text-based prompts.
-└── prompts.jsonl.zip ← a zipped JSONL file with promts. 
+└── prompts.jsonl.zip ← a zipped JSONL file with prompts. 
 ```
 
 
