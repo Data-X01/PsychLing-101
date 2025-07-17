@@ -120,6 +120,7 @@ In Steps 3.1 – 3.4 you transform the raw files of the original_data into stand
    - Mark human responses with `<< >>` (do not use these symbols elsewhere).
    - For discrete choice tasks, randomize the naming of options per participant (see [binz2022heuristics/generate_prompts.py](https://github.com/marcelbinz/Psych-201/tree/main/binz2022heuristics/generate_prompts.py)).
    - Stay within a 32K token limit per participant.
+   - If the trial includes an image, follow the formatting guidelines in step 3.4. 
 
 In resulting `prompts.jsonl.zip` each line should have the following three fields:
 - `"text"`: Full natural language prompt with instructions, cover story and trial-by-trial data.
@@ -164,7 +165,13 @@ If your dataset includes images:
 
 3. In your CSV file (e.g., exp1.csv), add a column named image_filename that matches each trial’s image (e.g., apple.jpg, scene1.png).
 
-4. In your README.md, briefly describe:
+4. In generate_prompts.py, insert the <image> token wherever the picture appeared:
+
+~~~
+Trial 1: <image> You press <<a>>.
+~~~
+
+5. In your README.md, briefly describe:
 
 - How images were used in the experiment (e.g., as stimuli, options, or cues)
 
