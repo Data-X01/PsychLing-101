@@ -165,7 +165,7 @@ If your dataset includes images:
 
 3. In your CSV file (e.g., exp1.csv), add a column named image_filename that matches each trial’s image (e.g., apple.jpg, scene1.png).
 
-4. In generate_prompts.py, insert the <image> token wherever the picture appeared:
+4. In generate_prompts.py, insert the <image> token wherever the picture appeared, e.g.:
 
 ~~~
 Trial 1: <image> You press <<a>>.
