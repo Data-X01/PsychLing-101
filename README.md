@@ -43,6 +43,7 @@ Key guidelines:
 
 1. Data must include raw, trial-level information (no aggregated results).
 2. Data must be convertible into a structured, text‑based format.
+3. Contributors should ensure that they have the legal permission to share all materials, including stimuli (e.g., images or texts). Using copyrighted stimuli in a controlled lab setting is often permissible, but publishing them online may require additional rights or licenses.
 
 ---
 
