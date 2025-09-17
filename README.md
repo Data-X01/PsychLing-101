@@ -6,7 +6,7 @@ Our goals are:
 
 1. Organize and make available psycholinguistic data by converting existing data into a unified, standardized format.
 2. Convert psycholinguistic data into a format that can be used to fine-tune and evaluate large language models (LLMs).
-3. Collaboratively produce an article describing the database to be sent to a leading psycholinguistic outlet.  
+3. Collaboratively produce an article describing the database to be sent to a psycholinguistic or interdisciplinary outlet.  
 
 The project is led by Taisiia Tikhomirova and Dirk U. Wulff at the Center for Adaptive Rationality at the Max Planck Institute for Human Development and supported by: Valentin Kriegmair (MPI for Human Development), Fritz Günther (Humboldt University), Marco Marelli (University of Milano-Bicocca), and Marcel Binz (Helmholtz Munich). 
 
