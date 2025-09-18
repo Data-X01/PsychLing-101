@@ -16,7 +16,7 @@
 |    Lexical decision task   |                        |          2,240,940         | [Link](https://link.springer.com/article/10.3758/s13428-011-0118-4)    |        
 | Semantic feature production task  |  -                      |     69,284 cue-raw feature combinations              | [Link](https://link.springer.com/article/10.3758/s13428-019-01243-z?utm_source=chatgpt.com)      |   
 | Semantic feature production norms     |    -                    |   ~3,900,00                | [Link](https://link.springer.com/article/10.3758/BF03192726#preview)     |  
-| The semantic priming project     |   -                     |  ~ 2,000,000                 |  [Link](https://link.springer.com/article/10.3758/s13428-012-0304-z)    |  
+| The semantic priming project     |   -                     |  ~2,000,000                 |  [Link](https://link.springer.com/article/10.3758/s13428-012-0304-z)    |  
 
 ---
 
