@@ -98,18 +98,17 @@ These examples are not exhaustive: each dataset contribution will be evaluated i
 - Eye-tracking
 
 ## 7. Lexico-Semantic Judgments :
-* Similarity/relatedness judgments
-* Word fluency
-* Odd-one-out
-* Affective & evaluative norms: valence, arousal, dominance
-* Conceptual accessibility: concreteness, imageability, familiarity, age of acquisition 
-* Iconicity & transparency: form–meaning mapping ratings 
-* Goals/needs: goal-directedness/need-related ratings 
-* Feature & associability: number of features; meaningfulness/associability
-* Semantic decisions: category/property/semantic decision
+- Similarity/relatedness judgments
+- Word fluency
+- Odd-one-out
+- Affective & evaluative norms: valence, arousal, dominance
+- Conceptual accessibility: concreteness, imageability, familiarity, age of acquisition
+- Iconicity & transparency
+- Feature: number of features
+- Semantic decisions: category/property/semantic decision
 
 ## 8. Association Paradigms
 
 ## 9. Lexical Processing Tasks
-* Lexical decision task 
-* Naming task
+- Lexical decision task 
+- Naming task
