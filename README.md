@@ -34,7 +34,7 @@ Key guidelines:
 
 ### Scope
 
-1. The study must primarily investigate **language processing** (e.g., lexical access, sentence comprehension, priming).More details and illustrative examples can be found in [SCOPE.md](https://github.com/Data-X01/PsychLing-101/blob/main/SCOPE.md). 
+1. The study must primarily investigate **language processing** (e.g., lexical access, sentence comprehension, priming). More details and examples can be found in [SCOPE.md](https://github.com/Data-X01/PsychLing-101/blob/main/SCOPE.md). 
 2. **Multilingual** datasets are allowed, but metadata and variable names, participant IDs, etc. must be in English.
 3. **EEG/fMRI** data are welcome if exported to a row‑wise CSV format.
 4. **Images** may be included; **audio/video** are not (yet) supported.
