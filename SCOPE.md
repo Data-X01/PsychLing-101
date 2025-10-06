@@ -1,6 +1,6 @@
 # Scope of Experiments
 
-This file provides illustrative examples of experimental paradigms, tasks, effects, and measurements that are typically relevant for inclusion in PsychLing-101.  
+This file provides examples of experimental paradigms, tasks, effects, and measurements that are typically relevant for inclusion in PsychLing-101.  
 These examples are not exhaustive: each dataset contribution will be evaluated individually to ensure it aligns with the project’s goals and data requirements. 
 
 ---
