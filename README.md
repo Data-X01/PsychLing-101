@@ -10,7 +10,7 @@ Our goals are:
 
 The project is led by Taisiia Tikhomirova and Dirk U. Wulff at the Center for Adaptive Rationality at the Max Planck Institute for Human Development and supported by: Valentin Kriegmair (MPI for Human Development), Fritz Günther (Humboldt University), Marco Marelli (University of Milano-Bicocca), and Marcel Binz (Helmholtz Munich). 
 
-PsychLing-101 will be open for contributions until December 1st, 2025. Future projects may follow.
+PsychLing-101 will be open for contributions until May 1st, 2026. Future projects may follow.
 
 > **Current coverage** 
 >
