@@ -15,7 +15,7 @@ These examples are not exhaustive: each dataset contribution will be evaluated i
 
 **Tasks**  
 - Self-paced reading  
-- Visual World Paradigm (+ audio)  #todiscuss - we do not want the audio data
+- Visual World Paradigm
 
 **Measurements**  
 - Self-paced reading times  
@@ -87,17 +87,13 @@ These examples are not exhaustive: each dataset contribution will be evaluated i
 - Accuracy  
 - Eye-tracking  
 
-
-## 5. Prosody and Intonation Studies - #todiscus can we work with it without the audio files?
-
-
-## 6. Discourse Processing Studies
+## 5. Discourse Processing Studies
 **Measurements**  
 - Recall accuracy  
 - Response times  
 - Eye-tracking
 
-## 7. Lexico-Semantic Judgments :
+## 6. Lexico-Semantic Judgments :
 - Similarity/relatedness judgments
 - Word fluency
 - Odd-one-out
@@ -107,8 +103,8 @@ These examples are not exhaustive: each dataset contribution will be evaluated i
 - Feature: number of features
 - Semantic decisions: category/property/semantic decision
 
-## 8. Association Paradigms
+## 7. Association Paradigms
 
-## 9. Lexical Processing Tasks
+## 8. Lexical Processing Tasks
 - Lexical decision task 
 - Naming task
