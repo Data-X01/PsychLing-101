@@ -36,7 +36,7 @@ Key guidelines:
 
 1. The study must primarily investigate **language processing** (e.g., lexical access, sentence comprehension, priming). More details and examples can be found in [SCOPE.md](https://github.com/Data-X01/PsychLing-101/blob/main/SCOPE.md). 
 2. **Multilingual** datasets are allowed, but metadata and variable names, participant IDs, etc. must be in English.
-3. **EEG/fMRI** data are welcome if exported to a row‑wise CSV format.
+3. EEG, fMRI, MEG, eye-tracking or other continuous behavioural/physiological signals are welcome if exported in a row-wise CSV format (one observation per time-point or trial).
 4. **Images** may be included; **audio/video** are not (yet) supported.
 
 ### Minimum requirements
@@ -118,7 +118,7 @@ In Steps 3.1 – 3.4 you transform the raw files of the original_data into stand
    - Represent an entire session from one participant.
    - Include trial-by-trial data.
    - Begin with the instructions. Use original instructions, if available.
-   - Mark human responses with `<< >>` (do not use these symbols elsewhere).
+   - Mark human responses or continuous behavioural outcomes with `<< >>` (do not use these symbols elsewhere).  
    - For discrete choice tasks, randomize the naming of options per participant (see [binz2022heuristics/generate_prompts.py](https://github.com/marcelbinz/Psych-201/tree/main/binz2022heuristics/generate_prompts.py)).
    - Stay within a 32K token limit per participant.
    - If the trial includes an image, follow the formatting guidelines in step 3.4. 
@@ -131,7 +131,7 @@ In resulting `prompts.jsonl.zip` each line should have the following three field
    - `"RTs"`: List of reaction times in ms.
    - `"age"`, `"diagnosis"`, `"nationality"`, or questionnaire-derived statistics.
    
-Example prompt:
+Example A – Discrete choice (lexical decision)
 ~~~
 In this task, you will see two words at a time. If both words are REAL ENGLISH words, you press the button \"a\". If ONE or BOTH words are non-sense words (for example \"FLUMMOL\"), you press the button \"l\". Respond within 2 seconds.
 
@@ -143,6 +143,24 @@ Trial 5: The word pair is 'snarp' and 'blonk'. You press <<l>>. Correct.
 Trial 6: The word pair is 'dog' and 'fleeb'. You press <<l>>. Correct.
 Trial 7: The word pair is 'sun' and 'cloud'. You press <<a>>. Correct.
 Trial 8: The word pair is 'cheef' and 'grass'. You press <<l>>. Correct.
+~~~
+
+Example B – Continuous outcome (self‑paced reading)
+~~~
+You will read each sentence word-by-word; press SPACE to reveal the next word. Try to read naturally.
+
+Trial 1:
+  Word 1: ‘The’       <<245 ms>>
+  Word 2: ‘cat’       <<198 ms>>
+  Word 3: ‘sat’       <<184 ms>>
+  Word 4: ‘on’        <<171 ms>>
+  Word 5: ‘the’       <<165 ms>>
+  Word 6: ‘mat’       <<213 ms>>
+
+Trial 2:
+  Word 1: ‘A’         <<231 ms>>
+  Word 2: ‘dog’       <<204 ms>>
+  Word 3: ‘barked’    <<190 ms>>
 ~~~
 
 ```
