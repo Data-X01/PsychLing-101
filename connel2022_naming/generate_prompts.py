@@ -144,4 +144,4 @@ with OUTPATH.open("w", encoding="utf8") as fo:
 
         fo.write(json.dumps(result, ensure_ascii=False) + "\n")
 
-print(f"✅ Successfully wrote {len(participants)} participant records to: {OUTPATH}")
+print(f" Successfully wrote {len(participants)} participant records to: {OUTPATH}")
