@@ -2,8 +2,8 @@
 
 | Task | Individual Differences | Number of Choices | Link | Person |
 |------|------------------------|-------------------|------|--------|
-|      |                        |                   |      |        |
-|      |                        |                   |      |        |
+|Decomposing the semantic processes underpinning veridical and false memories      |                        |                   |      |        |
+|From vector spaces to DRM lists: False Memory Generator, a software for automated generation of lists of stimuli inducing false memories      |                        |                   |      |        |
 |      |                        |                   |      |        |
 
 ---
