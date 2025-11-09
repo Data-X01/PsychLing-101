@@ -60,18 +60,21 @@ In the upper‑right corner of the project page, click **Fork ▸ Create fork**
 
 ## 2. Clone & create a feature branch
 
-On your local machine create a new folder named using the format: `authorYEAR_title` (e.g., `smith2000_priming`).
+You will now clone your fork (not the original repository) to your local machine and create a new branch for your dataset.
+Open your command-line interface (Terminal, Git Bash, or PowerShell). 
 
 ```bash
-# Replace YOUR‑USERNAME with your GitHub handle and <authorYEAR_title> with your folder name
-# Clone your fork to the local machine
-$ git clone https://github.com/YOUR-USERNAME/PsychLing-101.git
 
-# Move into the cloned repository
-$ cd PsychLing-101
+# 1. Clone your fork to the local machine
+# This creates a folder named 'PsychLing-101'. Remember to replace YOUR-USERNAME with your GitHub handle.
+git clone https://github.com/YOUR-USERNAME/PsychLing-101.git
 
-# Create & switch to a feature branch named after your dataset
-$ git checkout -b add_<authorYEAR_title>
+# 2. Move into the cloned repository folder
+cd PsychLing-101
+
+# 3. Create & switch to a new feature branch named after your dataset using the format `authorYEAR_title` (e.g., `smith2000_priming`)
+# All your work for this contribution will be done inside this branch.
+git checkout -b add_<authorYEAR_title>
 ```
 
 ## 3. Prepare your dataset
@@ -80,8 +83,9 @@ In Steps 3.1 – 3.4 you transform the raw files of the original_data into stand
 
 ### 3.1. Organise raw data 
 
-1. Inside the main folder, create a subfolder named `original_data/`.
-2. Place **all raw files** into `original_data/`. If your data are in a proprietary format, export them to one of the open formats before committing.
+1. Inside the PsychLing-101 folder you just cloned, create the new experiment folder using the format `authorYEAR_title` (e.g., `smith2000_priming`). This is where all your dataset files will reside.
+2. Inside the main folder, create a subfolder named `original_data/`.
+3. Place **all raw files** into `original_data/`. If your data are in a proprietary format, export them to one of the open formats before committing.
 
 ```
 <authorYEAR_title>/
@@ -221,23 +225,32 @@ Before opening a pull request, confirm all of the following:
 GitHub rejects individual files ≥ 100 MB unless they are stored with [Git LFS](https://git-lfs.com/). If any file in your experiment folder is ≥ 100 MB (for example images.zip), you need to track it with [Git LFS](https://git-lfs.com/). For this follow the "Optional" steps in the code snippet below. 
 
 ```bash
-# Stage the entire experiment folder
-$ git add <authorYEAR_title>
 
-# OPTIONAL - command Git LFS to manage all CSV files larger than 100 MB
-$ git lfs track "*.csv"
+# OPTIONAL - Command Git LFS to track large CSV files
+# Since this project deals with large data files, we track all CSV and ZIP files 
+# to ensure those that exceed the 100 MB GitHub limit are handled correctly.
+# NOTE: This command only needs to be run once per repository.
+git lfs track "*.csv"
+git lfs track "*.zip"
 
-# OPTIONAL - stage the .gitattributes file Git LFS just created
-$ git add .gitattributes
+# OPTIONAL - Stage the LFS configuration file
+# This adds the LFS tracking setup to Git
+git add .gitattributes
 
-# Create a commit
-$ git commit -m "Add <authorYEAR_title> dataset"
+# 1. Stage the entire experiment folder
+# This prepares all your new files and scripts for commit
+git add <authorYEAR_title>
 
-# Push the branch to your fork on GitHub
-$ git push -u origin HEAD
+# 2. Create a commit (A descriptive message is mandatory)
+git commit -m "Add <authorYEAR_title> dataset and preprocess scripts"
+
+# 3. Push the branch to your fork on GitHub
+git push -u origin add_<authorYEAR_title>
 ```
 
-Next, navigate to **Your fork ▸ Pull requests ▸ *Compare & pull request***. Fill in a short description and click **Create pull request**. A project maintainer will run the checks and leave comments directly in your pull requests. Small fixes can be pushed to the same branch; the pull request updates automatically.
+Next, navigate to **Your fork on GitHub**. You should see a banner or button prompting you to create a **Pull Request** from your new branch into the main branch of the original **Data-X01/PsychLing-101** repository. Fill in a short description of your contribution and click **Create pull request**.
+
+A project maintainer will run the checks and leave comments directly in your pull requests. Small fixes can be pushed to the same branch; the pull request updates automatically.
 
 ---
 
