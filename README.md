@@ -100,9 +100,9 @@ In Steps 3.1 – 3.4 you transform the raw files of the original_data into stand
 
 - Read every file inside original_data/.
 
-- Tidy the data: rename or recode columns so they match the canonical names in [CODEBOOK.csv](https://github.com/Data-X01/PsychLing-101/blob/main/CODEBOOK.csv). If a required variable is missing, first add it to CODEBOOK.csv with a short description. Use "," as the delimiter.
+- Tidy the data: rename or recode columns so they match the canonical names in [CODEBOOK.csv](https://github.com/Data-X01/PsychLing-101/blob/main/CODEBOOK.csv). If a required variable is missing, first add it to CODEBOOK.csv with a short description.
 
-- Write one or more cleaned files (exp1.csv, exp2.csv, …) into a new processed_data/ folder. 
+- Write one or more cleaned files (exp1.csv, exp2.csv, …) into a new processed_data/ folder.  Use "," as the delimiter.
 
 ```
 <authorYEAR_title>/
