@@ -1,0 +1,7 @@
+column_name,description
+participant,Anonymized participant ID (from 'subject')
+age,Participant age in years (from 'Age')
+trial_index,Trial order index (factorized from raw trial_index)
+stimulus,Compound string shown on the trial (from 'comp')
+response,"Response key recoded to 'c' or 'n' (key 67 => 'c', else 'n')"
+RTs,Response time in ms (from 'rt')

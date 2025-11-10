@@ -1,0 +1,6 @@
+column_name,description
+participant,Anonymized participant ID (from 'subject')
+age,Participant age in years (from 'age')
+trial_index,Trial order index (factorized from raw trial_index)
+stimulus,Stimulus string (from 'stim')
+response,Participant response (from 'responses')
