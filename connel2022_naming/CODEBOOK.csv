@@ -1,0 +1,27 @@
+variable;description
+participant_id;numeric participant identifier (0..N-1).
+trial_id;trial index per participant (0..T-1).
+rt;Recognition reaction time (ms) measured from image onset to recognition keypress.
+first_key_RT;Time from text-box onset to first typed key (ms).
+image_filename;Filename or identifier for the presented image.
+object;Object identifier (concept depicted by the image).
+response;Raw response.
+response_corrected;Cleaned / corrected response (spelling normalized).
+name_agreement;Percentage of participants giving the modal name for the image (0-100).
+H_statistic;Entropy of the name distribution for the image (bits).
+Normalised_H_statistic;H-statistic normalised for sample-size differences.
+unknown_osullivan_et_al;Count of responses coded 'unknown' per O'Sullivan coding scheme.
+idiosyncratic_osullivan_et_al;Count of idiosyncratic (singleton) responses per O'Sullivan coding scheme.
+nonobject_osullivan_et_al;Count of non-object / unrelated responses per O’Sullivan coding scheme.
+physically_dissimilar;Flag/score indicating physical dissimilarity of image variants.
+is_natural;Whether the object is a natural kind (true/false).
+is_modal;Whether the response equals the modal name for that image.
+modalWordFreq;Frequency (e.g., Zipf) of the modal response word.
+responseWordFreq;Frequency of the individual response word.
+modalWordLength;Number of characters in modal name.
+responseWordLength;Number of characters in individual response.
+responseProductionFreq;Production frequency (how many participants produced the response).
+responseProductionFreq_non_outlier;Production freq after outlier removal.
+is_invalid;Flag marking invalid responses (missing/non-word/timed-out).
+is_rt_outlier;Flag marking RT outliers removed from RT analyses.
+not_in_subtlex_uk;Flag if word not found in SUBTLEX-UK frequency resource.
