@@ -2,3 +2,5 @@ van Hoef, R., Lynott, D. & Connell, L. Timed picture naming norms for 800 photog
 
 
 All images, code, and data from this article, including third-party materials, are available from OSF (https://osf.io/r3hbz/) under a Creative Commons Attribution 4.0 International License (CC-BY).
+
+Processsed for the tutorial on PsychLing-101.
