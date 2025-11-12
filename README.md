@@ -94,7 +94,7 @@ In Steps 3.1 – 3.4 you transform the raw files of the original_data into stand
 
 ### 3.2. Preprocess raw data 
 
-1. Create a script named preprocess_data.py in the root of your experiment folder (next to original_data/).
+1. Create a script named preprocess_data.py or preprocess_data.R in the root of your experiment folder (next to original_data/).
 
 2. Inside the script:
 
@@ -107,14 +107,14 @@ In Steps 3.1 – 3.4 you transform the raw files of the original_data into stand
 ```
 <authorYEAR_title>/
 ├── original_data/        # unmodified raw files
-├── preprocess_data.py    # conversion script (runs in < 60 s if possible)
+├── preprocess_data.py (or preprocess_data.R)    # conversion script (runs in < 60 s if possible)
 ├── processed_data/       # tidy CSVs (exp*.csv)
 └── CODEBOOK.csv          # reference for standardized column names
 ```
 
 ### 3.3. Generate LLM prompts
 
-1. In the experiment folder, create a script named `generate_prompts.py` (for the example, see [guenther2024associations_sentences_texts/generate_prompts.py](https://github.com/marcelbinz/Psych-201/blob/main/guenther2024associations_sentences_texts/generate_prompts.py)).
+1. In the experiment folder, create a script named `generate_prompts.py (or generate_prompts.R)` (for the example, see [guenther2024associations_sentences_texts/generate_prompts.py](https://github.com/marcelbinz/Psych-201/blob/main/guenther2024associations_sentences_texts/generate_prompts.py)).
 2. This script should:
 - Read the standardized CSV file(s).
 - Generate a JSONL file (`prompts.jsonl`) with one line per participant.
@@ -170,10 +170,10 @@ Trial 2:
 ```
 <authorYEAR_title>/
 ├── original_data/    
-├── preprocess_data.py 
+├── preprocess_data.py (or preprocess_data.R)
 ├── processed_data/ 
 ├── CODEBOOK.csv 
-├── generate_prompts.py ← script for creating text-based prompts.
+├── generate_prompts.py (or generate_prompts.R) ← script for creating text-based prompts.
 └── prompts.jsonl.zip ← a zipped JSONL file with prompts. 
 ```
 
@@ -209,15 +209,15 @@ Before opening a pull request, confirm all of the following:
 * [ ] `original_data/`
 * [ ] `processed_data/` (`exp1.csv`, `exp2.csv`, …)
 * [ ] `CODEBOOK.csv`
-* [ ] `preprocess_data.py`
-* [ ] `generate_prompts.py`
+* [ ] `preprocess_data.py (or preprocess_data.R)`
+* [ ] `generate_prompts.py (or generate_prompts.R)`
 * [ ] `prompts.jsonl.zip`
 * [ ] *(optional)* `images.zip`
 
 ### Validation 
-* [ ] `preprocess_data.py` runs without errors *from a clean repo clone*.
+* [ ] `preprocess_data.py (or preprocess_data.R)` runs without errors *from a clean repo clone*.
 * [ ] Generated CSVs follow the column names in `CODEBOOK.csv`.
-* [ ] `generate_prompts.py` produces `prompts.jsonl` without exceeding 32 K tokens per participant.
+* [ ] `generate_prompts.py (or generate_prompts.R)` produces `prompts.jsonl` without exceeding 32 K tokens per participant.
 
 ## 5. Commit, push & open a pull request
 
