@@ -1,4 +1,4 @@
-"rt","stimulus","key_press","trial_type","trial_index","time_elapsed","internal_node_id","button_pressed","responses","question_order","mod","head","type","subject","gender","age","lang","stim","comp","selected"
+"rt","stimulus","key_press","trial_type","trial_id","time_elapsed","internal_node_id","button_pressed","responses","question_order","mod","head","type","participant_id","gender","age","lang","stim","comp","selected"
 54654.2499999996,"",NA,"survey-multi-choice",5,169690,"0.0-5.0-0.0",NA,"stove LOCATION IS rear","[0]","rear","stove","outtrain","110435","female",70,"english","rear stove","rearstove","H_location_is_M"
 26455.0150000005,"",NA,"survey-multi-choice",6,196403,"0.0-5.0-0.1",NA,"buy FOR protein","[0]","protein","buy","outtrain","110435","female",70,"english","protein buy","proteinbuy","H_for_M"
 32527.0299999993,"",NA,"survey-multi-choice",7,229183,"0.0-5.0-0.2",NA,"father IS fine","[0]","fine","father","outtrain","110435","female",70,"english","fine father","finefather","H_is_M"

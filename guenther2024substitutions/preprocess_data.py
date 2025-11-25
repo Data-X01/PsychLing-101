@@ -15,9 +15,9 @@ def write_codebook(base_dir: Path) -> None:
     if codebook_path.exists():
         return
     rows = [
-        {"column_name": "participant", "description": "Anonymized participant ID (numeric factor from raw ID)"},
+        {"column_name": "participant_id", "description": "Anonymized participant ID (numeric factor from raw ID)"},
         {"column_name": "age", "description": "Participant age in years (merged from demographics if available)"},
-        {"column_name": "trial_index", "description": "Per-participant sequential index starting at 1"},
+        {"column_name": "trial_id", "description": "Per-participant sequential index starting at 1"},
         {"column_name": "stimulus", "description": "Target word shown on the trial (from 'word')"},
         {"column_name": "response", "description": "Participant's substitution"},
     ]
@@ -26,40 +26,43 @@ def write_codebook(base_dir: Path) -> None:
 
 def clean_common(df: pd.DataFrame) -> pd.DataFrame:
     # Map to canonical names
-    df = df.rename(columns={"ID": "participant"})
+    df = df.rename(columns={"ID": "participant_id"})
     if "word" in df.columns:
         df["stimulus"] = df["word"]
 
     # Create per-participant trial index
-    if "participant" in df.columns:
-        df["trial_index"] = df.groupby("participant").cumcount() + 1
+    if "participant_id" in df.columns:
+        df["trial_id"] = df.groupby("participant_id").cumcount() + 1
 
     # Factorize participant to numeric
-    if "participant" in df.columns:
-        df["participant"] = pd.factorize(df["participant"])[0] + 1
+    if "participant_id" in df.columns:
+        df["participant_id"] = pd.factorize(df["participant_id"])[0] + 1
 
+    # turn age to float
+    df["age"] = df["age"].astype(float)
+    
     # Select canonical columns
-    cols = ["participant", "age", "trial_index", "stimulus", "response"]
+    cols = ["participant_id", "age", "trial_id", "stimulus", "response"]
     df_out = df.loc[:, [c for c in cols if c in df.columns]].copy()
-    df_out = df_out.sort_values(by=[c for c in ["participant", "trial_index"] if c in df_out.columns])
+    df_out = df_out.sort_values(by=[c for c in ["participant_id", "trial_id"] if c in df_out.columns])
     return df_out
 
 
 def preprocess_exp1(base_dir: Path, processed_dir: Path) -> None:
-    exp1_path = base_dir / "original_data" / "fasttext_experiment1.csv"
-    demo_path = base_dir / "original_data" / "demographics.txt"
+    exp1_path = base_dir / "original_data" / "raw_data_exp1.csv"
+    demo_path = base_dir / "original_data" / "demographics_exp1.txt"
     df = pd.read_csv(exp1_path)
-    # demographics.txt is tab-separated
+    # demographics_exp1.txt is tab-separated
     if demo_path.exists():
         demo = pd.read_table(demo_path)
         df = df.merge(demo, on="ID", how="left")
     df = clean_common(df)
-    out_path = processed_dir / "substitutions_experiment1_cleaned.csv"
+    out_path = processed_dir / "exp1.csv"
     df.to_csv(out_path, index=False)
 
 
 def preprocess_exp2(base_dir: Path, processed_dir: Path) -> None:
-    exp2_path = base_dir / "original_data" / "fasttext_experiment2.csv"
+    exp2_path = base_dir / "original_data" / "raw_data_exp2.csv"
     df = pd.read_csv(exp2_path)
     df = df.drop_duplicates()
 
@@ -71,15 +74,15 @@ def preprocess_exp2(base_dir: Path, processed_dir: Path) -> None:
 
     # instruction list exists but not needed for final tidy output (R created it but did not use)
     df = clean_common(df)
-    out_path = processed_dir / "substitutions_experiment2_cleaned.csv"
+    out_path = processed_dir / "exp2.csv"
     df.to_csv(out_path, index=False)
 
 
 def preprocess_replication(base_dir: Path, processed_dir: Path) -> None:
-    rep_path = base_dir / "original_data" / "raw_data_replication.csv"
+    rep_path = base_dir / "original_data" / "raw_data_exp3.csv"
     if not rep_path.exists():
         return
-    # raw_data_replication.csv is a CSV with header; first column may be an index
+    # exp3.csv is a CSV with header; first column may be an index
     try:
         df = pd.read_csv(rep_path, index_col=0)
     except Exception:
@@ -88,27 +91,27 @@ def preprocess_replication(base_dir: Path, processed_dir: Path) -> None:
     # Map columns to canonical schema
     # PID is the participant identifier in replication data
     if "PID" in df.columns:
-        df = df.rename(columns={"PID": "participant"})
+        df = df.rename(columns={"PID": "participant_id"})
     else:
-        df = df.rename(columns={"ID": "participant"})
+        df = df.rename(columns={"ID": "participant_id"})
     if "word" in df.columns:
         df["stimulus"] = df["word"]
     # Keep response as is
 
     # Create per-participant trial index starting at 1
-    if "participant" in df.columns:
-        df["trial_index"] = df.groupby("participant").cumcount() + 1
+    if "participant_id" in df.columns:
+        df["trial_id"] = df.groupby("participant_id").cumcount() + 1
 
     # Factorize participant to numeric (to match exp1/exp2 outputs)
-    if "participant" in df.columns:
-        df["participant"] = pd.factorize(df["participant"])[0] + 1
+    if "participant_id" in df.columns:
+        df["participant_id"] = pd.factorize(df["participant_id"])[0] + 1
 
     # Select canonical columns
-    cols = ["participant", "age", "trial_index", "stimulus", "response"]
+    cols = ["participant_id", "age", "trial_id", "stimulus", "response"]
     df_out = df.loc[:, [c for c in cols if c in df.columns]].copy()
-    df_out = df_out.sort_values(by=[c for c in ["participant", "trial_index"] if c in df_out.columns])
+    df_out = df_out.sort_values(by=[c for c in ["participant_id", "trial_id"] if c in df_out.columns])
 
-    out_path = processed_dir / "substitutions_replication_cleaned.csv"
+    out_path = processed_dir / "exp3.csv"
     df_out.to_csv(out_path, index=False)
 
 

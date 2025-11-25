@@ -2,6 +2,7 @@ import pandas as pd
 import jsonlines
 import random
 import string
+from pathlib import Path
 
 # Randomize choice options: function to draw n random letters from the alphabet without replacement
 def random_letters(n):
@@ -9,17 +10,18 @@ def random_letters(n):
 
 
 # load data
-df = pd.read_csv('processed_data/grammaticality_judgments_cleaned.csv')
+base_dir = Path(__file__).parent.resolve()
+df = pd.read_csv(base_dir / "processed_data" / "exp1.csv")
 
 # Sort dataframe by participant ID and trial order
-df = df.sort_values(by=['participant', 'trial_index'])
+df = df.sort_values(by=['participant_id', 'trial_id'])
 
 # Remap participant IDs to sequential integers starting from 1
-df['participant'] = df['participant'].map({p: i+1 for i, p in enumerate(df.participant.unique())})
+df['participant_id'] = df['participant_id'].map({p: i+1 for i, p in enumerate(df.participant_id.unique())})
 
 # Get unique participants and trial indices
-participants = df['participant'].unique()
-trials = range(df['trial_index'].max() + 1)
+participants = df['participant_id'].unique()
+trials = range(df['trial_id'].max() + 1)
 
 
 
@@ -27,10 +29,9 @@ trials = range(df['trial_index'].max() + 1)
 all_prompts = []
 for participant in participants:
     # Get data for current participant
-    df_participant = df[df['participant'] == participant]
+    df_participant = df[df['participant_id'] == participant]
     participant = participant.item()
     age = df_participant['age'].iloc[0].item()
-    rt_list = []
 
     # generate two choice options
     choices = random_letters(2)
@@ -50,27 +51,31 @@ for participant in participants:
     \n
     Press {choices[0]} if it is correct, and {choices[1]} if it is not correct."""
     
-    
+    rt_list = []
     # Add each trial's word and response
     for trial in trials:
-        df_trial = df_participant.loc[df_participant['trial_index'] == trial]
+        df_trial = df_participant.loc[df_participant['trial_id'] == trial]
         if not df_trial.empty:
             # Extract word and participant's response
             word = df_trial['stimulus'].iloc[0]
             response = df_trial['response'].iloc[0]
-            datapoint = f'{word}. You press <<{response}>>.\n '
+            datapoint = f'Sentence "{word}" appears on the screen. You press <<{response}>>.\n '
             prompt += datapoint
             
+            # store reaction time
+            rt = df_trial['rt'].iloc[0].item()
+            rt_list.append(rt)
     prompt += '\n'
     
     # Store complete prompt with metadata
     all_prompts.append({
         'text': prompt,
         'experiment': 'guenther2023Grammaticality',
-        'participant': participant,
-        'age': age
+        'participant_id': participant,
+        'age': age,
+        'rt': rt_list
     })
 
 # Save all prompts to JSONL file
-with jsonlines.open('prompts.jsonl', 'w') as writer:
+with jsonlines.open(base_dir / 'prompts.jsonl', 'w') as writer:
     writer.write_all(all_prompts)
