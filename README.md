@@ -132,7 +132,7 @@ In resulting `prompts.jsonl.zip` each line should have the following three field
 - `"experiment"`: Identifier for the experiment.
 - `"participant"`: Participant ID.
 - Optional metadata fields (if available):
-   - `"RTs"`: List of reaction times in ms.
+   - `"rt"`: List of reaction times in ms.
    - `"age"`, `"diagnosis"`, `"nationality"`, or questionnaire-derived statistics.
    
 Example A – Discrete choice (lexical decision)
