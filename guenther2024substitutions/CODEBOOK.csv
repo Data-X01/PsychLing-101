@@ -1,6 +1,6 @@
 column_name,description
-participant,Anonymized participant ID (numeric factor from raw ID)
+participant_id,Anonymized participant ID (numeric factor from raw ID)
 age,Participant age in years (merged from demographics if available)
-trial_index,Per-participant sequential index starting at 1
+trial_id,Per-participant sequential index starting at 1
 stimulus,Target word shown on the trial (from 'word')
 response,Participant's substitution

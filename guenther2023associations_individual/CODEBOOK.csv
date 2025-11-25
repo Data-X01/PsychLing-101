@@ -1,7 +1,7 @@
 column_name,description
-participant,Anonymized participant ID (numeric)
+participant_id,Anonymized participant ID (numeric)
 age,Participant age in years
-trial_index,0-based index of cue within participant
+trial_id,0-based index of cue within participant
 stimulus,Cue word (lowercased)
 response1,First association response (lowercased)
 response2,Second association response (lowercased)

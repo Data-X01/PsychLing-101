@@ -1,18 +1,20 @@
 import pandas as pd
 import jsonlines
+from pathlib import Path
 
 # load data‚
-df = pd.read_csv('processed_data/visual_similarity_maxdiff_cleaned.csv')
+base_dir = Path(__file__).parent.resolve()
+df = pd.read_csv(base_dir / "processed_data" / "exp1.csv")
 
 # Sort dataframe by participant ID and trial order
-df = df.sort_values(by=['participant', 'trial_index'])
+df = df.sort_values(by=['participant_id', 'trial_id'])
 
 # Remap participant IDs to sequential integers starting from 1
-df['participant'] = df['participant'].map({p: i+1 for i, p in enumerate(df.participant.unique())})
+df['participant_id'] = df['participant_id'].map({p: i+1 for i, p in enumerate(df.participant_id.unique())})
 
 # Get unique participants and trial indices
-participants = df['participant'].unique()
-trials = range(df['trial_index'].max() + 1)
+participants = df['participant_id'].unique()
+trials = range(df['trial_id'].max() + 1)
 
 # Define experiment instructions shown to participants
 instruction = """Instructions\n
@@ -30,16 +32,15 @@ The study will start with two practice trials in which you receive feedback.\n""
 all_prompts = []
 for participant in participants:
     # Get data for current participant
-    df_participant = df[df['participant'] == participant]
+    df_participant = df[df['participant_id'] == participant]
     participant = participant.item()
     
     # Start with instruction text
     prompt = instruction
-    rt_list = []
     
     # Add each trial's word and response
     for trial in trials:
-        df_trial = df_participant.loc[df_participant['trial_index'] == trial]
+        df_trial = df_participant.loc[df_participant['trial_id'] == trial]
         if not df_trial.empty:
             # Extract word and participant's response
             stimulus = df_trial['stimulus'].iloc[0]
@@ -54,9 +55,9 @@ for participant in participants:
     all_prompts.append({
         'text': prompt,
         'experiment': 'guenther2023ViSpa',
-        'participant': participant,
+        'participant_id': participant,
     })
 
 # Save all prompts to JSONL file
-with jsonlines.open('prompts.jsonl', 'w') as writer:
+with jsonlines.open(base_dir / 'prompts.jsonl', 'w') as writer:
     writer.write_all(all_prompts)

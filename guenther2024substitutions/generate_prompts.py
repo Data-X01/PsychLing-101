@@ -1,10 +1,12 @@
 import pandas as pd
 import jsonlines
+from pathlib import Path
 
 # load data
-exp1 = pd.read_csv("processed_data/substitutions_experiment1_cleaned.csv")
-exp2 = pd.read_csv("processed_data/substitutions_experiment2_cleaned.csv")
-exp_replication = pd.read_csv("processed_data/substitutions_replication_cleaned.csv")
+base_dir = Path(__file__).parent.resolve()
+exp1 = pd.read_csv(base_dir / "processed_data" / "exp1.csv")
+exp2 = pd.read_csv(base_dir / "processed_data" / "exp2.csv")
+exp_3 = pd.read_csv(base_dir / "processed_data" / "exp3.csv")
 
 # create empty list to store all prompts
 all_prompts = []
@@ -13,8 +15,8 @@ all_prompts = []
 # Experiment 1 #
 ################
 # Define number of participants and trials
-participants_exp1 = exp1["participant"].unique()
-trials_exp1 = range(exp1["trial_index"].max() + 1)
+participants_exp1 = exp1["participant_id"].unique()
+trials_exp1 = range(exp1["trial_id"].max() + 1)
 
 # define initial prompt
 instruction1 = 'In this experiment, you will be presented with different single words and asked to find substitutes for them.\n'\
@@ -40,24 +42,23 @@ instruction1 = 'In this experiment, you will be presented with different single 
 
 # Experiment1: Generate individual prompts for participants
 for participant in participants_exp1:
-    exp1_participant = exp1[exp1["participant"] == participant]
+    exp1_participant = exp1[exp1["participant_id"] == participant]
     participant = participant.item()
     age = exp1_participant["age"].iloc[0].item()
     individual_prompt = instruction1
-    rt_list = []
     for trial in trials_exp1:
-        exp1_trial = exp1_participant.loc[exp1_participant["trial_index"] == trial]
+        exp1_trial = exp1_participant.loc[exp1_participant["trial_id"] == trial]
         if not exp1_trial.empty:  # Only process if trial exists for this participant
             stimulus = exp1_trial["stimulus"].iloc[0]
             response = exp1_trial["response"].iloc[0]
-            datapoint = f"{stimulus}. You enter <<{response}>>.\n"
+            datapoint = f"The word {stimulus} appears on the screen. You enter <<{response}>>.\n"
             individual_prompt += datapoint
     individual_prompt += "\n"
     all_prompts.append(
         {
             "text": individual_prompt,
             "experiment": "guenther2024substitutions/experiment1",
-            "participant": participant,
+            "participant_id": participant,
             "age": age,
         }
     )
@@ -66,8 +67,8 @@ for participant in participants_exp1:
 # Experiment 2  #
 #################
 # Define number of participants and trials
-participants_exp2 = exp2["participant"].unique()
-trials_exp2 = range(exp1["trial_index"].max() + 1)
+participants_exp2 = exp2["participant_id"].unique()
+trials_exp2 = range(exp1["trial_id"].max() + 1)
 
 # define initial prompt
 instruction2 = 'In this experiment, you will be presented with different single words and asked to find substitutes for them.\n'\
@@ -116,24 +117,23 @@ instruction2 = 'In this experiment, you will be presented with different single 
 
 # Experiment2: Generate individual prompts for participants
 for participant in participants_exp2:
-    exp2_participant = exp2[exp2["participant"] == participant]
+    exp2_participant = exp2[exp2["participant_id"] == participant]
     participant = participant.item()
     age = exp2_participant["age"].iloc[0].item()
     individual_prompt = instruction2
-    rt_list = []
     for trial in trials_exp2:
-        exp2_trial = exp2_participant.loc[exp2_participant["trial_index"] == trial]
+        exp2_trial = exp2_participant.loc[exp2_participant["trial_id"] == trial]
         if not exp2_trial.empty:  # Only process if trial exists for this participant
             stimulus = exp2_trial["stimulus"].iloc[0]
             response = exp2_trial["response"].iloc[0]
-            datapoint = f"{stimulus}. You enter <<{response}>>.\n"
+            datapoint = f"The word {stimulus} appears on the screen. You enter <<{response}>>.\n"
             individual_prompt += datapoint
     individual_prompt += "\n"
     all_prompts.append(
         {
             "text": individual_prompt,
             "experiment": "guenther2024substitutions/experiment2",
-            "participant": participant,
+            "participant_id": participant,
             "age": age,
         }
     )
@@ -143,8 +143,8 @@ for participant in participants_exp2:
 # Experiment 3: Replication #
 #############################
 # Define number of participants and trials
-participants_exp_replication = exp_replication["participant"].unique()
-trials_exp_replication = range(exp_replication["trial_index"].max() + 1)
+participants_exp_3 = exp_3["participant_id"].unique()
+trials_exp_3 = range(exp_3["trial_id"].max() + 1)
 
 instruction_replication = 'In this experiment, you will be presented with different single words and asked to find substitutes for them.\n'\
     'Later, in another experiment, we will ask other people to guess the original words based on what you will come up with.\n'\
@@ -168,30 +168,29 @@ instruction_replication = 'In this experiment, you will be presented with differ
     'Please note that you will not be able to return to earlier answers.'
 
 
-for participant in participants_exp_replication:
-    exp_replication_participant = exp_replication[exp_replication["participant"] == participant]
+for participant in participants_exp_3:
+    exp_3_participant = exp_3[exp_3["participant_id"] == participant]
     participant = participant.item()
-    age = exp_replication_participant["age"].iloc[0].item()
+    age = exp_3_participant["age"].iloc[0].item()
     individual_prompt = instruction_replication
-    rt_list = []
-    for trial in trials_exp_replication:
-        exp_replication_trial = exp_replication_participant.loc[exp_replication_participant["trial_index"] == trial]
-        if not exp_replication_trial.empty:  # Only process if trial exists for this participant
-            stimulus = exp_replication_trial["stimulus"].iloc[0]
-            response = exp_replication_trial["response"].iloc[0]
-            datapoint = f"{stimulus}. You enter <<{response}>>.\n"
+    for trial in trials_exp_3:
+        exp_3_trial = exp_3_participant.loc[exp_3_participant["trial_id"] == trial]
+        if not exp_3_trial.empty:  # Only process if trial exists for this participant
+            stimulus = exp_3_trial["stimulus"].iloc[0]
+            response = exp_3_trial["response"].iloc[0]
+            datapoint = f"The word {stimulus} appears on the screen. You enter <<{response}>>.\n"
             individual_prompt += datapoint
     individual_prompt += "\n"
     all_prompts.append(
         {
             "text": individual_prompt,
             "experiment": "guenther2024substitutions/replication",
-            "participant": participant,
+            "participant_id": participant,
             "age": age,
         }
     )
 
 
 # Save all prompts to JSONL file
-with jsonlines.open("prompts.jsonl", "w") as writer:
+with jsonlines.open(base_dir / "prompts.jsonl", "w") as writer:
     writer.write_all(all_prompts)

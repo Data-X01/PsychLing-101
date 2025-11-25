@@ -7,3 +7,6 @@ https://osf.io/dfgmr/
 # Description
 - Participants answer questions about the events described in a sentence
 - 26,466 data points from 400 participants
+
+# Note:
+In guenther2024comprehension, each sentence was intentionally presented three times without any block structure; the dataset therefore correctly reflects this repetition.

@@ -14,8 +14,8 @@ def write_codebook(base_dir: Path) -> None:
     if codebook_path.exists():
         return
     rows = [
-        {"column_name": "participant", "description": "Anonymized participant ID"},
-        {"column_name": "trial_index", "description": "Trial order index (factorized from raw trial_index)"},
+        {"column_name": "participant_id", "description": "Anonymized participant ID"},
+        {"column_name": "trial_id", "description": "Trial order index (factorized from raw trial_id)"},
         {"column_name": "stimulus", "description": "Four options concatenated as 'opt1; opt2; opt3; opt4'"},
         {"column_name": "best", "description": "Participant's 'best' choice string"},
         {"column_name": "worst", "description": "Participant's 'worst' choice string"},
@@ -45,17 +45,17 @@ def preprocess(base_dir: Path) -> None:
         + df["option4"].astype(str).str.strip()
     )
 
-    # Factorize trial_index
-    if "trial_index" in df.columns:
-        df["trial_index"] = pd.factorize(df["trial_index"])[0] + 1
+    # Factorize trial_id
+    if "trial_id" in df.columns:
+        df["trial_id"] = pd.factorize(df["trial_id"])[0] + 1
 
     # Select and sort
-    cols = ["participant", "trial_index", "stimulus", "best", "worst"]
+    cols = ["participant_id", "trial_id", "stimulus", "best", "worst"]
     df_out = df.loc[:, [c for c in cols if c in df.columns]].copy()
-    df_out = df_out.sort_values(by=[c for c in ["participant", "trial_index"] if c in df_out.columns])
+    df_out = df_out.sort_values(by=[c for c in ["participant_id", "trial_id"] if c in df_out.columns])
 
     # Write
-    out_path = processed_dir / "visual_similarity_maxdiff_cleaned.csv"
+    out_path = processed_dir / "exp1.csv"
     df_out.to_csv(out_path, index=False)
 
 

@@ -1,7 +1,7 @@
 column_name,description
-participant,Anonymized participant ID
+participant_id,Anonymized participant ID
 age,Participant age in years
-trial_index,Trial order index (factorized from raw trial_index)
+trial_id,Trial order index (factorized from raw trial_id)
 stimulus,Sentence string (from 'sentence')
 response,"Grammaticality judgment (e.g., 'c' / 'n')"
-RTs,Response time in ms (from 'rt')
+rt,Response time in ms (from 'rt')

@@ -1,6 +1,6 @@
 column_name,description
-participant,Anonymized participant ID
-trial_index,Trial order index (factorized from raw trial_index)
+participant_id,Anonymized participant ID
+trial_id,Trial order index (factorized from raw trial_id)
 stimulus,Four options concatenated as 'opt1; opt2; opt3; opt4'
 best,Participant's 'best' choice string
 worst,Participant's 'worst' choice string
