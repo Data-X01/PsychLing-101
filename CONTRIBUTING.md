@@ -29,7 +29,6 @@
 |Sense elicitation task| [Link]( http://digitalna.ff.uns.ac.rs/sadrzaj/2017/978-86-6065-446-7)     | Dušica Filipović Đurđević      |
 |Concreteness ratings     |                        [Link](https://doi.org/10.19090/pp.2017.3.375-400)      |  Dušica Filipović Đurđević       |
 |Visual Lexical Decisi       |                        [Link](http://www.nature.com/articles/srep20369)      | Dušica Filipović Đurđević      |
-
 |Cloze responses and Predictability ratings       |  [Link](https://link.springer.com/article/10.3758/s13428-023-02261-8)      | Andrea de Varda      |
 |Lexical decision        |                        [Link](https://doi.org/10.1038/s41539-024-00237-7)      |  Benjamin Gagl     |
 |Object and Word Frequency Effects        | [Link](https://pubmed.ncbi.nlm.nih.gov/37155283/)     | Benjamin Gagl      |
