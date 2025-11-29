@@ -1,0 +1,733 @@
+StartDate,EndDate,Status,Progress,Duration (in seconds),Finished,RecordedDate,DistributionChannel,UserLanguage,Q3,Q15,Q16,Q17,Q18,Q19,Q20,Q21,Q22,Q23,Q24,1_Q22,2_Q22,3_Q22,4_Q22,5_Q22,6_Q22,7_Q22,8_Q22,9_Q22,10_Q22,11_Q22,12_Q22,13_Q22,14_Q22,15_Q22,16_Q22,17_Q22,18_Q22,19_Q22,20_Q22,21_Q22,22_Q22,23_Q22,24_Q22,25_Q22,26_Q22,27_Q22,28_Q22,29_Q22,30_Q22,31_Q22,32_Q22,33_Q22,34_Q22,35_Q22,36_Q22,37_Q22,38_Q22,39_Q22,40_Q22,41_Q22,42_Q22,43_Q22,44_Q22,45_Q22,46_Q22,47_Q22,48_Q22,49_Q22,50_Q22,51_Q22,52_Q22,53_Q22,54_Q22,55_Q22,56_Q22,57_Q22,58_Q22,59_Q22,60_Q22,61_Q22,62_Q22,63_Q22,64_Q22,65_Q22,66_Q22,67_Q22,68_Q22,69_Q22,70_Q22,71_Q22,72_Q22,73_Q22,74_Q22,75_Q22,76_Q22,77_Q22,78_Q22,79_Q22,80_Q22,81_Q22,82_Q22,83_Q22,84_Q22,85_Q22,86_Q22,87_Q22,88_Q22,89_Q22,90_Q22,91_Q22,92_Q22,93_Q22,94_Q22,95_Q22,96_Q22,97_Q22,98_Q22,99_Q22,100_Q22,101_Q22,102_Q22,103_Q22,104_Q22,105_Q22,106_Q22,107_Q22,108_Q22,109_Q22,110_Q22,111_Q22,112_Q22,113_Q22,114_Q22,115_Q22,116_Q22,117_Q22,118_Q22,119_Q22,120_Q22,121_Q22,122_Q22,123_Q22,124_Q22,125_Q22,126_Q22,127_Q22,128_Q22,129_Q22,130_Q22,131_Q22,132_Q22,133_Q22,134_Q22,135_Q22,136_Q22,137_Q22,138_Q22,139_Q22,140_Q22,141_Q22,142_Q22,143_Q22,144_Q22,145_Q22,146_Q22,147_Q22,148_Q22,149_Q22,150_Q22,151_Q22,152_Q22,153_Q22,154_Q22,155_Q22,156_Q22,157_Q22,158_Q22,159_Q22,160_Q22,161_Q22,162_Q22,163_Q22,164_Q22,165_Q22,166_Q22,167_Q22,168_Q22,169_Q22,170_Q22,171_Q22,172_Q22,173_Q22,174_Q22,175_Q22,176_Q22,177_Q22,178_Q22,179_Q22,180_Q22,181_Q22,182_Q22,183_Q22,184_Q22,185_Q22,186_Q22,187_Q22,188_Q22,189_Q22,190_Q22,191_Q22,192_Q22,193_Q22,194_Q22,195_Q22,196_Q22,197_Q22,198_Q22,199_Q22,200_Q22,201_Q22,202_Q22,203_Q22,204_Q22,205_Q22,206_Q22,207_Q22,208_Q22,209_Q22,210_Q22,211_Q22,212_Q22,213_Q22,214_Q22,215_Q22,216_Q22,217_Q22
+Start Date,End Date,Response Type,Progress,Duration (in seconds),Finished,Recorded Date,Distribution Channel,User Language,Please report here your unique Prolific ID,She tried to jump.,She has no patience.,She was a headstrong child.,He owns two beagles.,She nearly got impaled.,She read about a cyborg.,The town was in its heyday.,Her pallor caused them concern.,The drawer was empty.,I was perturbed.,"His dark hair was just visible - Write the next word of the sentence:
+
+
+[Field-1]...","He called out but she did - Write the next word of the sentence:
+
+
+[Field-1]...","Bruce is looking - Write the next word of the sentence:
+
+
+[Field-1]...","The - Write the next word of the sentence:
+
+
+[Field-1]...","He - Write the next word of the sentence:
+
+
+[Field-1]...","He sat down and - Write the next word of the sentence:
+
+
+[Field-1]...","Why dont you tell me what happened on Saturday, - Write the next word of the sentence:
+
+
+[Field-1]...","Follow me closely - Write the next word of the sentence:
+
+
+[Field-1]...","The gathered villagers took a step - Write the next word of the sentence:
+
+
+[Field-1]...","Alan forgot to shave - Write the next word of the sentence:
+
+
+[Field-1]...","I am trying, old man, but I would - Write the next word of the sentence:
+
+
+[Field-1]...","I flung out my hands and they said - Write the next word of the sentence:
+
+
+[Field-1]...","He knocked on - Write the next word of the sentence:
+
+
+[Field-1]...","Tommy came out of the staff room toilet looking a little - Write the next word of the sentence:
+
+
+[Field-1]...","The van is your lead, - Write the next word of the sentence:
+
+
+[Field-1]...","Emma put her mug of tea down - Write the next word of the sentence:
+
+
+[Field-1]...","It had been two weeks since Philip had - Write the next word of the sentence:
+
+
+[Field-1]...","Jake - Write the next word of the sentence:
+
+
+[Field-1]...","It is not the most - Write the next word of the sentence:
+
+
+[Field-1]...","He sat his son up on - Write the next word of the sentence:
+
+
+[Field-1]...","All last week - Write the next word of the sentence:
+
+
+[Field-1]...","He - Write the next word of the sentence:
+
+
+[Field-1]...","I cannot - Write the next word of the sentence:
+
+
+[Field-1]...","She turned and saw him standing - Write the next word of the sentence:
+
+
+[Field-1]...","Phil let - Write the next word of the sentence:
+
+
+[Field-1]...","Follow me closely and watch for their - Write the next word of the sentence:
+
+
+[Field-1]...","Men could - Write the next word of the sentence:
+
+
+[Field-1]...","I know Richard drinks a little too much and has a - Write the next word of the sentence:
+
+
+[Field-1]...","They say he can breathe fire and kill a - Write the next word of the sentence:
+
+
+[Field-1]...","I mostly just pick a dry white and drink it - Write the next word of the sentence:
+
+
+[Field-1]...","She just kept telling herself he had - Write the next word of the sentence:
+
+
+[Field-1]...","He put the fork on the - Write the next word of the sentence:
+
+
+[Field-1]...","He put his hands in - Write the next word of the sentence:
+
+
+[Field-1]...","Walter closed the - Write the next word of the sentence:
+
+
+[Field-1]...","It had been two weeks since Philip had been sent to - Write the next word of the sentence:
+
+
+[Field-1]...","Christopher groaned and lay his hands across - Write the next word of the sentence:
+
+
+[Field-1]...","Follow me closely and watch - Write the next word of the sentence:
+
+
+[Field-1]...","Ill give him more - Write the next word of the sentence:
+
+
+[Field-1]...","Brian sat down at - Write the next word of the sentence:
+
+
+[Field-1]...","Finally - Write the next word of the sentence:
+
+
+[Field-1]...","The - Write the next word of the sentence:
+
+
+[Field-1]...","I cant see any amount of talk - Write the next word of the sentence:
+
+
+[Field-1]...","Let - Write the next word of the sentence:
+
+
+[Field-1]...","Walter - Write the next word of the sentence:
+
+
+[Field-1]...","The police officer got out of - Write the next word of the sentence:
+
+
+[Field-1]...","Let me through and youll hear - Write the next word of the sentence:
+
+
+[Field-1]...","I am trying, old man, but I would rather kill - Write the next word of the sentence:
+
+
+[Field-1]...","Jake smiled again at his baby daughter, - Write the next word of the sentence:
+
+
+[Field-1]...","His - Write the next word of the sentence:
+
+
+[Field-1]...","Phil let him go and - Write the next word of the sentence:
+
+
+[Field-1]...","I - Write the next word of the sentence:
+
+
+[Field-1]...","Edward washed his hands - Write the next word of the sentence:
+
+
+[Field-1]...","Sam felt - Write the next word of the sentence:
+
+
+[Field-1]...","She threatened to - Write the next word of the sentence:
+
+
+[Field-1]...","He put - Write the next word of the sentence:
+
+
+[Field-1]...","She threatened to leave before and this time she - Write the next word of the sentence:
+
+
+[Field-1]...","He lay his sword aside - Write the next word of the sentence:
+
+
+[Field-1]...","His dark hair was just - Write the next word of the sentence:
+
+
+[Field-1]...","Come within the walls to - Write the next word of the sentence:
+
+
+[Field-1]...","He is after glory - Write the next word of the sentence:
+
+
+[Field-1]...","Ian gave Geoffrey a hard slap across - Write the next word of the sentence:
+
+
+[Field-1]...","While they sat drinking their tea, Mick dug them a - Write the next word of the sentence:
+
+
+[Field-1]...","I wouldnt - Write the next word of the sentence:
+
+
+[Field-1]...","Matthew stood against the - Write the next word of the sentence:
+
+
+[Field-1]...","Now the man is coming who will give - Write the next word of the sentence:
+
+
+[Field-1]...","Jacques sighed and tried to move out - Write the next word of the sentence:
+
+
+[Field-1]...","I was thinking of - Write the next word of the sentence:
+
+
+[Field-1]...","I know Richard drinks a little too much and has - Write the next word of the sentence:
+
+
+[Field-1]...","Looks like a walk did - Write the next word of the sentence:
+
+
+[Field-1]...","Good God, if you are watching, give me - Write the next word of the sentence:
+
+
+[Field-1]...","Ken just hoped - Write the next word of the sentence:
+
+
+[Field-1]...","I do not spare the - Write the next word of the sentence:
+
+
+[Field-1]...","No-one else had dared step within the - Write the next word of the sentence:
+
+
+[Field-1]...","Simon nodded and walked into the - Write the next word of the sentence:
+
+
+[Field-1]...","Turn your hearing aid - Write the next word of the sentence:
+
+
+[Field-1]...","Alan forgot to - Write the next word of the sentence:
+
+
+[Field-1]...","Turn your hearing - Write the next word of the sentence:
+
+
+[Field-1]...","He uses - Write the next word of the sentence:
+
+
+[Field-1]...","The truck was an older version - Write the next word of the sentence:
+
+
+[Field-1]...","He stayed - Write the next word of the sentence:
+
+
+[Field-1]...","We shall arrive properly or you will never live - Write the next word of the sentence:
+
+
+[Field-1]...","His helmet was lost but he could still - Write the next word of the sentence:
+
+
+[Field-1]...","He heaved his shoulders and swung - Write the next word of the sentence:
+
+
+[Field-1]...","The first - Write the next word of the sentence:
+
+
+[Field-1]...","Arthur placed the bars of chocolate - Write the next word of the sentence:
+
+
+[Field-1]...","He sat his son up on the table and laid his belt - Write the next word of the sentence:
+
+
+[Field-1]...","Tony stopped off at his first - Write the next word of the sentence:
+
+
+[Field-1]...","He sat down - Write the next word of the sentence:
+
+
+[Field-1]...","You know that I - Write the next word of the sentence:
+
+
+[Field-1]...","It is a narrow ship, - Write the next word of the sentence:
+
+
+[Field-1]...","They stared at the black wall - Write the next word of the sentence:
+
+
+[Field-1]...","Let us give battle to these foreign snakes once and - Write the next word of the sentence:
+
+
+[Field-1]...","Henry washed his hands and sat on - Write the next word of the sentence:
+
+
+[Field-1]...","Michael knew they never hit him and that was half the - Write the next word of the sentence:
+
+
+[Field-1]...","Gilbert sat as still as he could - Write the next word of the sentence:
+
+
+[Field-1]...","Christopher - Write the next word of the sentence:
+
+
+[Field-1]...","I do not spare the birds - Write the next word of the sentence:
+
+
+[Field-1]...","James walked in to wake Samuel at - Write the next word of the sentence:
+
+
+[Field-1]...","Brian sat down at an empty - Write the next word of the sentence:
+
+
+[Field-1]...","Brian - Write the next word of the sentence:
+
+
+[Field-1]...","He folded his arms - Write the next word of the sentence:
+
+
+[Field-1]...","While they sat drinking their tea, Mick - Write the next word of the sentence:
+
+
+[Field-1]...","The speaker turned to her with a smile and - Write the next word of the sentence:
+
+
+[Field-1]...","Andrew nodded and stood - Write the next word of the sentence:
+
+
+[Field-1]...","Normally they want - Write the next word of the sentence:
+
+
+[Field-1]...","Bruce - Write the next word of the sentence:
+
+
+[Field-1]...","A smile came to - Write the next word of the sentence:
+
+
+[Field-1]...","Alan told Jason - Write the next word of the sentence:
+
+
+[Field-1]...","The speaker - Write the next word of the sentence:
+
+
+[Field-1]...","Anthony was approached, - Write the next word of the sentence:
+
+
+[Field-1]...","He called earlier and - Write the next word of the sentence:
+
+
+[Field-1]...","Tell me what really happened - Write the next word of the sentence:
+
+
+[Field-1]...","Billy knocked on the door and waited till he - Write the next word of the sentence:
+
+
+[Field-1]...","Ross sat back - Write the next word of the sentence:
+
+
+[Field-1]...","His - Write the next word of the sentence:
+
+
+[Field-1]...","He - Write the next word of the sentence:
+
+
+[Field-1]...","We should talk about the things people talk about - Write the next word of the sentence:
+
+
+[Field-1]...","Steve sat - Write the next word of the sentence:
+
+
+[Field-1]...","He folded his - Write the next word of the sentence:
+
+
+[Field-1]...","Edward - Write the next word of the sentence:
+
+
+[Field-1]...","Run along home now and bring us - Write the next word of the sentence:
+
+
+[Field-1]...","You know - Write the next word of the sentence:
+
+
+[Field-1]...","I know Richard drinks a little too much - Write the next word of the sentence:
+
+
+[Field-1]...","A smile came to his lips as he - Write the next word of the sentence:
+
+
+[Field-1]...","Follow me closely and watch for - Write the next word of the sentence:
+
+
+[Field-1]...","I know Richard drinks a little too much and - Write the next word of the sentence:
+
+
+[Field-1]...","Now - Write the next word of the sentence:
+
+
+[Field-1]...","Let us give battle to - Write the next word of the sentence:
+
+
+[Field-1]...","Albert spoke before - Write the next word of the sentence:
+
+
+[Field-1]...","Gilbert sat as still as he - Write the next word of the sentence:
+
+
+[Field-1]...","The shout caught him off - Write the next word of the sentence:
+
+
+[Field-1]...","Now the - Write the next word of the sentence:
+
+
+[Field-1]...","He just wished he could talk - Write the next word of the sentence:
+
+
+[Field-1]...","The - Write the next word of the sentence:
+
+
+[Field-1]...","He called earlier and I already arranged to go - Write the next word of the sentence:
+
+
+[Field-1]...","He lay his sword aside and - Write the next word of the sentence:
+
+
+[Field-1]...","She was smiling in the - Write the next word of the sentence:
+
+
+[Field-1]...","They were definitely holding hands - Write the next word of the sentence:
+
+
+[Field-1]...","The - Write the next word of the sentence:
+
+
+[Field-1]...","The bored looking soldier continued - Write the next word of the sentence:
+
+
+[Field-1]...","Andrew - Write the next word of the sentence:
+
+
+[Field-1]...","Ken just hoped he wasnt taking his temper out - Write the next word of the sentence:
+
+
+[Field-1]...","Anthony was approached, just as he had predicted, - Write the next word of the sentence:
+
+
+[Field-1]...","Let us give battle to these foreign snakes once and for - Write the next word of the sentence:
+
+
+[Field-1]...","In the morning Mickey stood - Write the next word of the sentence:
+
+
+[Field-1]...","Finally Maria sat down with a cup of - Write the next word of the sentence:
+
+
+[Field-1]...","She just kept telling herself he had to learn a - Write the next word of the sentence:
+
+
+[Field-1]...","If I have time at the - Write the next word of the sentence:
+
+
+[Field-1]...","From the moment we leave this spot be - Write the next word of the sentence:
+
+
+[Field-1]...","He just wished he - Write the next word of the sentence:
+
+
+[Field-1]...","He - Write the next word of the sentence:
+
+
+[Field-1]...","Alan told Jason he would just sit outside to have - Write the next word of the sentence:
+
+
+[Field-1]...","I - Write the next word of the sentence:
+
+
+[Field-1]...","Why dont you tell me what happened on Saturday, step by - Write the next word of the sentence:
+
+
+[Field-1]...","There will - Write the next word of the sentence:
+
+
+[Field-1]...","Ken just hoped he wasnt taking his temper out on - Write the next word of the sentence:
+
+
+[Field-1]...","Billy knocked on the door and waited till he was told to - Write the next word of the sentence:
+
+
+[Field-1]...","They turned - Write the next word of the sentence:
+
+
+[Field-1]...","Powerful in the wrong - Write the next word of the sentence:
+
+
+[Field-1]...","He didnt seem to mind that she was screaming in his - Write the next word of the sentence:
+
+
+[Field-1]...","Ted smiled and bit his bottom - Write the next word of the sentence:
+
+
+[Field-1]...","Sam felt proud when he went - Write the next word of the sentence:
+
+
+[Field-1]...","If this were a movie instead of a book this - Write the next word of the sentence:
+
+
+[Field-1]...","Bob sat at the entrance to - Write the next word of the sentence:
+
+
+[Field-1]...","Alan told Jason he - Write the next word of the sentence:
+
+
+[Field-1]...","Christopher groaned and lay his - Write the next word of the sentence:
+
+
+[Field-1]...","They - Write the next word of the sentence:
+
+
+[Field-1]...","Normally they want to cut things - Write the next word of the sentence:
+
+
+[Field-1]...","He held his mother tight and she cried into his - Write the next word of the sentence:
+
+
+[Field-1]...","Tommy - Write the next word of the sentence:
+
+
+[Field-1]...","Weve been travelling almost - Write the next word of the sentence:
+
+
+[Field-1]...","It - Write the next word of the sentence:
+
+
+[Field-1]...","She would soon be - Write the next word of the sentence:
+
+
+[Field-1]...","He was already up and dressed and invited us in for a cup of - Write the next word of the sentence:
+
+
+[Field-1]...","In the morning at breakfast Mike smiled - Write the next word of the sentence:
+
+
+[Field-1]...","She would - Write the next word of the sentence:
+
+
+[Field-1]...","He shouted and the - Write the next word of the sentence:
+
+
+[Field-1]...","Lets get out and Ill buy you - Write the next word of the sentence:
+
+
+[Field-1]...","He let Donald go and he fell to - Write the next word of the sentence:
+
+
+[Field-1]...","Bruce is looking for someone to take the spare - Write the next word of the sentence:
+
+
+[Field-1]...","Now the man is coming who - Write the next word of the sentence:
+
+
+[Field-1]...","Lets have the gates - Write the next word of the sentence:
+
+
+[Field-1]...","Emma put her mug of tea down on - Write the next word of the sentence:
+
+
+[Field-1]...","His men will not follow him and they are - Write the next word of the sentence:
+
+
+[Field-1]...","We shall arrive properly or you will never - Write the next word of the sentence:
+
+
+[Field-1]...","Let us leave these poor - Write the next word of the sentence:
+
+
+[Field-1]...","After - Write the next word of the sentence:
+
+
+[Field-1]...","I flung out my hands - Write the next word of the sentence:
+
+
+[Field-1]...","The truck was an older version of the ones the others - Write the next word of the sentence:
+
+
+[Field-1]...","He probably doesnt want people to - Write the next word of the sentence:
+
+
+[Field-1]...","Have - Write the next word of the sentence:
+
+
+[Field-1]...","He didnt seem to mind that she was screaming in - Write the next word of the sentence:
+
+
+[Field-1]...","She had refused - Write the next word of the sentence:
+
+
+[Field-1]...","There - Write the next word of the sentence:
+
+
+[Field-1]...","I flung out my hands and they said I had - Write the next word of the sentence:
+
+
+[Field-1]...","Now the man is coming who will give it back - Write the next word of the sentence:
+
+
+[Field-1]...","James was only in the cell for an - Write the next word of the sentence:
+
+
+[Field-1]...","Duncan took a breath and wanted - Write the next word of the sentence:
+
+
+[Field-1]...","Edward washed - Write the next word of the sentence:
+
+
+[Field-1]...","James was only in the cell for an hour - Write the next word of the sentence:
+
+
+[Field-1]...","The gate was double, one huge mass of wood following - Write the next word of the sentence:
+
+
+[Field-1]...","There will be men to - Write the next word of the sentence:
+
+
+[Field-1]...","He knocked on the door so hard that he almost broke - Write the next word of the sentence:
+
+
+[Field-1]...","She wound up talking to Barry about her - Write the next word of the sentence:
+
+
+[Field-1]...","Weve been - Write the next word of the sentence:
+
+
+[Field-1]...","He drank too much at times and washed too little at - Write the next word of the sentence:
+
+
+[Field-1]...","We should talk about the things people talk about on first - Write the next word of the sentence:
+
+
+[Field-1]...","William - Write the next word of the sentence:
+
+
+[Field-1]...","Hes - Write the next word of the sentence:
+
+
+[Field-1]...","He called earlier and I already arranged to go swimming - Write the next word of the sentence:
+
+
+[Field-1]...","She just kept telling herself - Write the next word of the sentence:
+
+
+[Field-1]...","Good God, if - Write the next word of the sentence:
+
+
+[Field-1]...","He smiled again and felt - Write the next word of the sentence:
+
+
+[Field-1]...","From - Write the next word of the sentence:
+
+
+[Field-1]...","He - Write the next word of the sentence:
+
+
+[Field-1]...","His dark hair was just visible under his - Write the next word of the sentence:
+
+
+[Field-1]...","All the bowls from the empty tables are - Write the next word of the sentence:
+
+
+[Field-1]..."
+2020-12-17 12:49:37,2020-12-17 13:06:46,IP Address,100,1028,True,2020-12-17 13:06:46,anonymous,EN,VCWQRE,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,her lack of interest in anything,sliding box,worried and puzzled,under,not,for,cat,wanted,read,when,tiny,into,his,like,that,the,flustered,lets,on,been,you,common,his,I,ate,understand,on,the,steps,go,problem,spider,straight,been,table,his,door,prison,his,me,time,the,there,newspaper,on,me,is,control,the,him,when,arms,talk,am,with,worried,leave,his,actually,and,so,find,of,his,hole,mind,wall,me,of,going,a,us,a,that,time,boundaries,shop,on,brush,up,the,of,out,in,ride,around,time,on,on,stop,on ,am,but,and,all,the,fun,and,is,that,9am,table,is,to,explained,said,out,to,is,his,that,is,by,said,when,heard,and,arms,is,when,down,arms,is,some,how,but,bit,snakes,has,we,the,him,could,guard,wait,like,window,to,went,distance,in,person,to,is,on,but,all,outside,tea,new,beach,it,had,is,a,am,step,be,her,go,away,direction,face,lip,to,would,the,was,head,could,out,arms,is,for,is,married,tea,and,like,dog,a,the,room,is,open,the,not,find,people,the,in,had,know,you,his,to,are,a,to,hour,to,his,and,the,guide,his,uncle,on,times,dates,went,going,with,that,only,happy,the,is,wig,dirty
+2020-12-17 12:51:20,2020-12-17 13:08:32,IP Address,100,1032,True,2020-12-17 13:08:32,anonymous,EN,ZGEEOY,stop the car at the edge of the road,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,not,good,men,sat,cried,Billy,now,back,this,die,stop,the,pale,you,on,seen,vanished,beautiful,the,I,sat,lie,there,Mavis,sign,talk,problem,snake,slowly,enough ,table,his,door,prison,her,me,time,the,yes,patient,helping,me,said,car,me,him,she,name,he,was,again,sad,leave,his,was,and,long,see,not,the,hole,mind,window,you,of,you,trouble,us,strength,he,men,mile,room,up,flush,up,vanish,of,still,it,feel,his,cut,on,down,port,and,love,be,and,for,the,problem,for,Biggins,and,seven,chair,left,across,smiled,said,tall,cake,Willis,him,to,said,by,arranged,when,heard,and,hat,arrived,about,down,arms,Scissorhands,Charles ,I,and,thought ,something ,has,come,them,march,could,guard ,end,to,man,home,turned,garden,now,men,looking,fell,on,he,all,up,tea,lesson,end,prepared,had,waited,wait,like,step,blood,the,enter,up,hands,ear,lip,red,chapter,the,loved,pen,said,down,shoulder ,can't,an,came,his,coffee,and,know,men,a,the,room,see,open,the,bad,know,biscuits,tonight,and,had,see,a,his,before,was,to,to,hour,nothing,his,but,on,lose,his,mum,laughing,others,date,the,here,with,to,he,sad,afar,said,hat,there
+2020-12-17 12:50:48,2020-12-17 13:12:27,IP Address,100,1299,True,2020-12-17 13:12:27,anonymous,EN,GKEQLA,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under,Not,Chipper,Men,Said,Crossed,Before,And,Toward,Again,Rather,I,The,Sick,Follow,On,Gone,does,Elegant,The,I,Said,Fathom,There,Me,Signal,Never,Problem,Dragon,Chilled,Forgotten,Table,His,Door,Camp,His,For,Of,The,They,First,Helping,Me,Was,The,What,Myself,Who,Hands,Then,Never,With,Lonely,Kill,The,Meant,And,Beautiful,See,Isn't,The,Grave,Dare,Wall,Us,Of,Something,A,Them,A,That,Children,Walls,Room,Off,Go,Toward,Sunscreen,Of,For,To,Fight,Wildly,Time,On,Beside,House,At,Love,But,Forever,For,The,Battle,But,Never,Any,Seven,Table,Got,And,Said,Said,In,To,Said,Her,That,Gestured,And,Said,Yesterday,Heard,Against,House,Always,When,In,Clothes,Can,Some,That,But,Mentioned,My,He,That,The,She,Waited,Guard,First,Louder,First,With,Knelt,Mirror,But,People,Marching,Has,On,By,All,Against,Tea,New,End,Careful,Could,Said,A,Don't,Step,Be,Her,Enter,Around,Way,Ear,Lip,To,Would,Wait,Should,Head,Had,Short,Shoulder,Has,Three,Is,Dead,Tea,And,Never,Girl,A,The,Seat,Will,Checked,The,In,Get,Folks,The,To,Had,Know,You,His,To,Are,To,To,Hour,To,His,But,A,Spare,It,Problems,Watching,Times,Dates,Went,Never,With,That,You,Joy,There,Said,Hat,Clean
+2020-12-17 12:49:56,2020-12-17 13:14:31,IP Address,100,1474,True,2020-12-17 13:14:32,anonymous,EN,PFPKSF,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,not,at,rain,wasnt,cried,so,now,back,his,rather,why,the,ill,follow,on,Seen,went,Amazing,the,everything,went,forget,over,the,signal,fight,temper,man,warm,no,plate,his,door,Prison,his,everything,food,the,we,mouse,doing,it,said,his,how,myself,watching,face,ran,want,and,sad,call,it,meant,and,a,explore,not,the,hole,go,wall,us,of,asking,some,him,strength,that,change,Realm,house,up,Mentiom,up,too,ford,home,to,play,again,step,in,down,destination,and,didnt,but,until,for,the,Problem,On,saw,any,nine,table,ran,stubbornly,Sighed,said,up,to,said,her,to,rose,he,said,in,could,quietly,Face,went,when,Down,hands,is,some,it's,sometimes,walked,any,says,let,the,anything,could,guard,magician,to,woman,back,stood,distance,finally,end,to,Just,on,and,all,up,milk,new,end,aware,could,would,some,will,step,be,her,come,on,hands,ear,lip,home,Would,the,should,head,saw,Down,shoulder,isnt,two,isnt,alone,tea,and,go,girls,anything,the,tire,will,open,the,insubordinate,see,People,today,to,used,notice,you,his,to,Was,to,to,hour,nothing,his,but,the,finish,it,and,everywhere,times,Dates,was,just,with,it,you,happy,the,went,hat,Washed
+2020-12-17 12:57:59,2020-12-17 13:18:57,IP Address,100,1258,True,2020-12-17 13:18:57,anonymous,EN,TVBCWE,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Over,Not,Good,End,Swore,Contemplated,Morning,He,Back,His,Not,Hello,The,Sheepish,Old,To,Poohed,Said,Helpful,The,He,Shouted,Cry,Back,Rip,Swords,Cry,Bad,Mouse,All,Done,Table,The,Door,Alcatraz,His,My,Time,Noon,He,Story,Sorted,Out,Out,The,A,A,Whom,Hands,Said,Think,Of,Wounded,Leave,A,Meant,White,Swept,See,For,The,Biscuit,Do,Wall,You,Of,You,Bad,Him,A,He,Time,Caracoum,Hall,Up,Stay,Up,Silence,Of,Still,A,See,The,Time,In,Down,House,Aside,Jave,To,Thinking,For,The,Story,For,Columbus,Thoughts,Seven,Table,Sang,Left,Pondered,Winked,There,To,Almighty,My,To,Of,By,Left,Boy,Heard,Back,Thoughts,Said,In,Abreast,Clothes,Who,The,How,Alcohol,Thought,Traps,Smokes,Children,Hell,Thinking,Could,Guard,Real,About,Beginning,Out,Prayed,Window,Out,End,Standing,Called,A,By,All,Still,Tea,Little,Start,Steadfast,Was,Said,A,Know,Step,Be,The,Enter,Left,Hands,Face,Lip,Home,Would,The,Sold,Hands,Stood,Down,Arms,Lookout,A,Would,Gone,Ale,Intently,Look,Men,A,Pieces,Room,Knows,Open,The,Unshaken,Be,Souls,Time,To,Had,Know,A,His,Him,There,Arms,To,Hour,Satisfaction,His,And,The,Carry,His,Problems,A,Times,Dates,Of,Stalling,At,It's,Yoy,Happy,Now,Called,Hood,Dirty
+2020-12-17 12:55:26,2020-12-17 13:19:35,IP Address,100,1448,True,2020-12-17 13:19:35,anonymous,EN,ILGWNQ,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,below,Not,Sadly,Man,Asked,Cried,Afternoon,And,Back,His,Love,Hello,The,Worried,Follow ,On,Had,Knew,Comfortable,The,He,Asked,Help,There,Her,Movements,Throw,Problem,Man,Quickly ,Bad,Plate,His,Door,Prison,His,For,Money,The,They,Man,Will,There,Knew,The,All,The,Hoping,Name,Tell,Use,For,Nervous,Kill,His,Left ,And,Like ,Talk,And,His,Hole,Say,Door,Us,Of,Something,Problems,Him,Space,That,Birds,Entrance,Bar,Up,Ask,Aid,A,Of,Out,Through,Ride,His bag,Ship,On,Next,House,Quickly,Love,But,Wondering,For,The,Problem,While,Said,From,Three,Table,Knew,Across ,Asked,Cried,Up,Everything,Wanted,His,That,Was ,By,said,On,Heard,On,Name,Had,Every,Opposite,Arms,Took,Some,That,But,Thought,Any,Has,We,These,Anyone,Could,Guard,Man,To,Man,Swimming,Smiled,Picture,Because,Man,Standing,Asked,On,By,All,Up,Tea,New,Weekend,Aware,Could,Knew,A,Use,Step,Be,His,Enter,The,Sense,Ear,Lip,To,Would,The,Didn’t ,Hands,Said,Up,Chest,Knew,One,was,Married ,Tea,At,Help,Man,A,Wards,Room,Has,Open,The,Never,Know,People,Tea,Towards,Had,Know,Some,Pain,Any,Was,Too,To,Hour,To,His,Before,Another,Help,His,Life,Accepted,Times,Dates,Knew,He,With,She ,You ,Happy,Now,Knew,Cap,Empty
+2020-12-17 12:58:56,2020-12-17 13:19:49,IP Address,100,1253,True,2020-12-17 13:19:50,anonymous,EN,PPPJVQ,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,not,good,criminals,can,sobbed,slowly,be,toward,his,prefer,No,the,drained,watch,and,seen,said,creative,the,we,can't,handle,inside,loose,signal,stand,smoking,dragon,with,cheated,plate,his,door,detention,his,for,time,the,she,end,becoming,me,Mathau,the,the,you,as,wife,cried,will,again,lonely,shoot,down,meant,to,brilliant,see,for,his,grave,say,wall,you,of,you,his,you,strength,he,whip,room,castle,on,lock,aid,gold,of,back,with,ride,wildly,time,into,out,stop,defeated,cry,watch,aghast,for,his,lie,to,Cross,teh,noon,bottle,told,angrily,took,spoke,there,to,Wayne,my,seh,blared,by,left,honestly,could,against,dad,did,when,alone,shirt,Snowden,back,her,and,sang,beacons,smokes,then,our,anyone,listened,guard,next,about,past,toi,bowed,photo,secretlhy,end,shooting,Lloyd,on,and,all,up,joe,few,end,certain,wasn't,did,these,can't,step,be,his,enter,out,way,face,lip,home,story,the,just,gun,forfeit,out,shirt,boy,all,can,gone,tea,quietly,never,men,some,his,tire,we,open,the,cowards,see,souls,you,in,used,know,we,pain,his,there,lost,to,hour,to,up,before,another,help,the,relationship,going,his,dates,left,gone,with,she,only,fraudulent,here,spoke,cap,stacked
+2020-12-17 12:56:19,2020-12-17 13:20:39,IP Address,100,1460,True,2020-12-17 13:20:39,anonymous,EN,VSHPCD,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Through,Not,At,Night,Showered,Began ,I,She,Backwards,His,Rather,Not,The,Perplexed,It,On,Visited,Saw,Becoming,The,I,Just,Begin,There,Everyone,Next,Sometimes,Smoking,Dragon ,To,To,Plate ,His,Door,Sacramento,Her,As,Time,The,The,Embankment,Helping,Us,Welcomed,Their,The,My,And,Exasperation,Felt,Knew,Thoroughly,Like,Never,Down,Meant,And,So,See,And,His,Hole,Want,Tide,Us,Of,When,Too,Him,A,He,Slightest,Boundary,Kitchen,On,Turn,Aids ,The,Of,Very,It,Feel,His,Time,Gently,On,Stop,Next,Really,So,And,For,His,Issue,Whilst,Quietly,Nor,3am,Table,Dove,Slowly,Talked,She,Up,To,Liked,Me,That,Had,And,Said,Down,Heard ,In,Mind,Thought,Together,With,Arms,Sighed,The,What,These,Saw,Any,That’s ,We,Those,His,Possibly,Guard,Real,To,Birds,Out,Took,Sunlight,Now,Goal,To,Grimaced,On,By,All,His,Tea,New,Festival,Cautious,Could,Always,A,Thought,Step,Be,Any,Enter,Out,Way,Face,Lip,To,Would,The,Would,Head,Could,Smaller,Arms,Kneeled,All,Was,Forgotten,Tea,At,Have,Dog,A,His,Room,You,Wide,The,Too,Hear,People,My,In,Drove,Know,You,His,His,Was,To,To,Hour,Nothing,His,But,Another,Boot,The,Nights ,Trying,Others,Dates,Regretted,Not,With,That,Even,Relieved,Here,Never,Cap,Full
+2020-12-17 12:57:48,2020-12-17 13:22:43,IP Address,100,1494,True,2020-12-17 13:22:43,anonymous,EN,DHESNK,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,her lack of interest in anything,cupboard to keep things cold,worried and puzzled,To everyone ,Didn't ,Mighty fine,End,Is,Vried,Then,And silently,Forward ,His chin,Like a rest,Put them behind you head,The ,Embarrassed,Clue,And screamed ,Got,Is old ,Important ,Top,He,Left,Stop,Rhere,Her,Reaction ,Not,Problem ,Man,With ,The,Table ,There,Door behind him,The,His body,Me,When ,The ,He,Beginning ,Will,Me,Wait,The,It,You ,And ,Mum,Follow me,Have ,Quickly ,Cold,Jump,It,Did,His,As,See,And guts,His face,Hole,Dare,Door,Us,Of the traffic ,Leaving ,A problem ,Her,A,He,Tyres,Lines,Room ,Up,Take the bins out ,I'd on,Drink,Of his,In,There,Have ,His bag over his shoulder ,Day,In front of them,On the table ,Customer ,For ,Have ,What ,Glumly,For,Bed,Problem ,However ,Robin ,As the poo on my washing ,The,Chair ,Is a naughty boy ,Together ,And,Wink,Still ,All,Had,Her face,That,Sneazes,By,Said,Now,Answers ,With ,Breath,Smells,Today ,Down ,Arms,Scissor ,Some,Who,I ,Looked ,It,Will,Let's start ,Them,She could ,Could ,Guard,Story,To,End,Out,Ran,Mirror ,When,End,To,Get out,On,Yesterday ,All,Sadly looking in the mirror ,Coffee ,Lesson ,End of the day ,The beginning ,Was,Is annoyed ,A,Am,Step ,Be no end,Them,Come,Round,Hands,Face,Lip,To the headmaster ,Would be better ,The,Gay,Hat,Are,All,Shoulder ,Hello,All,Is,Dead,Tea,And ,Not ,Children cowered,An ice cream ,Floor ,Tyre,Is behind ,Closed,The,Scared ,Arrive ,Bastards ,You ,To,Had,Know,No fear,His facr,To,Is the ebd,No,To,Hour,For ,His scissors ,And a half,Along ,Stop,The,Life,There,Other ,Dates,Shakespeare ,Shit,Tuesday ,Things will get better ,I,Alive ,All,Jumped,Hat,Being cleared
+2020-12-17 12:55:24,2020-12-17 13:22:54,IP Address,100,1649,True,2020-12-17 13:22:54,anonymous,EN,DJEQSQ,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Underneath ,Not,Fine ,End,Cried,Wept,William,Now,Backwards ,Again ,Appreciate ,Stop,The,Flustered ,Go,Gently ,Started ,Had,Suitable ,The,I,Laughed ,Guarantee ,There,Go,Signal ,Not,Sad,Knight,Straight,Enough ,Table ,His ,Book,Prison,His,What ,Notice ,The ,She,End,Would,Go,Please,The,A,Time ,Beautiful ,Mother,Shouted ,Love,Gently ,Lost,Kill,His,Meant ,Gently,Visible ,Find,And,The,Hole,Care,Wall,Us,Through ,You,No,Help,Strength ,It,Rod,Grounds ,Room,On,Wash,Aid ,Jelp,Of,Up,To,Fight ,Hard,Call,Above ,Down,Place,Quietly ,Care,Sir ,Silently ,For,The,Reason ,Manage,Please,Food,Noon,Table ,Sang,Across ,Wondered ,Said,Up ,To,Walked ,Him,He,Coughed ,He,Left,Yesterday ,Heard,Down,Mother,Dreamt,Usually ,Down,Arms,Please,Some,How,Nowadays ,Remembered ,Clues,Some times ,Listen ,Them,Leaving,Contemplated,Guard ,Man ,Back,End ,Over ,Exhaled ,Mirror ,Underneath ,End,Walkimg,Didn't ,Irrationally ,By ,All,Outside ,Tea,Lesson ,Weekend ,Careful,Could ,Was,Some,Love,Step,Be,Her,Enter,Around ,Way,Ear,Lip,Home,Would,The,Quit,Head,Lay,Up,Chest ,Didn't ,Ten,Rained ,Gone,Tea,At,Try,Wife ,Food,His,Tire,Can,Open,The,Cowards ,Be,Creatures ,All,And,Had,Know,You,His,Twice,There,Failed ,To,Hour ,To,Quickly ,Before ,A,See,It,Job ,Tricked,Times,Dates,Help ,Tired ,There,She,Only,Something ,Him,Helped ,Cap,Gathered 
+2020-12-17 13:01:07,2020-12-17 13:23:03,IP Address,100,1316,True,2020-12-17 13:23:03,anonymous,EN,ZOMDIL,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under,Hear,For,Sunshine,Liked,Nodded,First,Now,Back,His,Only ,Hi,The,Sas,But,Only,Thought,Liked,Charming ,A,I,Sang,Fathom,Behind,The,Reaction ,Trt,Problem ,Dragon,Neat,To,Table,His,Blinds,Prison,The,My,Time,9,Its,Dog,Here,Me,Wondering ,Bed,My,The,Mia,Mum,Ran,Like,Thoroughly ,Certain ,Run,Money,Meant,By,Hanging,Tge,For,The,Small,Dare,Wall,A,Of,Christmas ,A ,Them,The,That ,Expenses,Vicinity ,Chapel,On,Turn,Up,All,Of,The ,Happy ,See,Heavily ,Man,Orange,Out,Dance,Wheb,Cant,But ,Longingly ,For,The,Problem,But ,Joked,Hearts,10,Table,Oozed,Angrily,Remembered ,Wave,Still,To,And,His,Why,Shouted ,By,Cried,Today,Heard,Confused ,Name ,Embraced,My,Worried ,Arms,And,The,What,But,Glanced,My,Has,And,The,They,Thought ,Guard,Papers,Better,End,Tomorrow,Put,Distance ,Tonight ,Song,To,Surely ,On,And,All,Still,Coffee,New,End,Came,Had,Smiled,A,Love,My,Be,The,Come,On,Sense,Ear,Lip ,To,Would,Tge,Loved,Head,Laughed,Loose,Arms,Boy, Three,Was,The,Tea,Just,Die,Cat,Milk,The,Key,Previously ,Open,The,Alone,Attend,Souls,All,In,Owned,Cry ,I,Spanish ,To,Was,Tried,To,Hour ,To,His,And,Wood,Attend,The,Dog,Found ,Night,Dates ,The,Happy,With ,No,They,Sure,Mine,Found,Beanie,Dirty
+2020-12-17 13:04:22,2020-12-17 13:23:55,IP Address,100,1172,True,2020-12-17 13:23:55,anonymous,EN,BJADVZ,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Behind,Not,Sad,Mother ,Said,Drank,Please,Please,Back,That,Like,Hello,The,Sheepish,Follow,Slowly,Said,Ran,Useful,The,She,Smiled,Talk,There ,Him,Smiles,Talk,Problem,Dragon,Quickly,Left,Table,His,Fridge,Boarding,The,Me,Time,Table,She,Whitcher,Mattering,Me,Wallace,His,My,Myself,And,Shoes ,Dance,Wish,Quickly,Nothing,Leave,It,Meant,Abs ,Long,Sleep,And,His,Hole,Wnat,Wall,Me,Of,Wine,Issues,Walk,A,That ,Time,Gate,Bar,Dowm,Mention,Up,Emotional ,Of,Overnigt,Again,Fight,His,Kiss,Dpwn,Down,Stop,And,Love,Made ,Unknowingly ,For,His,Problem,Bear,Robbin,From,Seven,Table,Please,Across,Sneezed,Passed,Up,Nothing,Said,Her,The,Spoke,By,Said,Now,Heard,Suddenly,Hands,Wanted,Nowadays,Down,Arms,Scissorhands ,Some ,It,Wine,Thought,My,Crashes,Then,Mem,His,Could,Guard,Cake,To,Boys,Out ,Wept,Distance,Secretly,Dog,To,Waited,On ,By,All,Back,Tea,New,End,Happy,Cpuld,Wmted,Time,Live,Step,Be,His,Enter,Around,Hands,Ear,Lip,Alone,Would,The,Left,Head,Ran,Down,Shoulder,Went,An,Said,Born,Tea,Awkwardly ,Laugh,Sog,Soemthing,The,Room,Loved,Open,The,Dangerous ,Know ,People,That,Wide,In,Know,A,Laughter ,Help,Was,The,To ,Hour,Mpre,His,Before,Wood,Meet,His,Issue,Friends,Others,Dates ,Ran,Good ,Together,She,You,Happy,Russia,Wished,Hat,Washed
+2020-12-17 13:08:28,2020-12-17 13:25:23,IP Address,100,1014,True,2020-12-17 13:25:24,anonymous,EN,NMRKVM,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,her lack of interest in anything,sliding box,worried and puzzled,under,not,for,beginning,saw,waited,Daniel,and,down,his,check,stop!,the,pale,keep,to,taken,wore,encouraging,the,there,went,stand,menacingly.,Michael,cue,fight,temper,dragon,straight,been,table,his,door,the,his,carefully,things,the,they,story,that,it,walked,the,my,myself,laughing,needs,live,need,thoroughly.,disturbed,kill,his,did,himself,luscious,find,and,his,hole,ever ,wall,us,of,Dorsia's,anger,him,signs,there,details,barrier,room,up,watch,on,that,of,with,freely,fight,for,thing,down,down,stop,slowly,wish,but,aimlessly,for,the,story,to,please,any,6:30,table,wore,over,pondered,continued,up,more,saw,his,there,had,by,asked,there,was,in,life,needed,while,down,sheets,made,groceries,something?,whiskey,saw,movement,gets,come,those,Dawn,possibly,guard,bad,about,whole,out,walked,sunlight,together,whole,his,waited,too,there,all,for,tea,trade,store,cautious,could,always,a,want,step,be,Debra,leave,around,way,room,lip,through,would've,see,needed,body,needed,off,chest,Vercetti?,five,needs,free,tea,while,watch,sky,flowers,power,tire,stole,open,the,Angered,be,folk,that,vigorously,were,know,one,pain,the,were,been,to,hour,peace,his,before,the ,fight,the,issue,through,dawn,dates,needs,needy,in,that,that,happy,there,always,hat,for
+2020-12-17 13:04:30,2020-12-17 13:26:07,IP Address,100,1296,True,2020-12-17 13:26:07,anonymous,EN,CATHHN,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Below ,Not,Tired,Start,Waited,Thought ,It,And,Back,Today ,Like,I,The,Sheepish ,Follow ,On,Returned ,Sat,Convenient ,The,The,Thought,Tell,Behind ,Mary,Footprints ,Help,Sleep,Dozen,There,Forgotten ,Table ,His,Door,Coventry ,His,What,Tea,The,This,End,Helping ,It,Walked,The,What,You,She,Hat,See,Want ,So,Sad,Sit,His,Really ,And,Seen,Sing,Not,The,Trench,Want,Wall,Us,Of,Going,A,You,Strength ,That,Rod,Walls,Wall,On,Ask,Aid,His,Of,Put,Alone,Hear,Around ,Nowell,In,Down,Pub,On,Love,The,In,For,The,Problem ,Under,Is,Food,Seven,Table ,Told,And,Ate,Laughed,Still,To,Just,His,To,Stood,By,Said ,I,Heard,On,Hand,Sat,Whe,Down,Hands,Sat,The,Ony,Wine,Remembered ,The,Thinks ,Listen ,The,His,Could,Guard,Tie,To,End,Out,Sat,Mirror ,I,Only,To ,Ate,On,He,All,Still ,Tea,Lesson ,Shops,Careful ,Could,Read,A,Think,Step,Be,Her,Enter,Off,Sense,Ear,Lip,To,Chapter,The,Wanted,Head,Dancee,Up,Shoulder ,Said,All,Rained,Alone,Tea,So,Have,Horse,A,The,Room,Fixed,Open,The,Right ,See,Beggars,That,In,Had,Know,Faith,To,To,There,Hit,To,Hour,To,His,And ,Another ,Help,It,Heart,Here,Others,Dates,Went,Over,With,He,Only ,Happy ,Here,Waited,Hat,Washed
+2020-12-17 13:08:07,2020-12-17 13:26:40,IP Address,100,1113,True,2020-12-17 13:26:41,anonymous,EN,ELTTOC,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Underneath,Not,Forward,First,Wanted,Asked,Evening,Into,Back,His,Have,Well,The,Pale,The,Ok,First,Let,Original,The,I,Knew,Believe,In,Her,Moves,Often,Drinking,Dragon,Quickly,Always,Table,The,Deal,The,The,How,Food,The,It,First,That,Us,Went,Her,Something,The,She,Time,Off,Would,And,Sure,Sue,His,Meant,And,Right,See,Once,The,Hole,If,Doorway,Me,Of,You,To,The,A,That,Wrath,Framework,Pub,Off,Tell,Aid,All,Of,Out,For,See,The,Time,On,Down,Dropoff,And,Wanted,To,For,For,His,Problem,On,Robin,Any,The,Table,Wanted,And,Watched,Said,Still,To,Wanted,Her,To,Of,He,He,I,Had,And,First,Wanted,All,At,Arms,Looked,Some,When,But,Thought,The,He,Try,The,The,Could,Guard,First,About,Second,Round,Looked,Woods,I,First,On,Should,On,He,All,Up,Coffee,Lesson,Shop,Sure,Had,Always,His,Wish,Step,Suggests,The,Enter,Off,Way,Ear,Lip,Over,Would,The,Had,Hands,Should,Out,Arms,Thought,Five,Is,Told,Tea,And,Always,Guard,A,His,Seat,Was,Closed,The,Right,Be,People,The,And,Had,Think,You,Agony,To,Was,Already,To,Hour,To,The,But,The,Consider,The,Favourite,Sitting,Others,Dates,Shakespeare,Trying,With,That,Only,Happy,The,Wanted,Hat,Collected
+2020-12-17 13:07:13,2020-12-17 13:27:51,IP Address,100,1238,True,2020-12-17 13:27:52,anonymous,EN,CUVJVB,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under,Not,Sad,End,Went,Looked,Jenny,And,Forward ,His,Rather,Stop,The,Sad,Follow ,And,Gone,Wanted,Seemly,The,I,Went,Go,There,It,Eyes,Never,Bad ,Man,Quickly ,A,Table,Pockets,Door,The,His,For,Juice,The,They,Weather,Having,Me,Waited,The,All,Myself ,She,Name,Said,Want,And,Sad,Leave ,It,Meant,And,Perfect ,See,Not,The,Hole,Want,Wall,Me,Of,You,A,Not,A,She,Feelings,Border ,Garden ,Up,Shave ,Aid,It,Of,The,The,Fight,The,Time,On,Across,Destination ,And,Love,A,And,For,The,Battle ,But,Thought,For,Six,Table,Went,And,Thought ,Said,Silently ,To,Wanted,Her,All,Paused,And,Said,When,Heard,And,Smile,Said,On,Down,Arms,Wanted,The,I,And,Said,The,He,Then,Those,He,Could,Guard,Time,More,Way,With,Said,Moon,And,Next,Looking ,Wanted,On,And,All,Up,Tea,Lesson ,Weekend ,Careful ,Could,Wanted,A,Wanted ,Step,Be,Her,Come ,Around,Way,Face,Lip,To,Would,The,Wanted,Hand,Went ,Out,Shoulder,Said,All,Didn’t ,Married ,Tea,And,Never,Moon,Something ,His,Tire,Will,Open,The,Not,Live,Creatures,All,And,Had,Know,You,His,Him,Was,A,To,Hour,More,His,But,The,Do,It,Car,Travelling ,Others,Dates,Thought,Very,But,To,They,Happy,Here,Wanted,Hood,Sitting
+2020-12-17 13:09:16,2020-12-17 13:29:24,IP Address,100,1208,True,2020-12-17 13:29:25,anonymous,EN,SOZCVT,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,not,for,girl,went,put,night,and,down,his,never,stop,the,pale,follow,on,seen,was,wanted,his,we,went,wait,there,her,nod,see,tendency,person,from,wanted,table,his,door,jail,his,what,time,the,we,girl,helping,me,was,the,nothing,myself,she,face,play,want,carefully,sad,leave,the,meant,and,visible,see,and,the,hole,want,wall,you,of,the,a,you,a,that,weak,lines,shop,on,shave,aid,a,of,inside,here,see,his,girl,down,across,friends,next,love,with,and,for,the,story,until,was,and,dawn,table,looked,and,dug,said,in,to,was,her,to,was,by,he,last,was,down,own,was,on,down,arms,is,some,how,but,looked,their,has,let's,the,he,could,guard,next,to,boy,to,picked,doorway,but,girl,on,was,on,by,all,up,coffee,lesson,weekend,prepared,were,went,a,want,step,be,him,come,away,word,face,lip,to,would,the,wanted,head,walked,but,shoulder,was,all,was,here,tea,at,have,girl,some,the,room,wants,open,the,scared,see,people,we,to,in,see,you,his,to,were,to,to,act,to,his,when,a,say,the,problem,waiting,a,dates,went,always,with,that,i,her,the,was,hat,clean
+2020-12-17 13:11:29,2020-12-17 13:30:09,IP Address,100,1119,True,2020-12-17 13:30:09,anonymous,EN,HZLJVL,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under his ,Not hear,Good,End ,Said,Held ,And them ,And ,Back ,His face ,Rather ,Ok,The door,Ill,Take ,On the table ,Been to work ,Said,Attractive ,Attention ,I was ,Said,Committ,There,Out steam,Reactions ,Be ,Tendency ,Any,From the bottle,Not gone ,Table,His pocket ,Door,Detention,His cheat,Me ,Of this,Home ,He ,Emd,I just see,Is ,Said,The car,The full ,An ant,Who smiled back ,Arms ,Watched him,Am,And his face ,Sad,Hurt,His hands ,Meant it,Him,AMAzing,See what is ,Forever,The face ,Potatoe ,Mimd,Wall,You ,Of,Today ,An alcohol ,You go,Strength ,It was ok,Change ,Door,Room,Up,Say,Aid ip,The kettle ,Of the ,Over,At all,Ride,His arms,Word,In the fridge ,Across,Shop,On the chair ,Don’t ,But,Together ,For all,On the sofa,Story ,Abs then ,Said,Any food,Dawn,Table ,Said,And stood ,Said,Said,Straight ,Nothing ,Said,His face ,A secret ,Is on,And then ,Said he ,Please,Was heard ,And thought ,Mum,Said,And then ,On the mat,Arms ,Said,Tea,What ,Sometimes ,Saw,The sequel ,Smokes ,And then ,Survive ,She did,He could ,Guard,Story ,To her,Woman ,There,Cried ,Doorway ,Together ,Cat,To stand ,Said,Others ,And said ,All,Tall,Tea,Lesson ,Weekend ,Come ,Had said,Said,A drink ,Would like ,Step,Be an end ,Others ,Open it ,Away,Arms,Ears,Lip,To uni,Would be ,The house,Didn’t ,Hands ,Wemt,Open ,Arms ,Said,2 hours ,Is going ,Gone ,Tea,At ,Never ,Mam ,A car,The floor,Sofa,Likes,Open ,The table ,Evil,See ,People ,The end ,I’m dispair,That were ,Know ,You ever,Unison ,Dinner ,Was a ,Hands ,And then ,Hour ,To scream ,His face,When he ,An other ,Give ,The glass ,Issues,Meaning ,Times,Dates ,Said,Not ,In the ,It’s ok,They don’t ,Happy ,Then,Went ,Shirt,Dirty 
+2020-12-17 13:07:50,2020-12-17 13:30:18,IP Address,100,1348,True,2020-12-17 13:30:19,anonymous,EN,ZUGVPJ,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under,Not,Mighty ,Only,Wished,Looked,After ,And,Forwards,Again ,Appreciate ,That,The ,Green,You,On,Dies,Waltzed,Comfortable ,The,I,Walked,Abide,There,Out,Reaction ,Only,Problem ,Dragon,With ,Only,Table,His,Door,See,Chest,Where,Time,The,It ,Only,Actually ,There,Was,The,How,Myself ,She,Mother,Then,Wish ,Quickly ,Sad,Jumo,Up,Meant ,And,About,Have ,For ,The,Hole,Go,Wall,You,Of,You,Some,Him,Peace,That,Time ,Bounds,Room ,Off,Look,On,It,Of,There,It,Cycle ,A,Of,On,Down,Stop,And,Only,A,Quietly ,For,The,Of ,Possibly ,Was,When,The,Table ,Is,Across ,Was,She ,Up,You,Looked,His,To,Was,By,Said,When ,Was,And,Mother,Is,Whney,Down ,Napkin,Looked,The,When ,As,Looked,Any,Always,Then ,Our,She ,Could,Guard ,Truth,About,Only,Out,Lay,Window,Under,Only,On,Looked,On,And,All,Up ,Tea,Way,Beginning ,Careful ,Was,Was,A ,Wish ,My,Always ,Her,Open,Around,Hands ,Ear,Lip,To,Wouldn’t ,The,Was,Head,Looked,Equally ,Shoulder,Is,Nonstop ,Is,Married ,Tea,Shyly ,Only,Children ,A,A,Couch,Do,Open ,The,Always,Be,Creatures ,They,And,Had,Know,Some,His,Ti,Were,Finally ,To,Hour,Some,Himself ,And,On,Do,It,Problem ,Here,Others,Date,Was,Always,With,That,It,Happiness ,Over,Is,Shirt,Stacked
+2020-12-17 13:05:30,2020-12-17 13:31:11,IP Address,100,1540,True,2020-12-17 13:31:11,anonymous,EN,SQEDFF,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,not,at,way,was,grinned,night,and,forward,today,not,what,the,pale,find,and,seen,was,efficient ,his,I,was,imagine,by,himself,gaze,cry,bad,dragon,straight,moved,plate,the,door,hospital,her,what,to,the,it,time,resolving,me,was,the,the,you,he,eyes,he,am,thoroughly ,happy,call,the,was,and,perfect,greet,and,his,hole,touch,door,us,the,you,a,him,a,that,birds,barrier,kitchen,on,lock,aid,that,of,still,to,fight,the,time,in,across,stop,and,love,it,closing,for,the,problem,while,is,any,ten,table,was,and,watched,said,firm,everything,was,her,that,was,he,told,please,could,and,way,was,when,on,arms,was,good,I,but,finished,the,has,it,these,about,watched,guard,time,about,way,out,fell,window,secretly ,way,watching,was,on,he,all,up,coffee,lesson,shop,careful,was,was,a,was,step,be,his,come,a,hands,face,lip,to,wouldn't,the,loved,head,were,open,shoulder,was,six,was,over,tea,at,not,people,something,the,tire,will,open,the,tired,see,wretches,the,and,had,see,fun,his,to,was,gone,to,hour,to,his,but,a,help,his,problems,seeing,the,dates,was,not,with,that,I,relieved ,somewhere,was,shirt,empty
+2020-12-17 13:09:59,2020-12-17 13:31:29,IP Address,100,1289,True,2020-12-17 13:31:30,anonymous,EN,BJHOIS,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,in,not,there,end,was,cried,night,and,back,his,never,hey,the,pale,the,on,sex,was,pretty,his,he,was,be,there,the,tracks,not,temper,dragon,fast,no,plate,his,door,jail,his,me,drinks,the,some,end,here,us,White,the,me,myself,lovingly,hand,said,am,quickly,angry,beat,a,meant,and,beautiful,see,and,the,hole,dare,wall,us,of,that,a,nothing,patience,that,time,boundaries,kitchen,on,clean,aid,the,of,home,again,see,a,time,in,down,drink,and,love,but,silently,for,the,battle,so,Columbus,nest,noon,table,is,again,said,said,up,us,Willis,his,that,was,by,said,then,was,and,hand,was,in,down,laundry,was,some,that,but,looked,tracks,he,then,the,his,could,guard,end,to,end,home,backed,kitchen,with,dog,to,was,on,by,all,up,tea,new,moment,careful,had,was,coffee,am,step,be,anyone,stop,around,way,ear,lip,through,would,wait,was,head,were,off,shoulder,is,all,is,toast,tea,and,never,echo,a,the,tire,will,open,the,his,be,people,that,in,had,see,a,pain,to,was,no,to,hour,to,his,before,another,see,it,dad,here,the,dates,Shakespere,not,in,it's,only,happy,there,was,hat,clean
+2020-12-17 13:11:49,2020-12-17 13:31:59,IP Address,100,1210,True,2020-12-17 13:31:59,anonymous,EN,HGWZRC,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,balding,not,for,man,said,sighed,after,along,forward,today,not,stop,the,pale,follow,forcefully,seen,slept,terrible,the,sucked,ran,believe,there,go,movements,jump,problem,dragon,cold,reasons,plate,his,door,camp,his,out,time,the,she,possum,worthy,him,ate,his,what,myself,happy,arm,left,am,thoroughly,sad,leave,up,did,and,sloppy,see,and,the,hole,do,wall,over,of,you,a,good,strength,they,rod,boundaries,room,up,lock,aid,tools,of,home,a,fight,his,place,down,aside,errand,slowly,love,faster,perplexed,finally,the,fun,do,lied,patience,noon,table,rose,across,sputtered,asked,up,nothing,sat,her,to,spoke,apprehension,said,when,was,surveying,hair,lifted,normally,down,clothes,thought,back,what,and,planned,the,often,go,them,Sharon,could,guard,finale,to,dragon,with,knelt,coyest,walking,man,staring,lifted,on,shouting,all,up,tea,lesson,end,alert,died,grimaced,beers,am,step,be,her,enter,around,way,face,lip,to,would,the,had,head,walked,out,shoulder,asked,two,was,free,tea,broadly,see,echo,a,death,shift,will,opened,the,cowards,see,wretches,that,shouting,drove,worry,you,his,him,is,no,to,hour,solitude,laundry,after,another,fight,it,troubles,hoodwinked,others,dates,walked,sad,with,no,I,happier,work,said,cap,dirty
+2020-12-17 13:08:48,2020-12-17 13:32:59,IP Address,100,1451,True,2020-12-17 13:33:00,anonymous,EN,ZUXZWD,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under,Nothing,Forward ,End,Forgot ,Stretched,When ,To,Back,Today,Rather ,I,The ,Whitr,Follow,On,Seen,Is,Gracious ,The,The,Gasped ,Stand,There,Go,Cue,Sing,Problem ,Dog,Chilled,Forgot,Plate,The,Door,Prison,His,For,Time,The,The Rock,End,Resolving ,Us,White,His,Me,Myself ,And,Arm,Gasped,Am,With,Numb,Leave,Me,Meant,And,Flopped,See,Goal,The,Grave,Do,Door,Me ,Of the room ,You,Mental,You,A sign ,That,Horses,Confines,Kitchen,Up,Say,Aid ,Aftershave,Of,On,Here,See,His,And,In,Down,Stop,And,Couldn't ,Tightly,And,For,The,Problem,And,Said ,Or,Seven,Carriage ,I,Sighed ,Read,Said ,Still,To,Lee,His ,That,Of,His,Said ,When ,Heard,And,Eyes,Is,When,Down,Arms,How,More,That,And,Surveyed ,Signs,Has,Then,The,He,Pondered ,Guard,End,To,End,There,Sighed ,End,And,End,Onwards ,Yang,On,And then ,All,Up,And,Language,End,Aware,Had,Said ,A cigarette ,Don't ,Step,Be,The,Come,To,Way,Ear,Lip,Down,Would,The,Did,Boots,Said,Open,Arms,How,Four,Is,There,Tea,At,Not,Man,A,The,Tyre ,Is,Closed,The ,Gone,Go,Wretches,All,And,Were,Know ,A,Latin ,To,Is,Lost,To,Hour,To,His,And,Metal,Dance ,His,Period ,Here ,Nighr,Dates ,It,Here,With,That,This,Good,Russia,Stole,Hat,Here
+2020-12-17 13:09:29,2020-12-17 13:33:31,IP Address,100,1442,True,2020-12-17 13:33:32,anonymous,EN,WGSVTR,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under,Not hear,For,End,Fell,Waited,Please ,Please ,Back,Today ,Leave,Welcome ,The,Flustered ,Vehicle ,There,A ,Ran,Common,The,I,Ran,Wait ,Still,Slip,Self ,Want,Problem ,Human ,Fast,Left,Table ,Hers,Door,Jail,Hers,Close,Time ,The,He,End,Here ,Go,Wait,Trouble ,It,It,Lilly,Arms,Hide,Am,Again ,Sad ,Leave ,It down,Did,His,Lovely ,Hear,Today ,The face,Hole,Wait,Door,You,Safely ,Going ,A,Wonders,Help,He,Time,Gates ,House,On,Lock,On,His,Of it,Home,Happy ,Ride ,Left,Word,Down ,Down ,Place,Near,Know,Or,Area,For all ,Table ,Truth,And,Laughed ,Food,Ten,Table,Cried,Together ,Ate,Nodded ,Still ,Together ,Slept ,Him,Go,Was,By ,Waited ,Then ,Opened ,And,Arms,Sang,More,Patient ,Arms,Is,Hope,What,And,Glanced ,Yourself ,Eats,Sleep,British ,Her,Could ,Guard,Second ,More,End,With,Moved,Morning ,I,End ,To,Left,On,Earlier ,All,Still,Tra,Lesson ,Zoo,Happy ,Could fly ,Froze ,Tea,Can,Step,Be,Her,Enter,Around ,One,Ears,Lip,Home,Is,Wait ,Ate,Head,Left,Out,Shoulder,Ate,A ,Fell,Wealthy,Tea,At,Sleep,Gate,Something ,The,Room ,Wants,Open ,The,Awau,Know,People ,That,Today ,Had,Know,You,Pain,Him,Away,Gone ,To,Hour,To,His,Tonight ,The,Help,It,Life,Great,Times,Instance ,Is,Gone,Alone ,Go,Only,Strange ,Me,Wept,Hood,Gone 
+2020-12-17 13:10:31,2020-12-17 13:33:36,IP Address,100,1384,True,2020-12-17 13:33:36,anonymous,EN,MPGKLQ,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,her lack of interest in anything,sliding box,worried and puzzled,Above,Not,Sad,Dog,Started,Said,Evening,And,Towards,His,Like,Stop,The,Flushed,Start,Next,Seen,Ran,Quiet,His,I,Went,See,There,Him,Moves,Go,Problem,Monster,Quickly,Been,Plate,Side,Door,The,His,What,Chance,The,He,Cat,Helping,It,Thought,The,Me,Myself,And,Face,He,Want,Thoroughly,Sad,Kill,The,Would,Him,Messy,See,And,His,Hole,Tell,Tree,Everything,Of,You,A,Some,A,He,Wrong,Circle,Bar,Up,Ask,Aid,More,Of,Again,To,Ride,His,Swan,On,Across,House,On,Love,Look,Behind,For,The,Battle,At,Heard,Food,Nine,Table,Wsnted,Tightly,Thought,Said,Still,Feeding,Jumped,My,About,Began,By,Said,With,Heard,Against,Voice,Wanted,On,Down,Arms,Must,Some,I,Beet,Thought,Danger,When,We,Them,Me,Could,Guard,Weather,Somehow,Dog,Out,Sighed,Dark,Earlier,Sword,Walking,Ran,Wrongly,He,All,Still,Coffee,Lesson,Lunch,Prepared,Could,Started,Some,Want,Step,Be,Them,Come,Around,Hands,Face,Lip,Home,Would,The,Was,Head,Went,Down,Shoulder,Screamed,Of,Will,His,Tea,And,Never,Words,Lunch,Ground,Wheel,Wants,Closed,The,Without,Sleep,People,Lunch,Above,Owned,Know,Some,His,To,Wasn't,To,To,Hour,A,His,And,Metal,Watch,It,Problem,Here,Times,Dates,Said,A,Later,To,He,The,Now,Wanted,Hat,Full
+2020-12-17 12:56:19,2020-12-17 13:34:02,IP Address,100,2263,True,2020-12-17 13:34:03,anonymous,EN,WCNHYJ,move very fast,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,her lack of interest in anything,sliding box,worried and puzzled,enough,nothing,young,end,worried,studied,evening,child,forward,yesterday,die,STOP,wood,scared,play,stairs,sex,laughed,exciting,the,we,asked,drive,there,down,tracks,climb,problem,dragon,down,charisma,plate,water,door,hospital,the,closely,freedom,brunch,overcame,play,helping,go,waltzed,the,noises,myself,joyfully,wife,leave,asked,effortlessly,sad,jump,me,left,the,brown,disneyland,claim,face,hole,smoke,wall,you,home,you,issues,everything,strength,soon,time,grounds,apartment,up,clean,elsewhere,skills,truck,forever,together,ride,stronly,man,down,down,job,silently,will,deck,strangely,for,top,battle,sit,robin,lives,midnight,chair,went,together,gossiped,nodded,wearily,food,springstein,face,everything,spoke,angrily,cried,yesterday,left,cautiously,arm,laughed,publicly,quietly,clothes,Scissorhands,cherries,I,alcohol,saw,bears,loves,come,blow,writing,drove,guard,time,more,way,ahead,cried,inside,together,end,flighting,knew,coldly,happened,all,tall,tea,sport,day,free,left,laughed,tea,cried,step,always,others,leave,around,way,face,lip,out,would,store,fought,head,laughed,out,shoulder,hillfigure,daily,scared,free,coffee,grateful,know,house,food,the,shift,cried,open,the,careless,live,people,everything,unintentionally,had,think,you,terror,treatment,he,wept,again,hour,out,everything,altogether,another,guide,through,problems,excited,times,dates,sat,handsome,later,its,she,nothign,now,loved,hat,full
+2020-12-17 13:11:28,2020-12-17 13:34:26,IP Address,100,1377,True,2020-12-17 13:34:27,anonymous,EN,YIAUTT,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,above,not,good,answer,was,sighed,when,and,forward,this,suggest,had,the,pale,so,on,seen,is,difficult,his,I,is,wait,there,his,signal,never,problem,monster,from,never,table,his,door,Coventry,his,out,time,the,we,rest,about,me,was,the,what,myself,who,last,then,am,carefully,stupid,tell,down,meant,and,visible,hear,and,the,hole,do,wall,us,of,a,other,her,a,he,time,boundary,bar,up,go,aid,a,of,in,it,travel,round,thing,on,over,opportunity,in,would,and,and,for,the,battle,manage,Columbus,any,eight,table,was,across,and,said,still,to,Forsyth,her,that,was,then,said,that,was,in ,name,was,when,down,arms,Scissorhands,back,who,but,saw,my,he,is,these,I ,could,guard,start,freely,idea,out,then,dark,I,next,standing,never,on,then,all,in ,tea,lesson,weekend,quiet,could,is,five,don't,step,be,his,come,on,hands,face,lip,to,would,the,was,head,were,out,jumper,will,an,was,married,tea,at,never,girl,some,thinking,room,will,open,the,usually,be,people,this,in,drove,know,a,his,to,is,overreacted,to,hour,to,his,at,on,do,the,boyfriend,waiting,other,dates,the,not,with,don't,you,better,the,has,hat,clean
+2020-12-17 13:09:57,2020-12-17 13:34:30,IP Address,100,1473,True,2020-12-17 13:34:31,anonymous,EN,LRJBNF,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under,Not,For,First ,Was,Saw,Then,And,Back,Before,Rather,Hello,The,Pale,Then,On,Seen,Saw,Consistent ,The,We,Saw,Say,By,Go,Lead,Be,Bit,Conversation ,Straight ,Been,Plate,His,Door,See,His,What,Chance,The,We,Day,Will,Us,Was,His,My,Time,Thinking,Mother,See,Will,And,That,Leave,It,Meant,And,Visible ,See,And,The,Suitable ,Want,Wall,You,Her,The,A,Us,Strength ,That,Time,Office,Room,On,Mention,Aid,A,Of,While ,It,Fight,His,Time,On,Down,Delivery ,On,Was,Like,Bewildered ,For,The,Story,And,Was,Any,Dawn,Table,Was,And,Laid,Said,Still ,To,Saw,Her,That,Is,But,Said ,Then,Saw,Down,Mother,Said,After,Down,Arms,Wad,Some,I,And,Thought ,My,Has,We,Our,He,Could,Guard,Day,To,End,To,Said,Mirror ,Until,End,To,Saw,On,By,All,Up,Tea,Lesson ,End,Ready,Could,Saw ,Some,Saw,Step,Be,The,Come,Up,Way,Face,Lip,To,Would,The,Was,Head,Saw,Up,Arms,Was,The,Was,Finished ,Tea,And,See,Person,A,The,Role,Will,Open,The,Unwiling,Come,Souls,Today ,To,Drivers ,Know,A,His,To,Were,Been,To,Afternoon,To,His,After,On,Be,The,Day,Told,Others,Dates,Was,Been,With,That,Only,Happy,The,Said,Hat,Stacked
+2020-12-17 12:57:53,2020-12-17 13:34:37,IP Address,100,2204,True,2020-12-17 13:34:37,anonymous,EN,LFGVIP,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,not,for,house,was,broke,then,and,back,his,not,just,the,pale,follow,on,died,is,simple,the,the,was,believe,there,it,signals,be,problem,human,out,not,table,his,door,prison,his,the,time,table,I,first,about,it,is,the,a,myself,she,face,he,am,and,very,kill,it,was,and,above,the,and,the,hole,do,wall,us,of,you,a,him,strength,it,horses,boundary,room,on,go,aid,a,of,still,it,wear,it,thing,in,down,appointment,at,am,so,as,for,the,problem,and,and,or,once,table,is,and,was,said,up,to,is,his,that,of,he,left,that,was,and,face,said,when,on,arms,the,some,that,and,watched,signs,eats,I,the,he,could,guard,other,to,thing,to,sat,most,at,cat,to,is,on,he,all,up,tea,trade,end,quiet,would,was,a,am,step,be,his,come,up,hands,ear,lip,to,would,the,was,sword,are,out,neck,is,all,is,off,coffee,and,go,sudden,a,the,tyre,was,closed,the,here,see,creatures,the,and,used,know,a,his,to,was,to,to,hour,to,his,or,a,do,it,problem,together,others,dates,the,not,with,that,it,that,one,was,hat,on
+2020-12-17 13:12:17,2020-12-17 13:35:08,IP Address,100,1370,True,2020-12-17 13:35:08,anonymous,EN,OMIRBC,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,not,for,man,should,looked,night,and,closer,his,like,that,the,pale,you,and,seen,was,honest,the,I,was,fathom,there,himself,movements,be,short,dragon,slowly,changed,plate,his,door,jail,the,for,time,the,we,man,that,me,was,the,what,myself,Julie,friend,apologised,cant,of,that,hurt,his,meant,and,short,see,and,his,biscuit,do,tide,us,of,that,issues,him,patience,that,time,hall,room,on,tell,on,his,of,longer,be,ride,his,place,down,down,place,at,care,tall,in,for,the,battle,possibly,was,a,dawn,chair,was,and,asked,said,up,to,was,her,that,was,at,I,that,was,at,friend,was,that,down,arms,was,some,what,at,saw,the,he,is,these,he,could,guard,time,to,man,with,stopped,direction,and,person,to,was,her,that,all,at,tea,lesson,end,alert,could,is,his,cannot,step,be,her,come,their,way,face,lip,to,would,the,would,head,said,down,arms,had,an,was,at,tea,across,have,person,something,the,key,was,open,the,his,see,children,all,and,had,know,a,his,to,was,been,to,hour,to,his,and,the,stay,the,problems,friends,times,dates,was,not,with,that,I,his,the,was,hat,being
+2020-12-17 13:04:00,2020-12-17 13:35:36,IP Address,100,1896,True,2020-12-17 13:35:37,anonymous,EN,ULDWLA,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under,Not,For,Man,Thought,Asked,With,And,Back,Today,Cant,I,The,Flushed,Follow,On,Seen,Thought,Glamorous ,His,There,Moved,Think,There,Me,Movements,Never,Problem ,Man,With ,Not ,Plate,Her,Door,Detention ,His,Me,Later,The,They,Horse,Time,Go,Waited,His ,The,Myself,And,Car,He,Think,With,Upset,Leave,His,Meant,To,There,See,And,The,Tunnel,Care,Wall,You,Of,You,A,Them,Strength ,That,Effort,Room,Other,On,Lock,Aid,Tools,Of,There,This,Ride,His,Thing,Up,Out,Garage,In,Said,To,Until,For,The,People ,Until,Was,Seeds,Seven,Table,Was,Until,Said,Said,Up,More,Went ,Her,That,Said,By,Told,When,Got,And,Silence,Thought ,When,Down,Arms,Said,Back,How,Than ,Looked,The,Should,He,You,He,Could,Guard,Time,To,People,Out,Started,Photo,With,Supervisor ,Walking,Said,On,Last,All,Up,Coffee,Lesson,Weekend,Silent,Said,Waited,His,Am,Step,Be,The,Come,Around,Way,Face,Lip,To,Would,Wait,Was,Head,Went,Shorter,Chest,Saw,Ten,Wasn’t ,Gone,Coffee,At,Like,Crowd,Dinner,The,Wheel,Will,Closed,The,Not ,Know,People,That,And,Had,Know,Another,His,To,Was,Just,To,Hour,More,His,When,Rain,Do,The,Feeling ,Everywhere ,Times,Dates,Is,Just,Today,No,Only,Better,Town,Said,Hat,Inside
+2020-12-17 13:05:56,2020-12-17 13:35:41,IP Address,100,1785,True,2020-12-17 13:35:42,anonymous,EN,YFRDQE,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under ,Not listen ,Tired ,End ,Said ,Then,You,Because ,Backwards ,His face ,Not ,Stop ,The door ,Worried ,Watch ,On the table ,Seen,Knows ,Wonderful ,The chair ,They,Said,See,Next ,Out a sigh ,Moves ,Carry ,Problem ,Man,Slowly ,Gone,Plate,His pockets ,Door,Prison ,His lap,Carefully ,Money ,The table ,I,End ,Solving this ,Us,Said,The carb,The truth ,Him,She,Answer ,Left ,Think,Thoroughly ,Tired ,Leave ,Up,Was serious ,Then ,Washed ,Listen ,But ,The faceb,Joke ,Listen,Wall,Me,Away,You ,A problem ,Not,Strength ,Nobody sawv,Details ,Boundaries ,Road ,Up,Listen ,On,Too much ,Of,Awake ,To tell,Ride,His arms ,Step,In his bag ,On the chair ,Job ,Slowly,Think ,It,For a long time ,A while ,The chair ,Problem ,When ,Liked ,Food,Home ,Chair ,Said ,Then ,Said ,Said,Still,To,Said ,Show ,To,Said,He ,Said,Yesterday ,Heard ,Slowly ,Face ,Is ,More ,Next ,Arms ,Said ,A drink ,Well,And ,Said ,Spiders ,Has a problem ,Listen ,The greatest,I did ,Could ,Guard,Truth ,To her ,End ,See him ,Glistened ,Sun,Then,End,Waiting ,Knows ,Of the wrong thing ,They,All ,Still,Tea,Lesson ,End ,Careful ,Could,Is,Lunch ,Think ,Step,Be tears ,The wrong thing ,Enter ,Around ,Way ,Ear ,Lip,To school ,Would ,The,Had,Hands ,Stood,In half ,Shoulder ,Likes,All day ,Will,Back ,Tea,And ,Try ,Lady listened,A drink ,The floor ,Role,Can ,Open ,The table ,Safe,Know ,People ,Wards,Quickly ,Owned,Know ,You ,His ear,To,Is,To,To me,Hour ,To go,His hands ,Before ,Another ,Come ,It ,Self ,Waiting ,Times ,Dates,Likes ,Gone ,With ,It’s ok,Only ,Happy,Me,Said ,Hat ,Gone 
+2020-12-17 13:03:53,2020-12-17 13:36:59,IP Address,100,1985,True,2020-12-17 13:36:59,anonymous,EN,YHRGJX,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,but,not,up,men,is,then,night,or,back,his,rather,no,the,sheepish,the,on,been,won't,interesting,the,he,did,tell,there,her,hands,not,temper,bird,while,no,side,the,door,war,the,the,than,the,there,dark,working,it,sat,his,all,you,then,choice,then,will,of,sad,walk,it,did,him,divine,see,and,his,cookie,go,wall,us,of,you,no,you,strength,he,time,boundaries,room,on,do,aid,a,of,outside,freely,protect,his,time,on,down,pub,on,love,however,and,for,the,problem,so,is,their,noon,table,is,and,said,said,up,over,was,his,not,blurted,by,said,before,answered,and,hands,won't,all,down,arms,told,back,how,wine,looked,enemies,is,and,them,he,could,guard,night,openly,bird,there,dropped,mirror,under,man,to,cried,on,he,all,up,coffee,song,end,there,listened,cried,a,am,step,be,us,enter,around,and,face,lip,home,would,the,had,hand,did,off,shoulder,did,everyday ,is,married,tea,at,never,man,a,his,tyre,knows,open,the,not,survive,souls,that,in,and,come,yourself,his,the,will,to,to,hour,to,his,and,metal,carry,his,problems,over,others,dates,will,not,in,it,you,happy,then,told,hood,in
+2020-12-17 13:13:28,2020-12-17 13:37:13,IP Address,100,1424,True,2020-12-17 13:37:13,anonymous,EN,EKHSGR,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,not,at,man,was,thought,then,and,back,today,rather,I,the,sheepish,go,on,thought,was,flattering,the,I,was,tell,there,him,trail,be,tendency,man,there,not,plate,his,door,see,his,what,time,the,I,man,fixing,me,thought,the,it,them,Olivia,mind,have,am,in,tired,leave,his,did,and,over,rest,isn't,the,hole,have,wall,me,of,you,been,her,strength,he,rod,house,room,up,go,aid,his,of,in,to,fight,his,man,in,down,stop,to,can't,but,and,for,the,problem,and,thought,for,nine,table,had,and,thoughtttttttttttttttt,a,up,to,thought,my,to,was,but,said,when,heard,and,face,was,when,down,legs,was,some,what,but,thought,any,has,then,them,he,could,guard,men,to,bag,out,stood,window,he,boy,to,was,on,would,all,up,tea,lesson,end,careful,had,was,a,am,step,be,her,enterrrrr,around,way,face,lip,to,would,the,was,hands,will,up,arms,was,all,was,gone,tea,and,have,man,some,his,wheel,will,open,the,sick,arrive,souls,the,and,had,know,you,his,to,are,to,to,hour,to,his,or,one,come,through,problems,to,others,viewing,was,not,with,to,only,warm,now,was,hat,empty
+2020-12-17 13:18:00,2020-12-17 13:37:47,IP Address,100,1187,True,2020-12-17 13:37:48,anonymous,EN,SAMDFR,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,not,sad,candle,worked,cried,please,and,and,his,rather,sincerely,the,distraught,my,on the counter,died,didn't,expensive,the,I,called,understand,there,himself,signal,kill,problem,dragon,with,lied,plate,his pockets,door,school,his,for,time,the,It,way,that,me,White,hand,a,myself,and,name,buy,love,with,betrayed,run,his,meant,gently,oily,find,only,the,plant,know,wall,me,of,telling,a,the ,strength,he,traitor,lines,room,on,brush,on,meth,of,with,happily,ride,his,man,in,down,stop,and,love,but,in,for,the couch,struggle,but,Robin,because,nine,stall,I,into his  breast pockets,made,laughed,still,to,Wayne,his,he,blasted,calmly,spoke,at,heard,lazily,name,danced,like,down,arms,ran,some,it,but,recalled,my,has,it,these,he,watched,guard,door,more,man,to,took,mirror,together,dog,patrolling,shouted,on,with,all,by,coffee,secret,store,silent,could,sang,a,received,step,be,his,enter,around,way,face,lip,fishing,would,the,was,back,said,loose,shoulders,Angelo,eight,can't,dead,tea,pleasantly,cry,room,a,the,room,killed,opened,the,scared,succeed,people,he,violently,broke,know,a,his,him,is,problems,to,hour,to,his,but,a,collect,it,problems,sitting,night,date,Shakespeare,dead,with,it,I,happy,the,sang,cap,taken
+2020-12-17 13:15:38,2020-12-17 13:37:58,IP Address,100,1340,True,2020-12-17 13:37:58,anonymous,EN,ASVZKD,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under,Not,Great,Book,Stopped,Farted,Did,Walk,Forward,His,Rather,What,The,Flushed,Follow,Gently,Washed,Said,Exciting,The,I,Wants,Lie,There,Me,Reaction,Die,Good,Man,Slowly,His,Table,His,Door,Jail,The,What,Money,The,I,Tree,But,Go,Smith,The,My,It,She,Mum,Get,Am,Thoroughly,Sorry,Kill,It,Did,The,Beautiful,Meet,And,The,Hole,Do,Door,You,Of,Going,A,Them,Strength,He,Enemy,Boundary,Room,Down,Eat,Aid,Flash,Of,Away,It,Ride,His,Boy,On,Down,Pick,Slowly,Can,The,With,For,The,Battle,Despite,Are,Any,Nine,Table,Are,Quickly,Looked,Spoke,Still,Food,Went,My,To,Said,He,Explained,Yesterday,Was,Thinking,mum,Wished,When,Quietly,Napkin,Is,Some,You,Wine,Thought,Cars,Eats,Then,The,He,Could,Guard,Dog,Eloquently ,Girl,With,Crept,Mirror,Under,Long,To,What,On,To,All,Up,Tea,New,Shops,Prepared,Could,Feels,Peace,Wish,Step,Be,Them,Enter,Left,Hands,Ear,Lip,To,Might,Get,Wanted,Hands,Dont,Up,Arms,Has,Fifteen,Was,Fifty,Tea,Like,Warm,Girls,A,The,Tyre,Kept,Open,The,Cowards,Succeed,People,They,And,Had,Know,You,Pain,To,Is,Scabies,To,Hour,To,His,And,Steel,Fight,It,Problems,Rumbled,Times,Dates,Was,Tired,With,To,You,Thankful,A,Cried,Hat,Away
+2020-12-17 13:18:29,2020-12-17 13:38:34,IP Address,100,1204,True,2020-12-17 13:38:34,anonymous,EN,BJSCIW,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under,Nothing,For,Man,Walked,Said,At,To,Towards,His,If,I,The,Sad,Follow,On, Been,Said,Important ,The,He,Said,Go,Behind ,The,Move,Go,Temper,Knight ,Straight ,To,Plate ,Beside ,Lid ,The,The,The,Food,The,When,Bar,That ,Them,Wanted,Car,What,You, In,Eyes,He,Said,Of,That,Be,The,Did,On,Visible ,The,And,The,New,Want,Side,The,The,The,Been,You,The,That,Rest,Walls,Room,On,Put,Aid,The,Of,At,In,Remember ,His,Time,In,Out,Hotel,On,Live,That,In,For,The,Problem ,On,Wanted,For,The,Table ,Wanted,Across,Said,Said,Aside,To,Said,Her,That,Started,By,Said,To,Heatd,Down,Name,Wanted,In,At,Arms,Wanted,A,That,Sometimes ,Looked,The,Says,Then,The,The,Could,Guard,Time,To,Car,To,Said,Corridor ,Under,Cat,To,Wanted,On,He,All,In,Tea,That,End,Aware,Went,Said,A,Want,Step,Be,The,Enter,Down,Way,Face,Lip,To,Would,The,Would,Head,Knew,Out,Shoulder,Said,A,Was,In,Tea,At,Talk,Noise,A,Into,Wheel,Will,Shut,The,In,Go,People ,The,The,People,Know,You,The,To,Was,The,To,Hour,To,His,But,By,Want,His,Job,Through ,Times,Dates,Talked,Been,With,That ,You,That,Inside,Wanted,Hat,Taken
+2020-12-17 13:04:26,2020-12-17 13:38:36,IP Address,100,2049,True,2020-12-17 13:38:36,anonymous,EN,DUTDZD,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,In ,Not,Smart,End,Warned,Slept,Morning ,Watch ,Back ,His,Want,Hooray ,Door,Sheepish ,And ,And,Seen,Had,It’s ,The ,I,Came ,Run,There,Out,Mistakes ,Slave ,Problem ,Stone,Straight ,Money ,Table,Money ,Door,Jsul,Tge,Me,Food,Ladt,The,Start,Going ,Go,Smith,Jail ,Glory,Myself ,Who,Partner ,Said ,Love ,Clean ,Sad,Kill,Hands ,Meant ,And ,Immaculate ,My,And ,His,Hole,Lie,Wall,You,The ,Yiy,A problem ,Good,Then ,Up,Change,Cellar ,Lampost,On,Say,Off,Me,Of,Home ,Again ,Ride,Back,Is,Fridge,Over,Club ,And,Love,Therefore ,For,For all,The bed,Story,So ,Robin,Thought,Noon ,Seat,Adams ,And ,Had caffee,Said ,Silently ,More,Almighty ,Me,About ,Is,Slowly ,Said ,Now,Was let in ,Staring ,Hair,Said,Most,Down,Arms,Wanted ,Food,What,But,Saw her,Sucess,Spends ,And ,Vain ,About,Could,Guard,End,To ,End,To golf,Knelt ,Mirror,Tightly ,End,To ,Said,Om,The ,All,Still,Tea,Lesson ,End,Ready ,Was,Was,A char,Love,Step ,Be,Her,Enter,Down ,Way,Face,Lip,To,Would ,The ,Could,Head,Sat,Up,Lap,Thumb ,Everyday ,Is,Here,Tea,Cheekily ,Sleep,Lady ,Drinks,Floor,Room,Wasn’t ,Open ,The table,Cautious,Leave ,Peolle,Noon,Quixkly,Had,Know,A,Town ,Entry,Was,Passion,To you ,Hour ,Say,Himself,And,A,Be had ,It,Relationship ,Waiting ,The least,Date,Shakespeare ,Brighter,With,She ,I ,Butterfly ,Russia,Saw,Hat,Washed
+2020-12-17 13:19:28,2020-12-17 13:39:15,IP Address,100,1187,True,2020-12-17 13:39:15,anonymous,EN,NAQLSQ,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under,Not ,Nice,Dog,Didnt,Cleared,Night,And,Forward,His,Rather,No,The,Green,So,Picked,Gone,Saw,Comfortable ,The,He,Didnt ,Stand ,Right,Me,Eyes,Not,Temper,Dragon,Down,Not,Table,His,Gate,The,His,For,Than,The,She,Way,That,Me,Scott,His,About ,Than,Lifted,Desk,Gave,Know,Dried,Scared,Leave,His,Meant,Sat,Visible,Fight,Not,The,Grave,Know,Door,Us,Of,You,A,Good,A,That,Rod,Circle,Shop,On,Tell,Aid,Up,Of,Late,It,Feel,His,Day,Down,On,Stop,And,Don’t ,And,Wondering ,For,The,Problem ,Manage,Had,Or,Seven,Table,Said,And,Said,Gestured,Up,To,Walked,His,To,Had,Then,Said,That,Coukd,Down,Temper,Didn’t ,When,Down,Arms,Jumped,Some,I,But,Thought,The,Doesnt,Tell,The,She,Tried,Guard,Cat,To,Cat,With,Sat,Dark,She,Dog,Standing ,Said,On,He,All,Up,Tea,Lesson,Opera,Careful,Could,Tried,The,Said,Step,Be,Her,Enter,Round,Way,Ear,Lip,Out,Would,The,Couldn’t ,Head,Said,Out,Shoulder ,Said,All,Isn’t ,Over,Tea,At,Not,Driver,An ,The,Room,Will,Open,The,Right,Hear,Bastards,All,And,Saw,Know,You,Pain,His,Was,Not ,To,Hour,To,His ,Long,On,Help,The,Garden,Trying,Others,Dates,Couldn’t ,Not,With,It,You,Happy,Here,Didnt,Hat,Ready
+2020-12-17 13:20:01,2020-12-17 13:39:29,IP Address,100,1167,True,2020-12-17 13:39:29,anonymous,EN,DKRWCC,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under his hat,not,good,cat,said,stared,please,now,back,his,like,stop,the,sad,driver,on,seen,asked,attractive,the chair,she,said,wait,there,her,signal,not,bad ,dragon,cold,left,plate,the,door,hospital,his,for their signal,next,the,he,cat,here,it,mitty,his,me,myself,she,wife,ran,love,clean,sad,kill,his,did,him,perfect,hear,and ,his,hole,dare,wall,us,of,her,anger,occur,help,that,birds,walls,room,on,pick,on,women,of,awake,again,ride,about,time,down,down,stop,at,love,yet,and,for all,the chair,problem,in ,robin,food,nine,table,what,up,went,said,up,more,said,her face,to,turned,by,told,now,heard,down,wife,said,on first dates,down,arms,is,food,you,he,spoke,their signal,gets angry,i,them,her,could,guard,time,to,cat,out,rested,nicest,then,cat,to,said,on,in,all,up,tea,lesson,break,careful,could,said,a,said,here,be,her,come,away,way,house,lip,forward,film,the cafe,hated,bed,stopped,off,arm,what,an hour,was,dead,tea,at,wait,people,a,the ,key,hurt,opened,the,traitors,leave,folk,all,in,had,know,you,his,to,they,to ,to,hour,more,his hands,before,the,come,it,cat,waiting,times,dates,it,a,alone,it'll,she,happy,our,said,hat,gone
+2020-12-17 13:10:27,2020-12-17 13:39:33,IP Address,100,1746,True,2020-12-17 13:39:33,anonymous,EN,TPJZID,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,nothing,scary ,cat,said,put,night,or,away,his,like,stop,the,suspicious ,I,on ,seen,said,flattering,his,I,was,bear,there,her,movements,do,problem,bear,quickly,done,plate,his,door,the,his,the,cake,the,she,cat,fixing,go,said,the,about,myself,in,mum,ran,will,slowly,sad,hit,on,did,the,wet,hide,and,the,hole,do,wall,him,the ,clouds,a ,him,the,she,weak,room,kitchen,on,wash,aid,potatoes,of,still,to ,win,out,person,down,down,stop,at,hate,with,blankly,for,the,size,in,said,or,ten,table,moved,across,watched,nodded ,up,happiness,said,his,that,described,by,said,here,heard,and,idea,said,together,down,arms,shouted,some,what,he,looked,movement,is,or,snakes,the,could,guard,man,to,girl,to,picked,sun,underneath,cat,to,Smith,on,would,all,up,tea,lesson,end,alert,could,sat,a,am,step,be,her,come,their,way,face,lip,to,would,the,was,hands,swam,off,shoulder ,sat,four,was,born,tea,across,love,windows ,cake,his,room,said,open,the,not,go,souls,class,in,had,know,a ,pain,him,was,a,to,hour,to,his,and,a,fight,his,problems,duped,times,dates,stopped,a,with,that,I,warm,here,was,cap,messy
+2020-12-17 13:16:42,2020-12-17 13:39:41,IP Address,100,1379,True,2020-12-17 13:39:41,anonymous,EN,HCOPPU,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,in,not,for,car,said,sighed,I,and,back,his,rather,be,the,embarassed,follow,tea,been,went,effective,the,and,went,understand,by,his,car,not,problem,dragon,at,been,plate,his,door,prison,his,what,money,the,the,boy,I don't know,him,went,the,from,myself,she,friend,get,want,and,that,tell,on,meant,and,about,see,for,the,hole,want,fence,you,of,doing,a,him,a,that,time,space,room,on,bring,aid,a,of,with,it,go,the,time,down,down,location,and,love,but,and,for,the,problem,and,went,bread,last,table,went,across,said,said,beside,to,said,her,that,said,he,said,that,was,and,mum,went,when ,down,arms,said,back,you're,and,saw,danger,has,and,our,he,waited,guard,time,to,dog,with,held,sun,but,man,to,said,on,they,all,up,tea,few,shop,careful,had,walked,some,want,step,be,his,enter,around,hands,ear,lip,to,would,the,would,hands,went,off,chest,listened,all,was,without,tea,at,have,noise,a,the,time,will,closed,the,not,live,people,the,and,had,see,you,his,to,was,been,to,I don't know,to,the,or,the,do,it,job,doing,others,time,said,been,with,to,he,better,one,went,hat,clean
+2020-12-17 13:17:05,2020-12-17 13:40:31,IP Address,100,1406,True,2020-12-17 13:40:32,anonymous,EN,RWRHNN,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Over ,Nit,Confused ,Car,Laughed,Sighed ,Without ,Carefullt,Backwards ,Himself,Walk,Wait ,The,Sad,Follow,And,Cried,Walked ,Colourful ,The ,I,Walked ,Talk,Outside ,Go,Smiles ,Win,Problem ,Bird,Slowly ,Cheated ,Table ,Pockets ,Door,School ,His,Me,Food,Once ,We,Bat,That,Them,Waited ,Hand ,Laughter ,Birds ,Laughed ,Arm,He,Would ,Twice ,Sad,Leave ,It,Did,Stepped ,Right ,Listen ,For,The,Hole ,Go,Wall,Information ,The,Sunshine ,Problems ,Him,Time,For,Time ,Line ,Room,Down,Wash,Aid,Utensils ,Of,Quiet ,There ,Drive,Heavily ,Book ,On,Down,Mothers ,And,Hate,Walk,Constantly ,For,The,Battle ,Befoee,Ran,Food,Once ,Table ,Sighed ,and,Thought ,Spoke ,Still,Attention ,Laughed ,Her,To,Paused ,It,Asked,There ,Answered ,Down ,Hand,Leapt,When,Still,Shirt ,Laughed ,Back,Alfie ,Wine ,Imagined,Cars,Knows,Then,Them,Alfie,Ate,Guard ,Cat,Confidently ,Wolf,Out,Sighed ,Rain ,Then,Dog,Marching ,Left ,On,And,All,Still,Tea ,Trick ,Table,Good,Listened ,Walked ,Drinks ,Cried ,Step,Always ,Her,Enter,Around ,Hands ,Ear,Lip,Home,Time ,Hospital ,Wanted,Hat,Laughed ,Out,Hair,Laughed ,All,Rained ,Married ,Tea ,A,Know,Girl,Food,His,Wheel,went,Open ,The,Loyal ,Know ,Children ,Work,In,Had,Knoe,A,Pain,Conversation ,Once ,Stolen ,Tonight ,Hour,Information ,Himself,But,The,Help,The,Car,Tired,Night ,Dates ,Walked,Alive ,Tomorrow ,All,I,Happier ,Us,Smiled,Hood,Clean
+2020-12-17 12:49:27,2020-12-17 13:42:55,IP Address,100,3208,True,2020-12-17 13:42:56,anonymous,EN,THBXYM,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,her group of friends,sliding box,worried and puzzled,Outside ,Not,Good ,Perfect ,Did,Chilled ,When ,Please ,Towards ,His,Not,Stop,Her,Gaunt ,Follow ,Shakily ,Used,Hasn’t ,Interesting ,His,We ,Had ,Stand ,There,Me,Guns,Disappear ,Anger ,Dragon ,Warm,Cheated ,Meat ,The,Door,Camp,The ,This,Information ,The ,Done ,End,Will ,Her ,Couldn’t ,Control,My ,Him,She ,Mother,Watched ,Am,Thoroughly ,Bad ,Jump ,It,Wasn’t ,Because ,Perfect ,Me,And ,His ,Hole,Do ,Wall ,Me,Of,Him ,Been ,Not ,Peace,He ,Rod ,Bounds ,Bathroom ,On ,Bring ,Aid ,His ,Of,Still,To ,Fight ,His ,Baby,On,Down,Light ,Quickly ,Am,That ,Hypnotized ,For,The,Fun ,While,Is,With,Noon ,Section ,Hates,Angrily ,Turned ,Shrugged ,Still,Alphabetical ,Ia,My,He ,Was ,By ,Told ,When ,Answered ,And ,Brother,Can’t ,Normally ,Down,Pants,Can’t ,Some ,Don’t ,Vodka ,Thought ,Enemies ,Often ,And ,The ,Slowly ,Watched,Gaurd ,Woman ,To ,Worst ,Home,Kneeled ,Background ,With ,Last ,To,Brings ,On ,Yesterday ,All ,Tall ,Tea ,New ,Next ,Careful ,Could ,Isn’t ,A ,Haven’t ,Step,Be ,Him ,Come ,Towards,Way ,Face,Lip ,Went ,Wouldn’t ,Heaven ,Wasn’t ,Head ,Will,Thin ,Arms ,Will,Completely ,Could,Done ,Of ,Excitedly,Love ,Glass,Something ,The ,Tire ,Is,Open ,The ,His,See ,People,All ,Wildly ,Had ,See,Fun,The ,Him,You,To,To ,Hour ,More,His,Or,The ,Fix,His,Problems ,Good,Times ,Base,Stop,Such ,With ,She ,She ,Calm,Me ,Was ,Hat,Empty 
+2020-12-17 13:17:52,2020-12-17 13:43:20,IP Address,100,1528,True,2020-12-17 13:43:20,anonymous,EN,CMPNZZ,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,beneath,not,after,master,heard,cried,then,and,towards,his,expect,hold,the,sheepish,and,lit,gone,said ,convenient,his,we,asked ,believe ,there,him,reactions,live,problem,dragon,slowly,a,side,the,door,africa,his,for,than,the,I,last,but ,it,waited,the,me,myself,then,face,he,wish,of,ill,kill,his,meant,and,loose,the,but,his,hole ,want,wall,you,of,inviting,hurt,him,a ,that,details,perimeter,room,up,take,up,the,of,inside,happily,hear,his,day,on,upon,meeting,on,love,but,intently,for,his,problem,but,wanted,but,eight,table,laughed,across,stood,said,up,to,was,her,that,was ,directly,said,here,was,down,face,wanted,when,alone,hands,said ,a,that,but ,walked,the,he,he,the ,they,could,guard,time,to,boy,to,put,fire,but,clown,watching ,called,on,by,all,in,tea,lesson,end,quiet,could ,wondered,a,want,step,be,his,enter,around,hands,ear,lip,to,bit,the,wasn't ,hands,said,out,hair,wanted,three,should,here,tea,at,have,crowd,a,his,key,is,open,the,usually,hear,beasts,that,in,had,know,you,to,to,once,nothing ,to,hour,to,his,but,wood,fight,the,past,through,other,dates,the,allowed,with,that,they,how,me,wanted,hat,cleared
+2020-12-17 13:10:48,2020-12-17 13:43:47,IP Address,100,1979,True,2020-12-17 13:43:48,anonymous,EN,YDWOJR,stop the car at the edge of the road,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Is,Leave ,Groovy,End,Walked,Cried,As,Now,Down ,Again,Need,Aye,The,Shaken,Follow,Quickly ,Heard,Was,Serious ,The,People ,Did,Wait,Ther,His,Bullets,Behave,Problem ,Man,Slowly ,Left,Tabke,Water,Door,The,His,Carefully,Help,The,They,End,Problems ,There,Speaks,The,Soon,You,Lovingly ,Eyes,Ran,Left,Thoroughly ,Sad,Leave,The,Lost,Quietly ,Perfect ,Speak,And,His,Hole,Leave,Bourgeoisie,The,Of,You ,Problems ,Work ,Strength ,Again ,Horses ,Walls,Sea,On,Leave,Aid,Meth,Of,Safe,Again ,Fight,Low,One,On,Down ,Destination ,Again ,Can’t,Flows,Pensively,Then,Them,Battle ,Silently ,Runs,Anymore,6,Chair,Addams ,Again,Dug,Helped,Uo,Us,Willis,Me,To,Spoke,Silently,Then,To,Was,On,Arms,Ran,More,Down,Arms,Smells,Some,Me,Alcohol ,Listened,Trouble ,Has,We,The,He,Could,Guard,End,Better,End,Hone,He,Sun,To,End,Walking,Spoke,Unnecessarily,But,All,Up,Tea,Lesson,Moment ,Happy,Was,Walks,His,Nap,Step ,Be,Them,Move,Blue,Hands,Hands,Lip,Down,Rocks ,The,Danced,Head,Laugh,Open,Shoulder,Shelby,Weekly ,Is,Dead,Tea,To,Walk,People,Anything ,The,Room,Will,Open ,Tables,Scared,Leave ,People,Noon,To,Had,Know,Faith,Agony,Him,Is,Fought,To,Hour,To,Quickly ,And,The,Walk,The,Issues,Busy,Times,Watch,Shakespeare ,Gone,With,No,Only,Rough ,There,Walked ,Helmet,Cleared
+2020-12-17 13:27:27,2020-12-17 13:44:14,IP Address,100,1007,True,2020-12-17 13:44:15,anonymous,EN,TYUABG,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,beneath,not,fine,dark,was,thought,when,and,forward,his,rather,why,the,green,and,on,been,is,flattering,his,I ,is,believe,there,her,eyes,be,problem,man,all,not,table,his,door,prison,his,me,time,the,I ,duck,fixing,us,White,trouble ,what,you,who,pockets,see,like,at,good,leave,a,did,then,visible,help,but,the,hole,think,wall,us,of,you,issues,him,strength ,that,rod,boundary,room,up,knock,aid,the,of,home,with,feel,his,time ,down,out,appointment ,on,love,but,and,never,the,problem ,but,Walkden,or,home,desk ,watched,across,thought ,said,up,to,Wayne,her,that,spoke,by,cried,next ,could,on,wife,looked,on,down,towel,is,some,why,but,drank,the,has,let’s ,them,anyone,pondered,guard,time,to,woman,and,cried,dark,at,treehousr,standing,is,on,and,all,up,tea,song,weekend,quiet,could,was,a,would,step,be,her,enter,around,body,face,lip,home,wouldn’t ,the,loved,head,cried,short,hair,is,everywhere ,wasn’t ,home,coffee,creepily ,not,man,a,the,room,doesn’t ,open,the,cowards,find,devils,that,and,liked,see,a,her,to,was,pride,to,hour,more,his,and,into,fight,the,life,good,others,dates,is,not,with,that,we,happy ,me,is,hat,gone 
+2020-12-17 13:04:31,2020-12-17 13:44:47,IP Address,100,2415,True,2020-12-17 13:44:47,anonymous,EN,BBUNQN,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,beneath,didn't,in,hobbit,hated,placed,Brian,and,forward,today,not,stop,the,wet,follow,defiantly ,seen,opened,affordable,the,we,joined,stand,still,Claire,signals,help,tendency,giant,with,aids,table,his,door,Greece,his,what,than,the,we,dragon,helping,it,waited,his,the,myself,his,bottom,watched,woke,splattering,lonely,scream,it,knew,and,right,play,nothing,his,grave,do,wall,us,of,our,a,him,strength,Barbie,expense,perimetre,bar,up,wipe,aid,women,of,awake,till,see,his,story,lovingly,down,home,hard,hate,but,paint,for,the,problem,silently,wasted,when,stupid,table,danced,across,shuffled,said,hesitantly ,a,hurled,her,that,blew,he,left,that,answered,pivotting ,hands,went,on,opposite,laundry,Woodward,a,who,sometimes,ejaculated,mistakes,when,let,French,John,could,guard,party,to,first,out,urinated,morning,yesterday,way,walking,grimaced,on,the,all,in,wotsits,language,weekend,on,would,wanted,a,started,step,be,me,come,around,way,ear,lip,out,would,the,should,penis,climbed,emos,shoulder,sat,all,is,expected,tea,at,start,girl,dinner,his,room,is,open,her,legless,survive,children,we,flamboyantly ,bought,know,a,Spanish,surgery,were,aids,to,eon,to,his,but,the,fuck,his,problems,through,others,dates,broke,really,though,no,only,boobs,now,began,hat,stacked
+2020-12-17 13:13:51,2020-12-17 13:45:14,IP Address,100,1882,True,2020-12-17 13:45:15,anonymous,EN,KSCNQH,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,not,good,next,liked,relaxed,I,and,towards,his,not,welcome,the,worse,follow,on,died,was,common,the,he,was,think,by,him,faces,be,habit,man,with,changed,fire,his,door,prison,his,how,time,the,he,next,helping,the,was,the,the,myself,she,hands,find,am,frequently,hurt,walk,the,was,and,visable,find,and,the,few,do,wall,his,of,letting,sometimes,him,a,for,time,gate,room,up,eat,aid,his,of,overnight,in,fight,the,one,in,down,stop,and,know,it,and,for,the,battle,so,was,or,eight,table,was,across,decided,said,up,be,was,her,about,was,by,said,the,answered,and,day,was,on,down,arms,was,the,how,and,thought,how,smokes,and,them,he,could,guard,time,to,time,out,sat,inside,yesterday,next,to,was,on,earlier,all,in,tea,lesson,end,prepared,knew,was,a,am,step,be,everyone,come,out,hands,face,lip,training,would,the,had,head,were,out,shoulder,was,all,was,arriving,tea,at,like,screamed,a,his,keys,he,open,the,going,know,people,all,and,had,know,a,his,to,was,to,to,hour,to,his,and,another,ask,it,problems,here,times,dates,was,going,with,to,only,pleased,now,was,hat,stacked
+2020-12-17 13:01:17,2020-12-17 13:46:49,IP Address,100,2731,True,2020-12-17 13:46:49,anonymous,EN,INFVNK,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,nothing,forward ,end,wants,sighed,did,and,towards,yesterday ,like,what,the,sad,it,on,been,will,comfortable ,the,she,sleeps,sleep,watching ,go,lies,dream,large,man,slowly,changed,table,his,door,prison,the,what,chance ,the,he,End ,will,it,please,the,what,someone,laughing ,clothes,see,wish,and,upset,go,on,did,and,right,see,for ,the,tunnel,try,wall,us,of,you,a,some,some,he,time,lines,room ,up,get,aid ,too,than,up,there,go,his,and,down,on,stop,calmly,know,it,together,for,the,story,and,can,in,seven,table,didn't ,and,told,said,silently,some ,said,her,will ,did,he,explained ,that,was,on,body,did,at,down,arms,didn't ,some,what ,and,thought,the,eats ,then,see,she,could,guard,end ,to,End,later,walked,picture,down,one,to,can ,on,he,all,at,coffee,lesson,end,aware,was ,sleeps,some,Love,step,be,the,go,around,hands,dream,lip,to,would,see,was,head,will,short,arms,please,two,was,married,tea,at,like,tears,cake,the,key,did ,open,the,disloyal ,behave,souls ,it,to,had,hear,some,pain,to,is,grown ,to,hour,to,his,so,the,see,down,job,served,bathtime,dates,will,smile,with,it,you,relieved ,your,dreams,hat,full
+2020-12-17 13:24:38,2020-12-17 13:46:52,IP Address,100,1334,True,2020-12-17 13:46:53,anonymous,EN,QVRBSS,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Behind,Not,Out,Dog,Said,Ate,Step,And,Towards ,His ,Not,Stop,The,Shifty ,The,On,Seen,Said,Convenient ,A,I,Ate,Think,Alone,Himself,Lights ,Buy,Drinking,Bird,Quickly,Missed,Table,His,Door,School,His,Me,Money ,His,She,Man,Will,Me,Spoke ,The,Whether,A,And,Mum,Placed,Love,Thoroughly ,Scared,Kill,Down,Did,And,Long,See,For,His,Hole,Try,Wall,You,Of,You,Issues,Him,Strength,That,Last,Lines,House,On,Brush,Aid,Her,Of,Out,It,Cycle,His,Man,On,On,Opportunity ,At,Will,Tall,Together,Take,The,Truth,With,Asked,Water,Nine,Table,Spoke,Across,Thought ,Asked,Still,To,Sat,Him,That,Smiled,By,Asked,Here,Was,On,Mum,Said,Together ,Alone,Hands,Asked,Cake,Her,Wine,Walked,Intruders ,Has,Then,The,Anyone,Contemplated ,Guard,Man,To,Man,Swimming ,Spoke,Garden,Whilst,Man,Waiting,Nodded,On,By,All,Outside,Tea,New,End,Quiet,Had,Spoke,His,Love,Step,Be,Her,Enter,Up,Hands,Face,Lip,Home,Would,The,Loved,Hands,Talked,Quickly,Chest,Spoke,All,Was,Gone,Tea,At,Wait ,Woman,Some,Thr,Bed,Told,Open,The,Not,Live,Children,That,And,Drove,Think,You,His,His,Were ,Reacted,To,Hour,To,His,And,Metal,Clear,It,Life,Speaking,Times,Dates,Said,Waiting ,With,That,You,Happy,My,Sat,Hat,Collected
+2020-12-17 13:04:58,2020-12-17 13:47:07,IP Address,100,2529,True,2020-12-17 13:47:07,anonymous,EN,WBCLLP,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,her lack of interest in anything,sliding box,worried and puzzled,in,not,for,mouse,cried,watched,please,and,back,and,apprechiate,stop,the,pale,car,then,spoken,is,happiest,the,david,lied,move,there,go,reaction,see,nasty,man,all,gone,side,the,door,deal,his,what,money,the,its,dog,ing,me,walter,the,me,him,then,body,then,lied,then,old,call,his,did,to,in,see,and,his,hole,try,wall,him,of,you,no,them,help,on,time,line,door,on,dry,off,it,of,awake,happily,ride,his,time,in,down,house,for,dont,captain,all,for,a,problem,but,went,or,morning,table,ran,and,smiled,said,up,to,shouted,my,why,is,by,i,then,came,and,mother,loved,like,staring ,money,went,your,me,before,watched,the,smokes,what,you,he,could,guard,truth,to,car,over,sat,mirror,and,end,to,drew,on,he ,all,up,juice,lesson,end,quiet,could,is,time,wish,and,be,his,enter,in,way,ear,lip,to,would,the,loved,pen,are,up,chest,was,all,was,queen,tea,hello,always,whole,tea,the,seat,will,open,the,weak,get,soul,tea,and,drive,see,a,pain,to,is,hit,to,hour,to,his,and,another,carry,it,issues,to,others,dates,was,about ,later,stop,you,good,me,whispered,hat,in
+2020-12-17 13:18:11,2020-12-17 13:47:08,IP Address,100,1736,True,2020-12-17 13:47:08,anonymous,EN,ITTDSS,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,not,for,ugly,jumped,sighed,night,home,toqards,his,try,hi,the,shocked,hello,and,seen,slept,lovely,his,stank,wept,stand,nect,rip,hands,not,temper,dragon,whilst,left,tabld,his,door,prison,his,my,sugar,hast,he,husbad,helps,me,smiled,the,dolphins,birds,as,eyes,waved,never,wiht,hurt,jump,doen,knew,slowly,balding,of,all,the,hole,worry,wall,you,of,running,tempers,him,a,he,time,line,room,up,close,up,every,of,up,free,hear,his,word,down,down,job,and,hate,shape,thinking,for,the,battle,master,yelped,seed,noon,crate,was,gentyly,kissed,looked,hello,hugs,smiled,her,to,shouted,by,cried,last,could,comfy,friemds,opened,know,up,arms,sung,tea,bo ,beer,watched,ghosts,farts,look,wave,the,could,guard,end,to,end,out,hurt,wind,as,jumpr,thinking,gulped,angrily,and,all,at,tea,lesson,side,here,was,was,a,hate,step,be,mum,go,back,hands,face,lip,on,would,pub,was,leg,knew,up,arms,shouted,all,walked,a,tea,as,know,gull,sweets,ground,tyre,to,open,wiped,funnyh,go,cats,life,and,had,know,a,the,food,he,never,licked,short,to,his,a,a,hug,the,mum,let,hia,dates,helps,there,baths,she,i,happy,now,ran,hat,empty
+2020-12-17 13:17:00,2020-12-17 13:48:23,IP Address,100,1883,True,2020-12-17 13:48:23,anonymous,EN,EYNUSE,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Between,Not ,Smart,Truck,Moaned ,Breathed,Did ,While ,Towards,His ,Not ,Thanks,The ,Flustered ,The ,On,Seen,Said ,Exciting ,The ,I ,Never ,Wait ,By ,Me,Reactions,Take ,But ,Bear,Neat,Seen ,Plate,His ,Gates,Prison ,The ,How ,Time ,A ,He ,School ,Or ,Me,Can ,Car,The,Myself,How,Name ,See,Love,After,Sorry ,Kill ,His ,Did ,Whilst ,Lovely ,See,And ,The ,Hole ,Mind ,Wall,You ,Of ,Marrying ,Anxiety ,Not ,Some ,That,Time ,House,Sauna ,Up ,Lock,Aid ,Tools ,Of ,Late ,It ,Feel ,A ,Time ,In ,Aside ,Stop ,Next,Love,Be ,Of ,For ,The ,Story ,Before ,Said,Feelings ,10,Table ,Said ,Crossly ,Stretched ,Said,Still ,More,Said,His,To ,Abruptly ,By ,Said ,Now,Could ,On ,Name ,Lied ,On,Down ,Paper,Told ,Some ,That,Wine ,Saw,Any ,Eats,Please,The ,Standing ,Could ,Guard,Time ,To ,Boy ,Our ,Brushed,Sun,Weren’t ,Bear,To,Please,On,So ,All,Up,Tea,New,End ,Careful ,Could ,Looked ,A ,Hate,Step ,Be ,His ,Move ,Left ,Way ,Face ,Lip ,To ,Would ,The ,Couldn’t ,Hands ,Shared,Up,Hands,Lied,Years,Rained,Home ,Coffee,At,Never ,Dogs,Lunch ,The ,Tyre ,Had,Open ,The ,Not ,Believe ,Women ,That ,With,Had ,Know ,A ,His ,To ,Were,Been,To,Hour ,To ,His,Before ,The ,Watch ,The,Dog,Sailing ,The ,Dates ,Saw,Getting ,With ,She ,Only ,Happy ,Me ,Loved ,Glasses,Dirty 
+2020-12-17 13:10:12,2020-12-17 13:48:48,IP Address,100,2316,True,2020-12-17 13:48:49,anonymous,EN,DUGXUA,stop the car at the edge of the road,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under ,Not ,extremely ,family,thanked,asked,Step,as,on,His ,Not,Stop,Her,Sheepish ,you,On,Text,loved,common,His ,I ,Clearly  ,Express ,under,the,Signal ,Never ,drinking ,tree,quickly ,not,Kitchen ,Pocket ,Door ,prison,His,how,Water ,his ,she,Women ,That,Us,Thanked ,His ,how ,Myself ,Whilst ,mind ,instantly , Said ,Hard,Dizzy ,Jump ,His,Meant ,him ,Mesmerising ,listen,From,the ,photo ,Wish ,wall ,good,His ,You ,become ,you ,Strength ,that ,Thoughts,Circle ,room,Up ,invite ,Aid ,Her,of,longer,to ,cycle,his ,word ,down,down,job,At ,Love ,But ,Wondering ,Step,His,man ,during ,laughed ,Because ,Noon ,Table,Told ,Angrily ,decided ,Shouted,his ,deserts ,Ate,Davids,He,proudly ,by ,tried ,Step,heard ,And ,Mother ,thought,whilst,At,Laundry ,Crossed ,Some ,How ,however ,Said ,Their ,He ,then,sir,The ,Read,guard ,dog ,to ,princess ,out,stood,rain,When,children ,to,spoke ,on ,then,last,Up,Milk ,few,party,A,could,Liked,His,wished,Step ,Be,her ,Enter ,Around,hands ,face ,Lip,Inside ,Chapter ,Collect,Couldn’t ,Head,whispered ,however ,Shoulder ,Held ,For,Was,Pregnant ,tea,And,risk ,woman,Some ,his,space ,We,Opened ,The,Not ,see ,children,the ,and,Owned ,question ,You,the,Supper ,Were ,Strength ,To ,Hour,to,His ,Because ,the,match ,The ,Divorce ,Caught ,Times,dates,was,Very ,with,it,i ,happiness ,everyone ,said ,Cap ,now 
+2020-12-17 13:15:18,2020-12-17 13:49:08,IP Address,100,2029,True,2020-12-17 13:49:08,anonymous,EN,UHBSOC,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,her lack of interest in anything,sliding box,worried and puzzled,under,nothing,handsome,end,looked,looked,it,and,towards,his,not,what,and,amused,please,and,his,decided,attractive,the,we,can't,fathom,still,the,lead,not,problem,dragon,till,to,table,his,door,the,his,for,time,the,look,end,ing,us,looked,the,nothing,him,before,hands,be,can't,of,amused,leave,away,meant,and,so,hear,and,his,hole,care,wind,chase,the,selling,a,happen,strength,for,time,line,the,up,record,up,his,of,away,to,drive,his,dance,bars,across,destination,away,cannot,but,and,for,the,problem,while,columbus,and,noon,table,pondered,and,sighed,laughed,still,to,looked,my,he,arose,he,said,when,was,and,mother,looked,when,on,cards,the,some,I,but,saw,my,he,it,the,he,could,guard,woman,to,man,meet,rested,face,with,time,to,decided,on,and,all,still,tea,lesson,weekend,proud,could,decided,his,can't,step,be,me,come,away,seat,sleep,lip,to,would,his,could,hands,looked,off,chest,Shelby,half,can't,incumbent,tea,and,not,people,food,his,shifts,looks,of,the,confused,arrive,people,the,and,we,cry,to,his,to,there,nothing,to,hour,to,his,and,another,date,his,problems,over,others,dates,the,not,with,to,you,happy,the,rose,shirt,looking
+2020-12-17 13:15:43,2020-12-17 13:50:02,IP Address,100,2058,True,2020-12-17 13:50:02,anonymous,EN,LJMOJG,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,charged with a serious offence,an integrated human-machine system,at its peak of success,her lack of interest in anything,sliding box,worried and puzzled,Under,Hear,Happy,Same,Is,Smiled,Afternoon ,For,Back,His,Rather,Hello,The,Relieved,Follow,And,Sex,Has,Common,The,I,Could,Sleep,In,Out,Reaction ,Be,Problem ,Bear,Straight,Changed,Plate,His,Door,Work,The,Yhis,Space,The,She,Night,Here,Get,Dear,The,Me,Than,Mary,Face,Sighed,Love,With,Sad,Run,Down,Meant,Him,Shining ,Hear,Now,His,Hole,Dare,Wall,Us,Of,Making,A,You,Strength,That ,Keys,Lines,Room,Up,Close,Aid,Socks,Of,Awake,To,See,Open,Day,Down,Out,Stop,On,Can,Sailor,In,For,The,Time,Against ,Said,Song,Home,Table,Is,In,Smiled,Asked,Still,To,Is,From,Stories,Smiled,Just,Said,Yesterday ,Was,And,Day,Is,Normally ,Down,Chair,Cullen,Back,Who,Alcohol ,Saw,The,He,Then,Him,He,Could,Gaurd,Time,Again,Cat,There,Cast,Wind,Today,Dog,Marching,Will,On,He,All,Up,Tea,Lot,End,Aware,Could,Went,A,Like,Step,Be,Her,Enter,Around,Way,Ear,Lip,Shopping ,Would,The,Was,Hands,Are,Out,Arms,Did,Hours,Is,Home,Coffee,To,Sit,Screamed,Chocolate ,His,Keys,Likes,Closed,The,Scared,Return,Kids,It,To,Saw,Know,You,His,Already,Was,To,Today,Hour,Air,His,Ago,Bricks,Helo,It,Shoes,Here,Most,Dates,Was,Not,Later,That,You,Happy,Now,Is,Hat,Here
+2020-12-17 13:09:30,2020-12-17 13:50:29,IP Address,100,2459,True,2020-12-17 13:50:30,anonymous,EN,COSFNB,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,cupboard to keep things cold,worried and puzzled,under,not,nice,children,laughed,cried,so,and,closer,his, rather,stop,the,flustered,vehicle,safely,died,sat,exciting,the,she,tried,stand,there,russel,signal,do,problem,demon,slowly,to,table,his,door,prison,chest,your,time,the,I,second, time,me,placed,his,me,you,and,name,hide,dare,in,sad,kill,the,did,his,wild,see,and,the,hole,bother,tree,me,of,the,never,you,a,that,time,boundaries,woods,up,say,aid,amazon,of,up,to,drive,his,person,in,down,appointment,at,hate,so,and,for,the,problem,to,robin,water,seven,log,could,and,dug,nodded,up,quietly,was,his,he,was,he,said,to,could,down,name,stared,on,down,arms,washed,some,what,but,turned,aliens,he,you,the,being,could,guard,end,to,children,swimming,waved,picture,together,children,humming,once,on,he,all,up,tea,lesson,start,careful,could,never,time,hope,step,be,anyone,enter,up,hands,ear,lip,to,would,the,never,head,never,in,chest,never,six,wasn't,his,tea,at,never,officer,some,his,car,better,repaired,the,dead,see,people,we,of,had,know,you,his,to,was,to,to,hour, to,his,before,by,do,his,periods,on,others,dates,never,trying,so,that,only,his,now,listened,hat,clean
+2020-12-17 13:12:50,2020-12-17 13:50:57,IP Address,100,2286,True,2020-12-17 13:50:58,anonymous,EN,WGMJDY,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Underneath,Not,At,Morning ,Mentioned,Cupped,I,And,Towards,His,Rather,Stop,The,Perplexed,Find,On,Opened,Looked,Quiet,The,We,Called,Handle,There,Out,Children ,Behave,Problem,Dragon,All,Done,Table,His,Door,See,His,What,Money,The,She,Next ,Ing,Ne,Stopped,His,What,You,She,Mum,Continued,Do,In,Sick,Hurt,His,Meant,His,Hanging,See,For,The,Hole,Do,Tree,Me,Of,Him,A,Him,A,For,time,Barrier,Back,On,Mention,Aid,His,Of,Awake,To,Ride,The,Person,On,Next,Customer,On,Can,With,Aghast,For ,The,Trouble ,And,Walked,Any,Six ,Chair,Looked,Across,Told,Said,Firmly ,To,Looked,her,About,Bellowed,Bu,Said,And,Came,And,Game,Walked,When,At,Arms,Has,Some ,They,Alcohol ,Walked,Anything,Doesn’t ,She,Those,And ,Could ,Guard,Important ,To,Day,With,Put,Mirror ,Under,Outside,To,Appeared,On,Then,All,Up,Peppermint ,Lesson,Race,Cautious,Had,Noticed ,His,Believe ,Step,Be,The,Come,Up,Hands,Face,Lip,To,Would,The,Was,Head,Came,Open,Shoulder,Didn’t ,An,Could,Awake,Tea,Widely,Keep,Gates,A,His,Key,Can,Open,The,Loyal ,Have,Kods,That,In,Had,Notice,You,His,To,Was,Won,To,Hour,To,His,When,Another,Deliver,It,Worries,Walking,Times,Dates,Jumped ,Not,With,It,I,Instantly,His,Said,Hat,Piled
+2020-12-17 13:02:04,2020-12-17 13:51:02,IP Address,100,2937,True,2020-12-17 13:51:02,anonymous,EN,WOXTKI,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,almost,nothing,good,dog,works,wept,son,again,backward,again,scream,ouch,loudly,puzzled,then,swiftly,died,gyllenhaal,attractive,top,apart,didn't,believe,there,go,vehicles,fight,problem,village,alone,gone,table,mud,door,prison,his,this,time,midday,finished,cat,working,go,white,trouble,more,myself,lovingly,friends,ran,know,thoroughly,annoyed,scream,out,cried,her,shaven,see,again,his,grave,worry,wall,cash,quietly,you,chirosis,good,drugs,again,birds,boundary,door,off,run,on,heroin,though,alone,here,ride,wildly,dawn,down,down,friends,abruptly,can,barge,silently,again,top,story,quietly,wallace,anymore,noon,table,Griffin,again,cried,said,strong,everything,Banner,soon,already,spoke,silently,shouted,now,answered,abruptly,father,ran,then,silently,arms,cullen,wine,though,alcohol,spoke,cars,all,then,them,breakfast,could,guard,finale,properly,only,swimming,fell,car,again,house,smoking,cried,unfairly,again,all,up,tea,bit,weekend,aware,waited,slept,time,know,step,though,Tracy,enter,around,hands,face,lip,home,could,work,died,head,left,short,shoulder,cried,days,rained,home,coffee,happily,cry,dogs,food,illness,car,owes,open,top,scared,know,fools,all,aggresively,had,know,it,indian,food,has,problems,later,hour,more,blind,again,another,build,it,problems,shopping,home,dates,shakespear,dead,together,that,only,warm,around,died,hat,dirty
+2020-12-17 13:12:02,2020-12-17 13:52:28,IP Address,100,2425,True,2020-12-17 13:52:28,anonymous,EN,KSHCJN,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Beneath,Respond,Forward,Train,Freaked,Smiled,After,And,Towards,On,Suggest,That,The,Embarrassed,Mode,And,Been,Ran,Pretty,Th,Was,Walked,Begin,Behind,Off,Reaction,Run,Bad,Person ,Straight,Nothing,Table,Slowly,Window,Camp,His,What,Information,Last,Over,End,About,The,Walked,The,What,Him,And,Car,Never,Can,Before,Instant,Take,Down,Really,Took,Visible,Witness,For,The,Hole,Want,Wall,The,Of,That,Always,Make,Strength,Everything ,Birds,Walls,Shop,Off,Pack,Aid,Special,Of,Around,Another,Cycle,His,Time,Inside,On,House,Astride,Secret,A,For,For,Down,Story,Wishing,Began,Seed,Sunrise,Table,Gave,Awkwardly,Offered,Wimked,His,It,Worked,Light,Because,Was,Asked,Nobody,That,Heard,And,Name,Breathed,When,Wearily,Shirt,Is,Back,How,But,Heard,Holes,Struggled,That,The,Anyone,Possibly,Guard,Time,About,Mechanics,Over,Bowed,Photo,When,Opening,Polishing,Sat,On,He,All,Infront,Coffee,Valuable,End,Cautious,Could,Believed,Peace,Believe,Step,Be,The,Enter,To,Hands,Ear,Lio,Received,Would,The,Would,Head,Ran,Short,Chest,Woke,A,Terrified,Alone,Coffee,Whilst,Go,Room,Something,His,Tyre,Was,Erected,The,Rebelling,Be,Children,Everyone,To,Were,Know,Hope,Angony,Many,Once,Hit,To,Hour,To,His,When,Behind,Greet,His,New,Together,Times,Dates,Travelled,Always,With,Over,Heather,Safe,Here,Believed,Helmet,Stacked
+2020-12-17 13:13:22,2020-12-17 13:52:49,IP Address,100,2366,True,2020-12-17 13:52:50,anonymous,EN,XEUZYB,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under,Not,For,Brown,Said,Cried,Shelly,And,Forward ,His,Not,I,Her,Frumpy,Follow ,On,Heard,Was,Ideal,A,I,Said,Fathom,There,His,Signal,Not,Bad ,Man,At,Changed,Table,His,Door,The,His,My,Money ,The,I,Broach,Points,Us,Was,The,Why,Myself,Sarah,Eyes,Told,Am,Thoroughly ,Tired,Leave,My,Meant,And,Messy,Our,Days,His,Beer,Want,Wall,Us,Of,You,A,Me,A,He,Change,Boundaries ,Bar,On,Eat,Aid,A,Of,Away,It,See,His,Day,On,On,Game,At,Am,Like,Wondering ,For,A,Battle,He,Is,I ,Noon,Table,Said,And,Drank,Said,Beside,Food,Died,My,He,Lied,He,Said,Last,Could,And,Mom,Said,In,Down,Napkin,Lied,A,Who,And,Thought ,The,Can,I,Words,He,Could,Guard,Cat,About,Box,To,Cried,Stranger,She,Brown,To,Said,Of,Just,All,Up,Tea,Language ,End,Careful ,Could,Is,A,Am,Step,Be,Her,Come,Around,Church,Face,Lip,To,Would,Thw,Had,Arm,Waited,Off,Chest ,Is,A,Began,Gone,Tea,To,Wait,Crowd,A,The,Tire,Will,Open,The,Weak ,Live,Desolate ,All,In,Had,Assume ,A,His,His,Is,ADHD,To,Minuite,To,His,When,A,Take,The,Drama,Away,Best,Dates,Laughed ,A,Today,He,I,The,You,Said,Hat,In
+2020-12-17 13:14:41,2020-12-17 13:53:46,IP Address,100,2344,True,2020-12-17 13:53:46,anonymous,EN,MHVIOA,get off the ground suddenly,has no free time,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,And,Not,Good,Man,Held,Sighed,Please,Please,Forward,But,Not,What,The,White,And,On,Been,Please,Cozy,The,I,Went,Stand,Alone,Him,Movement,Not,Temper,Man,Straight ,To,Table ,His,Door,Hospital,His,Out,Food,The ,We,Mouse,About,Me,Went,The,Me,Myself ,He,Mum,Fell,Am,Throughly ,Lonely ,Leave,It,Meant,And,Lovely,The,And,The,Biscuit,Be,Bully,Us,Of,You,A ,Us,Strength,He,Fool,Room,Room,On,Check,On,Every,Of,Quite,With,Ride,Around,Sound,On,Down,Home,Quicky,Love,But,And,For ,The ,Battle ,But,Moved,Or,8,Chair,Has,Crossly,Smiled,Said,Still,To,Dickinson ,Her,To,Spoke,By,Said,Yesterday ,Heard,And,Name,Went,Normally,Down,Clothes,Please,Back,I,But ,Moved,Bugs,Can,Where,Then,Her,Could,Guard,Show,To,Girl,Out,Sighed,Inside,And,Boy,To,Has,On,He,We,Strong,Tea,Lesson,Weekend,Careful,Could,Walked,A ,Love,Step,Be,Her,Enter,Around,Hands,Ear,Lip,Home,Would,The,Had,Head,Are,Off,Arms,Looked,An,Will,Home,Tea,And,Like,Window,Something ,The,Room,Fixes,Open,The,Very,Cope,Souls,All,Wildly,Had,Worry,You,His,Help,Are,No,To,Evening,To,His,But ,Posts,Find,Off,Mother,Here,Others,Dates,Hello,A,With,She,You,Happy,Me,Is,Hat,Clean
+2020-12-17 13:17:47,2020-12-17 13:54:13,IP Address,100,2185,True,2020-12-17 13:54:13,anonymous,EN,FOHQMP,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under,Not,At,Next,Says,Talked,When,Everywhere,Backwards,His,Like,Not,The,Worse,Follow,And,Collapsed,Is,Easy,The,They,Will,Believe,Naked,Out,Next ,Learn,Lot,Knight,Slowly,Had,Plate,His,Coffin,The,His,What,Of,The,He,Next,That,It,Ran,The,The,You,I,Eyes,Turned,Like,After,Like,Leave,Them,Believed ,And,Visible,Speak,Period,The,Trench,Do,Wall,Everything,Of,Her,Bad,Us,A,That,Last,Building,Spiderweb,Up,Get,Aid,His,Of,There,Again,Cycle,Hard,Thing,In,Beside,Coffee,Next,Don't ,It's ,In,For,The,Problem,Not,Robin,Any,Seven,Seat,Went,And,Told,Said,Still,Something,Went,Him,I,Listened,He,There,When,Was,Down,World,Would,When,Quietly,Arms,Would,Back,Her,Every,Coughed,Spiders,Smokes,Let's ,Them,He,Thought,Guard,Pope,To,Next,With,Stepped,Photo,When,Coffin,On,Blushed,On,When,All,Up,Coffee,New,End,Careful,Knew,Would,A,Want,My,Always,Her,Open,Around,Hands,Ear,Lip,Home,Would,The,Would,Hands,Are,Up,Shoulder,Went,Two,Screams,Getting,Hot,Convincingly,Go,People,A,His,Room,Is,Open,His,Dead,Known,Peasants,His,To,Drove ,Stare,You,His,To,There,To,To,Afternoon,Her,His,Every,The,Kill,It,Family,Here,Times,Dates,Screamed,Going,With,That,She,Happy,Me,Cried,Hat,Collected
+2020-12-17 13:19:13,2020-12-17 13:58:40,IP Address,100,2366,True,2020-12-17 13:58:41,anonymous,EN,MUFXTG,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,through,not,like,only,walked,waited,night,or,forward,his,prefer,to,the,worse,the,gently,had,the,aesthetically,his,we,walked,comprehend,outside,you,dirty,do,bit,man,all,brought,plate,his,gate,the,his,the,than,the,we,price,resolving,bygones,the,the,the,myself,all,cat,warned,despair,thoroughly,anxious,quit,the,really,and,a,learn,at,the,shallow,touch,pole,you,of,you,a,you,strength,beyond,stupid,bounds,bar,up,make,aid,scissors,of,quiet,this,fight,the,rule,down,across,appointment,slowly,love,underwhelming,of,for,the,battle,manage,can't,at,7:30,table,May,impatiently,called,warmly,up,to,went,nothing,that,rose,menacingly,left,when,heard,deep,hands,thought,when,motionless,newspaper,Woodward,some,what,but,wondered,any,that's,now,the,thinking,could,guard,thing,without,trouble,out,offered,window,when,only,to,left,on,which,all,up,cocoa,harsh,end,prepared,was,waited,a,want,step,be,the,enter,over,ways,face,lip,to,wouldn't,the,was,clearly,ran,in,chest,was,four,doesn't,too,coffee,to,of,trees,a,the,ticket,will,open,the,fed,hear,sods,dark,in,drove,know,you,agony,to,is,an,to,evening,the,the,but,the,take,his,plan,expecting,others,dates,just,a,with,not,only,contented,me,asked,hat,still
+2020-12-17 13:18:37,2020-12-17 14:04:18,IP Address,100,2741,True,2020-12-17 14:04:19,anonymous,EN,AKGJVW,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,cupboard to keep things cold,worried and puzzled,Enough,Not,Dapper,Microwave,Swore,Growled,Kathleen?,And,Backwards,Again,Rather,Stop!,Wood,Flustered,Edward,Slowly,Cried,Screamed,Alluring,Above,He,Taunted,Feel,Alone,Monsters,Eyes,Complete,Problem ,Man,Speedily ,Passed,Plate,Ice,Door,Prison,The,Out,Than,Home,Alone,Deer,Here,God,Stared,Hand,Whispers,You,Ava,Fingers,Ran,Loathe ,Vigorously ,Horrified ,Hurt,His,Screamed,Carefully,Wet,See,And,His,Biscuit ,Dare,Wall,You,Quickly,Gravy,Issues,Nicely,Strength ,For,Wicked,Castle,Shop,On,Inform,Aid,Manipulation,Perhaps,Close,Alone,See,Harshly,Egg,Down,Across,Delivery,Carefully,Hate,However,Motionless,For,The,Trouble,Silently ,And,Because,Seven,Table,Is,Comfortably ,Grinned,Laughed,Tall,Money,Please,Rise,Quietly ,Burst,Hurriedly ,Explained,Or,Heard ,Gingerly,Legs,Chuckled,Like,Down,Newspaper,Was,Biscuits,Him?,Whisky ,Realised ,Them,Spends,Then,Them,Anyone,Stared,Guard,Time,German,Eyes,There,Sighed,Mirror,Tightly,Woman,Scanning,Is,Unnecessarily ,By,All,Ready,Milk,Trade,End,Prepared ,Could,Grimaced,Coffee,Love,Step,Never,Everyone,Come,Around,Place,Face,Lip,Finished,Would,Asda,Shouldn’t,Hands,Watched,Quickly ,Chest,Halted,A,Hurts,Dead,Tea,Awkwardly ,Never,Woman,Anything,Hell,Shift,Is,Open,The,Cowards,Show,Fools,That,Towards,Had,Know,You,French,Coffee,There...,Committed ,To,Hour,Nothing,Laundry,Alone,Metal,Order,It,Dogs,Together,Church,Basis,Gasped,Coming,With,Otherwise,You,Happy,Where?,Butchered ,Hood,Dirty
+2020-12-17 13:17:16,2020-12-17 14:04:26,IP Address,100,2830,True,2020-12-17 14:04:27,anonymous,EN,YARWSC,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Behind,Not,Fine,Snail,Died,Sighed,Because,I,Away,His,Faint,Woah,The,Pale,Drive,On,Seen,Said,Convenient,Table,I,Winced,Believe,Behind,Go,Guns,Never,Problem,Man,Straight,A,Table,His,Door,Prison,Her,My,Time,The,I,King,Left,Go,Went,Car,Me,Myself,She,Dad,Sleep,Concur,Thoroughly,Scared,Tell,Me,Meant,Himself,Gorgeous,See,These,The,Cave,Do,Tree,Me,Of,The,A ,Him,A,He,Smalltalk,These,Hallway,On,Wash,Towards,Mouthwash,Of,Right,To,Drive,The,Chapter,On,Down,Stop,To,Don't,So,Intensely,For,The,Struggle,Until,Swore,Food,Dawn,Table,Swerved,Angrily,Smiled,Said,Up,Everything,Springsteen,His,To,Exploded,Tyrone,Said,Honestly,Was,And,Bum,Sighed,When,Alone,Arms,Scissorhands,Back,Game,Gin,Ate,The,Top,This,The,He,Watched,Guard,Saying,More,Son,Over,Said,Mirror,When,Scene,To,Farted,Mr,He'd,All,Up,Coffee,Song,End,Careful,Was,Grinned,Food,Suggest,Step,Be,His,Enter,Left,Way,Ear,Lip,To,Would,The,Was,Head,Laughed,But,Shirt,Giggled,Ten,Takes,The,Tea,To,Do,Wall,A,The,Room,We,Opened,The,Not,Know,Kids,All,And,Had,See,Another,His,His,Is,Punchef,To,Hour,Yo,His,Before,The,Eat,It,Ex,Together,Times,Dates,Shakespeare,Cute,So,That,You're,For,The,Freaked,Cap,Dirty
+2020-12-17 13:04:19,2020-12-17 14:07:04,IP Address,100,3765,True,2020-12-17 14:07:05,anonymous,EN,NGMBZS,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,not,good,people,sat,relaxed,I ,and,together,again,advise,what,the door,pale,now,on the table ,seen,said,interesting,the,she,said,sleep,there,me,move,do,bad,person,when,helped,table,his pockets,door,see,the table,me,than,the,she,people,can,us,Raleigh ,car,me,you,she,name,left,said,again,sad,run,her,did,and,wet,see,only,his,hole,do that,wall,you,of the way,you,bad habits,her good,strength,that,people,line,bar,on,say,up,her,and,alone,happily,fight,round,time,down,down,because,again,know,but,a while,for,the table,problem,sit,said,which,noon,table,said,across,said,said,happily,help,said,my,that,said,then,said,again,heard,and,mum,said,when,down,arms,said,food,that,and,saw,signs,smokes,and,it,her,waited,guard,important,more,people,round,collapsed,face,and,house,away,said,on her,and,all,alone,tea,method,time,aware,had,said,a,said,step,be,her,enter,around,way,face,lip,away,would,the,had,head,said,shorter,shoulder,sat,three,moved,gone,tea,at,have,man,something,the ,room,needs,open,the,loyal,forget,people,that,in,but,see,a go,his,to,is,lost,again,hour,to,the,but,round,help,it,health,together,home,dates,said,just,tomorrow,that,you,happy,there,said,hat,here
+2020-12-17 13:03:28,2020-12-17 14:09:49,IP Address,100,3981,True,2020-12-17 14:09:50,anonymous,EN,CXXNSJ,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,a,for,only,wanted,laid,i,in,to,his,rather,what,the,sheepish,follow,on,said,looked,difficult,the,he,called,only,there,his,hand,walk,problem,dragon,all,a,his,the,door,tell,her,the,time,the,i,only,back,me,white,the,that,myself,she,only,he,want,and,sad,send,his,meant,and,under,hear,in,the,grave,want,ravages,you,of,you,a,in,the,he,only,marked,room,up,enter,too,the,of,too,too,protect,his,and,into,on,house,in,want,but,and,for,a,game,and,wanted,the,seven,chair,wanted,and,wanted,said,too,to,wanted,his,to,wanted,by,had,on,heard,and,only,wanted,to,down,arms,wanted,a,the,but,wanted,the,he,then,the,he,read,guard,client,to,only,to,decided,dark,and,only,walking,wanted,on,he,all,too,tea,skill,end,looking,would,wanted,a,am,step,be,her,enter,into,hands,ear,lip,to,would,say,wanted,hand,had,up,hand,said,for,was,over,tea,and,want,woman,a,the,room,will,and,the,looking,hear,little,i,and,had,hear,a,his,his,was,a,to,afternoon,to,his,and,his,who,the,feelings,hearing,times,contact,i,his,with,that,i,her,my,wanted,long,taken
+2020-12-17 13:17:20,2020-12-17 14:10:25,IP Address,100,3185,True,2020-12-17 14:10:25,anonymous,EN,ZCCDVB,get off the ground suddenly,has no faith,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,nothing,good,door,and,prayed,Mick,darling,forward,beard,not,hello,wall,better,vehicle,on,sex,opened,important,steps,he,waited,understand,there,me,movement,do,mood,men,down,cheat,table,pockets,door,prison,table,him,time,table,happen,door,ing,it,scream,car,me,him,again,advance,cried,open,and,better,scream,down,did,him,great,pray,again,face,hole,mind,wall,money,way,him,bad,you,some,for,horses,boundary,shop,on,close,aid,oven,model,still,again,ride,around,place,down,down,appointment,on,love,Dave,together,all,chair,trouble,today,Columbus,or,home,resturant,sat,and,smiled,wave,still,walking,opened,him,about,come,by,waited,today,burst,down,heart,wave,Barry,down,arms,will,food,me,wine,watched,the,crys,then,these,Alice,could,guard,time,about,day,running,preyed,window,together,door,staring,open,on,today,all,still,tea,trade,shops,prepared,could,walk,tea,waited,step,be,him,wait,around,hands,face,lip,home,would,Asda,had,hands,hoped,off,chest,waited,five,was,free,tea,at,not,kid,a,death,tire,will,open,table,cowards,learn,souls,tonight,wide,had,know,one,pain,him,was,cried,then,hour,to,his,today,it,help,hand,life,there,times,dates,said,mum,today,why,that,better,tomorrow,cried,hat,empty
+2020-12-17 13:04:40,2020-12-17 14:11:32,IP Address,100,4011,True,2020-12-17 14:11:32,anonymous,EN,OLZGGI,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,to,not,sharp,map,felt,watched,did,watch,back,his,prefer,I,the,rough,find,on,died,felt,interesting,his,we,was,believe,there,out,torch,never,problem,human,straight,moved,table,the,door,bootcamp,his,for,time,the,he,woman,changing,me,white,it,a,myself,thinking,face,ran,heard,twice,angry,kill,on,actually,assuredly,too,find,for,his,hole,say,wardrobe,me,his,you,a,her,a,that,children,area,kitchen,up,bring,aid,people,of,asleep,freely,protect,his,challenge,under,down,chance,at,am,be,waiting,forall,his,problem,to,went,from,noon,table,said,and,thought,laughed,by,money,saw,his,he,announced,by,asked,that,recieved,on,face,felt,when,down,clothes,is,your,that,beer,drank,clues,maybe,he,the,lunch,could,guard,way,with,tree,tommorow,awaited,dark,yesterday,chest,marching,had,on,by,all,uo,tea,new,weekend,prepared,had,knew,a,said,step,be,her,enter,around,way,face,lip,viral,would,the,was,head,found,short,shoulder,said,sixty,made,here,tea,at,never,woman,something,his,room,wanted,open,the,his,get,kids,that,in,bought,know,you,his,his,was,a,to,experience,to,his,to,another,find,it,dog,bamboozled,all,dates,knew,gay,tommorow,it,he,happy,his,thought,hood,free
+2020-12-17 13:14:19,2020-12-17 14:12:01,IP Address,100,3461,True,2020-12-17 14:12:01,anonymous,EN,USTIHB,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,By,Not,For,Men,Told,Smiled,So,As,Back,His,Fail,Calm,The,Faint,So,To,Been,Told,Pretty,The,We,Went,Cope,Next,His,Next,Fight,Problem,Mood,With,Listened ,Table,The,Door,Prison,The,For,Time,The ,We,People,Helping,It,Was,The,Sense,Myself,And,Wife,Smiled,Am,With,Alone,Tell,His,Really,And ,Visible ,Get,Only,The,Hole,Do,Wall,Us,Of,You,A,Them,Strength ,That,Time,House ,House,Up,Tell,Aid,The,Instead,Late,It,Ride,Around,Person,Down,Down,Stop,On,Would,And,In,For,The,Problem,Possibly,Was,And,Home,Desk,Said,In,Told,Said,At,To,Was,Me,That,Said,And,Said,To,Got,And,Wife,Was,At,Down,Arms,Was,Some,How,And,Looked,The,Forgets,We,Them,About,Possibly ,Guard,Next,To,Man,To,Knelt ,Sun,As,People,To,Likes,On,And,All,Outside ,Tea,New,End,Happy,Had,Sat,A,Am,Step,Be,Her,Stop,Around,Way,Face,Lip,To,Would,The,Went,Clothes,Were,Out,Arms,Sat,All,Is,At,Tea,At,Always,Children ,A ,His,Room,I,Open,The,Not,Be,People,All,In ,Drove,Think,Some,Pain,To,Is,To,To,Hour,To,His,But,The,Watch,It,Mum,Played,Times,Dates ,Tell,A,With,She,You,Happy,Me,Was,Hat,Empty 
+2020-12-17 13:13:08,2020-12-17 14:17:29,IP Address,100,3861,True,2020-12-17 14:17:30,anonymous,EN,FUPEEM,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,beneath,not listen,straight,end,went,listened,evening,watch,back,his beard,listen,welcome,the door,dazed,go,loudly,quickly,heard,beautiful,the chair,he,heard,walk,there,me in,reaction,fly,problem,dragon,neatly,no idea,plate,his pocket,gap,London,her hand,me,time,the bar,its the last,end,doing,go,smith,the car,my,myself,looked,reaction,walked,went,gently,tired,leave,his hand,went,stood up,perfect,meet,days,the cheek,hole,believe,current,us,th house,going,often,us good,strength,he,change,ring,room,on,change,aid,sharp,of,until,again,ride,the,time,in ,next,step,gently,believe,be careful,turned,for all,the,problem,fly,robin,food,easy,chair,went,around,went,let,up,to ,willis,his face,to,aked,by,left,next,opened,again,warm,went,frequently,still,arms,called,some,me,but,laughed,clues,stumbles,then,each,they,could,guard,end,aloud,end,away,gathered,dark,by,end,watching,threw,on,by,all,up,tea,new ,moment,grateful,had,could,tea,went,step,be,his,walk,the,time,face,lip,away,would,the,leave,hand,began,short,arms,lets,every,went,going,tea,suddenly,leave,rest,food,the ground,ke,breaths,open,the table,leading,leave,people,all,and ,brought,understand,a,panic,to leave,was,emotion,later,short,to,his,later,another,come,the,problems,waiting,bed time,basis,asked,looking,by,that,you,relaxed,yesterday,went,hat,on
+2020-12-17 13:02:23,2020-12-17 14:24:43,IP Address,100,4939,True,2020-12-17 14:24:43,anonymous,EN,KNZFIG,get off the ground suddenly,has no free time,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,not,cute,car,said,finally,night,for,together,his,not,i,hard,tired,so,and,snacks,told,effective,the,work,said,lie,beside,out,errors,talk, bad,thing,all,everything,table,front,best,school,the,how,time,home,i,day,that,it,walk,the ,the,time, when,hands,pick,love,quietly,pained,tell,his,will,the,colored,see, that,his,hole,dance,all,you,quickly,cooking,bad,the ,hope,for,wrong,line,house,on,everything,aid,his,of,back,to,ride,in,time,down,down,school,calmly,passed, but,all,for,back,truth,but,likes,for,noon,table,did,round,laughed,left,still,food,slept,her,the,wanted,and,i,to,was,home,hands,smiles,always,down,hands,danced,some,what,everytime,spoke,me,that,lets,God,everyone,could,guard,boys,more,cat,home,fought,rain,together,night,fighting,saw,on,before,all,up,coffee,the,event,careful,had,likes,tea,sat,step,heavy,everyone,come,peeled,things,face,hand,for,would,the,the,legs,can,off,arms, said,all,is,home,tea,so,tell,crowd,something,his,car,has,opened,the,sad,know,people,now,across,bought,know,you,out,help,is,done,the,hour,to,the,only,another,work,it,vacation,busy,night,dates,likes,gone,all,that,not,loved,here,danced,cap,cleared
+2020-12-17 13:19:08,2020-12-17 14:28:30,IP Address,100,4161,True,2020-12-17 14:28:30,anonymous,EN,DERVSB,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,under,not,for,man,was,cried,when,while,into,this,like,that,the,shifty,follow,to,gone,was,pleasant,the,I,was,be,there,the,steps,always,mean,dragon,with,not,table,the,door,the,the,me,than,the,he,girl,is,it,didn't,his,me,them,as,mouth,read,am,until,that,go,it,meant,his,above,show,every,the,big,want,wall,us,of,the,his,the,strength,that,feelings,lines,shop,on,show,aid,a,of,until,to,see,round,thing,in,on,home,and,always,almost,and,for,the,battle,until,was,usually,the,table,had,and,saw,gave,there,to,can,her,that,is,by,said,on,heard,down,face,was,after,at,arms,is,some,that,but,kissed,the,can,this,this,he,had,guard,thing,to,car,to,his,bathroom,when,man,to,was,on,he,all,up,tea,lesson,shop,careful,could,said,a,am,step,be,her,go,to,hands,face,lip,to,would,the,had,head,could,into,arms,has,every,was,his,tea,thinking,always,woman,a,the,tyre,is,shut,the,not,get,children,all,and,had,know,you,pain,to,was,hit,to,hour,to,his,but,the,go,her,feelings,stupid,others,dates,is,going,with,that,only,as,me,is,hat,dirty
+2020-12-17 13:01:23,2020-12-17 14:28:57,IP Address,100,5254,True,2020-12-17 14:28:58,anonymous,EN,VICGJN,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,Under ,Not ,For ,Man ,Went ,Saw ,Then ,For ,Towards ,His ,Never ,Oh ,The ,Upset ,Now ,On ,Seen ,Asked ,Important ,The ,It ,Saw ,See ,There ,The ,Are ,Be ,Temper ,Dragon ,All ,Smiled ,Table ,The,Window,The ,Her ,How,Snacks ,The,Getting ,House ,Happening ,Me ,Was ,The ,Me ,A ,For ,Daughter ,Saa,Will ,Under ,Strange ,Mention ,His ,Did ,The ,Lovely ,See ,After all ,The ,Hole ,Say ,Door ,Me ,The ,A ,An ,Them,Strength ,For ,Time ,Tracks ,Road,Up ,Check ,Aid ,It ,Of ,Over ,It ,Ride ,His ,Ever,Down ,Over ,House ,To ,Will ,Can ,Longingly ,For ,The ,Battle ,For ,Had ,They ,Ten ,Desk ,Switched ,Across ,Said ,Said ,Away ,More ,Knew,Her ,That ,Was ,Several ,Said ,Go ,Could ,And ,Wife ,Swam ,It’s ,Down ,Newspaper ,Loves ,Some ,I ,And ,Remembered ,Clues ,Gets ,Then ,Them,He ,Could ,Guard ,Inevitable ,To ,Boy ,Out ,Went ,Dark ,Under ,Taxi ,On,Spoke ,On ,Before ,All ,Up ,Tea,Skill ,Beach ,Warned ,Could ,Kneeled ,His ,Love ,Step,Be ,The ,Go ,Off ,Way ,Arms ,Lip ,Saw ,Would ,The,Was ,Hand ,Knew ,Off,Shoulders ,Said,Three ,May,Mrs ,Coffee ,Happily ,Be ,Boy ,A,His ,Tyre ,Knows ,Open ,The ,Scared ,Know,Things ,All,Towards ,Knew ,Know ,You ,Pain ,To ,Not ,Over reacted ,Then ,Hour ,Peace ,His ,At ,Alongside ,Do ,His hand ,Self ,Out ,Bedtime ,Dates ,Had ,Never ,With ,It ,Only ,Happy ,Here,Went ,Shirt,Full 
+2020-12-17 13:11:09,2020-12-17 14:29:12,IP Address,100,4682,True,2020-12-17 14:29:12,anonymous,EN,RGZAKL,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,beneath,not,for,next,was,thought,the,and,forward,that,appreciate,that,the,sheepish,keep,on,last,is,economical,his,there,is,think,in,me,next,be,problem,fly,all,a,plate,his,door,the,his,my,time,the,we,next,doing,us,the,their,all,for,who,instinct,retrieve,think,in,a,walk,the,meant,and,visible,see,in,the,plate,have,wall,us,of,doing,some,some,strength,that,birds,room,next,on,place,aid,a,of,back,this,find,round,time,on,down,port,on,would,there,and,for,the,problem,manage,was,any,the,table,is,in,suggested,gave,up,the,was,their,that,smiled,which,said,out,was,and,feeling,was,such,down,arms,is,some,that,and,could,any,forgets,then,these,anyone,could,guard,time,to,thought,to,caught,dark,as,next,to,was,on,by,all,on,tea,very,next,aware,had,was,a,am,step,be,them,enter,around,hands,face,lip,through,would,the,would,self,were,into,clavicle,is,half,could,a,tea,brightly,like,sound,a,the,tyre,can,open,the,tired,be,souls,all,and,were,know,you,such,to,may,a,to,evening,to,his,because,a,help,it,need,out,the,dates,it,going,with,that,you,happy,here,thought,hood,ready
+2020-12-17 13:03:09,2020-12-17 14:34:30,IP Address,100,5481,True,2020-12-17 14:34:31,anonymous,EN,TGMUDA,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,her lack of interest in anything,sliding box,worried and puzzled,his,not,grown,man,was,sighed,I,and,forward,his,never,stop,the,queasy,do,and,seen,went,interesting,the,I,was,see,there,out,footsteps,never,small,man,with,been,table,his,door,see,his wound,behind,than,the,he,man,that,us,sat,his,what,myself,his,words,turned,want,carefully,a ,file,away,might,and,effortlessly,the,and,the,small,let,wall,you,the,you,problems,you,a,he,loser,arena,room,up,mention,aid,both,of,for,to,see,at,night,within,down,location,and,will,be,silently,for,the,case,manage,gave,or,dawn,booth,wanted,and,said,said,up,more,wanted,his,he,vibrated,they,told,I,heard,and,eyes,was,more,at,arms,saw,some,that,and,saw,intruders,has,they,these,the,pondered,guard,weather,for,man,get,collapsed,distance,and,man,to,sat,on,he,all,up,tea,different,store,ready,had,was,a ,was,step,be,him,enter,around,persons,face,lip,to,would,the,had,sword,are,off,arms,was,a ,was,the,tea,and,be,boy,an,his,parts,will,opened,the,cowards,see,fools,they,in ,owned,know,you,his,previously,was,no,to,hour,nothing,his,but,a,do,the,problems,made,the,meet,was,not,at,it,only,a ,weeks,was,hood,full
+2020-12-17 15:16:10,2020-12-17 15:40:12,IP Address,100,1442,True,2020-12-17 15:40:12,anonymous,EN,VZDVJQ,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,hood,not respond,cautious,mermaid,rented,groaned,morning,and quietly,backwards,today,hesitate,calm down,the door,peaky,point,quickly,fed,joked,pleasent,the stool,relentlessly,crawled,believe,there,go,arrows,weep,bad,anyone,neat,nits,table,deep,coffin,school,sideways,my hand,chance,his desk,it happened,ghost,helping,us commence,ran,the way,me,you,giggling,thumb,sobbed,thought,carefully,troubled,cut,up,meant,politely,enchanting,hear,status,his face,hole,dare,wall,directions,fast,you,liver,not,strength,longingly,victims,cave,room,up,give,aid,his,and rusty,put,to tell the tale,ride,with force,time,amongst,down,destination,hastily,know,today,in front,forever,down,story,manage,thought,life,dawn,bus shelter,forgot,sternly,sighed,waved,still,more,thought,surface,about,demanded,by,cried,then,heard,in his chair,brother,turned,generally,still,arms,rang,wine,what,gin,licked,bats,eats,aim,them,required,breathed,guard,end,more,cat,out,sighed,mirror,affectionately,horse,aiming,froze,them,this,ever,down,tea,song,moment,comes,remembered,goaded,peace,wish,step,no longer,innocent,enter,up,hands,ear,lip,outside,would,the hall,gave up,back,will,out,arms,looked,a week,began,dead,coffee,satisfied,cry,noise,something,down,room,collects,open,bench,cowards,be a man,souls,hours,in rage,had,know,ago ,his face,before,was once,issues,this time,hour,more,quicky,at most,hinges,help,it,problems,trying,others,dates,stood,there,there and then,over,you,warm,now,sat,helmet,dirty
+2020-12-17 15:00:49,2020-12-17 15:44:18,IP Address,100,2608,True,2020-12-17 15:44:18,anonymous,EN,QPGVAB,get off the ground suddenly,will not wait happily,child that is determined to do what it wants,small dogs with long ears,stuck through with a sharp instrument,an integrated human-machine system,at its peak of success,the faint color of her skin,sliding box,worried and puzzled,enough,not,beautiful,universe,lashed,mulled,during,observed,forward,his,not,calm,the,sheepish,vehicle,quickly,passed,Gyllenhaal,interesting,the,without,never,listen,there,them,hateful,inspire,short,room,whole,lied,table,his,gate,prison,his,intently,time,once,everything,universe,changing,go,White,jail,everything,time,while,name,pushed,always,regularly,astonished,attack,manners,really,without,stunningly,hear,whilst,the,biscuit,punish,world,strength,while,you,no,nothing,strength,they,time,walls,gallery,up,remember,up,willpower,of,quiet,proudly,battle,his,time,across,besides,place,quietly,know,swaying,intently,for,the,truth,but,Walken,whilst,midday,table,Boru,sharply,laughed,said,upright,everything,Springsteen,world,keep,angrily,twice,shouted,before,heard,while,second,laughed,frequently,excitedly,clothes,Scissorhands,treats,nothing,but,looked,inspiration,lashes,shut,fight,he,pondered,guard,world,again,world,elsewhere,lamented,restaurant,together,ocean,marching,Duke,unfairly,earlier,all,patiently,coffee,lesson,moment,quiet,could,said,peace,screamed,step,never,people,enter,around,hands,ear,lip,home,story,the,would,head,cried,Down,arms,Hilfiger,forever,happens,vanquished,tea,broadly,never,gathering,anything,the,wheel,said,open,the,not,ever,people,eight,out,from,remember,you,agony,regularly,never,temper,instantly,hour,support,his,shouting,another,revolt,bones,problems,patiently,times,date,Shakespeare,shouting,quickly,always,only,content,Ireland,screamed,hat,filthy
