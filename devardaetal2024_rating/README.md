@@ -2,7 +2,7 @@
 
 ## Citation
 
-de Varda, A. G., Marelli, M., & Amenta, S. (2024). Cloze probability, predictability ratings, and computational estimates for 205 English sentences, aligned with existing EEG and reading time data. Behavior Research Methods, 56(5), 5190-5213.
+de Varda, A. G., Marelli, M., & Amenta, S. (2024). Cloze probability, predictability ratings, and computational estimates for 205 English sentences, aligned with existing EEG and reading time data. *Behavior Research Methods*, 56(5), 5190-5213. https://doi.org/10.3758/s13428-024-02379-9
 
 ## Data Source
 
