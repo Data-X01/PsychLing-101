@@ -20,7 +20,7 @@ Participants were asked to continue the sentence by writing what they expect to 
 
 - **Total items**: 1,726 sentence fragments
 - **Lists**: 8 (items distributed across lists, ~216 items per list)
-- **Total participants**: 630 (after exclusions based on comprehension checks)
+- **Total participants**: 630 (after exclusions based on comprehension checks) (about 80 per list)
 - **Language**: English
 
 ## Exclusion Criteria

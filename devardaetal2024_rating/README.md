@@ -20,7 +20,7 @@ Participants were presented with both the sentence fragment and the associated u
 
 - **Total items**: 1,726 sentence fragment + target word pairs
 - **Lists**: 8 (items distributed across lists, ~216 items per list)
-- **Total participants**: 470 (after exclusions based on comprehension checks)
+- **Total participants**: 470 (after exclusions based on comprehension checks) (about 60 per list)
 - **Language**: English
 
 ## Exclusion Criteria
