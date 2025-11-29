@@ -1,0 +1,15 @@
+Recommended Column Name,Description
+participant_id,Anonymous identifier for each participant (6 uppercase letters).
+list,Experimental list number (1-8). Items were distributed across 8 lists.
+trial_id,Unique identifier for the item/stimulus. Same item has the same trial_id across all participants who saw it.
+trial_order,Presentation order within the session (0-indexed). The order in which the participant saw this trial.
+stimulus,The sentence fragment presented to the participant (rating context).
+target_word,The target word that participants rated for expectedness.
+response,The rating given by the participant (1-5 scale; 1=Not at all expected to 5=Very much expected).
+age,Age of the participant at the time of the experiment.
+gender,Self-reported gender identity of the participant (Male/Female).
+education,Highest completed education level of the participant.
+first_language,Participant's native or first-acquired language.
+nationality,Participant's self-reported nationality.
+country_of_birth,Participant's country of birth.
+country_of_residence,Participant's current country of residence.
