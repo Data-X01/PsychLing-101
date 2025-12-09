@@ -16,6 +16,12 @@ Participants completed a **predictability rating task** where they saw sentence 
 
 Participants were presented with both the sentence fragment and the associated upcoming word and asked to rate, on a scale from 1 to 5, how much they would expect the presented word to follow the sentence fragment. Instructions emphasized that they were not asking to evaluate how plausible or sensible that word was, but rather how much they would expect to find it while reading the preceding sentence context.
 
+### Prompt template
+
+```
+Trial {trial_idx}. The sentence is: '{stimulus}'. How much would you expect to read the word '{target_word}' as the next word of this sentence fragment? 1 (Not at all) 2 3 4 5 (Very much). You rate: <<{rating_str}>>
+```
+
 ## Dataset Details
 
 - **Total items**: 1,726 sentence fragment + target word pairs
