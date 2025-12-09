@@ -48,7 +48,7 @@ def format_trial_description(trial_idx: int, stimulus: str, target_word: str, ra
         Formatted trial description string
     """
     rating_str = str(int(rating)) if pd.notna(rating) and not np.isnan(rating) else "NA"
-    return f"Trial {trial_idx}: '{stimulus}...' -> '{target_word}' You rate: <<{rating_str}>>"
+    return f"Trial {trial_idx}. The sentence is: '{stimulus}'. How much would you expect to read the word '{target_word}' as the next word of this sentence fragment? 1 (Not at all) 2 3 4 5 (Very much). You rate: <<{rating_str}>>"
 
 
 def print_example_prompts(df: pd.DataFrame, n_participants: int = 2, n_trials: int = 5):
