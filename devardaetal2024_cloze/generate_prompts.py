@@ -29,16 +29,19 @@ Your task is to continue each sentence by writing what you expect to be the next
 def format_trial_description(trial_idx: int, stimulus: str, response: str) -> str:
     """
     Format a single trial into a descriptive string.
-    
+
     Args:
         trial_idx: Trial number for display (1-indexed)
         stimulus: The sentence fragment shown to participant
         response: The word the participant wrote
-        
+
     Returns:
         Formatted trial description string
     """
-    return f"Trial {trial_idx}: '{stimulus}...' You write: <<{response}>>"
+    return (
+        f"Trial {trial_idx}. The sentence is: '{stimulus}'. "
+        f"What is the next word you expect to follow? You write: <<{response}>>"
+    )
 
 
 def print_example_prompts(df: pd.DataFrame, n_participants: int = 2, n_trials: int = 5):
