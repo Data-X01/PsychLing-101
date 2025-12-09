@@ -16,6 +16,12 @@ Participants completed a **cloze probability task** where they saw sentence frag
 
 Participants were asked to continue the sentence by writing what they expect to be the next word. The instructions stressed that, even if participants came up with several options, their task was always to produce one single word – the one that, in their immediate intuition, should follow what was presented. Moreover, it was emphasized that the to-be-produced word could belong to any part-of-speech, including articles and prepositions.
 
+### Prompt template
+
+```
+Trial {trial_idx}. The sentence is: '{stimulus}'. What is the next word you expect to follow? You write: <<{response}>>
+```
+
 ## Dataset Details
 
 - **Total items**: 1,726 sentence fragments
