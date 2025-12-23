@@ -3,6 +3,15 @@
 | Task | Link | Contributor |
 |------|------|--------|
 |Cloze responses and Predictability ratings       |  [Link](https://link.springer.com/article/10.3758/s13428-023-02261-8)      | Andrea de Varda      |
+| Lexical decision    |  [Link](https://doi.org/10.1177/1747021820902019)      | Louis Schiekiera|
+| Semantic Relation   |  [Link](https://doi.org/10.1016/j.jml.2020.104104)      | Louis Schiekiera|
+| Semantic Relation   |  [Link]( https://doi.org/10.1016/j.cogpsych.2022.101471)      | Louis Schiekiera|
+| Visual Similarity  |  [Link](https://doi.org/10.1037/rev0000392)      | Louis Schiekiera|
+| Grammaticality Judgments  |  [Link](https://doi.org/10.1073/pnas.2309583120)      | Louis Schiekiera|
+|Comprehension  |  [Link]( https://doi.org/10.1038/s41598-024-79531-8)      | Louis Schiekiera|
+|Word Substitution Task    |  [Link](https://doi.org/10.17605/OSF.IO/VYJRZ)      | Louis Schiekiera|
+
+
 
 ##  List of Datasets in Progress
 
@@ -34,7 +43,7 @@
 | Visual Lexical Decision                      |[Link]( https://doi.org/10.2298/PSI170811015F)     |  Dušica Filipović Đurđević     |
 |Sense elicitation task| [Link]( http://digitalna.ff.uns.ac.rs/sadrzaj/2017/978-86-6065-446-7)     | Dušica Filipović Đurđević      |
 |Concreteness ratings     |                        [Link](https://doi.org/10.19090/pp.2017.3.375-400)      |  Dušica Filipović Đurđević       |
-|Visual Lexical Decisi       |                        [Link](http://www.nature.com/articles/srep20369)      | Dušica Filipović Đurđević      |
+|Visual Lexical decision       |                        [Link](http://www.nature.com/articles/srep20369)      | Dušica Filipović Đurđević      |
 |Lexical decision        |                        [Link](https://doi.org/10.1038/s41539-024-00237-7)      |  Benjamin Gagl     |
 |Object and Word Frequency Effects        | [Link](https://pubmed.ncbi.nlm.nih.gov/37155283/)     | Benjamin Gagl      |
 |Iconicity        | [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0337947)       | Chiara Saponaro      |
