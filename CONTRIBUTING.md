@@ -37,7 +37,7 @@
 |Visual Lexical Decisi       |                        [Link](http://www.nature.com/articles/srep20369)      | Dušica Filipović Đurđević      |
 |Lexical decision        |                        [Link](https://doi.org/10.1038/s41539-024-00237-7)      |  Benjamin Gagl     |
 |Object and Word Frequency Effects        | [Link](https://pubmed.ncbi.nlm.nih.gov/37155283/)     | Benjamin Gagl      |
-|Iconicity        | [Link]([https://pubmed.ncbi.nlm.nih.gov/37155283/](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0337947))      | Chiara Saponaro      |
+|Iconicity        | [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0337947)       | Chiara Saponaro      |
 
 ---
 
