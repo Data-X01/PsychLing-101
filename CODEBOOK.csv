@@ -37,7 +37,7 @@ nonobject_osullivan_et_al,Count of non-object / unrelated responses per O’Sull
 physically_dissimilar,Flag/score indicating physical dissimilarity of image variants.
 is_natural,Whether the object is a natural kind (true/false).
 is_modal,Whether the response equals the modal name for that image.
-modalWordFreq,Frequency (e.g., Zipf) of the modal response word.
+modalWordFreq,Frequency (e.g. Zipf) of the modal response word.
 responseWordFreq,Frequency of the individual response word.
 modalWordLength,Number of characters in modal name.
 responseWordLength,Number of characters in individual response.
@@ -46,3 +46,4 @@ responseProductionFreq_non_outlier,Production freq after outlier removal.
 is_invalid,Flag marking invalid responses (missing/non-word/timed-out).
 is_rt_outlier,Flag marking RT outliers removed from RT analyses.
 not_in_subtlex_uk,Flag if word not found in SUBTLEX-UK frequency resource.
+
