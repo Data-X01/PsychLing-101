@@ -1,0 +1,48 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant.
+age,Age of the participant at the time of the experiment.
+gender,Self-reported or observed gender identity of the participant.
+education,Highest completed education level of the participant.
+clinical_diagnoses,"Any reported or documented clinical conditions relevant to cognitive, language, or psychological functioning."
+first_language,Participant's native or first-acquired language.
+other_languages,"Languages learned after the first language, optionally with proficiency level."
+nationality,Participant's self-reported nationality.
+country_of_birth,Participant's country of birth.
+country_of_residence,Participant's current country of residence.
+trial_id,Unique identifier for a single trial within a session or condition.
+trial_order,Presentation order within the session (0-indexed). The order in which the participant saw this trial.
+list,Experimental list number (1-8). Items were distributed across 8 lists.
+phase_id,"Identifier for the experimental phase or block a trial belongs to (e.g., practice, test, recall)."
+accuracy,Binary indicator of whether the participant's response was correct.
+condition,Experimental condition assigned to the trial.
+stimulus,The linguistic or visual stimulus presented to the participant in a given trial.
+target_word,The target word that participants rated for expectedness (from https://doi.org/10.3758/s13428-024-02379-9)
+response,Participant's response
+response_corrected,Cleaned / corrected response (spelling normalized).
+response1,First association response (for association tasks)
+response2,Second association response (for association tasks)
+responseX,Xth association response (for association tasks)
+best,Participant's 'best' choice string (from https://doi.org/10.1037/rev0000392)
+worst,Participant's 'worst' choice string (from https://doi.org/10.1037/rev0000392)
+rt,"Time taken by the participant to respond, in milliseconds."
+first_key_RT,Time from text-box onset to first typed key (ms).
+image_filename,Filename or identifier for the presented image.
+object,Object identifier (concept depicted by the image).
+name_agreement,Percentage of participants giving the modal name for the image (0-100).
+H_statistic,Entropy of the name distribution for the image (bits).
+Normalised_H_statistic,H-statistic normalised for sample-size differences.
+unknown_osullivan_et_al,Count of responses coded 'unknown' per O'Sullivan coding scheme.
+idiosyncratic_osullivan_et_al,Count of idiosyncratic (singleton) responses per O'Sullivan coding scheme.
+nonobject_osullivan_et_al,Count of non-object / unrelated responses per O’Sullivan coding scheme.
+physically_dissimilar,Flag/score indicating physical dissimilarity of image variants.
+is_natural,Whether the object is a natural kind (true/false).
+is_modal,Whether the response equals the modal name for that image.
+modalWordFreq,Frequency (e.g. Zipf) of the modal response word.
+responseWordFreq,Frequency of the individual response word.
+modalWordLength,Number of characters in modal name.
+responseWordLength,Number of characters in individual response.
+responseProductionFreq,Production frequency (how many participants produced the response).
+responseProductionFreq_non_outlier,Production freq after outlier removal.
+is_invalid,Flag marking invalid responses (missing/non-word/timed-out).
+is_rt_outlier,Flag marking RT outliers removed from RT analyses.
+not_in_subtlex_uk,Flag if word not found in SUBTLEX-UK frequency resource.
