@@ -1,5 +1,4 @@
 Variable,Description
-
 response_mapping,Mapping of correct responses ("press 1 for words and 2 for non-words" or the other way around).
 participant_id,Unique identifier assigned to each participant.
 age,Age of the participant at the time of the experiment.
