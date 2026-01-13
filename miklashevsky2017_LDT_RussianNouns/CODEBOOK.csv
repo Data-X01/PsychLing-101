@@ -3,7 +3,7 @@ response_mapping,"Mapping of correct responses ('press 1 for words and 2 for non
 participant_id,"Unique identifier assigned to each participant."
 age,"Age of the participant at the time of the experiment."
 first_language,"Participant's native or first-acquired language."
-gender,"Self-reported or observed gender identity of the participant."
+gender,"Self-reported gender identity of the participant."
 education_subject,"Participant's self-reported educational area (available options: Art & Humanities / Natural sciences / Technical education)."
 list,"Experimental list number ('word1' to 'word4'). Items were distributed across 4 lists."
 trial_order,"Presentation order within the session (0-indexed). The order in which the participant saw this trial."
