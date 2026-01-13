@@ -47,6 +47,16 @@ data = data[!data$Subject %in% bad_ids, ]
 ## correct trial_order to start with 0
 data$BlockList = data$BlockList - 1
 
+## correct Age for those participants who did not indicate it 
+## (impute mean sample age instead of 0)
+mean_age = data %>%
+  filter(Age > 0) %>%
+  summarise(mean_age = round(mean(Age, na.rm = TRUE))) %>%
+  pull(mean_age)
+
+data = data %>%
+  mutate(Age = ifelse(Age == 0, mean_age, Age))
+
 ## rename variables
 data =
   data %>%
