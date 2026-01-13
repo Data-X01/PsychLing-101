@@ -1,11 +1,11 @@
 Variable,Description
-response_mapping,Mapping of correct responses ("press 1 for words and 2 for non-words" or the other way around).
+response_mapping,Mapping of correct responses ('press 1 for words and 2 for non-words' or the other way around).
 participant_id,Unique identifier assigned to each participant.
 age,Age of the participant at the time of the experiment.
 first_language,Participant's native or first-acquired language.
 gender,Self-reported or observed gender identity of the participant.
 education_subject,Participant's self-reported educational area (available options: Art & Humanities / Natural sciences / Technical education)
-list,Experimental list number ("word1" to "word4"). Items were distributed across 4 lists.
+list,Experimental list number ('word1' to 'word4'). Items were distributed across 4 lists.
 trial_order,Presentation order within the session (0-indexed). The order in which the participant saw this trial.
 accuracy,Binary indicator of whether the participant's response was correct.
 correct_response,Correct response (1 or 2, depending on response_mapping for that participant and current target_word).
