@@ -1,7 +1,7 @@
 library(dplyr)
 
 ## read data
-data = read.csv("merged_data_DB_LDT_raw.csv", stringsAsFactors = FALSE)
+data = read.csv("original_data/merged_data_DB_LDT_raw.csv", stringsAsFactors = FALSE)
 
 ## keep only critical variables
 data =
@@ -78,4 +78,4 @@ data =
   )
 
 ## save preprocessed data
-write.csv(data, "exp1.csv", row.names = FALSE)
+write.csv(data, "processed_data/exp1.csv", row.names = FALSE)

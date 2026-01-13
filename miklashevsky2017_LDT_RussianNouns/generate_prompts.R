@@ -3,7 +3,7 @@ library(readr)
 library(jsonlite)
 
 ## read data
-data = read_csv("exp1.csv", show_col_types = FALSE)
+data = read_csv("processed_data/exp1.csv", show_col_types = FALSE)
 
 all_prompts = list()
 
