@@ -93,7 +93,6 @@ mapping = {
     'Native Language': 'first_language',
     'Other languages': 'other_languages',
     'Medical history': 'clinical_diagnoses',
-    'Prompts': 'stimulus',
     'Prompt':'stimulus',
     'Responses': 'response',
     'Response':'response',
