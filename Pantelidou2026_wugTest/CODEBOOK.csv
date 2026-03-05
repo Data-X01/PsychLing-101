@@ -1,0 +1,13 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant.
+age,Age of the participant at the time of the experiment.
+gender,Self-reported or observed gender identity of the participant.
+education,Highest completed education level of the participant.
+clinical_diagnoses,participants' medical history referring to any kind of diseases
+first_language,Participant's native language
+other_languages,Languages learned after the first language
+nationality,Participant's self-reported nationality.
+trial_id,Number for each question. Each question was 1 trial.
+accuracy,"Binary indicator of whether the participant's response was correct, 1 for correct 0 for incorrect"
+stimulus,the prompt that the participant had to answer
+response,Participant's response
