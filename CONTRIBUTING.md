@@ -47,6 +47,13 @@
 |Lexical decision        |                        [Link](https://doi.org/10.1038/s41539-024-00237-7)      |  Benjamin Gagl     |
 |Object and Word Frequency Effects        | [Link](https://pubmed.ncbi.nlm.nih.gov/37155283/)     | Benjamin Gagl      |
 |Iconicity        | [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0337947)       | Chiara Saponaro      |
+|Lexical decision     |                        [Link]     | Alex Miklashevsky     |
+|WugTest     |                        [Link](https://osf.io/4z5n6/overview)     | Nikoleta Pantelidou     |
+|Manipulative Discourse Task     |                        [Link]( https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0256173)     | Nikoleta Pantelidou     |
+|Meter-syntax alignment     |                        [Link](https://www.sciencedirect.com/science/article/pii/S0010027721003012)     | Courtney Hilton      |
+
+
+
 
 ---
 
