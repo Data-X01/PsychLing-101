@@ -109,6 +109,7 @@ def generate_prompts(exp_df, instruction_block1, instruction_block2, experiment_
                 age = int(age_val)
 
         individual_prompt = instruction_block1
+        trial_accuracies = []
 
         trials = exp_participant["trial_id"].dropna().unique()
 
@@ -126,26 +127,23 @@ def generate_prompts(exp_df, instruction_block1, instruction_block2, experiment_
                     trial_instruction = exp_trial["trial_instruction"].iloc[0]
 
                 # Get accuracy
+                # Get accuracy
                 accuracy = None
                 if "accuracy" in exp_trial.columns:
                     acc_val = exp_trial["accuracy"].iloc[0]
                     if pd.notna(acc_val):
                         accuracy = int(acc_val)
 
+                # Add accuracy to list
+                trial_accuracies.append(accuracy)
+
                 trial_index = int(exp_trial["trial_id"].iloc[0])
 
-                # Build datapoint string
+                # Build datapoint string WITHOUT accuracy
                 if trial_index == 21:
-                    datapoint = (
-                        f"{instruction_block2} {stimulus} {trial_instruction} "
-                        f"You enter <<{response}>>. Accuracy: {accuracy}.\n"
-                    )
+                    datapoint = f"{instruction_block2} {stimulus} {trial_instruction} You enter <<{response}>>.\n"
                 else:
-                    datapoint = (
-                        f"{stimulus} {trial_instruction} "
-                        f"You enter <<{response}>>. Accuracy: {accuracy}.\n"
-                    )
-
+                    datapoint = f"{stimulus} {trial_instruction} You enter <<{response}>>.\n"
                 individual_prompt += datapoint
 
                 if len(individual_prompt) > max_tokens:
@@ -155,10 +153,10 @@ def generate_prompts(exp_df, instruction_block1, instruction_block2, experiment_
         all_prompts.append({
             "participant": int(participant),
             "text": individual_prompt,
+            "accuracy": trial_accuracies,  # new field
             "experiment": experiment_name,
             "age": age
         })
-
 
 # --------------------------
 # Run all experiments
