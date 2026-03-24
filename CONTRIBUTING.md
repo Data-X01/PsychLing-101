@@ -52,8 +52,7 @@
 |Lexical decision     |                        [Link]     | Alex Miklashevsky     |
 |Meter-syntax alignment     |                        [Link](https://www.sciencedirect.com/science/article/pii/S0010027721003012)     | Courtney Hilton      |
 |Lexical decision (Spanish. Megastudy)        |                        [Link](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02156)      |  Akinloluwa Ajayi     |
-|Metaphor norming study|                        [Link](https://pubmed.ncbi.nlm.nih.gov/41491452/)      |  Laura Pissani
-     |
+|Metaphor norming study|                        [Link](https://pubmed.ncbi.nlm.nih.gov/41491452/)      |  Laura Pissani |
 |Lexical decision (Japanese)        |                        [Link](https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2024.1506509/full)      |  Akinloluwa Ajayi     |
 
 
