@@ -10,6 +10,8 @@
 | Grammaticality Judgments  |  [Link](https://doi.org/10.1073/pnas.2309583120)      | Louis Schiekiera|
 |Comprehension  |  [Link]( https://doi.org/10.1038/s41598-024-79531-8)      | Louis Schiekiera|
 |Word Substitution Task    |  [Link](https://doi.org/10.17605/OSF.IO/VYJRZ)      | Louis Schiekiera|
+|WugTest     |                        [Link](https://osf.io/4z5n6/overview)     | Nikoleta Pantelidou     |
+|Manipulative Discourse Task     |                        [Link]( https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0256173)     | Nikoleta Pantelidou     |
 
 
 
@@ -48,12 +50,11 @@
 |Object and Word Frequency Effects        | [Link](https://pubmed.ncbi.nlm.nih.gov/37155283/)     | Benjamin Gagl      |
 |Iconicity        | [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0337947)       | Chiara Saponaro      |
 |Lexical decision     |                        [Link]     | Alex Miklashevsky     |
-|WugTest     |                        [Link](https://osf.io/4z5n6/overview)     | Nikoleta Pantelidou     |
-|Manipulative Discourse Task     |                        [Link]( https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0256173)     | Nikoleta Pantelidou     |
 |Meter-syntax alignment     |                        [Link](https://www.sciencedirect.com/science/article/pii/S0010027721003012)     | Courtney Hilton      |
 |Lexical decision (Spanish. Megastudy)        |                        [Link](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02156)      |  Akinloluwa Ajayi     |
 |Metaphor norming study|                        [Link](https://pubmed.ncbi.nlm.nih.gov/41491452/)      |  Laura Pissani
      |
+|Lexical decision (Japanese)        |                        [Link](https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2024.1506509/full)      |  Akinloluwa Ajayi     |
 
 
 ---
