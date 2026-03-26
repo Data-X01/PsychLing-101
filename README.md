@@ -8,7 +8,7 @@ Our goals are:
 2. Convert psycholinguistic data into a format that can be used to fine-tune and evaluate large language models (LLMs).
 3. Collaboratively produce an article describing the database to be sent to a psycholinguistic or interdisciplinary outlet.  
 
-The project is led by Taisiia Tikhomirova and Dirk U. Wulff at the Center for Adaptive Rationality at the Max Planck Institute for Human Development and supported by: Valentin Kriegmair (MPI for Human Development), Fritz Günther (Humboldt University), Aliona Petrenco (Humboldt University), Louis Schiekiera (Humboldt University), Marco Marelli (University of Milano-Bicocca), and Marcel Binz (Helmholtz Munich). 
+The project is led by [Taisiia Tikhomirova](https://www.mpib-berlin.mpg.de/staff/taisiia-tikhomirova) and [Dirk U. Wulff](https://www.mpib-berlin.mpg.de/staff/dirk-wulff) at the Center for Adaptive Rationality at the Max Planck Institute for Human Development and supported by: [Valentin Kriegmair](https://www.mpib-berlin.mpg.de/person/valentin-kriegmair/171978) (MPI for Human Development), [Fritz Günther](https://www.psychologie.hu-berlin.de/de/mitarbeiter/1693894) (Humboldt University), [Aliona Petrenco](https://www.psychologie.hu-berlin.de/de/mitarbeiter/1694954) (Humboldt University), [Louis Schiekiera](https://www.psychologie.hu-berlin.de/de/mitarbeiter/1696407) (Humboldt University), [Marco Marelli](https://www.marcomarelli.net/) (University of Milano-Bicocca), and [Marcel Binz](https://marcelbinz.github.io/) (Helmholtz Munich). 
 
 PsychLing-101 will be open for contributions until May 1st, 2026. Future projects may follow.
 
