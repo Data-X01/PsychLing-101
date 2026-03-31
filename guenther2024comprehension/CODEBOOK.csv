@@ -1,6 +1,3 @@
-column_name,description
-participant_id,Anonymized participant ID
-age,Participant age in years
-trial_id,Trial order index (factorized from raw trial_id)
-stimulus,Concatenation of sentence_text and sentence_question_full
-response,Participant's answer text
+version https://git-lfs.github.com/spec/v1
+oid sha256:2a8b8fde96ab2640af7e8c8abfa01c398ee70c441b265ea56e03e8554160cd4b
+size 260

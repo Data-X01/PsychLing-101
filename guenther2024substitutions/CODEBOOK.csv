@@ -1,6 +1,3 @@
-column_name,description
-participant_id,Anonymized participant ID (numeric factor from raw ID)
-age,Participant age in years (merged from demographics if available)
-trial_id,Per-participant sequential index starting at 1
-stimulus,Target word shown on the trial (from 'word')
-response,Participant's substitution
+version https://git-lfs.github.com/spec/v1
+oid sha256:d4f79ed958af5d3f0fb3232d270f748066660a126bf4aef746c0dc2f558b269a
+size 315
