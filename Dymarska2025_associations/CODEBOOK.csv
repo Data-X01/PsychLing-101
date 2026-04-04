@@ -1,0 +1,24 @@
+column_name,description
+participant_id,Unique identifier assigned to each participant.
+trial_id,Unique identifier for a single trial within a session or condition.
+stimulus,The linguistic or visual stimulus presented to the participant in a given trial.
+response1,First association response; spelling-corrected where required (lowercased).
+response2,Second association response; spelling-corrected where required (lowercased).
+response3,Third association response; spelling-corrected where required (lowercased).
+response4,Fourth association response; spelling-corrected where required (lowercased).
+response5,Fifth association response; spelling-corrected where required (lowercased).
+response6,Sixth association response; spelling-corrected where required (lowercased).
+response7,Seventh association response; spelling-corrected where required (lowercased).
+response8,Eighth association response; spelling-corrected where required (lowercased).
+response9,Ninth association response; spelling-corrected where required (lowercased).
+response10,Tenth association response; spelling-corrected where required (lowercased).
+response11,Eleventh association response; spelling-corrected where required (lowercased).
+response12,Twelfth association response; spelling-corrected where required (lowercased).
+response13,Thirteenth association response; spelling-corrected where required (lowercased).
+response14,Fourteenth association response; spelling-corrected where required (lowercased).
+response15,Fifteenth association response; spelling-corrected where required (lowercased).
+response16,Sixteenth association response; spelling-corrected where required (lowercased).
+response17,Seventeenth association response; spelling-corrected where required (lowercased).
+response18,Eighteenth association response; spelling-corrected where required (lowercased).
+response19,Nineteenth association response; spelling-corrected where required (lowercased).
+response20,Twentieth association response; spelling-corrected where required (lowercased).
