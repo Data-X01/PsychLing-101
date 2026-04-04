@@ -15,22 +15,7 @@ from pathlib import Path
 import pandas as pd
 
 
-# ---------------------------------------------------------------------------
-# Column rename map  (raw name → CODEBOOK canonical name)
-# ---------------------------------------------------------------------------
-
-RENAME_MAP = {
-    "Ps.number":         "participant_id",
-    "Cue.number":        "cue_number",       # helper for ordering; dropped later
-    "Response.number":   "response_number",
-    "cues":              "stimulus",
-    "Response":          "response",
-    "RT":                "first_key_RT",
-    "Response_spelling": "response_corrected",
-    "ZipfUK":            "responseWordFreq",
-}
-
-# Columns to keep in the long output (CODEBOOK-aligned)
+# Columns to keep in the long output 
 LONG_COLS = [
     "participant_id",
     "trial_id",
@@ -43,9 +28,6 @@ LONG_COLS = [
     "not_in_subtlex_uk",
 ]
 
-
-# ---------------------------------------------------------------------------
-# Helpers
 # ---------------------------------------------------------------------------
 
 def ensure_processed_dir(base_dir: Path) -> Path:
@@ -53,9 +35,6 @@ def ensure_processed_dir(base_dir: Path) -> Path:
     processed_dir.mkdir(exist_ok=True)
     return processed_dir
 
-
-# ---------------------------------------------------------------------------
-# Core preprocessing
 # ---------------------------------------------------------------------------
 
 def preprocess(base_dir: Path) -> None:
@@ -114,8 +93,8 @@ def preprocess(base_dir: Path) -> None:
     )
     raw = raw.drop(columns=["cue_number"], errors="ignore")
 
-    # -----------------------------------------------------------------------
-    # LONG FORMAT  (exp1_long.csv)
+    
+    # LONG FORMAT
     # -----------------------------------------------------------------------
     long_cols_present = [c for c in LONG_COLS if c in raw.columns]
     df_long = (
@@ -127,9 +106,8 @@ def preprocess(base_dir: Path) -> None:
     df_long.to_csv(long_path, index=False)
     print(f"  Written: {long_path.name}  ({df_long.shape[0]} rows × {df_long.shape[1]} cols)")
 
-    # -----------------------------------------------------------------------
-    # WIDE FORMAT  (exp1.csv) — one row per participant × cue,
-    #              response1 … response20 as separate columns
+
+    # WIDE FORMAT  (exp1.csv)
     # -----------------------------------------------------------------------
     wide = (
         raw
@@ -170,10 +148,6 @@ def preprocess(base_dir: Path) -> None:
     print(f"  Total responses   : {len(df_long)}")
     print(f"  Not in SUBTLEX-UK : {raw['not_in_subtlex_uk'].sum()} responses")
 
-
-# ---------------------------------------------------------------------------
-# Entry point
-# ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
     base = Path(__file__).parent.resolve()
