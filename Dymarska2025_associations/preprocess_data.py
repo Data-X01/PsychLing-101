@@ -7,12 +7,12 @@ CODEBOOK, and writes two cleaned files to processed_data/:
   exp1.csv       — wide format: one row per (participant × cue),
                    response1 … response20 as separate columns.
   exp1_long.csv  — long format: one row per (participant × cue × response),
-                   with first_key_RT, log_rt, response_corrected, and responseWordFreq.
+                   with first_key_RT, response_corrected, responseWordFreq,
+                   and not_in_subtlex_uk.
 """
 
 from pathlib import Path
 import pandas as pd
-import numpy as np
 
 
 # ---------------------------------------------------------------------------
@@ -20,15 +20,14 @@ import numpy as np
 # ---------------------------------------------------------------------------
 
 RENAME_MAP = {
-    "Ps.number":          "participant_id",
-    "Cue.number":         "cue_number",        # helper for ordering; dropped later
-    "Response.number":    "response_number",
-    "cues":               "stimulus",
-    "Response":           "response",
-    "RT":                 "first_key_RT",
-    "Response_spelling":  "response_corrected",
-    "logRT":              "log_rt",
-    "ZipfUK":             "responseWordFreq",
+    "Ps.number":         "participant_id",
+    "Cue.number":        "cue_number",       # helper for ordering; dropped later
+    "Response.number":   "response_number",
+    "cues":              "stimulus",
+    "Response":          "response",
+    "RT":                "first_key_RT",
+    "Response_spelling": "response_corrected",
+    "ZipfUK":            "responseWordFreq",
 }
 
 # Columns to keep in the long output (CODEBOOK-aligned)
@@ -40,8 +39,8 @@ LONG_COLS = [
     "response",
     "response_corrected",
     "first_key_RT",
-    "log_rt",
     "responseWordFreq",
+    "not_in_subtlex_uk",
 ]
 
 
@@ -89,14 +88,18 @@ def preprocess(base_dir: Path) -> None:
     raw["participant_id"]  = pd.to_numeric(raw["participant_id"], errors="coerce")
     raw["response_number"] = pd.to_numeric(raw["response_number"], errors="coerce")
     raw["first_key_RT"]    = pd.to_numeric(raw["first_key_RT"], errors="coerce")
+    raw["responseWordFreq"] = pd.to_numeric(raw["responseWordFreq"], errors="coerce")
 
-    # --- 4. Lowercase text fields ---
+    # --- 4. not_in_subtlex_uk: 1 if responseWordFreq is NaN, else 0 ---
+    raw["not_in_subtlex_uk"] = raw["responseWordFreq"].isna().astype(int)
+
+    # --- 5. Lowercase text fields ---
     for col in ("stimulus", "response", "response_corrected"):
         if col in raw.columns:
             raw[col] = raw[col].astype(str).str.lower().str.strip()
             raw[col] = raw[col].replace("nan", "")
 
-    # --- 5. Compute trial_id (0-based index of cue per participant,
+    # --- 6. Compute trial_id (0-based index of cue per participant,
     #        ordered by cue_number) ---
     cue_order = (
         raw[["participant_id", "stimulus", "cue_number"]]
@@ -126,12 +129,10 @@ def preprocess(base_dir: Path) -> None:
 
     # -----------------------------------------------------------------------
     # WIDE FORMAT  (exp1.csv) — one row per participant × cue,
-    #              response1 … response10 as separate columns
+    #              response1 … response20 as separate columns
     # -----------------------------------------------------------------------
-    wide_src = raw[raw["response_number"].between(1, 20, inclusive="both")].copy()
-
     wide = (
-        wide_src
+        raw
         .pivot_table(
             index=["participant_id", "trial_id", "stimulus"],
             columns="response_number",
@@ -164,9 +165,10 @@ def preprocess(base_dir: Path) -> None:
 
     # --- Summary ---
     print("\n  === Summary ===")
-    print(f"  Participants : {df_wide['participant_id'].nunique()}")
-    print(f"  Unique cues  : {df_wide['stimulus'].nunique()}")
-    print(f"  Total responses (long): {len(df_long)}")
+    print(f"  Participants      : {df_wide['participant_id'].nunique()}")
+    print(f"  Unique cues       : {df_wide['stimulus'].nunique()}")
+    print(f"  Total responses   : {len(df_long)}")
+    print(f"  Not in SUBTLEX-UK : {raw['not_in_subtlex_uk'].sum()} responses")
 
 
 # ---------------------------------------------------------------------------
