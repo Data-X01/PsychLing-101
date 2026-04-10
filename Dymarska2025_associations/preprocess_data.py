@@ -22,24 +22,16 @@ def preprocess():
         'Ps.number': 'participant_id',
         'Cue.number': 'trial_id',
         'cues': 'stimulus'
+        'Response_corrected': "response"
     }
     df = df.rename(columns=rename_map)
 
-    # Merge Response and Response_spelling (prefer spelling correction if available)
-    # Then lowercase and strip whitespace
-    df['clean_response'] = (
-        df['Response_spelling']
-        .fillna(df['Response'])
-        .astype(str)
-        .str.lower()
-        .str.strip()
-    )
     
     # 3. Pivot to Wide Format (One row per participant × stimulus)
     wide = df.pivot_table(
         index=['participant_id', 'trial_id', 'stimulus'],
         columns='Response.number',
-        values='clean_response',
+        values='response',
         aggfunc='first'
     )
     
