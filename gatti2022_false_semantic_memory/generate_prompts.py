@@ -29,8 +29,7 @@ def build_prompt(pdf: pd.DataFrame) -> str:
 
     for i, row in enumerate(study_df.itertuples(index=False), start=1):
         lines.append(
-            f"Study trial {i}: List {row.list_name}. "
-            f"The word is '{row.stimulus}'."
+            f"Study trial {i}: The word is '{row.stimulus}'."
         )
 
     lines.append("")
@@ -40,22 +39,54 @@ def build_prompt(pdf: pd.DataFrame) -> str:
         lines.append(
             f"Recognition trial {i}: "
             f"The word is '{row.stimulus}'. "
-            f"Condition: {row.condition}. "
             f"You respond <<{int(row.response)}>>."
         )
 
     return "\n".join(lines)
+
+def build_metadata(pdf: pd.DataFrame) -> dict:
+    pdf = pdf.sort_values("trial_order").reset_index(drop=True)
+
+    study_df = pdf[pdf["phase_id"] == "study"].copy()
+    recog_df = pdf[pdf["phase_id"] == "recognition"].copy()
+
+    return {
+        "participant": int(pdf["participant_id"].iloc[0]),
+        "experiment": str(pdf["experiment"].iloc[0]),
+        "study_trials": [
+            {
+                "trial_id": row.trial_id,
+                "trial_order": int(row.trial_order),
+                "phase_id": row.phase_id,
+                "list": None if pd.isna(row.list) else int(row.list),
+                "list_name": None if pd.isna(row.list_name) else str(row.list_name),
+                "stimulus": row.stimulus,
+            }
+            for row in study_df.itertuples(index=False)
+        ],
+        "recognition_trials": [
+            {
+                "trial_id": row.trial_id,
+                "trial_order": int(row.trial_order),
+                "phase_id": row.phase_id,
+                "list": None if pd.isna(row.list) else int(row.list),
+                "list_name": None if pd.isna(row.list_name) else str(row.list_name),
+                "stimulus": row.stimulus,
+                "condition": row.condition,
+                "response": int(row.response),
+                "accuracy": int(row.accuracy),
+            }
+            for row in recog_df.itertuples(index=False)
+        ],
+    }
 
 def main():
     df = pd.read_csv(INFILE)
 
     with JSONL.open("w", encoding="utf-8") as f:
         for participant_id, pdf in df.groupby("participant_id", sort=True):
-            record = {
-                "text": build_prompt(pdf),
-                "experiment": str(pdf["experiment"].iloc[0]),
-                "participant": int(participant_id),
-            }
+            record = build_metadata(pdf)
+            record["text"] = build_prompt(pdf)
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
     with zipfile.ZipFile(ZIPFILE, "w", compression=zipfile.ZIP_DEFLATED) as zf:
