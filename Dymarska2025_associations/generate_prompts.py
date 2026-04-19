@@ -1,94 +1,67 @@
-"""
-generate_prompts.py
--------------------
-Reads processed_data/exp1.csv and writes prompts.jsonl with one entry
-per participant. Each prompt represents a full session:
-  - Starts with task instructions
-  - Followed by one line per cue trial
-  - Human responses marked with << >>
-"""
-
+import pandas as pd
 import json
 from pathlib import Path
-import pandas as pd
 
-# ---------------------------------------------------------------------------
-# Task instructions (use original wording where available)
-# ---------------------------------------------------------------------------
+def generate_prompts():
+    base_dir = Path(".")
+    processed_file = base_dir / "processed_data" / "exp1.csv"
+    output_file = base_dir / "prompts.jsonl"
 
-INSTRUCTIONS = (
-    "In this task, you will see a cue word, and you will be asked to type "
+    if not processed_file.exists():
+        print(f"Error: {processed_file} not found. Run preprocess_data.py first.")
+        return
+
+    # 1. Read the standardized data
+    df = pd.read_csv(processed_file)
+
+    # 2. Define instructions
+    instructions = (
+           "In this task, you will see a cue word, and you will be asked to type "
     "any associated words which come to mind, one by one.\n\n"
-)
+    )
 
-EXPERIMENT_ID = "exp1/word_associations"
+    prompts = []
+
+    # 3. Group by participant to represent an entire session per prompt
+    for p_id, group in df.groupby("participant_id"):
+        # Sort by trial_id to ensure chronological order
+        group = group.sort_values("trial_id")
+        
+        prompt_text = instructions
+        
+        # 4. Build trial-by-trial data
+        for _, row in group.iterrows():
+            trial_str = f"Trial {row['trial_id'] + 1}:\n"
+            trial_str += f"  Stimulus: '{row['stimulus']}'\n"
+            
+            # Gather all 20 responses
+            responses = []
+            for i in range(1, 21):
+                resp = row[f'response{i}']
+                if pd.notna(resp) and str(resp).strip() != "":
+                    responses.append(f"<<{str(resp).strip()}>>")
+            
+            resp_string = ", ".join(responses)
+            trial_line = f"{row['stimulus']}. You enter {resp_string}.\n"
+            prompt_text += trial_line
 
 
-# ---------------------------------------------------------------------------
-# Prompt generation
-# ---------------------------------------------------------------------------
 
-def generate_prompts(base_dir: Path) -> None:
-    exp1_path = base_dir / "processed_data" / "exp1.csv"
-    if not exp1_path.exists():
-        raise FileNotFoundError(f"Could not find {exp1_path}. Run preprocess_data.py first.")
 
-    df = pd.read_csv(exp1_path)
-
-    # Identify response columns (response1 … response20)
-    response_cols = [c for c in df.columns if c.startswith("response") and c[8:].isdigit()]
-    response_cols = sorted(response_cols, key=lambda c: int(c[8:]))
-
-    all_prompts = []
-
-    for participant_id, participant_df in df.groupby("participant_id"):
-        participant_df = participant_df.sort_values("trial_id")
-
-        prompt_text = INSTRUCTIONS
-
-        for _, row in participant_df.iterrows():
-            stimulus = row["stimulus"]
-
-            # Collect non-empty responses in order
-            responses = [
-                str(row[col]).strip()
-                for col in response_cols
-                if pd.notna(row[col]) and str(row[col]).strip() not in ("", "nan")
-            ]
-
-            if not responses:
-                continue
-
-            # Format: cue word followed by responses in << >>
-            responses_formatted = ", ".join(f"<<{r}>>" for r in responses)
-            prompt_text += f"Cue: {stimulus}. You respond: {responses_formatted}.\n"
-
+        # 5. Create JSONL entry
         entry = {
-            "text":        prompt_text,
-            "experiment":  EXPERIMENT_ID,
-            "participant": int(participant_id),
+            "text": prompt_text.strip(),
+            "experiment": "word_association_exp1",
+            "participant": str(p_id)
         }
-        all_prompts.append(entry)
+        prompts.append(entry)
 
-    # Write JSONL
-    out_path = base_dir / "prompts.jsonl"
-    with out_path.open("w", encoding="utf-8") as f:
-        for entry in all_prompts:
-            f.write(json.dumps(entry) + "\n")
+    # 6. Write to JSONL
+    with open(output_file, 'w', encoding='utf-8') as f:
+        for p in prompts:
+            f.write(json.dumps(p) + '\n')
 
-    print(f"  Written: {out_path.name}  ({len(all_prompts)} participants)")
-
-    # Print one example prompt
-    print("\n--- Example prompt (participant 1) ---\n")
-    print(all_prompts[0]["text"])
-
-
-# ---------------------------------------------------------------------------
-# Entry point
-# ---------------------------------------------------------------------------
+    print(f"Successfully generated {len(prompts)} participant prompts in {output_file}")
 
 if __name__ == "__main__":
-    base = Path(__file__).parent.resolve()
-    print(f"\nGenerating prompts in: {base}\n")
-    generate_prompts(base)
-    print("Done.\n")
+    generate_prompts()
