@@ -1,0 +1,15 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant.
+trial_id,Unique identifier for a single trial within a session or condition.
+trial_order,Presentation order within the session (0-indexed).
+phase_id,Identifier for the experimental phase or block a trial belongs to.
+prime,Prime word presented on the trial.
+target,Target word presented on the trial.
+response,Participant's binary response.
+response_correct,Correct binary response from the source data.
+accuracy,Binary indicator of whether the participant's response was correct.
+rt,Response time converted to numeric seconds from the source RTs column.
+age,Participant age.
+gender,Participant gender normalized to uppercase.
+hand,Handedness normalized to left/right.
+experiment,Experiment identifier for this dataset.
