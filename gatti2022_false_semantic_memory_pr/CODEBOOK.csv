@@ -1,0 +1,14 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant.
+trial_id,Unique identifier for a single trial within a session or condition.
+trial_order,Original within-session trial order from the cleaned dataset (0-indexed after preprocessing; gaps may remain for unanswered/missing trials).
+phase_id,Identifier for the experimental phase or block a trial belongs to.
+stimulus,The recognition probe word presented on the trial.
+probe_type,Fine-grained recognition probe type from the source data (studied, critical, unrelated, weakly).
+condition,Binary recognition condition from the source data (studied vs new).
+response,Participant recognition response.
+accuracy,Binary indicator of whether the participant's response matched the expected answer for the condition.
+rt,Response time for the trial.
+age,Participant age.
+gender,Participant gender, normalized to uppercase.
+experiment,Identifier for the source experiment/file.
