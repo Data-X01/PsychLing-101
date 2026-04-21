@@ -1,0 +1,9 @@
+column_name;description
+participant_id;Anonymized participant ID
+stimuli;String of letters shown on the screen
+type;Type of stimulus (0=pseudoword, 1=word)
+key;"Response key recorded to ""a"" or ""l"""
+accuracy;Response accuracy 
+rt;Response time in ms
+trial_id;Trial order index
+age;Participant age in years
