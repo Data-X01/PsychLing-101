@@ -1,4 +1,4 @@
-participant_id;stimuli;response;accuracy;rt;trial_id;age
+participant_id;stimulus;response;accuracy;rt;trial_id;age
 28;gialloso;2;2;691;1;25
 28;bianchista;2;2;1116;2;25
 28;biancozione;2;2;917;3;25
