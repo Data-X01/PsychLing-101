@@ -154,17 +154,17 @@ Example B – Continuous outcome (self‑paced reading)
 You will read each sentence word-by-word; press SPACE to reveal the next word. Try to read naturally.
 
 Trial 1:
-  Word 1: ‘The’       <<245 ms>>
-  Word 2: ‘cat’       <<198 ms>>
-  Word 3: ‘sat’       <<184 ms>>
-  Word 4: ‘on’        <<171 ms>>
-  Word 5: ‘the’       <<165 ms>>
-  Word 6: ‘mat’       <<213 ms>>
+  Word 1: ‘The’       <<245>> ms 
+  Word 2: ‘cat’       <<198>> ms
+  Word 3: ‘sat’       <<184>> ms
+  Word 4: ‘on’        <<171>> ms
+  Word 5: ‘the’       <<165>> ms
+  Word 6: ‘mat’       <<213>> ms
 
 Trial 2:
-  Word 1: ‘A’         <<231 ms>>
-  Word 2: ‘dog’       <<204 ms>>
-  Word 3: ‘barked’    <<190 ms>>
+  Word 1: ‘A’         <<231>> ms
+  Word 2: ‘dog’       <<204>> ms
+  Word 3: ‘barked’    <<190>> ms
 ~~~
 
 ```
