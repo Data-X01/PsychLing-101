@@ -800,12 +800,10 @@ def print_report(collectors: list[ResultCollector]) -> bool:
     return any_errors
 
 
-def _write_job_summary(collectors: list[ResultCollector], any_errors: bool):
-    """Write a rich markdown summary to $GITHUB_STEP_SUMMARY."""
-    summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
-    if not summary_path:
-        return
-
+def _build_summary_markdown(
+    collectors: list[ResultCollector], any_errors: bool
+) -> str:
+    """Build a rich markdown summary string."""
     lines: list[str] = []
 
     # Header
@@ -851,11 +849,28 @@ def _write_job_summary(collectors: list[ResultCollector], any_errors: bool):
                 lines.append(f"- **[{r.module}]** {r.message}")
             lines.append("\n</details>\n")
 
+    return "\n".join(lines)
+
+
+def _write_job_summary(collectors: list[ResultCollector], any_errors: bool):
+    """Write markdown summary to $GITHUB_STEP_SUMMARY and validation_summary.md."""
+    md = _build_summary_markdown(collectors, any_errors)
+
+    # Write to $GITHUB_STEP_SUMMARY (rendered on the Actions Summary tab)
+    summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary_path:
+        try:
+            with open(summary_path, "a") as f:
+                f.write(md + "\n")
+        except Exception:
+            pass
+
+    # Write to file for PR comment posting
     try:
-        with open(summary_path, "a") as f:
-            f.write("\n".join(lines) + "\n")
+        with open(REPO_ROOT / "validation_summary.md", "w") as f:
+            f.write(md + "\n")
     except Exception:
-        pass  # Don't fail the run if summary write fails
+        pass
 
 
 def main():
