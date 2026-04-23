@@ -13,13 +13,32 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # needed for git diff against origin/main
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Run validation
+      - name: Install dependencies
+        run: pip install langdetect
+
+      - name: Detect changed dataset folders
+        id: detect
         run: |
-          python scripts/validate_submission.py
+          FOLDERS=$(git diff --name-only origin/main...HEAD \
+            | grep -oP '^[^/]+(?=/)' \
+            | sort -u \
+            | grep -vxE 'scripts|\.github|\.git' \
+            | tr '\n' ' ')
+          echo "folders=$FOLDERS" >> "$GITHUB_OUTPUT"
+          echo "Detected dataset folders: ${FOLDERS:-<none>}"
+
+      - name: Run validation
+        if: steps.detect.outputs.folders != ''
+        run: |
+          python scripts/validate_submission.py ${{ steps.detect.outputs.folders }}
+
+      - name: Skip validation (no dataset changes)
+        if: steps.detect.outputs.folders == ''
+        run: echo "No dataset folders changed — skipping validation."
