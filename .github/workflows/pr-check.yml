@@ -3,7 +3,6 @@ name: PR validation
 on:
   pull_request:
     branches: [main]
-  workflow_dispatch:
 
 jobs:
   validate:
@@ -13,7 +12,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # needed for git diff against origin/main
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,25 +25,51 @@ jobs:
       - name: Detect changed dataset folders
         id: detect
         run: |
-          # List top-level directories touched by the PR
-          FOLDERS=$(git diff --name-only origin/main...HEAD \
-            | cut -d/ -f1 \
-            | sort -u \
-            | grep -vxE 'scripts|\.github|\.git|CODEBOOK\.csv|README\.md|LICENSE|TEST\.md' \
-            | tr '\n' ' ' \
-            | xargs)
-          echo "folders=$FOLDERS" >> "$GITHUB_OUTPUT"
+          CHANGED=$(git diff --name-only origin/main...HEAD 2>/dev/null || true)
+          FOLDERS=""
+          if [ -n "$CHANGED" ]; then
+            FOLDERS=$(echo "$CHANGED" \
+              | cut -d/ -f1 \
+              | sort -u \
+              | grep -vxE 'scripts|\.github|\.git|CODEBOOK\.csv|README\.md|LICENSE|TEST\.md' \
+              | tr '\n' ' ' \
+              | xargs)
+          fi
+          echo "Detected folders: '${FOLDERS}'"
           if [ -z "$FOLDERS" ]; then
-            echo "No dataset folders changed."
+            echo "has_folders=false" >> "$GITHUB_OUTPUT"
+            echo "folders=" >> "$GITHUB_OUTPUT"
           else
-            echo "Detected dataset folders: $FOLDERS"
+            echo "has_folders=true" >> "$GITHUB_OUTPUT"
+            echo "folders=$FOLDERS" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Run validation
-        if: ${{ steps.detect.outputs.folders != '' }}
+        if: steps.detect.outputs.has_folders == 'true'
         run: |
+          # Run once to generate the summary file (exit 0 to keep going)
+          python scripts/validate_submission.py ${{ steps.detect.outputs.folders }} || true
+
+      - name: Save PR number
+        if: steps.detect.outputs.has_folders == 'true'
+        run: echo "${{ github.event.pull_request.number }}" > pr_number.txt
+
+      - name: Upload validation summary
+        if: steps.detect.outputs.has_folders == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: |
+            validation_summary.md
+            pr_number.txt
+          retention-days: 1
+
+      - name: Fail on validation errors
+        if: steps.detect.outputs.has_folders == 'true'
+        run: |
+          # Re-run for the real exit code
           python scripts/validate_submission.py ${{ steps.detect.outputs.folders }}
 
       - name: Skip validation (no dataset changes)
-        if: ${{ steps.detect.outputs.folders == '' }}
+        if: steps.detect.outputs.has_folders != 'true'
         run: echo "No dataset folders changed — skipping validation."
