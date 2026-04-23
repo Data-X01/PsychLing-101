@@ -497,7 +497,20 @@ def validate_prompts(
         all_keys_seen: set[str] = set()
         instruction_texts: list[str] = []
         stimulus_words: list[str] = []
-        n_lines = len([l for l in lines if l.strip()])
+
+        # Strip blank lines once
+        non_blank = [(idx, l.strip()) for idx, l in enumerate(lines, 1) if l.strip()]
+        n_lines = len(non_blank)
+
+        # For large files, sample deterministically (first 50 + last 50)
+        MAX_JSONL_SAMPLE = 100
+        if n_lines > MAX_JSONL_SAMPLE:
+            half = MAX_JSONL_SAMPLE // 2
+            sampled = non_blank[:half] + non_blank[-half:]
+            is_sampled = True
+        else:
+            sampled = non_blank
+            is_sampled = False
 
         # Counters for aggregating repeating per-line issues
         missing_field_counts: dict[str, int] = {}  # field_name -> count
@@ -508,10 +521,7 @@ def validate_prompts(
         token_limit_count = 0
         token_limit_lines: list[int] = []
 
-        for i, line in enumerate(lines, 1):
-            line = line.strip()
-            if not line:
-                continue
+        for i, line in sampled:
 
             # --- Valid JSON ---
             try:
@@ -568,6 +578,13 @@ def validate_prompts(
                 stimulus_words.extend(markers[:10])
 
         # --- Emit aggregated per-line errors/warnings ---
+        sample_note = f" (sampled {len(sampled)}/{n_lines} lines)" if is_sampled else ""
+        if is_sampled:
+            rc.warning(
+                MODULE_PROMPTS,
+                f"{jsonl_name}: large file — validated {len(sampled)}/{n_lines} lines "
+                f"(first {MAX_JSONL_SAMPLE // 2} + last {MAX_JSONL_SAMPLE // 2}).",
+            )
         if participant_misname_count > 0:
             rc.error(
                 MODULE_PROMPTS,
