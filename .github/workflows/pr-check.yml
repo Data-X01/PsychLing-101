@@ -45,6 +45,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          lfs: true
 
       - name: Check out repository (comment trigger)
         if: github.event_name == 'issue_comment'
@@ -52,6 +53,7 @@ jobs:
         with:
           fetch-depth: 0
           ref: main
+          lfs: true
 
       - name: Merge PR head into main (comment trigger)
         if: github.event_name == 'issue_comment'
@@ -63,6 +65,7 @@ jobs:
             echo "::error::Merge conflict — cannot validate this PR automatically."
             exit 1
           }
+          git lfs pull
 
       - name: Set up Python
         uses: actions/setup-python@v5
