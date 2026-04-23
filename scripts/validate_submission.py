@@ -101,7 +101,7 @@ class Result:
         self.message = message
 
     def __str__(self):
-        return f"[{self.level}] ({self.module}) {self.message}"
+        return f"{self.level} ({self.module}) {self.message}"
 
     def github_annotation(self) -> str:
         """Return a GitHub Actions annotation string."""
@@ -782,10 +782,6 @@ def print_report(collectors: list[ResultCollector]) -> bool:
         for r in rc.results:
             prefix = "  ❌" if r.level == "ERROR" else "  ⚠️ "
             print(f"{prefix} {r}")
-
-            # GitHub Actions annotations
-            if is_ci:
-                print(r.github_annotation())
 
         if rc.has_errors:
             any_errors = True
