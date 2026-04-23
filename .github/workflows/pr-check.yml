@@ -13,7 +13,25 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # needed for git diff against origin/main
+          fetch-depth: 0  # needed for git diff
+
+      - name: Debug git state
+        run: |
+          echo "=== Git remotes ==="
+          git remote -v
+          echo ""
+          echo "=== Current branch ==="
+          git branch -a
+          echo ""
+          echo "=== GITHUB_BASE_REF = $GITHUB_BASE_REF"
+          echo "=== GITHUB_HEAD_REF = $GITHUB_HEAD_REF"
+          echo "=== GITHUB_REF      = $GITHUB_REF"
+          echo ""
+          echo "=== origin/main exists? ==="
+          git rev-parse --verify origin/main 2>&1 || echo "origin/main NOT found"
+          echo ""
+          echo "=== All changed files ==="
+          git diff --name-only origin/main...HEAD 2>&1 || echo "git diff FAILED"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,25 +44,43 @@ jobs:
       - name: Detect changed dataset folders
         id: detect
         run: |
-          # List top-level directories touched by the PR
-          FOLDERS=$(git diff --name-only origin/main...HEAD \
-            | cut -d/ -f1 \
-            | sort -u \
-            | grep -vxE 'scripts|\.github|\.git|CODEBOOK\.csv|README\.md|LICENSE|TEST\.md' \
-            | tr '\n' ' ' \
-            | xargs)
-          echo "folders=$FOLDERS" >> "$GITHUB_OUTPUT"
+          echo "=== Running folder detection ==="
+
+          # Get all changed files
+          CHANGED=$(git diff --name-only origin/main...HEAD 2>/dev/null || true)
+          echo "Changed files:"
+          echo "$CHANGED"
+          echo ""
+
+          # Extract top-level folder names, exclude non-dataset items
+          FOLDERS=""
+          if [ -n "$CHANGED" ]; then
+            FOLDERS=$(echo "$CHANGED" \
+              | cut -d/ -f1 \
+              | sort -u \
+              | grep -vxE 'scripts|\.github|\.git|CODEBOOK\.csv|README\.md|LICENSE|TEST\.md' \
+              | tr '\n' ' ' \
+              | xargs)
+          fi
+
+          echo "Detected folders: '${FOLDERS}'"
+
           if [ -z "$FOLDERS" ]; then
+            echo "has_folders=false" >> "$GITHUB_OUTPUT"
+            echo "folders=" >> "$GITHUB_OUTPUT"
             echo "No dataset folders changed."
           else
-            echo "Detected dataset folders: $FOLDERS"
+            echo "has_folders=true" >> "$GITHUB_OUTPUT"
+            echo "folders=$FOLDERS" >> "$GITHUB_OUTPUT"
+            echo "Will validate: $FOLDERS"
           fi
 
       - name: Run validation
-        if: ${{ steps.detect.outputs.folders != '' }}
+        if: steps.detect.outputs.has_folders == 'true'
         run: |
+          echo "Running: python scripts/validate_submission.py ${{ steps.detect.outputs.folders }}"
           python scripts/validate_submission.py ${{ steps.detect.outputs.folders }}
 
       - name: Skip validation (no dataset changes)
-        if: ${{ steps.detect.outputs.folders == '' }}
+        if: steps.detect.outputs.has_folders != 'true'
         run: echo "No dataset folders changed — skipping validation."
