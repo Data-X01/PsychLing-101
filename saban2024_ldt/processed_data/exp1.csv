@@ -1,4 +1,4 @@
-participant_id;stimuli;response;accuracy;rt;trial_id;age
+participant_id;stimulus;response;accuracy;rt;trial_id;age
 1;salmonetore;2;1;624;1;32
 1;venatore;1;2;680;2;32
 1;soletore;2;1;643;3;32
