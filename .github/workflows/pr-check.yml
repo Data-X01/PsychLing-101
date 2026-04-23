@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     concurrency:
       group: validate-${{ github.event.pull_request.number || github.event.issue.number }}
-      cancel-in-progress: true
+      cancel-in-progress: false
     # Run on PR events, or on "/validate" comments on PRs
     if: >
       github.event_name == 'pull_request' ||
