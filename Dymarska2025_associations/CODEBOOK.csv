@@ -1,4 +1,4 @@
-column_name,description
+Recommended Column Name,Description
 participant_id,Unique identifier assigned to each participant.
 trial_id,Unique identifier for a single trial within a session or condition.
 stimulus,The linguistic or visual stimulus presented to the participant in a given trial.
