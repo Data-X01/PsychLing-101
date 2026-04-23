@@ -3,16 +3,57 @@ name: PR validation
 on:
   pull_request:
     branches: [main]
+  issue_comment:
+    types: [created]
 
 jobs:
   validate:
     runs-on: ubuntu-latest
+    # Run on PR events, or on "/validate" comments on PRs
+    if: >
+      github.event_name == 'pull_request' ||
+      (
+        github.event_name == 'issue_comment' &&
+        github.event.issue.pull_request &&
+        contains(github.event.comment.body, '/validate')
+      )
 
     steps:
-      - name: Check out repository
+      - name: Get PR info (comment trigger)
+        if: github.event_name == 'issue_comment'
+        id: pr_info
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PR_URL="${{ github.event.issue.pull_request.url }}"
+          PR_DATA=$(curl -s -H "Authorization: token $GH_TOKEN" "$PR_URL")
+          HEAD_REF=$(echo "$PR_DATA" | python3 -c "import sys,json; print(json.load(sys.stdin)['head']['ref'])")
+          HEAD_REPO=$(echo "$PR_DATA" | python3 -c "import sys,json; print(json.load(sys.stdin)['head']['repo']['clone_url'])")
+          HEAD_SHA=$(echo "$PR_DATA" | python3 -c "import sys,json; print(json.load(sys.stdin)['head']['sha'])")
+          PR_NUMBER=$(echo "$PR_DATA" | python3 -c "import sys,json; print(json.load(sys.stdin)['number'])")
+          echo "head_ref=$HEAD_REF" >> "$GITHUB_OUTPUT"
+          echo "head_repo=$HEAD_REPO" >> "$GITHUB_OUTPUT"
+          echo "head_sha=$HEAD_SHA" >> "$GITHUB_OUTPUT"
+          echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+          echo "Validating PR #$PR_NUMBER (ref: $HEAD_REF, sha: $HEAD_SHA)"
+
+      - name: Check out repository (PR trigger)
+        if: github.event_name == 'pull_request'
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Check out repository (comment trigger)
+        if: github.event_name == 'issue_comment'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ steps.pr_info.outputs.head_sha }}
+
+      - name: Fetch PR head (comment trigger)
+        if: github.event_name == 'issue_comment'
+        run: |
+          git fetch origin "${{ steps.pr_info.outputs.head_repo }}" "${{ steps.pr_info.outputs.head_ref }}" || true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -47,12 +88,16 @@ jobs:
       - name: Run validation
         if: steps.detect.outputs.has_folders == 'true'
         run: |
-          # Run once to generate the summary file (exit 0 to keep going)
           python scripts/validate_submission.py ${{ steps.detect.outputs.folders }} || true
 
       - name: Save PR number
         if: steps.detect.outputs.has_folders == 'true'
-        run: echo "${{ github.event.pull_request.number }}" > pr_number.txt
+        run: |
+          if [ "${{ github.event_name }}" = "issue_comment" ]; then
+            echo "${{ steps.pr_info.outputs.pr_number }}" > pr_number.txt
+          else
+            echo "${{ github.event.pull_request.number }}" > pr_number.txt
+          fi
 
       - name: Upload validation summary
         if: steps.detect.outputs.has_folders == 'true'
@@ -67,7 +112,6 @@ jobs:
       - name: Fail on validation errors
         if: steps.detect.outputs.has_folders == 'true'
         run: |
-          # Re-run for the real exit code
           python scripts/validate_submission.py ${{ steps.detect.outputs.folders }}
 
       - name: Skip validation (no dataset changes)
