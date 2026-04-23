@@ -74,7 +74,7 @@ cd PsychLing-101
 
 # 3. Create & switch to a new feature branch named after your dataset using the format `authorYEAR_title` (e.g., `smith2000_priming`)
 # All your work for this contribution will be done inside this branch.
-git checkout -b add_<authorYEAR_title>
+git checkout -b <authorYEAR_title>
 ```
 
 ## 3. Prepare your dataset
