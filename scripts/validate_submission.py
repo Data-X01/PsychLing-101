@@ -797,7 +797,69 @@ def print_report(collectors: list[ResultCollector]) -> bool:
         print("  RESULT: PASSED" + (" (with warnings)" if any(rc.warning_count > 0 for rc in collectors) else ""))
     print(f"{'=' * 60}\n")
 
+    # Write GitHub Actions Job Summary (rendered as markdown on the PR page)
+    if is_ci:
+        _write_job_summary(collectors, any_errors)
+
     return any_errors
+
+
+def _write_job_summary(collectors: list[ResultCollector], any_errors: bool):
+    """Write a rich markdown summary to $GITHUB_STEP_SUMMARY."""
+    summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if not summary_path:
+        return
+
+    lines: list[str] = []
+
+    # Header
+    if any_errors:
+        lines.append("# ❌ Validation Failed\n")
+    else:
+        has_warnings = any(rc.warning_count > 0 for rc in collectors)
+        if has_warnings:
+            lines.append("# ✅ Validation Passed (with warnings)\n")
+        else:
+            lines.append("# ✅ Validation Passed\n")
+
+    # Overview table
+    lines.append("| Dataset | Status | Errors | Warnings |")
+    lines.append("|---------|--------|--------|----------|")
+    for rc in collectors:
+        marker = "❌ FAIL" if rc.has_errors else "✅ PASS"
+        lines.append(f"| `{rc.folder_name}` | {marker} | {rc.error_count} | {rc.warning_count} |")
+    lines.append("")
+
+    # Details per dataset
+    for rc in collectors:
+        if not rc.results:
+            continue
+
+        lines.append(f"## `{rc.folder_name}`\n")
+
+        # Errors first
+        errors = [r for r in rc.results if r.level == "ERROR"]
+        if errors:
+            lines.append("<details open>")
+            lines.append(f"<summary>❌ <strong>{len(errors)} Error(s)</strong> — must fix before merge</summary>\n")
+            for r in errors:
+                lines.append(f"- **[{r.module}]** {r.message}")
+            lines.append("\n</details>\n")
+
+        # Then warnings
+        warnings = [r for r in rc.results if r.level == "WARNING"]
+        if warnings:
+            lines.append("<details>")
+            lines.append(f"<summary>⚠️ {len(warnings)} Warning(s) — informational</summary>\n")
+            for r in warnings:
+                lines.append(f"- **[{r.module}]** {r.message}")
+            lines.append("\n</details>\n")
+
+    try:
+        with open(summary_path, "a") as f:
+            f.write("\n".join(lines) + "\n")
+    except Exception:
+        pass  # Don't fail the run if summary write fails
 
 
 def main():
