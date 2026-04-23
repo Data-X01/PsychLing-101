@@ -1,0 +1,69 @@
+name: Post validation comment
+
+# Runs after "PR validation" completes.
+# Uses workflow_run so it executes in the BASE repo context,
+# giving it write access to post comments on fork PRs.
+
+on:
+  workflow_run:
+    workflows: ["PR validation"]
+    types: [completed]
+
+permissions:
+  pull-requests: write
+  actions: read
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    if: >
+      github.event.workflow_run.event == 'pull_request'
+
+    steps:
+      - name: Download validation report
+        uses: actions/download-artifact@v4
+        with:
+          name: validation-report
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+        continue-on-error: true
+        id: download
+
+      - name: Post or update PR comment
+        if: steps.download.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          PR_NUMBER=$(cat pr_number.txt)
+          MARKER="<!-- validation-bot -->"
+
+          if [ ! -f "validation_summary.md" ]; then
+            echo "No validation summary found — skipping."
+            exit 0
+          fi
+
+          # Append run metadata
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}"
+          CONCLUSION="${{ github.event.workflow_run.conclusion }}"
+
+          {
+            echo "$MARKER"
+            cat validation_summary.md
+            echo ""
+            echo "---"
+            echo "*🤖 Posted by [PR validation]($RUN_URL) · Conclusion: \`$CONCLUSION\`*"
+          } > comment_body.md
+
+          # Find existing bot comment
+          EXISTING=$(gh api "repos/${GH_REPO}/issues/${PR_NUMBER}/comments" \
+            --jq ".[] | select(.body | contains(\"$MARKER\")) | .id" | head -1)
+
+          if [ -n "$EXISTING" ]; then
+            gh api "repos/${GH_REPO}/issues/comments/${EXISTING}" \
+              -X PATCH -f body="$(cat comment_body.md)"
+            echo "✅ Updated existing comment $EXISTING on PR #$PR_NUMBER"
+          else
+            gh pr comment "$PR_NUMBER" --body-file comment_body.md
+            echo "✅ Created new comment on PR #$PR_NUMBER"
+          fi
