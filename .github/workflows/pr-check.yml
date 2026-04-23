@@ -84,7 +84,7 @@ jobs:
             FOLDERS=$(echo "$CHANGED" \
               | cut -d/ -f1 \
               | sort -u \
-              | grep -vxE 'scripts|\.github|\.git|CODEBOOK\.csv|README\.md|LICENSE|TEST\.md' \
+              | grep -vxE 'scripts|\.github|\.git|\..*|CODEBOOK\.csv|README\.md|LICENSE|TEST\.md|test\.md|requirements\.txt' \
               | tr '\n' ' ' \
               | xargs)
           fi
