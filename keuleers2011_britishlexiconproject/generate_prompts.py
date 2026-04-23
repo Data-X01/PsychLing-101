@@ -61,7 +61,7 @@ def generate_prompts():
         all_prompts.append({
             'text': individual_prompt,
             'experiment': 'keuleers2011_britishlexiconproject/exp1',
-            'participant': f"{participant_id}_block_{int(phase_id)}", 
+            'participant_id': f"{participant_id}_block_{int(phase_id)}", 
             'rt': rt_list
         })
 
