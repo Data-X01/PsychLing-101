@@ -3,11 +3,6 @@ name: PR validation
 on:
   pull_request:
     branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pull-requests: write  # needed to post PR comments
 
 jobs:
   validate:
@@ -17,7 +12,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # needed for git diff
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,10 +25,7 @@ jobs:
       - name: Detect changed dataset folders
         id: detect
         run: |
-          # Get all changed files
           CHANGED=$(git diff --name-only origin/main...HEAD 2>/dev/null || true)
-
-          # Extract top-level folder names, exclude non-dataset items
           FOLDERS=""
           if [ -n "$CHANGED" ]; then
             FOLDERS=$(echo "$CHANGED" \
@@ -43,9 +35,7 @@ jobs:
               | tr '\n' ' ' \
               | xargs)
           fi
-
           echo "Detected folders: '${FOLDERS}'"
-
           if [ -z "$FOLDERS" ]; then
             echo "has_folders=false" >> "$GITHUB_OUTPUT"
             echo "folders=" >> "$GITHUB_OUTPUT"
@@ -55,49 +45,29 @@ jobs:
           fi
 
       - name: Run validation
-        id: validate
         if: steps.detect.outputs.has_folders == 'true'
         run: |
+          # Run once to generate the summary file (exit 0 to keep going)
           python scripts/validate_submission.py ${{ steps.detect.outputs.folders }} || true
-          # The script writes validation_summary.md in the repo root when
-          # GITHUB_ACTIONS=true. We check its exit code via the summary content.
 
-      - name: Post PR comment
-        if: steps.detect.outputs.has_folders == 'true' && github.event_name == 'pull_request'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          PR_NUMBER=${{ github.event.pull_request.number }}
-          SUMMARY_FILE="validation_summary.md"
-          MARKER="<!-- validation-bot -->"
+      - name: Save PR number
+        if: steps.detect.outputs.has_folders == 'true'
+        run: echo "${{ github.event.pull_request.number }}" > pr_number.txt
 
-          if [ ! -f "$SUMMARY_FILE" ]; then
-            echo "No summary file found — skipping comment."
-            exit 0
-          fi
+      - name: Upload validation summary
+        if: steps.detect.outputs.has_folders == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: |
+            validation_summary.md
+            pr_number.txt
+          retention-days: 1
 
-          # Build comment body with hidden marker for upsert
-          BODY=$(printf '%s\n%s' "$MARKER" "$(cat $SUMMARY_FILE)")
-
-          # Find existing bot comment
-          EXISTING=$(gh api "repos/${{ github.repository }}/issues/${PR_NUMBER}/comments" \
-            --jq ".[] | select(.body | contains(\"$MARKER\")) | .id" | head -1)
-
-          if [ -n "$EXISTING" ]; then
-            # Update existing comment
-            gh api "repos/${{ github.repository }}/issues/comments/${EXISTING}" \
-              -X PATCH -f body="$BODY"
-            echo "Updated existing comment $EXISTING"
-          else
-            # Create new comment
-            gh pr comment "$PR_NUMBER" --body "$BODY"
-            echo "Created new comment on PR #$PR_NUMBER"
-          fi
-
-      - name: Check validation result
+      - name: Fail on validation errors
         if: steps.detect.outputs.has_folders == 'true'
         run: |
-          # Re-run to get the actual exit code
+          # Re-run for the real exit code
           python scripts/validate_submission.py ${{ steps.detect.outputs.folders }}
 
       - name: Skip validation (no dataset changes)
