@@ -70,7 +70,7 @@ GENERATE_SCRIPT_NAMES = ["generate_prompts.py", "generate_prompts.R"]
 MAIN_CODEBOOK_HEADER = ("Recommended Column Name", "Description")
 
 # Required JSONL fields (per README §3.3)
-REQUIRED_JSONL_FIELDS = {"text", "experiment", "participant"}
+REQUIRED_JSONL_FIELDS = {"text", "experiment", "participant_id"}
 
 # Optional JSONL metadata fields that should mirror CSV columns
 OPTIONAL_METADATA_FIELDS = {
@@ -443,11 +443,38 @@ def validate_prompts(
         rc.error(MODULE_PROMPTS, f"Could not open prompts.jsonl.zip: {e}")
         return
 
-    jsonl_files = [n for n in zf.namelist() if n.endswith(".jsonl") and not n.startswith("__MACOSX")]
+    # --- Validate ZIP contents ---
+    all_entries = [n for n in zf.namelist() if not n.startswith("__MACOSX")]
+    jsonl_files = [n for n in all_entries if n.endswith(".jsonl")]
+    non_jsonl = [n for n in all_entries if not n.endswith(".jsonl") and not n.endswith("/")]
+
     if not jsonl_files:
         rc.error(MODULE_PROMPTS, "No .jsonl file found inside prompts.jsonl.zip.")
         zf.close()
         return
+
+    # Should be exactly one JSONL file named 'prompts.jsonl'
+    if len(jsonl_files) > 1:
+        rc.error(
+            MODULE_PROMPTS,
+            f"prompts.jsonl.zip should contain exactly one .jsonl file, "
+            f"but found {len(jsonl_files)}: {jsonl_files}",
+        )
+
+    for jf in jsonl_files:
+        # Accept both 'prompts.jsonl' and 'folder/prompts.jsonl' (strip dirs)
+        basename = jf.split("/")[-1]
+        if basename != "prompts.jsonl":
+            rc.error(
+                MODULE_PROMPTS,
+                f"JSONL file inside ZIP is named '{jf}' — expected 'prompts.jsonl'.",
+            )
+
+    if non_jsonl:
+        rc.warning(
+            MODULE_PROMPTS,
+            f"Unexpected non-JSONL files in prompts.jsonl.zip: {non_jsonl}",
+        )
 
     # Collect all CSV columns across all processed CSVs
     all_csv_columns: set[str] = set()
@@ -474,7 +501,7 @@ def validate_prompts(
 
         # Counters for aggregating repeating per-line issues
         missing_field_counts: dict[str, int] = {}  # field_name -> count
-        participant_id_misname_count = 0
+        participant_misname_count = 0
         no_marker_count = 0
         stray_angle_count = 0
         stray_angle_lines: list[int] = []
@@ -503,8 +530,8 @@ def validate_prompts(
             # --- Required fields ---
             for field in REQUIRED_JSONL_FIELDS:
                 if field not in keys:
-                    if field == "participant" and "participant_id" in keys:
-                        participant_id_misname_count += 1
+                    if field == "participant_id" and "participant" in keys:
+                        participant_misname_count += 1
                     else:
                         missing_field_counts[field] = missing_field_counts.get(field, 0) + 1
 
@@ -541,11 +568,11 @@ def validate_prompts(
                 stimulus_words.extend(markers[:10])
 
         # --- Emit aggregated per-line errors/warnings ---
-        if participant_id_misname_count > 0:
+        if participant_misname_count > 0:
             rc.error(
                 MODULE_PROMPTS,
-                f"{jsonl_name}: field 'participant_id' used instead of 'participant' "
-                f"in {participant_id_misname_count}/{n_lines} lines.",
+                f"{jsonl_name}: field 'participant' used instead of 'participant_id' "
+                f"in {participant_misname_count}/{n_lines} lines.",
             )
 
         for field, count in sorted(missing_field_counts.items()):
