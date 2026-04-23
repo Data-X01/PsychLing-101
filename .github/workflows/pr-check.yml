@@ -26,19 +26,25 @@ jobs:
       - name: Detect changed dataset folders
         id: detect
         run: |
+          # List top-level directories touched by the PR
           FOLDERS=$(git diff --name-only origin/main...HEAD \
-            | grep -oP '^[^/]+(?=/)' \
+            | cut -d/ -f1 \
             | sort -u \
-            | grep -vxE 'scripts|\.github|\.git' \
-            | tr '\n' ' ')
+            | grep -vxE 'scripts|\.github|\.git|CODEBOOK\.csv|README\.md|LICENSE|TEST\.md' \
+            | tr '\n' ' ' \
+            | xargs)
           echo "folders=$FOLDERS" >> "$GITHUB_OUTPUT"
-          echo "Detected dataset folders: ${FOLDERS:-<none>}"
+          if [ -z "$FOLDERS" ]; then
+            echo "No dataset folders changed."
+          else
+            echo "Detected dataset folders: $FOLDERS"
+          fi
 
       - name: Run validation
-        if: steps.detect.outputs.folders != ''
+        if: ${{ steps.detect.outputs.folders != '' }}
         run: |
           python scripts/validate_submission.py ${{ steps.detect.outputs.folders }}
 
       - name: Skip validation (no dataset changes)
-        if: steps.detect.outputs.folders == ''
+        if: ${{ steps.detect.outputs.folders == '' }}
         run: echo "No dataset folders changed — skipping validation."
