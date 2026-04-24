@@ -74,7 +74,6 @@ df_clean <- df %>%
   mutate(
     participant_id = as.character(participant_id),
     trial_id = suppressWarnings(as.integer(trial_id)),
-    trial_order = suppressWarnings(as.integer(trial_order)),
     version = suppressWarnings(as.integer(version)),
     phase_id = as.character(phase_id),
     block = suppressWarnings(as.integer(block)),
@@ -85,6 +84,8 @@ df_clean <- df %>%
     response = str_to_lower(as.character(response)),
     start_rt = suppressWarnings(as.numeric(start_rt)),
     end_rt = suppressWarnings(as.numeric(end_rt)),
+    start_rt = as.integer(round(start_rt)),
+    end_rt   = as.integer(round(end_rt)),
     accuracy = suppressWarnings(as.integer(accuracy)),
     concreteness = str_to_lower(as.character(concreteness)),
     age = suppressWarnings(as.numeric(age)),
@@ -113,7 +114,7 @@ df_clean <- df %>%
       TRUE ~ NA_character_
     )
   ) %>%
-  arrange(participant_id, trial_order, trial_id)
+  arrange(participant_id, trial_id)
 
 # -----------------------------
 # Save processed file

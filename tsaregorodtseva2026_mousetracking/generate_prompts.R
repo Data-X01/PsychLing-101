@@ -114,8 +114,8 @@ changed_rule_screen <- function(version, accuracy_pct, mean_rt) {
   
   paste(
     "End of Block 2 of 4!",
-    paste0("You responded correctly in <<", accuracy_pct, ">>% of the trials."),
-    paste0("Your average reaction time was <<", mean_rt, ">> ms."),
+    paste0("You responded correctly in ", accuracy_pct, "% of the trials."),
+    paste0("Your average reaction time was ", mean_rt, " ms."),
     "In the next block, the instructions change. Please read them carefully:",
     rule,
     "Drag the word to the top or bottom of the screen as if you are moving it out of the screen!",
@@ -138,8 +138,8 @@ same_rule_rest_screen <- function(version, accuracy_pct, mean_rt) {
   
   paste(
     "End of Block 3 of 4!",
-    paste0("You responded correctly in <<", accuracy_pct, ">>% of the trials."),
-    paste0("Your average reaction time was <<", mean_rt, ">> ms."),
+    paste0("You responded correctly in ", accuracy_pct, "% of the trials."),
+    paste0("Your average reaction time was ", mean_rt, " ms."),
     "In the next block, the instructions remain the same.",
     rule,
     "Drag the word to the top or bottom of the screen as if you are moving it out of the screen!",
@@ -150,8 +150,8 @@ same_rule_rest_screen <- function(version, accuracy_pct, mean_rt) {
 training_summary_1 <- function(accuracy_pct, mean_rt) {
   paste(
     "This is the end of the practice block!",
-    paste0("You responded correctly in <<", accuracy_pct, ">>% of the trials."),
-    paste0("Your average reaction time was <<", mean_rt, ">> ms."),
+    paste0("You responded correctly in ", accuracy_pct, "% of the trials."),
+    paste0("Your average reaction time was ", mean_rt, " ms."),
     "Please press the Continue button to continue the experiment."
   )
 }
@@ -171,8 +171,8 @@ training_summary_2 <- function(version, accuracy_pct, mean_rt) {
   
   paste(
     "This is the end of the practice block!",
-    paste0("You responded correctly in <<", accuracy_pct, ">>% of the trials."),
-    paste0("Your average reaction time was <<", mean_rt, ">> ms."),
+    paste0("You responded correctly in ", accuracy_pct, "% of the trials."),
+    paste0("Your average reaction time was ", mean_rt, " ms."),
     "REMINDER:",
     rule,
     "Drag the word to the top or bottom of the screen as if you are moving it out of the screen!"
@@ -183,15 +183,15 @@ final_screen <- function(version, accuracy_pct, mean_rt) {
   if (version == 1) {
     paste(
       "This is the end of the experiment. Thank you for your participation!",
-      paste0("You responded correctly in <<", accuracy_pct, ">>% of the trials."),
-      paste0("Your average reaction time was <<", mean_rt, ">> ms."),
+      paste0("You responded correctly in ", accuracy_pct, "% of the trials."),
+      paste0("Your average reaction time was ", mean_rt, " ms."),
       "Please press the Next button to receive the Prolific Completion URL."
     )
   } else {
     paste(
       "This is the end of the experiment. Thank you for your participation!",
-      paste0("You responded correctly in <<", accuracy_pct, ">>% of the trials."),
-      paste0("Your average reaction time was <<", mean_rt, ">> ms."),
+      paste0("You responded correctly in ", accuracy_pct, "% of the trials."),
+      paste0("Your average reaction time was ", mean_rt, " ms."),
       "Before you receive the Prolific Completion URL, we will ask you one last question.",
       "Please press the Next button."
     )
@@ -234,7 +234,7 @@ make_trial_text <- function(row, show_feedback = FALSE) {
   
   paste0(
     "Trial ", row$trial_id, ": ",
-    "The word is \"", row$stimulus, "\". ",
+    "The word is '", row$stimulus, "'. ",
     "You moved it to the <<", row$response, ">> line. ",
     "Movement started after <<", row$start_rt, ">> ms and ended after <<", row$end_rt, ">> ms.",
     feedback_text
