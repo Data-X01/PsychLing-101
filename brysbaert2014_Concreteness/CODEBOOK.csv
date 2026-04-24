@@ -1,4 +1,4 @@
-column_name,description
+Recommended Column Name,Description
 participant_id,Anonymized participant ID (derived from Worker_code)
 age,Participant age in years (from Answer.QAge)
 gender,Self-reported gender: Female / Male / Unspecified (from Answer.QGender)
