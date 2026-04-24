@@ -13,7 +13,7 @@ SPR_INSTRUCTION = (
     "You will read each sentence word-by-word; press SPACE to reveal the next word. "
     "Try to read naturally. "
     "After some sentences, a yes/no comprehension question will be shown. "
-    "Press '{yes_key}' for YES and '{no_key}' for NO.\n\n"
+    "Press '{yes_key}' for YES and '{no_key}' for NO."
     "We will measure response times.\n\n"
 )
 
@@ -21,7 +21,7 @@ ET_INSTRUCTION = (
     "You will read each sentence displayed on a screen. "
     "Your eye movements are tracked as you read naturally. "
     "After some sentences, a yes/no comprehension question will be shown. "
-    "Press '{yes_key}' for YES and '{no_key}' for NO.\n\n"
+    "Press '{yes_key}' for YES and '{no_key}' for NO."
     "We will measure fixation durations.\n\n"
 )
 
