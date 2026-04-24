@@ -1,10 +1,14 @@
 name: PR validation
 
 on:
-  pull_request:
+  pull_request_target:
     branches: [main]
   issue_comment:
     types: [created]
+
+permissions:
+  pull-requests: write
+  contents: read
 
 jobs:
   validate:
@@ -14,7 +18,7 @@ jobs:
       cancel-in-progress: false
     # Run on PR events, or on "/validate" comments on PRs
     if: >
-      github.event_name == 'pull_request' ||
+      github.event_name == 'pull_request_target' ||
       (
         github.event_name == 'issue_comment' &&
         github.event.issue.pull_request &&
@@ -22,6 +26,7 @@ jobs:
       )
 
     steps:
+      # ── Resolve PR metadata ──────────────────────────────────────────
       - name: Get PR info (comment trigger)
         if: github.event_name == 'issue_comment'
         id: pr_info
@@ -40,41 +45,125 @@ jobs:
           echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
           echo "Validating PR #$PR_NUMBER (ref: $HEAD_REF, sha: $HEAD_SHA)"
 
-      - name: Check out repository (PR trigger)
-        if: github.event_name == 'pull_request'
+      # ── Checkout main (scripts) then merge PR data ───────────────────
+      # pull_request_target already checks out the base (main) by default.
+      # For both triggers we checkout main, then merge the PR head on top.
+      - name: Check out base repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          lfs: true
-
-      - name: Check out repository (comment trigger)
-        if: github.event_name == 'issue_comment'
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
           ref: main
-          lfs: true
+          fetch-depth: 0
+          lfs: false
 
-      - name: Merge PR head into main (comment trigger)
-        if: github.event_name == 'issue_comment'
+      - name: Merge PR changes into main
+        env:
+          GIT_LFS_SKIP_SMUDGE: "1"
         run: |
+          git lfs install
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch "${{ steps.pr_info.outputs.head_repo }}" "${{ steps.pr_info.outputs.head_ref }}"
+
+          if [ "${{ github.event_name }}" = "issue_comment" ]; then
+            HEAD_REPO="${{ steps.pr_info.outputs.head_repo }}"
+            HEAD_REF="${{ steps.pr_info.outputs.head_ref }}"
+          else
+            HEAD_REPO="${{ github.event.pull_request.head.repo.clone_url }}"
+            HEAD_REF="${{ github.event.pull_request.head.ref }}"
+          fi
+
+          git remote add pr_fork "$HEAD_REPO" 2>/dev/null || true
+          git fetch pr_fork "$HEAD_REF"
           git merge FETCH_HEAD --no-edit || {
             echo "::error::Merge conflict — cannot validate this PR automatically."
             exit 1
           }
-          git lfs pull
 
+          # Best-effort LFS: try to resolve pointers (may fail if budget exceeded)
+          git lfs fetch origin || true
+          git lfs fetch pr_fork "$HEAD_REF" || true
+          git lfs checkout || true
+
+      - name: Resolve remaining LFS pointers via GitHub media URL
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event_name }}" = "issue_comment" ]; then
+            HEAD_REPO="${{ steps.pr_info.outputs.head_repo }}"
+            HEAD_REF="${{ steps.pr_info.outputs.head_ref }}"
+          else
+            HEAD_REPO="${{ github.event.pull_request.head.repo.clone_url }}"
+            HEAD_REF="${{ github.event.pull_request.head.ref }}"
+          fi
+
+          # Extract owner/repo from clone URL for the GitHub Contents API
+          # https://github.com/user/repo.git -> user/repo
+          FORK_NWO=$(echo "$HEAD_REPO" | sed 's|https://github.com/||; s|\.git$||')
+
+          LFS_SIG="version https://git-lfs.github.com/spec/v1"
+          RESOLVED=0
+          FAILED=0
+
+          # Find all files that are still LFS pointers on disk
+          find . -path ./.git -prune -o -type f \( -name "*.csv" -o -name "*.zip" \) -print | while read -r path; do
+            [ -f "$path" ] || continue
+            head -1 "$path" | grep -q "^$LFS_SIG" || continue
+
+            # Strip leading ./
+            REL_PATH="${path#./}"
+            echo "Resolving LFS pointer: $REL_PATH"
+
+            # Step 1: Query Contents API (JSON) to get the media download URL
+            # For LFS files, download_url points to media.githubusercontent.com
+            # which serves actual binary content (not the pointer)
+            DOWNLOAD_URL=$(curl -sL \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: token $GH_TOKEN" \
+              "https://api.github.com/repos/${FORK_NWO}/contents/${REL_PATH}?ref=${HEAD_REF}" \
+              2>/dev/null \
+              | python3 -c "import sys,json; print(json.load(sys.stdin).get('download_url',''))" 2>/dev/null)
+
+            if [ -z "$DOWNLOAD_URL" ]; then
+              echo "  ⚠️  Could not get download URL — skipping"
+              FAILED=$((FAILED + 1))
+              continue
+            fi
+
+            echo "  Downloading from: $DOWNLOAD_URL"
+
+            # Step 2: Download actual content from media.githubusercontent.com
+            HTTP_CODE=$(curl -sL -w "%{http_code}" \
+              -o "$path.tmp" \
+              "$DOWNLOAD_URL" \
+              2>/dev/null)
+
+            if [ "$HTTP_CODE" != "200" ]; then
+              echo "  ⚠️  Download returned HTTP $HTTP_CODE — skipping"
+              rm -f "$path.tmp"
+              FAILED=$((FAILED + 1))
+              continue
+            fi
+
+            # Verify it's not still a pointer
+            if head -1 "$path.tmp" | grep -q "^$LFS_SIG"; then
+              echo "  ⚠️  Downloaded content is still a pointer — skipping"
+              rm -f "$path.tmp"
+              FAILED=$((FAILED + 1))
+            else
+              mv "$path.tmp" "$path"
+              SIZE=$(wc -c < "$path" | tr -d ' ')
+              echo "  ✅ Resolved ($SIZE bytes)"
+              RESOLVED=$((RESOLVED + 1))
+            fi
+          done
+          echo "LFS resolution: $RESOLVED resolved, $FAILED failed"
+
+      # ── Setup ────────────────────────────────────────────────────────
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
-        run: pip install langdetect
-
+      # ── Detect & validate ────────────────────────────────────────────
       - name: Detect changed dataset folders
         id: detect
         run: |
@@ -102,25 +191,49 @@ jobs:
         run: |
           python scripts/validate_submission.py ${{ steps.detect.outputs.folders }} || true
 
-      - name: Save PR number
+      # ── Post comment directly (no second workflow needed) ────────────
+      - name: Post or update PR comment
         if: steps.detect.outputs.has_folders == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
           if [ "${{ github.event_name }}" = "issue_comment" ]; then
-            echo "${{ steps.pr_info.outputs.pr_number }}" > pr_number.txt
+            PR_NUMBER="${{ steps.pr_info.outputs.pr_number }}"
           else
-            echo "${{ github.event.pull_request.number }}" > pr_number.txt
+            PR_NUMBER="${{ github.event.pull_request.number }}"
           fi
 
-      - name: Upload validation summary
-        if: steps.detect.outputs.has_folders == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: validation-report
-          path: |
-            validation_summary.md
-            pr_number.txt
-          retention-days: 1
+          MARKER="<!-- validation-bot -->"
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
+          if [ ! -f "validation_summary.md" ]; then
+            echo "No validation summary found — skipping comment."
+            exit 0
+          fi
+
+          {
+            echo "$MARKER"
+            cat validation_summary.md
+            echo ""
+            echo "---"
+            echo "*🤖 Posted by [PR validation]($RUN_URL)*"
+          } > comment_body.md
+
+          # Upsert: update existing bot comment or create new
+          EXISTING=$(gh api "repos/${GH_REPO}/issues/${PR_NUMBER}/comments" \
+            --jq ".[] | select(.body | contains(\"$MARKER\")) | .id" | head -1)
+
+          if [ -n "$EXISTING" ]; then
+            gh api "repos/${GH_REPO}/issues/comments/${EXISTING}" \
+              -X PATCH -f body="$(cat comment_body.md)"
+            echo "✅ Updated existing comment $EXISTING on PR #$PR_NUMBER"
+          else
+            gh pr comment "$PR_NUMBER" --body-file comment_body.md
+            echo "✅ Created new comment on PR #$PR_NUMBER"
+          fi
+
+      # ── Final status ─────────────────────────────────────────────────
       - name: Fail on validation errors
         if: steps.detect.outputs.has_folders == 'true'
         run: |
