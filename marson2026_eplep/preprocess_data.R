@@ -14,14 +14,6 @@ eplep_exp3 <- read.table(paste('original_data/',raw_filenames[3],sep=''),
 eplep_exp4 <- read.table(paste('original_data/',raw_filenames[4],sep=''),
                          header = TRUE, sep = ",", dec = ".")
 
-eplep_participants <- read.table(paste('original_data/',raw_filenames[5],sep=''),
-                         header = TRUE, sep = ",", dec = ".")
-
-eplep_exp1 <- merge(eplep_exp1,eplep_participants[,c("id","age")],by='id')
-eplep_exp2 <- merge(eplep_exp2,eplep_participants[,c("id","age")],by='id')
-eplep_exp3 <- merge(eplep_exp3,eplep_participants[,c("id","age")],by='id')
-eplep_exp4 <- merge(eplep_exp4,eplep_participants[,c("id","age")],by='id')
-
 new_labels <- c('participant_id','phase_id','trial_order','list','stimulus','condition','catch','response','accuracy','rt','age')
 
 colnames(eplep_exp1) <- new_labels
@@ -34,47 +26,31 @@ eplep_exp1 <-
   mutate(accuracy = case_when(
     accuracy == 1 ~ 1,
     accuracy == 2 ~ 0,
-    accuracy == 3 ~ 0),
-    rt = case_when(
-      rt == 3000 ~ NaN,
-      rt < 3000 ~ rt
-    ))
+    accuracy == 3 ~ 0))
 
 eplep_exp2 <-
   eplep_exp2 %>%
   mutate(accuracy = case_when(
     accuracy == 1 ~ 1,
     accuracy == 2 ~ 0,
-    accuracy == 3 ~ 0),
-    rt = case_when(
-      rt == 3000 ~ NaN,
-      rt < 3000 ~ rt
-    ))
+    accuracy == 3 ~ 0))
 
 eplep_exp3 <-
   eplep_exp3 %>%
   mutate(accuracy = case_when(
     accuracy == 1 ~ 1,
     accuracy == 2 ~ 0,
-    accuracy == 3 ~ 0),
-    rt = case_when(
-      rt == 3000 ~ NaN,
-      rt < 3000 ~ rt
-    ))
+    accuracy == 3 ~ 0))
 
 eplep_exp4 <-
   eplep_exp4 %>%
   mutate(accuracy = case_when(
     accuracy == 1 ~ 1,
     accuracy == 2 ~ 0,
-    accuracy == 3 ~ 0),
-    rt = case_when(
-      rt == 3000 ~ NaN,
-      rt < 3000 ~ rt
-    ))
+    accuracy == 3 ~ 0))
 
 # export processed data as csv
-write.csv(eplep_exp1, "processed_data/eplep_exp1.csv")
-write.csv(eplep_exp2, "processed_data/eplep_exp2.csv")
-write.csv(eplep_exp3, "processed_data/eplep_exp3.csv")
-write.csv(eplep_exp4, "processed_data/eplep_exp4.csv")
+write.csv(eplep_exp1, "processed_data/exp1.csv")
+write.csv(eplep_exp2, "processed_data/exp2.csv")
+write.csv(eplep_exp3, "processed_data/exp3.csv")
+write.csv(eplep_exp4, "processed_data/exp4.csv")

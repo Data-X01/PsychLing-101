@@ -26,6 +26,7 @@ on.exit(close(con), add = TRUE)
 
 for(exp_n in 1:length(processed_filenames)) {
 df <- read_csv(file.path(base_dir, "processed_data", processed_filenames[exp_n]), show_col_types = FALSE, progress = FALSE)
+df[,1]<- NULL
 
 df <- df[order(df$participant_id, df$trial_order), , drop = FALSE]
 
@@ -79,10 +80,11 @@ for (participant in participants) {
         button <- press_L
       } else if(accuracy==0 & (condition == "SPW" | condition == "CPW" | condition == "NW")){
         button <- press_A
+      } else {
+        button <- "none"
       }
-      button
       
-      if(is.na(row$rt[1])){
+      if(row$rt[1] == 3000){
         datapoint <- sprintf(
           "You see %s. You did not respond in time\n ",
           stimulus
@@ -96,7 +98,7 @@ for (participant in participants) {
       
       prompt <- paste0(prompt, datapoint)
     }
-    rts <- c(rts,as.character(row$rt))
+    rts <- c(rts,row$rt[1])
   }
   prompt <- paste0(prompt, "\n")
   
