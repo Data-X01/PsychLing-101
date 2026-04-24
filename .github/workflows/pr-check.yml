@@ -79,10 +79,44 @@ jobs:
           }
 
           # Best-effort LFS: try to resolve pointers (may fail if budget exceeded)
-          # Unresolved pointers are detected by the validation script.
           git lfs fetch origin || true
           git lfs fetch pr_fork "$HEAD_REF" || true
           git lfs checkout || true
+
+      - name: Resolve remaining LFS pointers via raw download
+        run: |
+          if [ "${{ github.event_name }}" = "issue_comment" ]; then
+            HEAD_SHA="${{ steps.pr_info.outputs.head_sha }}"
+            HEAD_REPO="${{ steps.pr_info.outputs.head_repo }}"
+          else
+            HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+            HEAD_REPO="${{ github.event.pull_request.head.repo.clone_url }}"
+          fi
+
+          # Convert clone URL to raw content base URL
+          # https://github.com/user/repo.git -> https://github.com/user/repo/raw/<sha>
+          RAW_BASE=$(echo "$HEAD_REPO" | sed 's/\.git$//')/raw/$HEAD_SHA
+
+          LFS_SIG="version https://git-lfs.github.com/spec/v1"
+          RESOLVED=0
+
+          # Find all LFS pointer files and download actual content
+          git lfs ls-files -l 2>/dev/null | while read -r oid _ path; do
+            if [ -f "$path" ] && head -1 "$path" | grep -q "^$LFS_SIG"; then
+              echo "Downloading LFS file: $path"
+              curl -sL "$RAW_BASE/$path" -o "$path.tmp"
+              # Verify it's not still a pointer
+              if head -1 "$path.tmp" | grep -q "^$LFS_SIG"; then
+                echo "  ⚠️  Still a pointer — skipping"
+                rm -f "$path.tmp"
+              else
+                mv "$path.tmp" "$path"
+                echo "  ✅ Resolved"
+                RESOLVED=$((RESOLVED + 1))
+              fi
+            fi
+          done
+          echo "Resolved $RESOLVED LFS pointer(s) via raw download"
 
       # ── Setup ────────────────────────────────────────────────────────
       - name: Set up Python
