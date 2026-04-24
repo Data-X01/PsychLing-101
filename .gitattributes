@@ -1,3 +1,4 @@
 futrell2021_corpus/original_data/*.pdf filter=lfs diff=lfs merge=lfs -text
 futrell2021_corpus/original_data/*.tsv filter=lfs diff=lfs merge=lfs -text
 futrell2021_corpus/processed_data/*.csv filter=lfs diff=lfs merge=lfs -text
+brysbaert2014_Concreteness/processed_data/exp1.csv filter=lfs diff=lfs merge=lfs -text
