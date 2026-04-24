@@ -72,8 +72,6 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
-        run: pip install langdetect
 
       - name: Detect changed dataset folders
         id: detect
