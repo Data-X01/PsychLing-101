@@ -61,7 +61,7 @@ OPTIONAL_METADATA_FIELDS = {
 }
 
 # Rough character limit for ~32K tokens
-TOKEN_CHAR_LIMIT = 128_000
+TOKEN_CHAR_LIMIT = 50_000
 
 # Git LFS pointer signature (first line of every pointer file)
 LFS_POINTER_SIGNATURE = b"version https://git-lfs.github.com/spec/v1"
@@ -617,10 +617,10 @@ def validate_prompts(
 
         if token_limit_count > 0:
             example = f" (e.g., lines {token_limit_lines})" if token_limit_lines else ""
-            rc.warning(
+            rc.error(
                 MODULE_PROMPTS,
-                f"{jsonl_name}: {token_limit_count}/{n_lines} lines exceed ~32K token limit "
-                f"({TOKEN_CHAR_LIMIT:,} chars){example}.",
+                f"{jsonl_name}: {token_limit_count}/{n_lines} lines exceed the "
+                f"{TOKEN_CHAR_LIMIT:,}-character limit{example}.",
             )
 
         # --- Metadata cross-check ---
