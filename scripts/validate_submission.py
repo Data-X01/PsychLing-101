@@ -61,7 +61,7 @@ OPTIONAL_METADATA_FIELDS = {
 }
 
 # Rough character limit for ~32K tokens
-TOKEN_CHAR_LIMIT = 50_000
+TOKEN_CHAR_LIMIT = 100_000
 
 # Git LFS pointer signature (first line of every pointer file)
 LFS_POINTER_SIGNATURE = b"version https://git-lfs.github.com/spec/v1"
