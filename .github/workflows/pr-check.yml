@@ -83,40 +83,93 @@ jobs:
           git lfs fetch pr_fork "$HEAD_REF" || true
           git lfs checkout || true
 
-      - name: Resolve remaining LFS pointers via raw download
+      - name: Resolve remaining LFS pointers via Batch API
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           if [ "${{ github.event_name }}" = "issue_comment" ]; then
-            HEAD_SHA="${{ steps.pr_info.outputs.head_sha }}"
             HEAD_REPO="${{ steps.pr_info.outputs.head_repo }}"
           else
-            HEAD_SHA="${{ github.event.pull_request.head.sha }}"
             HEAD_REPO="${{ github.event.pull_request.head.repo.clone_url }}"
           fi
 
-          # Convert clone URL to raw content base URL
-          # https://github.com/user/repo.git -> https://github.com/user/repo/raw/<sha>
-          RAW_BASE=$(echo "$HEAD_REPO" | sed 's/\.git$//')/raw/$HEAD_SHA
+          # Build LFS Batch API URL from clone URL
+          # https://github.com/user/repo.git -> https://github.com/user/repo.git/info/lfs/objects/batch
+          # Ensure the URL ends with .git for the LFS API
+          FORK_BASE=$(echo "$HEAD_REPO" | sed 's/\.git$//')
+          LFS_API="${FORK_BASE}.git/info/lfs/objects/batch"
+          # Also try upstream LFS in case objects live there
+          ORIGIN_LFS="https://github.com/${{ github.repository }}.git/info/lfs/objects/batch"
 
           LFS_SIG="version https://git-lfs.github.com/spec/v1"
           RESOLVED=0
 
-          # Find all LFS pointer files and download actual content
-          git lfs ls-files -l 2>/dev/null | while read -r oid _ path; do
-            if [ -f "$path" ] && head -1 "$path" | grep -q "^$LFS_SIG"; then
-              echo "Downloading LFS file: $path"
-              curl -sL "$RAW_BASE/$path" -o "$path.tmp"
-              # Verify it's not still a pointer
-              if head -1 "$path.tmp" | grep -q "^$LFS_SIG"; then
-                echo "  ⚠️  Still a pointer — skipping"
-                rm -f "$path.tmp"
-              else
-                mv "$path.tmp" "$path"
-                echo "  ✅ Resolved"
-                RESOLVED=$((RESOLVED + 1))
-              fi
+          # Find all files that are still LFS pointers on disk
+          find . -path ./.git -prune -o -type f \( -name "*.csv" -o -name "*.zip" \) -print | while read -r path; do
+            [ -f "$path" ] || continue
+            head -1 "$path" | grep -q "^$LFS_SIG" || continue
+
+            # Parse OID and size from the pointer file
+            OID=$(grep '^oid sha256:' "$path" | sed 's/^oid sha256://')
+            SIZE=$(grep '^size ' "$path" | awk '{print $2}')
+
+            if [ -z "$OID" ] || [ -z "$SIZE" ]; then
+              echo "⚠️  Could not parse LFS pointer: $path — skipping"
+              continue
+            fi
+
+            echo "Resolving LFS pointer: $path (oid=${OID:0:12}…, size=$SIZE)"
+
+            # Try the LFS Batch API (fork first, then upstream)
+            DOWNLOAD_URL=""
+            for api_url in "$LFS_API" "$ORIGIN_LFS"; do
+              BATCH_RESPONSE=$(curl -sL \
+                -X POST \
+                -H "Accept: application/vnd.git-lfs+json" \
+                -H "Content-Type: application/vnd.git-lfs+json" \
+                -H "Authorization: token $GH_TOKEN" \
+                -d "{\"operation\":\"download\",\"transfers\":[\"basic\"],\"objects\":[{\"oid\":\"$OID\",\"size\":$SIZE}]}" \
+                "$api_url" 2>/dev/null) || continue
+
+              # Extract download URL from the batch response
+              DOWNLOAD_URL=$(echo "$BATCH_RESPONSE" \
+                | python3 -c "
+          import sys, json
+          try:
+              data = json.load(sys.stdin)
+              for obj in data.get('objects', []):
+                  actions = obj.get('actions', {})
+                  dl = actions.get('download', {})
+                  href = dl.get('href', '')
+                  if href:
+                      print(href)
+                      break
+          except Exception:
+              pass
+          " 2>/dev/null)
+
+              [ -n "$DOWNLOAD_URL" ] && break
+            done
+
+            if [ -z "$DOWNLOAD_URL" ]; then
+              echo "  ⚠️  Could not resolve via LFS Batch API — skipping"
+              continue
+            fi
+
+            # Download actual content
+            curl -sL "$DOWNLOAD_URL" -o "$path.tmp"
+
+            # Verify it's not still a pointer
+            if head -1 "$path.tmp" | grep -q "^$LFS_SIG"; then
+              echo "  ⚠️  Downloaded content is still a pointer — skipping"
+              rm -f "$path.tmp"
+            else
+              mv "$path.tmp" "$path"
+              echo "  ✅ Resolved ($SIZE bytes)"
+              RESOLVED=$((RESOLVED + 1))
             fi
           done
-          echo "Resolved $RESOLVED LFS pointer(s) via raw download"
+          echo "Resolved $RESOLVED LFS pointer(s) via Batch API"
 
       # ── Setup ────────────────────────────────────────────────────────
       - name: Set up Python
