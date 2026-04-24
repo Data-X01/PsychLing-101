@@ -10,8 +10,7 @@ MAX_CHARS = 50_000
 INSTRUCTION = (
     "You will read a story word-by-word; press SPACE to reveal the next word. "
     "Try to read naturally. "
-    "After the story, comprehension questions will be shown. "
-    "Response times are recorded.\n\n"
+    "Reaction times are recorded.\n\n"
 )
 
 
