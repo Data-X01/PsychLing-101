@@ -1,4 +1,4 @@
-column_name,description,experiment
+"Recommended Column Name", Description,experiment
 participant_id,Anonymized participant ID,both
 age,Participant age in years,both
 gender,Participant gender (male/female),both
