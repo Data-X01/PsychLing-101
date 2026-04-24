@@ -1,0 +1,28 @@
+column_name,description,experiment
+participant_id,Anonymized participant ID,both
+age,Participant age in years,both
+gender,Participant gender (male/female),both
+education,Years of education,both
+vision,"Self-reported vision quality (1=excellent 20/20 or better, 7=poor 20/50)",both
+school,University at which the participant was tested (msu/washu/suny/omaha),both
+ospan,"Operation span score: sum of letters recalled in correct order (0–75)",both
+saccade,Antisaccade task accuracy (proportion correct),both
+stroop,"Stroop interference RT: mean RT in incongruent minus congruent condition (ms)",both
+stroop_err,Stroop interference error rate: error rate in incongruent minus congruent condition,both
+ac,Attentional control composite score (PCA of ospan / saccade / stroop),both
+passage,Woodcock-Johnson III passage comprehension score,both
+vocaba,Woodcock-Johnson III synonym test score,both
+vocabb,Woodcock-Johnson III antonym test score,both
+vocabc,Woodcock-Johnson III analogy test score,both
+meq,"Morningness-Eveningness Questionnaire (MEQ) score (16–86; higher = more morning-type)",both
+session,Session number (1 or 2),both
+trial_id,"Trial order index within participant (1-indexed, sorted by Session, Block, Trial for LDT; Session, Trial for naming)",both
+prime,Prime word presented before the target (lowercase),both
+prime_type,"Type of prime: first_associate (most common association in Nelson et al. 1999 norms) or other_associate (2nd-Nth most common association to a different cue word)",both
+soa,"Stimulus onset asynchrony in ms: 200 (short, associated with automatic priming) or 1200 (long, associated with intentional priming)",both
+relatedness,"Semantic relatedness of the prime-target pair: related or unrelated (unrelated pairs formed by random re-pairing within the same prime-type set)",both
+stimulus,Target word or nonword presented to the participant,both
+lexicality,"Whether the target is a real word ('word') or a pronounceable nonword ('nonword'). Half of word targets were replaced by nonwords per participant.",exp1
+response,"Participant response: 'word' or 'nonword' for LDT (exp1, inferred from target.ACC and lexicality); 'correct', 'unsure', 'mispronunciation', or 'extraneous' for speeded naming (exp2)",both
+rt,"Response time in milliseconds. For naming (exp2), set to NaN if a microphone error was detected.",both
+accuracy,"Response accuracy (1.0 = correct, 0.0 = incorrect)",both
