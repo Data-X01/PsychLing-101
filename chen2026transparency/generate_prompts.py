@@ -31,13 +31,12 @@ exp1 = pd.read_csv(PROC_DIR / "exp1.csv")
 exp1 = exp1.sort_values(["participant_id", "trial_id"]).reset_index(drop=True)
 
 INSTRUCTION = (
-    "参加者需要对复合词的语义透明度进行打分："
+    "请你对复合词的语义透明度进行打分："
     "（1）复合词各组成成分对复合词整体语义的贡献程度；"
     "（2）复合词整体语义的可推测性（即能否从各组成成分的意义推断出复合词的意义）。"
     "打分范围为0到5，其中0表示\u201c完全没有贡献\u201d或\u201c非常难以推测\u201d，5表示\u201c贡献非常大\u201d或\u201c非常容易推测\u201d。"
     "如果某个词或者汉字有多种意义，请根据第一反应进行打分。\n\n"
 )
-
 
 def format_trial(trial_num: int, row: pd.Series) -> str:
     compound = row["stimulus"]
@@ -49,10 +48,13 @@ def format_trial(trial_num: int, row: pd.Series) -> str:
     return (
         f'{trial_num}：\n'
         f'1. "{c1}"为"{compound}"这个词的整体语义贡献了多少？'
+        f'请用0-5之间的整数来回答。\n'
         f'<<{r1}>>\n'
         f'2. "{c2}"为"{compound}"这个词的整体语义贡献了多少？'
+        f'请用0-5之间的整数来回答。\n'
         f'<<{r2}>>\n'
         f'3. "{compound}"的意思能从"{c1}"和"{c2}"的语义上推测出来吗？'
+        f'请用0-5之间的整数来回答。\n'
         f'<<{r3}>>\n'
     )
 

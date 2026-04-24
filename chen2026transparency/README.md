@@ -16,30 +16,21 @@ Participants rated the semantic transparency of Chinese compound words. For each
 
 **Chinese (original):**
 
-参加者需要对复合词的语义透明度进行打分，包括两个方面：
-
-（1）复合词各组成成分对复合词整体语义的贡献程度
-
-（2）复合词整体语义的可推测性（即能否从各组成成分的意义推断出复合词的意义）
-
-打分范围为0到5，其中：
-- 0表示"完全没有贡献"或"非常难以推测"
-- 5表示"贡献非常大"或"非常容易推测"
-
-注意：如果某个词或者汉字有多种意义，请根据第一反应进行打分。
+“请你对复合词的语义透明度进行打分：
+    "（1）复合词各组成成分对复合词整体语义的贡献程度；"
+    "（2）复合词整体语义的可推测性（即能否从各组成成分的意义推断出复合词的意义）。"
+    "打分范围为0到5，其中0表示\u201c完全没有贡献\u201d或\u201c非常难以推测\u201d，5表示\u201c贡献非常大\u201d或\u201c非常容易推测\u201d。"
+    "注：如果某个词或者汉字有多种意义，请根据第一反应进行打分。\n\n"
 
 **English (translation):**
 
-Participants rated two aspects of Chinese compound words on a 0–5 scale:
+"You are asked to rate the semantic transparency of compound words:
+(1) The degree of contribution of each component of the compound word to the overall meaning of the compound word;
+(2) The inferability of the overall meaning of the compound word (i.e., whether the meaning of the compound word can be inferred from the meanings of its components).
 
-1. **Constituent contribution**: The semantic contribution of each constituent (component) to the compound's overall meaning
-2. **Overall predictability**: How easily the compound's overall meaning can be inferred from the meanings of its constituents
+The rating scale ranges from 0 to 5, where 0 indicates 'no contribution at all' or 'very difficult to infer,' and 5 indicates 'very significant contribution' or 'very easy to infer.'
 
-**Scale**: 
-- 0 = no contribution / very hard to predict
-- 5 = very large contribution / very easy to predict
-
-**Note**: If a word or character had multiple meanings, participants were instructed to respond based on their first intuition.
+Note: If a word or character has multiple meanings, please rate based on your first instinct."
 
 
 ### Prompt template
@@ -48,12 +39,12 @@ Each JSONL line represents one participant's session segment (3 segments per par
 
 ```
 1：
-1. "{constituent_1}"为"{stimulus}"这个词的整体语义贡献了多少？<<{constituent_1_contribution}>>
-2. "{constituent_2}"为"{stimulus}"这个词的整体语义贡献了多少？<<{constituent_2_contribution}>>
-3. "{stimulus}"的意思能从"{constituent_1}"和"{constituent_2}"的语义上推测出来吗？<<{predictability}>>
+1. "{constituent_1}"为"{stimulus}"这个词的整体语义贡献了多少？请用0-5之间的整数来回答。\n<<{constituent_1_contribution}>>\n
+2. "{constituent_2}"为"{stimulus}"这个词的整体语义贡献了多少？请用0-5之间的整数来回答。\n<<{constituent_2_contribution}>>\n
+3. "{stimulus}"的意思能从"{constituent_1}"和"{constituent_2}"的语义上推测出来吗？请用0-5之间的整数来回答。\n<<{predictability}>>\n
 
 2：
-1. "{constituent_1}"为"{stimulus}"这个词的整体语义贡献了多少？<<{constituent_1_contribution}>>
+1. "{constituent_1}"为"{stimulus}"这个词的整体语义贡献了多少？请用0-5之间的整数来回答。<<{constituent_1_contribution}>>
 ...
 
 
