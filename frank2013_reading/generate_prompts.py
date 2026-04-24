@@ -14,6 +14,9 @@ SPR_INSTRUCTION = (
     "Try to read naturally. "
     "After some sentences, a yes/no comprehension question will be shown. "
     "Press '{yes_key}' for YES and '{no_key}' for NO.\n\n"
+    "Note: The <<RT>> ms values indicate self-paced reading times — "
+    "the time in milliseconds from when each word was revealed until the participant "
+    "pressed SPACE to advance to the next word.\n\n"
 )
 
 ET_INSTRUCTION = (
@@ -21,6 +24,9 @@ ET_INSTRUCTION = (
     "Your eye movements are tracked as you read naturally. "
     "After some sentences, a yes/no comprehension question will be shown. "
     "Press '{yes_key}' for YES and '{no_key}' for NO.\n\n"
+    "Note: The <<RT>> ms values indicate first fixation durations — "
+    "the time in milliseconds of the first fixation on each word during reading. "
+    "Words marked <<not fixated>> were skipped (no fixation before a rightward saccade).\n\n"
 )
 
 
