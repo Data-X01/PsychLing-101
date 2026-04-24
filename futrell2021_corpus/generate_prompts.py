@@ -10,10 +10,8 @@ MAX_CHARS = 50_000
 INSTRUCTION = (
     "You will read a story word-by-word; press SPACE to reveal the next word. "
     "Try to read naturally. "
-    "After the story, comprehension questions will be shown.\n\n"
-    "Note: The <<RT>> ms values indicate self-paced reading times — "
-    "the time in milliseconds from when each word was revealed until the participant "
-    "pressed SPACE to advance to the next word.\n\n"
+    "After the story, comprehension questions will be shown. "
+    "Response times are recorded.\n\n"
 )
 
 
