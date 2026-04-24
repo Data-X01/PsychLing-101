@@ -34,7 +34,7 @@ Participants pressed "/" for a real word target and "z" for a nonword target. Th
 
 `prompts.jsonl.zip` contains one JSON line per participant:
 
-- **exp1 (LDT)**: response key assignments are randomized per participant. Each trial shows: `Trial N: Prime: 'PRIME' → Target: 'target'. You press <<key>>.`
-- **exp2 (Naming)**: Each trial shows: `Trial N: Prime: 'PRIME' → Target: 'target'. Naming time: <<RT>> ms.` Trials with missing RT (microphone error or no detection) show `<<not recorded>>`.
+- **exp1 (LDT)**: yes/no key assignments are randomized per participant. Each trial shows: `Trial N: Cue: 'CUE' → Target: 'target'. You press <<key>>. RT: <<RT>> ms.` Trials with missing RT show `<<not recorded>>`.
+- **exp2 (Naming)**: Each trial shows: `Trial N: Cue: 'CUE' → Target: 'target'. Naming time: <<RT>> ms.` Trials with missing RT (microphone error or no detection) show `<<not recorded>>`.
 
-The `rt` field in each JSON entry contains the list of valid (non-NaN) reaction times in milliseconds, in trial order.
+The prime word is referred to as "cue" in both instructions to avoid giving the model meta-knowledge about the semantic priming manipulation. The `rt` field in each JSON entry contains the list of valid (non-NaN) reaction times in milliseconds, in trial order.
