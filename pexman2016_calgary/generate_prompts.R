@@ -39,9 +39,9 @@ format_jsonl_line <- function(text, experiment, participant_id, rt, age, gender)
     '{"text": ',            toJSON(text,           auto_unbox = TRUE),
     ', "experiment": ',     toJSON(experiment,     auto_unbox = TRUE),
     ', "participant_id": ', toJSON(participant_id, auto_unbox = TRUE),
-    ', "rt": ',             toJSON(rt,             auto_unbox = FALSE),
-    ', "age": ',            ifelse(is.na(age),    "null", toJSON(age,    auto_unbox = TRUE)), # for correct json format
-    ', "gender": ',         ifelse(is.na(gender), "null", toJSON(gender, auto_unbox = TRUE)),
+    ', "rt": ', toJSON(as.integer(rt), auto_unbox = FALSE, na = "null"),
+    ', "age": ',            ifelse(is.na(age),    "null", as.character(as.integer(age))),
+    ', "gender": ',         ifelse(is.na(gender), "null", paste0('"', gender, '"')),
     '}'
   )
 }
@@ -100,16 +100,16 @@ main <- function() {
   participants <- unique(df$participant_id)
   
   con <- file("prompts.jsonl", open = "wb")
-  on.exit(close(con), add = TRUE)
   
   for (p in participants) {
     df_p   <- df[df$participant_id == p, , drop = FALSE]
     prompt <- build_participant_prompt(df_p)
     line   <- format_jsonl_line(prompt, EXPERIMENT_NAME, p,
-                                as.list(as.vector(df_p$rt)), df_p$age[1], df_p$gender[1])
+                                df_p$rt, df_p$age[1], df_p$gender[1])
     writeLines(line, con, sep = "\n")
   }
   
+  close(con) # manually because it omitted the last participant when done like in the guenther2023ViSpa pipeline
   zip("prompts.jsonl.zip", "prompts.jsonl")
   file.remove("prompts.jsonl")
   cat("Done. Written", length(participants), "prompts to prompts.jsonl.zip\n")
@@ -118,8 +118,3 @@ main <- function() {
 if (sys.nframe() == 0) {
   main()
 }
-
-con <- unz("prompts.jsonl.zip", "prompts.jsonl")
-lines <- readLines(con)
-close(con)
-cat(fromJSON(lines[1])$text)
