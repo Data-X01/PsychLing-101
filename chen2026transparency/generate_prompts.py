@@ -1,31 +1,28 @@
 """
 Generate LLM prompts for Chen et al. (2026) Semantic Transparency Ratings.
-
-Reads processed_data/exp1.csv and writes prompts.jsonl (3 lines per participant),
+Reads processed_data/exp1.csv and writes prompts.jsonl,
 then compresses it to prompts.jsonl.zip.
-
-Each participant's trials are split into 3 prompts (chunks) to stay within token limit.
+Each participant's trials are split into chunks of max 100 trials.
 Responses are marked with << >>.
-
 Each line in the JSONL file contains:
   - "text": Full prompt with instructions, cover story, and all trial-by-trial data
   - "experiment": Identifier for the experiment
-  - "participant": Participant ID (format: original_id_part1/2/3)
+  - "participant_id": Participant ID (format: original_id_part1/2/3/...)
   - "trial_id_start": Global trial ID at the start of this prompt
-  - "trial_id_end": Global trial ID at the end of this prompt (trial numbers do not reset across prompts)
-
+  - "trial_id_end": Global trial ID at the end of this prompt
 """
-
 import json
+import math
 import zipfile
 from pathlib import Path
-
 import pandas as pd
 
 BASE = Path(__file__).parent
 PROC_DIR = BASE / "processed_data"
 OUT_JSONL = BASE / "prompts.jsonl"
-OUT_ZIP = BASE / "prompts.jsonl.zip"
+OUT_ZIP   = BASE / "prompts.jsonl.zip"
+
+MAX_TRIALS_PER_PROMPT = 100
 
 exp1 = pd.read_csv(PROC_DIR / "exp1.csv")
 exp1 = exp1.sort_values(["participant_id", "trial_id"]).reset_index(drop=True)
@@ -55,48 +52,46 @@ def format_trial(trial_num: int, row: pd.Series) -> str:
         f'<<{r2}>>\n'
         f'3. "{compound}"的意思能从"{c1}"和"{c2}"的语义上推测出来吗？'
         f'请用0-5之间的整数来回答。\n'
-        f'<<{r3}>>\n'
+        f'<<{r3}>> \n'
     )
 
-
-
 all_prompts = []
+
 for pid, group in exp1.groupby("participant_id", sort=False):
-    # Split trials into 3 chunks
     trials_list = list(group.iterrows())
-    n_trials = len(trials_list)
-    chunk_size = (n_trials + 2) // 3  # Round up to distribute evenly
-    
-    for chunk_idx in range(3):
-        start_idx = chunk_idx * chunk_size
-        end_idx = min(start_idx + chunk_size, n_trials)
-        
-        # Get trial_id_start and trial_id_end from the data
-        trial_id_start = trials_list[start_idx][1]["trial_id"]
-        trial_id_end = trials_list[end_idx - 1][1]["trial_id"]
-        
-        # Build text for this chunk
+    n_trials    = len(trials_list)
+    n_chunks    = math.ceil(n_trials / MAX_TRIALS_PER_PROMPT)
+
+    for chunk_idx in range(n_chunks):
+        start_idx = chunk_idx * MAX_TRIALS_PER_PROMPT
+        end_idx   = min(start_idx + MAX_TRIALS_PER_PROMPT, n_trials)
+        chunk     = trials_list[start_idx:end_idx]
+
+        trial_id_start = chunk[0][1]["trial_id"]
+        trial_id_end   = chunk[-1][1]["trial_id"]
+
         text = INSTRUCTION
-        for trial_num, (_, row) in enumerate(trials_list[start_idx:end_idx], start=start_idx+1):
+        for trial_num, (_, row) in enumerate(chunk, start=start_idx + 1):
             text += format_trial(trial_num, row) + "\n"
-        
+
         all_prompts.append({
-            "text": text,
-            "experiment": "chen2026transparency",
-            "participant_id": f"{pid}_part{chunk_idx+1}",
+            "text":           text,
+            "experiment":     "chen2026transparency",
+            "participant_id": f"{pid}_part{chunk_idx + 1}",
             "trial_id_start": trial_id_start,
-            "trial_id_end": trial_id_end,
+            "trial_id_end":   trial_id_end,
         })
 
 # Write JSONL
-
 with open(OUT_JSONL, "w", encoding="utf-8") as f:
     for entry in all_prompts:
         f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
-# Compress
+# Compress and remove uncompressed file
 with zipfile.ZipFile(OUT_ZIP, "w", zipfile.ZIP_DEFLATED) as zf:
     zf.write(OUT_JSONL, OUT_JSONL.name)
 OUT_JSONL.unlink()
 
-print(f"Written {len(all_prompts)} prompts to {OUT_ZIP.name} ({len(all_prompts) // 3} participants × 3 chunks)")
+n_participants = exp1["participant_id"].nunique()
+print(f"Written {len(all_prompts)} prompts to {OUT_ZIP.name} "
+      f"({n_participants} participants, max {MAX_TRIALS_PER_PROMPT} trials per prompt)")
