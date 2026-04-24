@@ -46,4 +46,21 @@ responseProductionFreq_non_outlier,Production freq after outlier removal.
 is_invalid,Flag marking invalid responses (missing/non-word/timed-out).
 is_rt_outlier,Flag marking RT outliers removed from RT analyses.
 not_in_subtlex_uk,Flag if word not found in SUBTLEX-UK frequency resource.
-
+session,Session number within the experiment (e.g. 1 or 2).
+prime,"Prime stimulus presented before the target in a priming paradigm (word, image, or other stimulus type)."
+prime_type,"Type or category of the prime (e.g., first_associate, other_associate, related, unrelated)."
+soa,"Stimulus onset asynchrony in milliseconds: time from prime onset to target onset."
+relatedness,"Semantic or associative relatedness between prime and target (e.g., related, unrelated)."
+lexicality,"Lexical status of the target stimulus: word or nonword."
+school,University or institution at which the participant was tested.
+ospan,"Operation span score measuring working memory capacity (sum of correctly recalled letters)."
+saccade,Antisaccade task accuracy (proportion of correct responses).
+stroop,"Stroop interference score: RT or error rate in incongruent minus congruent condition."
+stroop_err,Stroop interference error rate (incongruent minus congruent).
+ac,Attentional control composite score derived from PCA of attention tasks.
+passage,Reading comprehension score (e.g. from Woodcock-Johnson battery).
+vocaba,Vocabulary subtest score A (synonym test from Woodcock-Johnson battery).
+vocabb,Vocabulary subtest score B (antonym test from Woodcock-Johnson battery).
+vocabc,Vocabulary subtest score C (analogy test from Woodcock-Johnson battery).
+meq,"Morningness-Eveningness Questionnaire (MEQ) score reflecting circadian rhythm preference."
+vision,"Self-reported vision quality rating."

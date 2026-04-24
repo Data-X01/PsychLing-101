@@ -1,19 +1,24 @@
+import random
 import jsonlines
 import pandas as pd
 from pathlib import Path
 
 base_dir = Path(__file__).parent.resolve()
 
+MAX_CHARS = 50_000
+
 SPR_INSTRUCTION = (
     "You will read each sentence word-by-word; press SPACE to reveal the next word. "
     "Try to read naturally. "
-    "After some sentences, a yes/no comprehension question will be shown.\n\n"
+    "After some sentences, a yes/no comprehension question will be shown. "
+    "Press '{yes_key}' for YES and '{no_key}' for NO.\n\n"
 )
 
 ET_INSTRUCTION = (
     "You will read each sentence displayed on a screen. "
     "Your eye movements are tracked as you read naturally. "
-    "After some sentences, a yes/no comprehension question will be shown.\n\n"
+    "After some sentences, a yes/no comprehension question will be shown. "
+    "Press '{yes_key}' for YES and '{no_key}' for NO.\n\n"
 )
 
 
@@ -28,28 +33,40 @@ def build_prompts(df: pd.DataFrame, instruction: str, exp_name: str) -> list[dic
         gender = df_p["gender"].iloc[0]
         first_language = df_p["first_language"].iloc[0]
         rt_list = []
-        prompt = instruction
+
+        # Randomly assign J/F key mapping per participant
+        yes_key, no_key = random.choice([("j", "f"), ("f", "j")])
+
+        prompt = instruction.format(yes_key=yes_key, no_key=no_key)
 
         for trial_num, (_, df_sent) in enumerate(df_p.groupby("trial_order", sort=True), start=1):
             df_sent = df_sent.sort_values("word_position")
-            prompt += f"Trial {trial_num}:\n"
+            trial_text = f"Trial {trial_num}:\n"
 
+            trial_rt = []
             for _, row in df_sent.iterrows():
                 rt_val = row["rt"]
                 word_num = int(row["word_position"])
                 if pd.isna(rt_val):
-                    prompt += f"  Word {word_num}: '{row['word']}'  <<not fixated>>\n"
+                    trial_text += f"  Word {word_num}: '{row['word']}'  <<not fixated>>\n"
                 else:
                     rt_int = int(rt_val)
-                    prompt += f"  Word {word_num}: '{row['word']}'  <<{rt_int}>> ms\n"
-                    rt_list.append(rt_int)
+                    trial_text += f"  Word {word_num}: '{row['word']}'  <<{rt_int}>> ms\n"
+                    trial_rt.append(rt_int)
 
             question = df_sent["question"].iloc[0]
             response = df_sent["response"].iloc[0]
             if pd.notna(question) and pd.notna(response):
-                prompt += f"  Question: '{question}' You answer <<{response}>>.\n"
+                key = yes_key if response == "y" else no_key
+                trial_text += f"  Question: '{question}' You answer <<{key}>>.\n"
 
-            prompt += "\n"
+            trial_text += "\n"
+
+            if len(prompt) + len(trial_text) > MAX_CHARS:
+                break
+
+            prompt += trial_text
+            rt_list.extend(trial_rt)
 
         entry = {
             "text": prompt,
