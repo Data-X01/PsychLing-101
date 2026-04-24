@@ -45,7 +45,23 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          lfs: true
+          lfs: false
+
+      - name: Fetch LFS objects from fork (PR trigger)
+        if: github.event_name == 'pull_request'
+        run: |
+          git lfs install
+          # Fetch LFS objects from the base repo first (for any existing LFS files)
+          git lfs fetch origin || true
+          # The contributor's LFS objects live on their fork, not on our base repo.
+          # For PRs from forks, HEAD_REPO points to the fork's clone URL.
+          HEAD_REPO="${{ github.event.pull_request.head.repo.clone_url }}"
+          HEAD_REF="${{ github.event.pull_request.head.ref }}"
+          if [ "$HEAD_REPO" != "${{ github.event.repository.clone_url }}" ]; then
+            git remote add pr_fork "$HEAD_REPO" 2>/dev/null || true
+            git lfs fetch pr_fork "$HEAD_REF" || true
+          fi
+          git lfs checkout
 
       - name: Check out repository (comment trigger)
         if: github.event_name == 'issue_comment'
@@ -53,11 +69,12 @@ jobs:
         with:
           fetch-depth: 0
           ref: main
-          lfs: true
+          lfs: false
 
       - name: Merge PR head into main (comment trigger)
         if: github.event_name == 'issue_comment'
         run: |
+          git lfs install
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           HEAD_REPO="${{ steps.pr_info.outputs.head_repo }}"
@@ -69,8 +86,9 @@ jobs:
             exit 1
           }
           # Resolve LFS pointers from the contributor's fork
+          git lfs fetch origin || true
           git lfs fetch pr_fork "$HEAD_REF" || true
-          git lfs checkout || true
+          git lfs checkout
 
       - name: Set up Python
         uses: actions/setup-python@v5

@@ -63,6 +63,19 @@ OPTIONAL_METADATA_FIELDS = {
 # Rough character limit for ~32K tokens
 TOKEN_CHAR_LIMIT = 128_000
 
+# Git LFS pointer signature (first line of every pointer file)
+LFS_POINTER_SIGNATURE = b"version https://git-lfs.github.com/spec/v1"
+
+
+def is_lfs_pointer(path: Path) -> bool:
+    """Return True if *path* is a Git LFS pointer file (not the real content)."""
+    try:
+        with open(path, "rb") as f:
+            head = f.read(len(LFS_POINTER_SIGNATURE))
+        return head == LFS_POINTER_SIGNATURE
+    except Exception:
+        return False
+
 
 # ---------------------------------------------------------------------------
 # Result collection
@@ -115,7 +128,16 @@ class ResultCollector:
 # Helpers
 # ---------------------------------------------------------------------------
 def read_csv_auto(path: Path) -> tuple[list[str], list[list[str]], str]:
-    """Read a CSV file, auto-detecting delimiter. Returns (header, rows, delimiter)."""
+    """Read a CSV file, auto-detecting delimiter. Returns (header, rows, delimiter).
+
+    Raises ValueError if the file is a Git LFS pointer.
+    """
+    if is_lfs_pointer(path):
+        raise ValueError(
+            f"{path.name} is a Git LFS pointer file (not actual data). "
+            "Run 'git lfs pull' to download the real content."
+        )
+
     with open(path, encoding="utf-8-sig") as f:
         sample = f.read(4096)
 
@@ -411,6 +433,16 @@ def validate_prompts(
     zip_path = folder / "prompts.jsonl.zip"
     if not zip_path.exists():
         rc.error(MODULE_PROMPTS, "prompts.jsonl.zip is missing.")
+        return
+
+    # Guard against unresolved LFS pointer
+    if is_lfs_pointer(zip_path):
+        rc.error(
+            MODULE_PROMPTS,
+            "prompts.jsonl.zip is a Git LFS pointer file (not the actual ZIP). "
+            "The CI runner could not download the real content from the fork's LFS storage. "
+            "See the workflow logs for LFS fetch errors.",
+        )
         return
 
     try:
