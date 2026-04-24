@@ -24,7 +24,6 @@ def build_prompts(df: pd.DataFrame) -> list[dict]:
         story_text = f"Story {int(item)}:\n"
         for _, row in df_s.iterrows():
             story_text += f"  Word {int(row['word_position'])}: '{row['word']}' <<{int(row['rt'])}>> ms\n"
-        story_text += f"  Comprehension: {comp}/6 correct\n"
 
         prompt = INSTRUCTION + story_text
 
