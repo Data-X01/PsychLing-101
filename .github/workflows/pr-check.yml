@@ -83,7 +83,7 @@ jobs:
           git lfs fetch pr_fork "$HEAD_REF" || true
           git lfs checkout || true
 
-      - name: Resolve remaining LFS pointers via GitHub API
+      - name: Resolve remaining LFS pointers via GitHub media URL
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -112,17 +112,32 @@ jobs:
             REL_PATH="${path#./}"
             echo "Resolving LFS pointer: $REL_PATH"
 
-            # Use GitHub Contents API with raw media type — this resolves
-            # LFS pointers server-side, bypassing fork LFS bandwidth limits
-            HTTP_CODE=$(curl -sL -w "%{http_code}" \
-              -H "Accept: application/vnd.github.raw+json" \
+            # Step 1: Query Contents API (JSON) to get the media download URL
+            # For LFS files, download_url points to media.githubusercontent.com
+            # which serves actual binary content (not the pointer)
+            DOWNLOAD_URL=$(curl -sL \
+              -H "Accept: application/vnd.github+json" \
               -H "Authorization: token $GH_TOKEN" \
-              -o "$path.tmp" \
               "https://api.github.com/repos/${FORK_NWO}/contents/${REL_PATH}?ref=${HEAD_REF}" \
+              2>/dev/null \
+              | python3 -c "import sys,json; print(json.load(sys.stdin).get('download_url',''))" 2>/dev/null)
+
+            if [ -z "$DOWNLOAD_URL" ]; then
+              echo "  ⚠️  Could not get download URL — skipping"
+              FAILED=$((FAILED + 1))
+              continue
+            fi
+
+            echo "  Downloading from: $DOWNLOAD_URL"
+
+            # Step 2: Download actual content from media.githubusercontent.com
+            HTTP_CODE=$(curl -sL -w "%{http_code}" \
+              -o "$path.tmp" \
+              "$DOWNLOAD_URL" \
               2>/dev/null)
 
             if [ "$HTTP_CODE" != "200" ]; then
-              echo "  ⚠️  GitHub API returned HTTP $HTTP_CODE — skipping"
+              echo "  ⚠️  Download returned HTTP $HTTP_CODE — skipping"
               rm -f "$path.tmp"
               FAILED=$((FAILED + 1))
               continue
@@ -130,7 +145,7 @@ jobs:
 
             # Verify it's not still a pointer
             if head -1 "$path.tmp" | grep -q "^$LFS_SIG"; then
-              echo "  ⚠️  Response is still a pointer — skipping"
+              echo "  ⚠️  Downloaded content is still a pointer — skipping"
               rm -f "$path.tmp"
               FAILED=$((FAILED + 1))
             else
