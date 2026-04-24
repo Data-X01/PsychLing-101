@@ -10,7 +10,7 @@ https://doi.org/10.1007/s10579-020-09503-7
 
 The Natural Stories corpus collected self-paced reading times for 10 naturalistic English stories containing rare syntactic constructions. Data were collected from 180 participants via Amazon Mechanical Turk. Each participant read 5 stories.
 
-After each story, participants answered 6 comprehension questions (yes/no format). The `comprehension_correct` column records the number of correct answers per participant per story.
+After each story, participants answered 6 comprehension questions (2-choice format). The `comprehension_correct` column records the number of correct answers per participant per story. Note that the original data does not record which individual questions were answered correctly — only the per-story total is available.
 
 ## exp1.csv — Self-Paced Reading
 
