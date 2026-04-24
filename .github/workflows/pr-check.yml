@@ -60,12 +60,17 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch "${{ steps.pr_info.outputs.head_repo }}" "${{ steps.pr_info.outputs.head_ref }}"
+          HEAD_REPO="${{ steps.pr_info.outputs.head_repo }}"
+          HEAD_REF="${{ steps.pr_info.outputs.head_ref }}"
+          git remote add pr_fork "$HEAD_REPO" || true
+          git fetch pr_fork "$HEAD_REF"
           git merge FETCH_HEAD --no-edit || {
             echo "::error::Merge conflict — cannot validate this PR automatically."
             exit 1
           }
-          git lfs pull
+          # Resolve LFS pointers from the contributor's fork
+          git lfs fetch pr_fork "$HEAD_REF" || true
+          git lfs checkout || true
 
       - name: Set up Python
         uses: actions/setup-python@v5
