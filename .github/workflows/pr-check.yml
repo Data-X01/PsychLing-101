@@ -56,6 +56,8 @@ jobs:
           lfs: false
 
       - name: Merge PR changes into main
+        env:
+          GIT_LFS_SKIP_SMUDGE: "1"
         run: |
           git lfs install
           git config user.name "github-actions[bot]"
@@ -76,7 +78,8 @@ jobs:
             exit 1
           }
 
-          # Resolve LFS pointers from base and fork
+          # Best-effort LFS: try to resolve pointers (may fail if budget exceeded)
+          # Unresolved pointers are detected by the validation script.
           git lfs fetch origin || true
           git lfs fetch pr_fork "$HEAD_REF" || true
           git lfs checkout || true
