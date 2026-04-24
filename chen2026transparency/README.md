@@ -35,7 +35,7 @@ Note: If a word or character has multiple meanings, please rate based on your fi
 
 ### Prompt template
 
-Each JSONL line represents one participant's session segment (3 segments per participant). The `text` field follows this structure:
+Each JSONL line represents one participant's session segment (max 100 trials per segment). The `text` field follows this structure:
 
 ```
 1：
@@ -50,7 +50,7 @@ Each JSONL line represents one participant's session segment (3 segments per par
 
 ```
 
-**Note**: Each participant's 2,675 trials are split into 3 segments (approximately 890 trials per segment) to comply with token limits. All trials for a participant use the same instructions but are distributed across 3 separate JSONL entries with participant IDs: `{original_id}_part1`, `{original_id}_part2`, `{original_id}_part3`. Trial numbers are **global and never reset** across segments. JSONL fields: `"text"`, `"experiment"`, `"participant"`, `"trial_id_start"`, `"trial_id_end"`.
+**Note**: Each participant's 2,675 trials are split into segments of at most 100 trials to comply with token limits. The number of segments per participant varies depending on their total trial count. All trials for a participant use the same instructions but are distributed across separate JSONL entries with participant IDs: `{original_id}_part1`, `{original_id}_part2`, etc. Trial ID are **global and never reset** across segments. 
 
 ### JSONL Fields
 
@@ -58,7 +58,7 @@ Each JSONL line represents one participant's session segment (3 segments per par
 - `experiment`: Experiment identifier (`chen2026transparency`)
 - `participant`: Participant ID with segment indicator (e.g., `anonymized_1409_part1`)
 - `trial_id_start`: Global trial ID at the start of this segment (e.g., 1)
-- `trial_id_end`: Global trial ID at the end of this segment (e.g., 892). Note that trial IDs are continuous across all 3 segments per participant and do not reset.
+- `trial_id_end`: Global trial ID at the end of this segment (e.g., 100). Note that trial IDs are continuous across all 3 segments per participant and do not reset.
 
 ## Dataset Details
 
@@ -74,6 +74,6 @@ Each JSONL line represents one participant's session segment (3 segments per par
   - `item-set.csv`: Stimulus inventory. One row per unique compound, with columns: `stimulus`, `constituent_1`, `constituent_2`, `list_id`.
 - `processed_data/exp1.csv`: Cleaned trial-level data in long format. One row per participant × stimulus observation, with columns: `participant_id`, `trial_id`, `stimulus`, `constituent_1`, `constituent_2`, `constituent_1_contribution`, `constituent_2_contribution`, `predictability`.
 - `preprocess_data.py`: Script to process raw data into long format
-- `generate_prompts.py`: Script to generate LLM prompts (splits each participant's trials into 3 segments)
-- `prompts.jsonl.zip`: Zipped JSONL file with 60 prompt segments (20 participants × 3 segments each)
+- `generate_prompts.py`: Script to generate LLM prompts (splits each participant's trials into segments at most 100 trials)
+- `prompts.jsonl.zip`: Zipped JSONL file with 540 prompt segments
 - `CODEBOOK.csv`: Variable descriptions
