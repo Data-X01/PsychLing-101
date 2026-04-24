@@ -37,6 +37,7 @@ for participant_id, df_part in groups:
     country_of_birth = df_part["country_of_birth"].unique()[0]
     country_of_residence = df_part["country_of_residence"].unique()[0]
     number_of_sessions = int(df_part["session_no"].max()+1)
+    first_language = df_part["first_language"].unique()[0]
 
     sessions = sorted(df_part["session_no"].unique())
 
@@ -73,10 +74,11 @@ for participant_id, df_part in groups:
         "text": prompt_text,
         "experiment": "kyroelaeinen2022_valence_exp1",
         "participant_id": participant_id,
-        "RTs": RTs_per_session,
+        "rt": RTs_per_session,
         "age": age,
         "gender": gender,
         "education": education,
+        "first_language": first_language,
         "country_of_birth": country_of_birth,
         "country_of_residence": country_of_residence,
         "number_of_sessions": number_of_sessions
