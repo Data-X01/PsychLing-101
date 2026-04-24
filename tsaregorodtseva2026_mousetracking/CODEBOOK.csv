@@ -1,3 +1,4 @@
+Column Name,Description
 participant_id, Unique identifier for each participant.
 ,
 trial_id, Sequential identifier of trials within the experiment.
