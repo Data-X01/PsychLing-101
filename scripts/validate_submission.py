@@ -29,30 +29,6 @@ import zipfile
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
-# Optional dependency: langdetect (for prompt-language checks)
-# ---------------------------------------------------------------------------
-try:
-    from langdetect import detect as _langdetect_detect
-    from langdetect import DetectorFactory
-
-    DetectorFactory.seed = 42  # reproducible language detection
-
-    def detect_language(text: str) -> str | None:
-        """Return an ISO 639-1 language code, or None on failure."""
-        try:
-            return _langdetect_detect(text)
-        except Exception:
-            return None
-
-    HAS_LANGDETECT = True
-except ImportError:
-    HAS_LANGDETECT = False
-
-    def detect_language(text: str) -> str | None:  # noqa: ARG001
-        return None
-
-
-# ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -569,13 +545,7 @@ def validate_prompts(
                 if len(token_limit_lines) < 5:
                     token_limit_lines.append(i)
 
-            # Collect instruction text (first 500 chars) for language check
-            if i <= 3:  # sample first 3 participants
-                instruction_texts.append(text[:500])
 
-            # Collect stimulus/response words for language comparison
-            if i <= 3 and markers:
-                stimulus_words.extend(markers[:10])
 
         # --- Emit aggregated per-line errors/warnings ---
         sample_note = f" (sampled {len(sampled)}/{n_lines} lines)" if is_sampled else ""
@@ -632,57 +602,12 @@ def validate_prompts(
                 "as metadata fields in the JSONL but are missing.",
             )
 
-        # --- Language consistency check ---
-        if HAS_LANGDETECT and instruction_texts:
-            _check_language_consistency(
-                instruction_texts, stimulus_words, jsonl_name, rc
-            )
+
 
     zf.close()
 
 
-def _check_language_consistency(
-    instruction_texts: list[str],
-    stimulus_words: list[str],
-    jsonl_name: str,
-    rc: ResultCollector,
-):
-    """Flag if instruction language doesn't match stimulus language."""
-    # Detect instruction language from the first few participants
-    instr_langs = []
-    for text in instruction_texts:
-        lang = detect_language(text)
-        if lang:
-            instr_langs.append(lang)
 
-    # Detect stimulus language from collected words
-    if stimulus_words:
-        stimulus_text = " ".join(stimulus_words)
-        stim_lang = detect_language(stimulus_text)
-    else:
-        stim_lang = None
-
-    if not instr_langs or not stim_lang:
-        return
-
-    # Most common instruction language
-    from collections import Counter
-
-    instr_lang = Counter(instr_langs).most_common(1)[0][0]
-
-    if stim_lang != "en" and instr_lang == "en":
-        rc.warning(
-            MODULE_PROMPTS,
-            f"{jsonl_name}: stimuli appear to be in '{stim_lang}' but instructions "
-            f"appear to be in 'en'. If target words are non-English, instructions "
-            "should also be in that language.",
-        )
-    elif stim_lang != instr_lang and stim_lang != "en":
-        rc.warning(
-            MODULE_PROMPTS,
-            f"{jsonl_name}: language mismatch — instructions detected as '{instr_lang}', "
-            f"stimuli detected as '{stim_lang}'.",
-        )
 
 
 # ---------------------------------------------------------------------------
@@ -938,9 +863,7 @@ def main():
 
     print(f"Folders to validate: {folder_names}")
 
-    if not HAS_LANGDETECT:
-        print("NOTE: 'langdetect' not installed — language consistency checks will be skipped.")
-        print("      Install with: pip install langdetect")
+
 
     # Load the main CODEBOOK for cross-referencing
     main_columns = load_main_codebook()
