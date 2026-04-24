@@ -1,4 +1,6 @@
 import random
+import string
+import zipfile
 import jsonlines
 import pandas as pd
 from pathlib import Path
@@ -35,7 +37,7 @@ def build_prompts(df: pd.DataFrame, instruction: str, exp_name: str) -> list[dic
         rt_list = []
 
         # Randomly assign J/F key mapping per participant
-        yes_key, no_key = random.choice([("j", "f"), ("f", "j")])
+        yes_key, no_key = random.sample(string.ascii_lowercase, 2)
 
         prompt = instruction.format(yes_key=yes_key, no_key=no_key)
 
@@ -92,8 +94,14 @@ prompts_et = build_prompts(df2, ET_INSTRUCTION, "frank2013_reading/eye_tracking"
 
 all_prompts = prompts_spr + prompts_et
 
-with jsonlines.open(base_dir / "prompts.jsonl", "w") as writer:
+jsonl_path = base_dir / "prompts.jsonl"
+with jsonlines.open(jsonl_path, "w") as writer:
     writer.write_all(all_prompts)
 
-print(f"prompts.jsonl: {len(all_prompts)} participants total "
+zip_path = base_dir / "prompts.jsonl.zip"
+with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
+    zf.write(jsonl_path, "prompts.jsonl")
+jsonl_path.unlink()
+
+print(f"prompts.jsonl.zip: {len(all_prompts)} participants total "
       f"({len(prompts_spr)} SPR, {len(prompts_et)} ET)")
