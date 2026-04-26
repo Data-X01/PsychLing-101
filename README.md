@@ -8,13 +8,13 @@ Our goals are:
 2. Convert psycholinguistic data into a format that can be used to fine-tune and evaluate large language models (LLMs).
 3. Collaboratively produce an article describing the database to be sent to a psycholinguistic or interdisciplinary outlet.  
 
-The project is led by Taisiia Tikhomirova and Dirk U. Wulff at the Center for Adaptive Rationality at the Max Planck Institute for Human Development and supported by: Valentin Kriegmair (MPI for Human Development), Fritz Günther (Humboldt University), Aliona Petrenco (Humboldt University), Louis Schiekiera (Humboldt University), Marco Marelli (University of Milano-Bicocca), and Marcel Binz (Helmholtz Munich). 
+The project is led by [Taisiia Tikhomirova](https://www.mpib-berlin.mpg.de/staff/taisiia-tikhomirova) and [Dirk U. Wulff](https://www.mpib-berlin.mpg.de/staff/dirk-wulff) at the Center for Adaptive Rationality at the Max Planck Institute for Human Development and supported by: [Valentin Kriegmair](https://www.mpib-berlin.mpg.de/person/valentin-kriegmair/171978) (MPI for Human Development), [Fritz Günther](https://www.psychologie.hu-berlin.de/de/mitarbeiter/1693894) (Humboldt University), [Aliona Petrenco](https://www.psychologie.hu-berlin.de/de/mitarbeiter/1694954) (Humboldt University), [Louis Schiekiera](https://www.psychologie.hu-berlin.de/de/mitarbeiter/1696407) (Humboldt University), [Marco Marelli](https://www.marcomarelli.net/) (University of Milano-Bicocca), and [Marcel Binz](https://marcelbinz.github.io/) (Helmholtz Munich). 
 
 PsychLing-101 will be open for contributions until May 1st, 2026. Future projects may follow.
 
 > **Current coverage** 
 >
-> *11* studies | *‎‎4,351* participants | *‎‎268,717* datapoints
+> *17* studies | *30,353* participants | *‎‎2,446,714* data points
 
 ---
 
@@ -74,7 +74,7 @@ cd PsychLing-101
 
 # 3. Create & switch to a new feature branch named after your dataset using the format `authorYEAR_title` (e.g., `smith2000_priming`)
 # All your work for this contribution will be done inside this branch.
-git checkout -b add_<authorYEAR_title>
+git checkout -b <authorYEAR_title>
 ```
 
 ## 3. Prepare your dataset
@@ -130,7 +130,7 @@ In Steps 3.1 – 3.4 you transform the raw files of the original_data into stand
 In resulting `prompts.jsonl.zip` each line should have the following three fields:
 - `"text"`: Full natural language prompt with instructions, cover story and trial-by-trial data.
 - `"experiment"`: Identifier for the experiment.
-- `"participant"`: Participant ID.
+- `"participant_id"`: Participant ID.
 - Optional metadata fields (if available):
    - `"rt"`: List of reaction times in ms.
    - `"age"`, `"diagnosis"`, `"nationality"`, or questionnaire-derived statistics.
@@ -154,17 +154,17 @@ Example B – Continuous outcome (self‑paced reading)
 You will read each sentence word-by-word; press SPACE to reveal the next word. Try to read naturally.
 
 Trial 1:
-  Word 1: ‘The’       <<245 ms>>
-  Word 2: ‘cat’       <<198 ms>>
-  Word 3: ‘sat’       <<184 ms>>
-  Word 4: ‘on’        <<171 ms>>
-  Word 5: ‘the’       <<165 ms>>
-  Word 6: ‘mat’       <<213 ms>>
+  Word 1: ‘The’       <<245>> ms 
+  Word 2: ‘cat’       <<198>> ms
+  Word 3: ‘sat’       <<184>> ms
+  Word 4: ‘on’        <<171>> ms
+  Word 5: ‘the’       <<165>> ms
+  Word 6: ‘mat’       <<213>> ms
 
 Trial 2:
-  Word 1: ‘A’         <<231 ms>>
-  Word 2: ‘dog’       <<204 ms>>
-  Word 3: ‘barked’    <<190 ms>>
+  Word 1: ‘A’         <<231>> ms
+  Word 2: ‘dog’       <<204>> ms
+  Word 3: ‘barked’    <<190>> ms
 ~~~
 
 ```
@@ -245,7 +245,7 @@ git add <authorYEAR_title>
 git commit -m "Add <authorYEAR_title> dataset and preprocess scripts"
 
 # 3. Push the branch to your fork on GitHub
-git push -u origin add_<authorYEAR_title>
+git push -u origin <authorYEAR_title>
 ```
 
 Next, navigate to **Your fork on GitHub**. You should see a banner or button prompting you to create a **Pull Request** from your new branch into the main branch of the original **Data-X01/PsychLing-101** repository. Fill in a short description of your contribution and click **Create pull request**.

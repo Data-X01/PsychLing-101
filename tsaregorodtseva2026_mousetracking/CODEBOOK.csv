@@ -1,0 +1,42 @@
+Column Name,Description
+participant_id, Unique identifier for each participant.
+,
+trial_id, Sequential identifier of trials within the experiment.
+,
+version," Experimental version (1 or 2), indicating the initial response mapping rule."
+,
+phase_id," Experimental phase (e.g., training, experiment)."
+,
+block, Block number within the experiment.
+,
+block_number," Sequential index of experimental segments, including training and main blocks."
+,
+stimulus, The word presented on the screen.
+,
+stimulus_location," Vertical position of the word in the semantic space (e.g., top, bottom)."
+,
+condition, Assigned correct response location (top or bottom) based on the current instruction mapping.
+,
+start_rt, Time in milliseconds from stimulus onset to movement initiation.
+,
+end_rt, Time in milliseconds from stimulus onset to movement completion.
+,
+response, Actual response location where the participant moved the word (top or bottom).
+,
+accuracy," Whether the response matched the assigned condition (1 = correct, 0 = incorrect)."
+,
+concreteness, Ground-truth semantic category of the word (abstract or concrete).
+,
+age, Participant’s age in years.
+,
+gender, Self-reported gender of the participant.
+,
+handedness," Self-reported handedness (e.g., right-handed, left-handed)."
+,
+device_type," Input device used (e.g., computer mouse, trackpad)."
+,
+item, Identifier of the stimulus item.
+,
+instruction_mapping, Response rule active during the trial (mapping between concreteness category and response location).
+,
+response_category," Participant’s inferred semantic judgment (abstract or concrete), reconstructed from the response and instruction mapping."

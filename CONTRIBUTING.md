@@ -10,6 +10,9 @@
 | Grammaticality Judgments  |  [Link](https://doi.org/10.1073/pnas.2309583120)      | Louis Schiekiera|
 |Comprehension  |  [Link]( https://doi.org/10.1038/s41598-024-79531-8)      | Louis Schiekiera|
 |Word Substitution Task    |  [Link](https://doi.org/10.17605/OSF.IO/VYJRZ)      | Louis Schiekiera|
+|WugTest     |                        [Link](https://osf.io/4z5n6/overview)     | Nikoleta Pantelidou     |
+|Manipulative Discourse Task     |                        [Link]( https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0256173)     | Nikoleta Pantelidou     |
+
 
 
 
@@ -47,6 +50,14 @@
 |Lexical decision        |                        [Link](https://doi.org/10.1038/s41539-024-00237-7)      |  Benjamin Gagl     |
 |Object and Word Frequency Effects        | [Link](https://pubmed.ncbi.nlm.nih.gov/37155283/)     | Benjamin Gagl      |
 |Iconicity        | [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0337947)       | Chiara Saponaro      |
+|Lexical decision     |                        [Link]     | Alex Miklashevsky     |
+|Meter-syntax alignment     |                        [Link](https://www.sciencedirect.com/science/article/pii/S0010027721003012)     | Courtney Hilton      |
+|Lexical decision (Spanish. Megastudy)        |                        [Link](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02156)      |  Akinloluwa Ajayi     |
+|Metaphor norming study|                        [Link](https://pubmed.ncbi.nlm.nih.gov/41491452/)      |  Laura Pissani |
+|Lexical decision (Japanese)        |                        [Link](https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2024.1506509/full)      |  Akinloluwa Ajayi     |
+|Prevalence norms   (Catalan)      |                        [Link](https://link.springer.com/article/10.3758/s13428-022-01959-5)      |  Marc Guasch  |
+|British Lexicon Project     |                        [Link](https://link.springer.com/article/10.3758/s13428-011-0118-4)       | Adithya Ananth
+     |
 
 ---
 
@@ -55,7 +66,6 @@
 | Task | Individual Differences | Number of Choices | Link | 
 |------|------------------------|-------------------|------|
 | Lexical decision task and naming task     |       -                  |    2,749,324 for lexical decision task, 1,123,350 for naming task               |[Link](https://link.springer.com/article/10.3758/BF03193014)      |        
-|    Lexical decision task   |                        |          2,240,940         | [Link](https://link.springer.com/article/10.3758/s13428-011-0118-4)    |        
 | Semantic feature production task  |  -                      |     69,284 cue-raw feature combinations              | [Link](https://link.springer.com/article/10.3758/s13428-019-01243-z?utm_source=chatgpt.com)      |   
 | Semantic feature production norms     |    -                    |   ~3,900,00                | [Link](https://link.springer.com/article/10.3758/BF03192726#preview)     |  
 | The semantic priming project     |   -                     |  ~2,000,000                 |  [Link](https://link.springer.com/article/10.3758/s13428-012-0304-z)    |  
