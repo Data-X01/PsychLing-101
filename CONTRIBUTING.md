@@ -12,7 +12,9 @@
 |Word Substitution Task    |  [Link](https://doi.org/10.17605/OSF.IO/VYJRZ)      | Louis Schiekiera|
 |WugTest     |                        [Link](https://osf.io/4z5n6/overview)     | Nikoleta Pantelidou     |
 |Manipulative Discourse Task     |                        [Link]( https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0256173)     | Nikoleta Pantelidou     |
-
+|Concreteness ratings for 40 thousand generally known English word lemmas    |  [Link](https://link.springer.com/article/10.3758/s13428-013-0403-5 )     | Niklas Jung|
+|Valence norms for 3,600 English words collected during the COVID-19 pandemic     |                        [Link](https://pubmed.ncbi.nlm.nih.gov/34918233/)     | Frederik Wolfert     |
+|Reading time data for evaluating broad-coverage models of English sentence processing    |                        [Link](https://link.springer.com/article/10.3758/s13428-012-0313-y)     | Kiri Kuroda     |
 
 
 
@@ -36,14 +38,14 @@
 |Lexical decision on simplified Chinese characters               |  [Link](https://link.springer.com/article/10.3758/s13428-025-02701-7)    |  Cheng-Yu Hsieh      |
 |Rating of meaningfulness for novel compounds in Chinese                    | [Link](https://link.springer.com/article/10.3758/s13423-025-02668-8)    |      Cheng-Yu Hsieh   |
 |Picturing naming task in Mandarin Chinese                |[Link](https://link.springer.com/article/10.3758/s13428-025-02644-z#Sec2)      |     Cheng-Yu Hsieh    |
-|  Visual Lexical Decision       |                        [Link](https://doi.org/10.23668/psycharchives.21378)      |  Dušica Filipović Đurđević      |
-| Visual Lexical Decision        |                        [Link](https://doi.org/10.1016/j.jml.2024.104546)      |  Dušica Filipović Đurđević      |
+|Visual Lexical Decision       |                        [Link](https://doi.org/10.23668/psycharchives.21378)      |  Dušica Filipović Đurđević      |
+|Visual Lexical Decision        |                        [Link](https://doi.org/10.1016/j.jml.2024.104546)      |  Dušica Filipović Đurđević      |
 |Valence and arousal ratings                      |[Link](https://doi.org/10.1017/S0142716423000425)     |  Dušica Filipović Đurđević      |
-| Visual Lexical Decision                       | [Link](https://doi.org/10.1080/23273798.2021.1909083)     | Dušica Filipović Đurđević       |
+|Visual Lexical Decision                       | [Link](https://doi.org/10.1080/23273798.2021.1909083)     | Dušica Filipović Đurđević       |
 |Visual Lexical Decision       |                        [Link](https://doi.org/10.22190/TEME210418030M)      |  Dušica Filipović Đurđević     |
 |Visual Lexical Decision       |                        [Link](https://doi.org/10.1016/j.cortex.2018.07.020)      |  Dušica Filipović Đurđević      |
 |Visual Lexical Decision                          | [Link]( https://doi.org/10.19090/pp.2019.3.283-304)     | Dušica Filipović Đurđević       |
-| Visual Lexical Decision                      |[Link]( https://doi.org/10.2298/PSI170811015F)     |  Dušica Filipović Đurđević     |
+|Visual Lexical Decision                      |[Link]( https://doi.org/10.2298/PSI170811015F)     |  Dušica Filipović Đurđević     |
 |Sense elicitation task| [Link]( http://digitalna.ff.uns.ac.rs/sadrzaj/2017/978-86-6065-446-7)     | Dušica Filipović Đurđević      |
 |Concreteness ratings     |                        [Link](https://doi.org/10.19090/pp.2017.3.375-400)      |  Dušica Filipović Đurđević       |
 |Visual Lexical decision       |                        [Link](http://www.nature.com/articles/srep20369)      | Dušica Filipović Đurđević      |
