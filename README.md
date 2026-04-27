@@ -67,7 +67,8 @@ Open your command-line interface (Terminal, Git Bash, or PowerShell).
 
 # 1. Clone your fork to the local machine
 # This creates a folder named 'PsychLing-101'. Remember to replace YOUR-USERNAME with your GitHub handle.
-git clone https://github.com/YOUR-USERNAME/PsychLing-101.git
+Please clone the repository with LFS files untracked. 
+GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/YOUR-USERNAME/PsychLing-101.git
 
 # 2. Move into the cloned repository folder
 cd PsychLing-101
