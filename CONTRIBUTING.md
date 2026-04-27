@@ -12,13 +12,6 @@
 |Word Substitution Task    |  [Link](https://doi.org/10.17605/OSF.IO/VYJRZ)      | Louis Schiekiera|
 |WugTest     |                        [Link](https://osf.io/4z5n6/overview)     | Nikoleta Pantelidou     |
 |Manipulative Discourse Task     |                        [Link]( https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0256173)     | Nikoleta Pantelidou     |
-|Concreteness ratings for 40 thousand generally known English word lemmas    |  [Link](https://link.springer.com/article/10.3758/s13428-013-0403-5 )     | Niklas Jung|
-|Valence norms for 3,600 English words collected during the COVID-19 pandemic     |                        [Link](https://pubmed.ncbi.nlm.nih.gov/34918233/)     | Frederik Wolfert     |
-|Reading time data for evaluating broad-coverage models of English sentence processing    |                        [Link](https://link.springer.com/article/10.3758/s13428-012-0313-y)     | Kiri Kuroda     |
-| EPLeP: English Pseudoword Lexicon Project   |                        [Link](https://osf.io/cz9rh/files/osfstorage)     | Fabio Marson     |
-|  Semantic Transparency Ratings for Chinese Compounds   |                        [Link](https://doi.org/10.1111/cogs.70194)     | Jing Chen     |
-|  Calgary Project   |                        [Link](https://doi.org/10.3758/s13428-016-0720-6)     | Nicolas Reinecke    |
-|  Mouse-tracking dataset on spatial associations in language processing   |                        [Link](http://dx.doi.org/10.2139/ssrn.5658577)     | Oksana Tsaregorodtseva     |
 
 
 
