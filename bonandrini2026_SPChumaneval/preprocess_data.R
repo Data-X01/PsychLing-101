@@ -39,7 +39,7 @@ for (i in 1:(dim(E1)[1])){
 #create dataframe
 E1_clean <- data.frame(participant_id, trial_id, stimulus, response_option_1, response_option_2, response, accuracy)
 #write
-write.csv(E1_clean, "exp1.csv")
+write.csv(E1_clean, "exp1.csv", row.names = FALSE)
 #clear
 rm(list=ls())#clear all
 ############################# Experiment 2 #####################################
@@ -75,7 +75,7 @@ for (i in 1:(dim(E2)[1])){
 }
 E2_clean <- data.frame(participant_id, trial_id, stimulus, response_option_1, response_option_2, response, accuracy)
 #write
-write.csv(E2_clean, "exp2.csv")
+write.csv(E2_clean, "exp2.csv", row.names = FALSE)
 #clear
 rm(list=ls())#clear all
 
@@ -113,6 +113,6 @@ for (i in 1:(dim(E3)[1])){
 
 E3_clean <- data.frame(participant_id, trial_id, stimulus, response_option_1, response_option_2, response, accuracy)
 #write
-write.csv(E3_clean, "exp3.csv")
+write.csv(E3_clean, "exp3.csv", row.names = FALSE)
 #clear
 rm(list=ls())#clear all
