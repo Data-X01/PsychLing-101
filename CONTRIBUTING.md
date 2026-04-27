@@ -64,6 +64,11 @@
 |Lexical decision (Japanese)        |                        [Link](https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2024.1506509/full)      |  Akinloluwa Ajayi     |
 |Prevalence norms   (Catalan)      |                        [Link](https://link.springer.com/article/10.3758/s13428-022-01959-5)      |  Marc Guasch  |
 |British Lexicon Project     |                        [Link](https://link.springer.com/article/10.3758/s13428-011-0118-4)       | Adithya Ananth |
+|English Lexicon Project     |                        [Link](https://link.springer.com/article/10.3758/BF03193014)       | Frederik Wolfert |
+|The Semantic Priming Project    |                        [Link](https://link.springer.com/article/10.3758/s13428-012-0304-z)       | Kiri Kuroda |
+|The Natural Stories corpus    |                        [Link](https://link.springer.com/article/10.1007/s10579-020-09503-7)       | Kiri Kuroda |
+| Dutch crowdsourcing project    |                        [Link]( https://doi.org/10.5334/pb.491)       | Niklas Jung |
+|The Lancaster Sensorimotor Norms   |                        [Link](https://link.springer.com/article/10.3758/s13428-019-01316-z)       | Niklas Jung |
 
 ---
 
