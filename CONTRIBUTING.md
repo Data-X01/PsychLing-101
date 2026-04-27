@@ -68,7 +68,7 @@
 |The Semantic Priming Project    |                        [Link](https://link.springer.com/article/10.3758/s13428-012-0304-z)       | Kiri Kuroda |
 |The Natural Stories corpus    |                        [Link](https://link.springer.com/article/10.1007/s10579-020-09503-7)       | Kiri Kuroda |
 | Dutch crowdsourcing project    |                        [Link]( https://doi.org/10.5334/pb.491)       | Niklas Jung |
-|The Lancaster Sensorimotor Norms   |                        [Link](https://link.springer.com/article/10.3758/s13428-019-01316-z)       | Niklas Jung |
+|The Lancaster Sensorimotor Norms   |                        [Link](https://link.springer.com/article/10.3758/s13428-019-01316-z)       |Jing Chen |
 
 ---
 
