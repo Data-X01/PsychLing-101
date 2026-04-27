@@ -63,8 +63,7 @@
 |Metaphor norming study|                        [Link](https://pubmed.ncbi.nlm.nih.gov/41491452/)      |  Laura Pissani |
 |Lexical decision (Japanese)        |                        [Link](https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2024.1506509/full)      |  Akinloluwa Ajayi     |
 |Prevalence norms   (Catalan)      |                        [Link](https://link.springer.com/article/10.3758/s13428-022-01959-5)      |  Marc Guasch  |
-|British Lexicon Project     |                        [Link](https://link.springer.com/article/10.3758/s13428-011-0118-4)       | Adithya Ananth
-     |
+|British Lexicon Project     |                        [Link](https://link.springer.com/article/10.3758/s13428-011-0118-4)       | Adithya Ananth |
 
 ---
 
