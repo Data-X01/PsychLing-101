@@ -10,6 +10,16 @@
 | Grammaticality Judgments  |  [Link](https://doi.org/10.1073/pnas.2309583120)      | Louis Schiekiera|
 |Comprehension  |  [Link]( https://doi.org/10.1038/s41598-024-79531-8)      | Louis Schiekiera|
 |Word Substitution Task    |  [Link](https://doi.org/10.17605/OSF.IO/VYJRZ)      | Louis Schiekiera|
+|WugTest     |                        [Link](https://osf.io/4z5n6/overview)     | Nikoleta Pantelidou     |
+|Manipulative Discourse Task     |                        [Link]( https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0256173)     | Nikoleta Pantelidou     |
+|Concreteness ratings for 40 thousand generally known English word lemmas    |  [Link](https://link.springer.com/article/10.3758/s13428-013-0403-5 )     | Niklas Jung|
+|Valence norms for 3,600 English words collected during the COVID-19 pandemic     |                        [Link](https://pubmed.ncbi.nlm.nih.gov/34918233/)     | Frederik Wolfert     |
+|Reading time data for evaluating broad-coverage models of English sentence processing    |                        [Link](https://link.springer.com/article/10.3758/s13428-012-0313-y)     | Kiri Kuroda     |
+| EPLeP: English Pseudoword Lexicon Project   |                        [Link](https://osf.io/cz9rh/files/osfstorage)     | Fabio Marson     |
+|  Semantic Transparency Ratings for Chinese Compounds   |                        [Link](https://doi.org/10.1111/cogs.70194)     | Jing Chen     |
+|  Calgary Project   |                        [Link](https://doi.org/10.3758/s13428-016-0720-6)     | Nicolas Reinecke    |
+|  Mouse-tracking dataset on spatial associations in language processing   |                        [Link](http://dx.doi.org/10.2139/ssrn.5658577)     | Oksana Tsaregorodtseva     |
+
 
 
 
@@ -48,25 +58,34 @@
 |Object and Word Frequency Effects        | [Link](https://pubmed.ncbi.nlm.nih.gov/37155283/)     | Benjamin Gagl      |
 |Iconicity        | [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0337947)       | Chiara Saponaro      |
 |Lexical decision     |                        [Link]     | Alex Miklashevsky     |
-|WugTest     |                        [Link](https://osf.io/4z5n6/overview)     | Nikoleta Pantelidou     |
-|Manipulative Discourse Task     |                        [Link]( https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0256173)     | Nikoleta Pantelidou     |
 |Meter-syntax alignment     |                        [Link](https://www.sciencedirect.com/science/article/pii/S0010027721003012)     | Courtney Hilton      |
 |Lexical decision (Spanish. Megastudy)        |                        [Link](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02156)      |  Akinloluwa Ajayi     |
-|Metaphor norming study|                        [Link](https://pubmed.ncbi.nlm.nih.gov/41491452/)      |  Laura Pissani
-     |
-
+|Metaphor norming study|                        [Link](https://pubmed.ncbi.nlm.nih.gov/41491452/)      |  Laura Pissani |
+|Lexical decision (Japanese)        |                        [Link](https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2024.1506509/full)      |  Akinloluwa Ajayi     |
+|Prevalence norms   (Catalan)      |                        [Link](https://link.springer.com/article/10.3758/s13428-022-01959-5)      |  Marc Guasch  |
+|British Lexicon Project     |                        [Link](https://link.springer.com/article/10.3758/s13428-011-0118-4)       | Adithya Ananth |
+|English Lexicon Project     |                        [Link](https://link.springer.com/article/10.3758/BF03193014)       | Frederik Wolfert |
+|The Semantic Priming Project    |                        [Link](https://link.springer.com/article/10.3758/s13428-012-0304-z)       | Kiri Kuroda |
+|The Natural Stories corpus    |                        [Link](https://link.springer.com/article/10.1007/s10579-020-09503-7)       | Kiri Kuroda |
+| Dutch crowdsourcing project    |                        [Link]( https://doi.org/10.5334/pb.491)       | Niklas Jung |
+|The Lancaster Sensorimotor Norms   |                        [Link](https://link.springer.com/article/10.3758/s13428-019-01316-z)       |Jing Chen |
 
 ---
 
 ##  List of Open Datasets
 
-| Task | Individual Differences | Number of Choices | Link | 
-|------|------------------------|-------------------|------|
-| Lexical decision task and naming task     |       -                  |    2,749,324 for lexical decision task, 1,123,350 for naming task               |[Link](https://link.springer.com/article/10.3758/BF03193014)      |        
-|    Lexical decision task   |                        |          2,240,940         | [Link](https://link.springer.com/article/10.3758/s13428-011-0118-4)    |        
-| Semantic feature production task  |  -                      |     69,284 cue-raw feature combinations              | [Link](https://link.springer.com/article/10.3758/s13428-019-01243-z?utm_source=chatgpt.com)      |   
-| Semantic feature production norms     |    -                    |   ~3,900,00                | [Link](https://link.springer.com/article/10.3758/BF03192726#preview)     |  
-| The semantic priming project     |   -                     |  ~2,000,000                 |  [Link](https://link.springer.com/article/10.3758/s13428-012-0304-z)    |  
+| Task | Link | 
+|------|------|
+| MEGALEX: A megastudy of visual and auditory word recognition (only visual recognition data) |[Link](https://link.springer.com/article/10.3758/s13428-017-0943-1)  |
+| A behavioral database for masked form priming.  |[Link](https://link.springer.com/article/10.3758/s13428-013-0442-y)  |
+|Dutch Lexicon Project 1|[Link](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2010.00174/full#cite)  |
+|Dutch Lexicon Project 2|[Link](https://pubmed.ncbi.nlm.nih.gov/26501839/ )  |
+|The French Lexicon Project|[Link](https://link.springer.com/article/10.3758/BRM.42.2.488)  |
+|The Provo Corpus:A large eye-tracking corpus with predictability norms|[Link](https://link.springer.com/article/10.3758/s13428-017-0908-4  )  |
+|CELER: A 365-Participant Corpus of Eye Movements in L1 and L2 English Reading|[Link](https://link.springer.com/article/10.3758/s13428-017-0908-4  )|
+|OneStop: A 360-Participant Eye Tracking Dataset with Different Reading Regimes| [Link]( https://lacclab.github.io/OneStop-Eye-Movements/) |
+|1st wave of Multilingual Eye-movement Corpus (MECO) | [Link](https://meco-read.com/ )  |
+|2nd wave of Multilingual Eye-movement Corpus (MECO) |[Link](https://meco-read.com/ )  |
 
 ---
 
