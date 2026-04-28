@@ -11,7 +11,7 @@ def random_letters(n):
 
 
 # load data
-df = pd.read_csv('FilipovicDurdevicMilin2019_clean.csv')
+df = pd.read_csv('processed_data/exp1.csv')
 df['response'] = df['response'].astype(str)
 
 # Sort dataframe by participant ID and trial order
