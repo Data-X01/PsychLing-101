@@ -52,7 +52,7 @@ def generate_prompts():
         entry = {
             "text": prompt_text.strip(),
             "experiment": "word_association_exp1",
-            "participant": str(p_id)
+            "participant_id": str(p_id)
         }
         prompts.append(entry)
 
