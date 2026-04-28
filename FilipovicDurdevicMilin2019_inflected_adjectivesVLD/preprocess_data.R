@@ -1,4 +1,4 @@
-dat=read.table("original_data/FilipovicDurdevicMilin2019.dat",T)
+dat=read.csv("original_data/FilipovicDurdevicMilin2019.csv",T)
 
 dim(dat)
 colnames(dat)
@@ -15,7 +15,7 @@ dat$accuracy = dat$correct
 dat$rt = dat$response_time
 
 df <- dat[, c("list", "participant_id", "trial_id", "stimulus", "trial_order", "lexicality", "response", "accuracy", "rt")]
-write.csv(df, "processed_data/FilipovicDurdevicMilin2019_clean.csv", row.names = FALSE)
+write.csv(df, "processed_data/exp1.csv", row.names = FALSE)
 
 
 
