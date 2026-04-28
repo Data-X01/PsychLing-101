@@ -60,4 +60,4 @@ query_c2,Full original Chinese question text asking about constituent_2 contribu
 c2_contribution,Raw constituent_2 contribution rating as recorded in the original data (same scale as constituent_2_contribution).
 query_comp,Full original Chinese question text asking about predictability.
 comp,Raw predictability rating as recorded in the original data (same scale as predictability).
-lexicality,Variable with two levels denoting lexical status of the sequence of letters (word and pseudoword)
+lexicality,Variable with two levels denoting lexical status of the sequence of letters (word and pseudoword).
