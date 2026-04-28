@@ -3,51 +3,45 @@
 # https://doi.org/10.3758/s13428-016-0720-6
 # 312 participants, 10,000 words, ~312,000 trials
 # Output: exp1.csv, CODEBOOK
-#  
-# -------------------------------------------------------------------------
+#
+# -----------------------------------------------------------------------------
 
 library(tidyverse)
 library(openxlsx)
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-## Load the raw Excel files ---------------------------------------------
+## Load raw files
 items <- read.xlsx("original_data/13428_2016_720_MOESM2_ESM.xlsx")
 trials <- read.xlsx("original_data/13428_2016_720_MOESM3_ESM.xlsx")
 
-## Clean the Item Data (Word Ratings) -----------------------------------
+## Clean item lvl
 items_clean <- items %>%
-  # Basic cleaning (extra spaces and make lowercase to match both files)
-  mutate(
-    Word = str_to_lower(str_trim(Word)),
-    concrete_rating = as.numeric(Concrete_rating)
-  ) %>%
-  # We only need these two columns for our project
-  select(Word, concrete_rating) %>%
-  # Remove duplicates just in case
-  distinct(Word, .keep_all = TRUE)
+  # Need these two from item lvl
+  select(Word, Concrete_rating) %>% 
+  # Make lowercase to match files
+  mutate(Word = str_to_lower(Word)) %>% 
+  # Rename concrete rating
+  rename(concrete_rating = Concrete_rating)
 
-## Clean the Trial Data ------------------------------------------------
+## Clean trial lvl
 trials_clean <- trials %>%
-  # Put everything to character first so we can search for "#NULL!"
+  # All to character to catch all weird NAs
   mutate(across(everything(), as.character)) %>%
-  # Excel often imports empty cells as "#NULL!" or "", let's fix that first
+  # Clean NAs
   mutate(across(everything(), ~na_if(., "#NULL!"))) %>%
-  mutate(across(everything(), ~na_if(., ""))) %>%
-  
-  # Normalize Word column so it matches our items list
-  mutate(Word = str_to_lower(str_trim(Word))) %>%
-  
-  # Make trial_id for each participant
+  # Make lowercase to match files
+  mutate(Word = str_to_lower(Word)) %>%
+  # Make trial id for each participant
   group_by(Participant) %>%
   mutate(trial_id = row_number() - 1) %>%
   ungroup()
 
-## Merge the Word Ratings into the Trials -------------------------------
+## Merge items to trials
 df <- trials_clean %>%
   left_join(items_clean, by = "Word")
 
-## Rename and Recode ---------------------------------------------------
+## Rename and Recode
 # Rename
 df <- df %>%
   rename(
@@ -71,8 +65,7 @@ df <- df %>%
     prev_acc       = prevtrialACC
   ) %>%
   mutate(
-   
-    # Convert character to numbers
+    # Characters back to integers
     participant_id = as.integer(participant_id),
     accuracy  = as.integer(accuracy),
     rt       = as.integer(rt),
@@ -80,39 +73,23 @@ df <- df %>%
     age      = as.integer(age),
     list     = as.integer(list),
     prev_acc = as.integer(prev_acc),
-
-    # Recode experimental condition
+    # Recode condition 
     condition = case_when(
       WordTypeAC == "C" ~ "concrete",
       WordTypeAC == "A" ~ "abstract",
-      TRUE ~ NA_character_
     ),
-    
-    # Clean up gender 
-    gender = case_when(
-      gender %in% c("M", "MALE", "Male", "m") ~ "M",
-      gender %in% c("F", "FEMALE", "Female", "f") ~ "F",
-      gender %in% c("O", "OTHER", "Other", "o") ~ "O",
-      TRUE ~ NA_character_
-    ),
-    
-    # Rename blocks to make it clearer
+    # Rename blocks
     phase_id = case_when(
       phase_id == 1 ~ "block_1",
       phase_id == 2 ~ "block_2",
       phase_id == 3 ~ "block_3",
       phase_id == 4 ~ "block_4",
-      TRUE ~ NA_character_
     ),
-    
     # RT outliers (when raw RT exists but clean RT is missing it means trial was recorded but excluded)
     is_rt_outlier = !is.na(rt_raw) & is.na(rt),
-    
-    # Fix response (replaced "0" with NA)
-    response = if_else(response == "0", NA_character_, response)
   )
 
-## Final Organization ----------------------------------------------------
+## All together
 df <- df %>%
   select(
     participant_id, age, gender, naart_score, ehi_score, ehi_class,
@@ -123,14 +100,23 @@ df <- df %>%
   ) %>%
   arrange(participant_id, trial_id)
 
-## Save as csv ------------------------------------------------------
-dir.create("processed_data", showWarnings = FALSE)
+## Save as csv
+dir.create("processed_data")
 write_csv(df, "processed_data/exp1.csv", na = "")
 
-## Update codebook -------------------------------------------------------
+## Update codebook
+# Read codebook
+codebook <- read_csv("../CODEBOOK.csv")
 
-# Descriptions
-new_codebook_entries <- data.frame(
+# Rename and change descriptions
+colnames(codebook) <- c("column_name", "description")
+codebook$description[codebook$column_name == "list"]     <- "Experimental list number (1-10)."
+codebook$description[codebook$column_name == "response"] <- "A=abstract, C=concrete, T=timed out."
+codebook$description[codebook$column_name == "trial_order"] <- "Sequential position of the trial in the full experiment (25-1024; 1-24 absent as those were practice trials)."
+codebook$description[codebook$column_name == "phase_id"] <- "Experimental block (block_1 to block_4). Each block contains 250 trials. Mandatory 3-minute break after block_2."
+
+# New variables
+new_codebook <- data.frame(
   column_name = c("concrete_rating", "naart_score", "ehi_score", "ehi_class", 
                   "rt_raw", "rt_zscore", "list_order", "prev_rt", "prev_acc"),
   description = c(
@@ -146,30 +132,12 @@ new_codebook_entries <- data.frame(
   )
 )
 
-# Read existing codebook
-codebook <- read_csv("../CODEBOOK.csv", show_col_types = FALSE)
+# Add new codebook
+codebook <- rbind(codebook, new_codebook)
 
-# Rename and change descriptions
-colnames(codebook) <- c("column_name", "description")
-codebook$description[codebook$column_name == "list"]     <- "Experimental list number (1-10)."
-codebook$description[codebook$column_name == "response"] <- "A=abstract, C=concrete, T=timed out."
-codebook$description[codebook$column_name == "trial_order"] <- "Sequential position of the trial in the full experiment (25-1024; 1-24 absent as those were practice trials)."
-codebook$description[codebook$column_name == "phase_id"] <- "Experimental block (block_1 to block_4). Each block contains 250 trials. Mandatory 3-minute break after block_2."
-
-# Add new codebook rows
-codebook <- rbind(codebook, new_codebook_entries)
-
-# Delete rows that are not in df
+# Delete if not in df
 codebook <- codebook %>% 
   filter(column_name %in% names(df))
 
 # Save as csv
 write_csv(codebook, "CODEBOOK.csv")
-
-
-
-##### List_order redundant, remove it? ######
-
-
-
-
