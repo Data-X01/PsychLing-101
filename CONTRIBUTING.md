@@ -69,6 +69,16 @@
 |The Natural Stories corpus    |                        [Link](https://link.springer.com/article/10.1007/s10579-020-09503-7)       | Kiri Kuroda |
 | Dutch crowdsourcing project    |                        [Link]( https://doi.org/10.5334/pb.491)       | Niklas Jung |
 |The Lancaster Sensorimotor Norms   |                        [Link](https://link.springer.com/article/10.3758/s13428-019-01316-z)       |Jing Chen |
+|Italian lexical decision task|       [Link](https://osf.io/sd63u/overview)       |Iva Saban |
+|Italian Crowdsourcing Project (ICP)|       [Link](https://osf.io/e4x7w/overview?view_only=20c718b7a8594fdba02256b475832597))      |Simona Amenta|
+| Linear Discriminative Learning|       [Link](https://osf.io/hqut8)       |Rolando Bonandrini|
+| Italian Affective Norms |       [Link](https://osf.io/afe26/)      |Marco Petilli, Simona Amenta, Alessandra Vergallito, Marco Marelli|
+|Italian Perceptual Strength Norms |       [Link](https://osf.io/zdg59/)       |Alessandra Vergallito|
+|Word-association (STEM) |       [Link](https://arxiv.org/abs/2502.19529)       |Massimo Stel|
+|Dutch Lexicon Project 1|[Link](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2010.00174/full#cite)  |
+Sadaf Valadkhani|
+|Verbal fluency and similarity ratings|[Link](https://doi.org/10.1038/s41598-022-11698-4)  | Samuel Aeschbach|
+
 
 ---
 
@@ -78,7 +88,6 @@
 |------|------|
 | MEGALEX: A megastudy of visual and auditory word recognition (only visual recognition data) |[Link](https://link.springer.com/article/10.3758/s13428-017-0943-1)  |
 | A behavioral database for masked form priming.  |[Link](https://link.springer.com/article/10.3758/s13428-013-0442-y)  |
-|Dutch Lexicon Project 1|[Link](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2010.00174/full#cite)  |
 |Dutch Lexicon Project 2|[Link](https://pubmed.ncbi.nlm.nih.gov/26501839/ )  |
 |The French Lexicon Project|[Link](https://link.springer.com/article/10.3758/BRM.42.2.488)  |
 |The Provo Corpus:A large eye-tracking corpus with predictability norms|[Link](https://link.springer.com/article/10.3758/s13428-017-0908-4  )  |
