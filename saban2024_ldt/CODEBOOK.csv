@@ -1,0 +1,8 @@
+Recommended Column Name,Description
+participant_id,Anonymized participant ID
+stimulus,String of letters shown on the screen
+response,"Response key recorded to ""a"" or ""l"""
+accuracy,Response accuracy 
+rt,Response time in ms
+trial_id,Trial order index
+age,Participant age in years
