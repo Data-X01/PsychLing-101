@@ -89,12 +89,7 @@ codebook_own <- codebook_own |>
 
 # Export processed files -------------------------------------------------------
 
-codebook_own |> write_csv("codebook.csv")
+codebook_own |> write_csv("CODEBOOK.csv")
 exp1 |> write_csv("processed_data/exp1.csv")
 exp2 |> write_csv("processed_data/exp2.csv")
 exp3 |> write_csv("processed_data/exp3.csv")
-
-
-
-
-
