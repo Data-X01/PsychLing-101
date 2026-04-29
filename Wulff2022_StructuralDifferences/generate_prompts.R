@@ -80,7 +80,6 @@ exp1_tbl <- exp1_tbl |>
 
 # Create prompts Experiment 2 --------------------------------------------------
 
-
 exp2_tbl <- tibble(
   text = NA_character_,
   experiment = "Wulff2022_StructuralDifferences/Study2_Fluency",
@@ -155,7 +154,6 @@ for (p in exp3 |> pull(participant_id) |> unique()) {
   exp3_tbl$rt[exp3_tbl$participant_id == p] <- list(this_p$rt)
   
 }
-
 
 ppt_vars <- exp3 |> 
   select(participant_id, age, participant_age_group, gender) |> 
