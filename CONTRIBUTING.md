@@ -75,8 +75,7 @@
 | Italian Affective Norms |       [Link](https://osf.io/afe26/)      |Marco Petilli, Simona Amenta, Alessandra Vergallito, Marco Marelli|
 |Italian Perceptual Strength Norms |       [Link](https://osf.io/zdg59/)       |Alessandra Vergallito|
 |Word-association (STEM) |       [Link](https://arxiv.org/abs/2502.19529)       |Massimo Stel|
-|Dutch Lexicon Project 1|[Link](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2010.00174/full#cite)  |
-Sadaf Valadkhani|
+|Dutch Lexicon Project 1|[Link](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2010.00174/full#cite)  |Sadaf Valadkhani|
 |Verbal fluency and similarity ratings|[Link](https://doi.org/10.1038/s41598-022-11698-4)  | Samuel Aeschbach|
 
 
