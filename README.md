@@ -14,7 +14,7 @@ PsychLing-101 will be open for contributions until May 1st, 2026. Future project
 
 > **Current coverage** 
 >
-> *13* studies | *‎‎4,658* participants | *‎‎277,927* data points
+> *20* studies | *32,241* participants | *4,179,557‎* data points
 
 ---
 
@@ -67,7 +67,8 @@ Open your command-line interface (Terminal, Git Bash, or PowerShell).
 
 # 1. Clone your fork to the local machine
 # This creates a folder named 'PsychLing-101'. Remember to replace YOUR-USERNAME with your GitHub handle.
-git clone https://github.com/YOUR-USERNAME/PsychLing-101.git
+Please clone the repository with LFS files untracked. 
+GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/YOUR-USERNAME/PsychLing-101.git
 
 # 2. Move into the cloned repository folder
 cd PsychLing-101
