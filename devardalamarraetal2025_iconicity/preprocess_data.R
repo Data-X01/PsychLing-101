@@ -78,5 +78,8 @@ names(processed_data_final)
 
 ### save processed data file ###
 
-write.csv(processed_data_final, "processed_data/exp1.csv", row.names = FALSE)
+write.csv(processed_data_final,
+          "processed_data/exp1.csv",
+          row.names = FALSE,
+          fileEncoding = "UTF-8")
 

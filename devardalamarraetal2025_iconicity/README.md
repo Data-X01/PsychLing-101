@@ -23,7 +23,7 @@ Trial {trial_idx}. La parola italiana è: '{stimulus}'. Quanto è iconica questa
 
 - **Total items:** 1,121 words from the ANEW database + 30 additional words (5 onomatopoeic control words present in all lists; 25 phonosymbolic words, 5 per list)
 - **Lists:** 5 (224 words per list, one list with 225 words)
-- **Total participants:** 111 after exclusions (54 L1, 57 L2)
+- **Total participants:** 111 after exclusions (54 L1, 57 L2); participants could rate 1 or more lists
 - **Language:** Italian (stimuli); instructions in Italian and English
 
 ## Exclusion Criteria
