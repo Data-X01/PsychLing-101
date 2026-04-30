@@ -153,7 +153,7 @@ for participant_id, df_participant in groups:
             # Create the prompt dictionary
             prompt_dict = {
                 "text": prompt_text,
-                "task": "balota2007_LDT_exp1",
+                "experiment": "balota2007_LDT_exp1",
                 "participant_id": participant_id,
                 "session_no": int(session_no+1),
                 "batch_no": int(batch+1),
