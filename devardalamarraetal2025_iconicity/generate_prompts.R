@@ -19,6 +19,7 @@ library(jsonlite)
 
 ## import data
 data <- read.csv("processed_data/exp1.csv", stringsAsFactors = FALSE)
+data$response <- round(data$response) #to shorten answers with decimals
 
 # quick check: print column names and number of rows to verify correct loading
 cat("Columns:", paste(colnames(data), collapse = ", "), "\n")
@@ -154,6 +155,26 @@ for (pid in participant_ids) {
     trials_text <- paste(kept_trials, collapse = "\n")
     full_text   <- paste0(instructions, "\n\n---\n\n", trials_text)
   }
+  
+  # additional limit: truncate at 100,000 characters if needed (GitHub file line limit)
+  if (nchar(full_text) > 100000) {
+    
+    cat("WARNING: Participant", pid, "exceeds 100,000 character limit. Truncating.\n")
+    
+    # Rebuild trial by trial, stopping before the character limit
+    char_budget <- 100000 - nchar(instructions) - nchar("\n\n---\n\n") - 10  
+    
+    kept_trials <- c()
+    for (trial in trial_lines) {
+      trial_chars <- nchar(trial) + 1  # +1 for newline
+      if (char_budget - trial_chars < 0) break
+      kept_trials  <- c(kept_trials, trial)
+      char_budget  <- char_budget - trial_chars
+    }
+    
+    trials_text <- paste(kept_trials, collapse = "\n")
+    full_text   <- paste0(instructions, "\n\n---\n\n", trials_text)
+  }
 
   # convert the prompt to a JSON object with three fields: text, experiment, participant_id.
   json_obj <- toJSON(
@@ -187,7 +208,7 @@ cat("Created zip archive:", zip_file, "\n")
 cat("\n=== Done ===\n")
 cat("Output:                      ", zip_file, "\n")
 cat("Participants written:         ", length(participant_ids), "\n")
-cat("Participants truncated:       ", n_truncated, "\n")
+cat("Participants truncated for token limit:       ", n_truncated, "\n")
 
 ## approximate token count for the first participant as a sanity check
 sample_pid  <- participant_ids[1]
