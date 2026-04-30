@@ -14,9 +14,19 @@ codebook <- read_csv("CODEBOOK.csv")
 print(codebook$`Recommended Column Name`)
 
 ## required variables added previously to codebook
+library(dplyr)
 # codebook_new <- codebook %>%
 #   add_row(
-#     `Recommended Column Name` = c("group", "eng_translation", "word_class", "word_length", "first_language", "second_language", "lexita_self_cefr", "lexita_score"),
+#     `Recommended Column Name` = c(
+#       "group", "eng_translation", "word_class", "word_length", "first_language",
+#       "second_language", "lexita_self_cefr", "lexita_score",
+#       "Auditory", "Gustatory", "Haptic", "Ita_Word_y", "M_AoA",
+#       "M_Aro", "M_Con", "M_Dom", "M_Fam", "M_Ima", "M_Val", "Olfactory", "SD_AoA",
+#       "Specificity_scaled", "Visual", "WF_Subtlex", "density_fastText",
+#       "ldt_acc", "ldt_rt", "ldt_rt_z", "letter_freq", "mag_percept",
+#       "max_percept", "mean_percept", "min_percept", "mink_percept",
+#       "mod_e", "mod_exc", "nt_acc", "nt_rt", "nt_rt_z"
+#     ),
 #     Description = c(
 #       "The participant's group (1 for L1 Italian speaker, 2 for L2 Italian speaker)",
 #       "English translation of the Italian target word",
@@ -25,13 +35,44 @@ print(codebook$`Recommended Column Name`)
 #       "Participant's first language",
 #       "Participant's second language",
 #       "Participant's score in LexIta according to CEFR levels",
-#       "Participant's score in LexIta"
+#       "Participant's score in LexIta",
+#       "Variable from Italian perceptual norms",
+#       "Variable from Italian perceptual norms",
+#       "Variable from Italian perceptual norms",
+#       "Repeated variable from the original dataset (unused)",
+#       "Variable from ANEW",
+#       "Variable from ANEW",
+#       "Variable from ANEW",
+#       "Variable from ANEW",
+#       "Variable from ANEW",
+#       "Variable from ANEW",
+#       "Variable from ANEW",
+#       "Variable from Italian perceptual norms",
+#       "Standardized Age of Acquisition",
+#       "Variable from ANEW specificity ratings",
+#       "Variable from Italian perceptual norms",
+#       "Word frequency from SUBTLEX-IT",
+#       "Density from FastText",
+#       "Accuracy in the lexical decision task",
+#       "Reaction time in the lexical decision task",
+#       "Z-scored reaction time in the lexical decision task",
+#       "Letter frequency",
+#       "Variable from Italian perceptual norms",
+#       "Variable from Italian perceptual norms",
+#       "Variable from Italian perceptual norms",
+#       "Variable from Italian perceptual norms",
+#       "Variable from Italian perceptual norms",
+#       "Variable from Italian perceptual norms",
+#       "Variable from Italian perceptual norms",
+#       "Accuracy in the naming task",
+#       "Reaction time in the naming task",
+#       "Z-scored reaction time in the naming task"
 #     )
 #   )
+# 
 # write.csv(codebook_new, "CODEBOOK.csv", row.names = FALSE)
 
 
-library(dplyr)
 processed_data <- original_data %>% 
   rename(participant_id = participant, 
          stimulus = word,
