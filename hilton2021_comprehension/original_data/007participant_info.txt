@@ -1,0 +1,2 @@
+Session	Participant	Handedness	Gender	Native_language	Age	
+007	007	Left	Female	English	24

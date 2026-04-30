@@ -1,0 +1,18 @@
+column_name,description
+trial_id,Unique identifier for a single trial within a session or condition.
+condition,"Experimental condition assigned to the trial. Either ""congruent"", ""incongruent"", or ""other"""
+stimulus,"The linguistic or visual stimulus presented to the participant in a given trial. This is formatted in a way that indicates the sequential presentation of the sentence and which words were on screen at a given moment, e.g., ['The', 'man', 'that the', 'nurse', 'phoned', 'left', 'his', 'pills', 'at', 'the', 'office']
+"
+sentence_extraction,"Additional annotation about the 'stimulus' variable, noting whether it is an 'object' or 'subject' extracted relative clause sentence, or 'other'"
+comprehension_probe,"In response to the 'stimulus' sentence, this variable indicates the comprehension question participants answered."
+probe_clause,"In relation to the 'comprehension_probe' variable, this variable annotates whether that probe targeted the main or relative clause of the sentence."
+response,Participant's response. - either 'y' for yes or 'n' for no
+accuracy,Binary indicator of whether the participant's response was correct.
+rt,"Time taken by the participant to respond, in milliseconds. This is timed relative to the onset of the comprehension probe."
+participant_id,Unique identifier assigned to each participant.
+handedness,Participant's handedness
+gender,Self-reported or observed gender identity of the participant.
+first_language,Participant's native or first-acquired language.
+age,Age of the participant at the time of the experiment (in years)
+country_of_residence,Participant's current country of residence.
+other_languages,"Languages learned after the first language, optionally with proficiency level."
