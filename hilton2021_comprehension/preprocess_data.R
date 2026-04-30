@@ -47,6 +47,28 @@ data_clean <- map(participant_ids, \(.participant_id) {
       gender == "m" ~ "male",
       .default = gender
     ),
+    first_language = case_when(
+      first_language == "english" ~ "English",
+      first_language == "Eng" ~ "English",
+      first_language == "dutch" ~ "Dutch",
+      first_language == "hebrew" ~ "Hebrew",
+      .default = first_language
+    ),
+    # NOTE: this wasn't explicitly part of the data, but fluency in English was a participation requirement
+    # that was screened prior to the experiment so it can be inferred.
+    other_languages = case_when(
+      first_language == "Dutch" ~ "English (Fluent)",
+      first_language == "Hebrew" ~ "English (Fluent)",
+      .default = NA
+    ),
+    handedness = case_when(
+      handedness == "Right" ~ "right",
+      handedness == "R" ~ "right",
+      handedness == "r" ~ "right",
+      handedness == "L" ~ "left",
+      handedness == "Left" ~ "left",
+      .default = handedness
+    ),
     # NOTE: this wasn't explicitly part of the original data, but as the experimenter 
     # of the original study I can confidently say all participants were at that time
     # residents in Australia
