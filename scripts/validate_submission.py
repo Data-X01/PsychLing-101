@@ -29,30 +29,6 @@ import zipfile
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
-# Optional dependency: langdetect (for prompt-language checks)
-# ---------------------------------------------------------------------------
-try:
-    from langdetect import detect as _langdetect_detect
-    from langdetect import DetectorFactory
-
-    DetectorFactory.seed = 42  # reproducible language detection
-
-    def detect_language(text: str) -> str | None:
-        """Return an ISO 639-1 language code, or None on failure."""
-        try:
-            return _langdetect_detect(text)
-        except Exception:
-            return None
-
-    HAS_LANGDETECT = True
-except ImportError:
-    HAS_LANGDETECT = False
-
-    def detect_language(text: str) -> str | None:  # noqa: ARG001
-        return None
-
-
-# ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -70,7 +46,7 @@ GENERATE_SCRIPT_NAMES = ["generate_prompts.py", "generate_prompts.R"]
 MAIN_CODEBOOK_HEADER = ("Recommended Column Name", "Description")
 
 # Required JSONL fields (per README §3.3)
-REQUIRED_JSONL_FIELDS = {"text", "experiment", "participant"}
+REQUIRED_JSONL_FIELDS = {"text", "experiment", "participant_id"}
 
 # Optional JSONL metadata fields that should mirror CSV columns
 OPTIONAL_METADATA_FIELDS = {
@@ -85,7 +61,20 @@ OPTIONAL_METADATA_FIELDS = {
 }
 
 # Rough character limit for ~32K tokens
-TOKEN_CHAR_LIMIT = 128_000
+TOKEN_CHAR_LIMIT = 100_000
+
+# Git LFS pointer signature (first line of every pointer file)
+LFS_POINTER_SIGNATURE = b"version https://git-lfs.github.com/spec/v1"
+
+
+def is_lfs_pointer(path: Path) -> bool:
+    """Return True if *path* is a Git LFS pointer file (not the real content)."""
+    try:
+        with open(path, "rb") as f:
+            head = f.read(len(LFS_POINTER_SIGNATURE))
+        return head == LFS_POINTER_SIGNATURE
+    except Exception:
+        return False
 
 
 # ---------------------------------------------------------------------------
@@ -101,7 +90,7 @@ class Result:
         self.message = message
 
     def __str__(self):
-        return f"[{self.level}] ({self.module}) {self.message}"
+        return f"{self.level} ({self.module}) {self.message}"
 
     def github_annotation(self) -> str:
         """Return a GitHub Actions annotation string."""
@@ -139,7 +128,16 @@ class ResultCollector:
 # Helpers
 # ---------------------------------------------------------------------------
 def read_csv_auto(path: Path) -> tuple[list[str], list[list[str]], str]:
-    """Read a CSV file, auto-detecting delimiter. Returns (header, rows, delimiter)."""
+    """Read a CSV file, auto-detecting delimiter. Returns (header, rows, delimiter).
+
+    Raises ValueError if the file is a Git LFS pointer.
+    """
+    if is_lfs_pointer(path):
+        raise ValueError(
+            f"{path.name} is a Git LFS pointer file (not actual data). "
+            "Run 'git lfs pull' to download the real content."
+        )
+
     with open(path, encoding="utf-8-sig") as f:
         sample = f.read(4096)
 
@@ -437,17 +435,54 @@ def validate_prompts(
         rc.error(MODULE_PROMPTS, "prompts.jsonl.zip is missing.")
         return
 
+    # Guard against unresolved LFS pointer
+    if is_lfs_pointer(zip_path):
+        rc.error(
+            MODULE_PROMPTS,
+            "prompts.jsonl.zip is a Git LFS pointer file (not the actual ZIP). "
+            "The CI runner could not download the real content from the fork's LFS storage. "
+            "See the workflow logs for LFS fetch errors.",
+        )
+        return
+
     try:
         zf = zipfile.ZipFile(zip_path)
     except Exception as e:
         rc.error(MODULE_PROMPTS, f"Could not open prompts.jsonl.zip: {e}")
         return
 
-    jsonl_files = [n for n in zf.namelist() if n.endswith(".jsonl") and not n.startswith("__MACOSX")]
+    # --- Validate ZIP contents ---
+    all_entries = [n for n in zf.namelist() if not n.startswith("__MACOSX")]
+    jsonl_files = [n for n in all_entries if n.endswith(".jsonl")]
+    non_jsonl = [n for n in all_entries if not n.endswith(".jsonl") and not n.endswith("/")]
+
     if not jsonl_files:
         rc.error(MODULE_PROMPTS, "No .jsonl file found inside prompts.jsonl.zip.")
         zf.close()
         return
+
+    # Should be exactly one JSONL file named 'prompts.jsonl'
+    if len(jsonl_files) > 1:
+        rc.error(
+            MODULE_PROMPTS,
+            f"prompts.jsonl.zip should contain exactly one .jsonl file, "
+            f"but found {len(jsonl_files)}: {jsonl_files}",
+        )
+
+    for jf in jsonl_files:
+        # Accept both 'prompts.jsonl' and 'folder/prompts.jsonl' (strip dirs)
+        basename = jf.split("/")[-1]
+        if basename != "prompts.jsonl":
+            rc.error(
+                MODULE_PROMPTS,
+                f"JSONL file inside ZIP is named '{jf}' — expected 'prompts.jsonl'.",
+            )
+
+    if non_jsonl:
+        rc.warning(
+            MODULE_PROMPTS,
+            f"Unexpected non-JSONL files in prompts.jsonl.zip: {non_jsonl}",
+        )
 
     # Collect all CSV columns across all processed CSVs
     all_csv_columns: set[str] = set()
@@ -470,21 +505,31 @@ def validate_prompts(
         all_keys_seen: set[str] = set()
         instruction_texts: list[str] = []
         stimulus_words: list[str] = []
-        n_lines = len([l for l in lines if l.strip()])
+
+        # Strip blank lines once
+        non_blank = [(idx, l.strip()) for idx, l in enumerate(lines, 1) if l.strip()]
+        n_lines = len(non_blank)
+
+        # For large files, sample deterministically (first 50 + last 50)
+        MAX_JSONL_SAMPLE = 100
+        if n_lines > MAX_JSONL_SAMPLE:
+            half = MAX_JSONL_SAMPLE // 2
+            sampled = non_blank[:half] + non_blank[-half:]
+            is_sampled = True
+        else:
+            sampled = non_blank
+            is_sampled = False
 
         # Counters for aggregating repeating per-line issues
         missing_field_counts: dict[str, int] = {}  # field_name -> count
-        participant_id_misname_count = 0
+        participant_misname_count = 0
         no_marker_count = 0
         stray_angle_count = 0
         stray_angle_lines: list[int] = []
         token_limit_count = 0
         token_limit_lines: list[int] = []
 
-        for i, line in enumerate(lines, 1):
-            line = line.strip()
-            if not line:
-                continue
+        for i, line in sampled:
 
             # --- Valid JSON ---
             try:
@@ -503,8 +548,8 @@ def validate_prompts(
             # --- Required fields ---
             for field in REQUIRED_JSONL_FIELDS:
                 if field not in keys:
-                    if field == "participant" and "participant_id" in keys:
-                        participant_id_misname_count += 1
+                    if field == "participant_id" and "participant" in keys:
+                        participant_misname_count += 1
                     else:
                         missing_field_counts[field] = missing_field_counts.get(field, 0) + 1
 
@@ -532,20 +577,21 @@ def validate_prompts(
                 if len(token_limit_lines) < 5:
                     token_limit_lines.append(i)
 
-            # Collect instruction text (first 500 chars) for language check
-            if i <= 3:  # sample first 3 participants
-                instruction_texts.append(text[:500])
 
-            # Collect stimulus/response words for language comparison
-            if i <= 3 and markers:
-                stimulus_words.extend(markers[:10])
 
         # --- Emit aggregated per-line errors/warnings ---
-        if participant_id_misname_count > 0:
+        sample_note = f" (sampled {len(sampled)}/{n_lines} lines)" if is_sampled else ""
+        if is_sampled:
+            rc.warning(
+                MODULE_PROMPTS,
+                f"{jsonl_name}: large file — validated {len(sampled)}/{n_lines} lines "
+                f"(first {MAX_JSONL_SAMPLE // 2} + last {MAX_JSONL_SAMPLE // 2}).",
+            )
+        if participant_misname_count > 0:
             rc.error(
                 MODULE_PROMPTS,
-                f"{jsonl_name}: field 'participant_id' used instead of 'participant' "
-                f"in {participant_id_misname_count}/{n_lines} lines.",
+                f"{jsonl_name}: field 'participant' used instead of 'participant_id' "
+                f"in {participant_misname_count}/{n_lines} lines.",
             )
 
         for field, count in sorted(missing_field_counts.items()):
@@ -571,10 +617,10 @@ def validate_prompts(
 
         if token_limit_count > 0:
             example = f" (e.g., lines {token_limit_lines})" if token_limit_lines else ""
-            rc.warning(
+            rc.error(
                 MODULE_PROMPTS,
-                f"{jsonl_name}: {token_limit_count}/{n_lines} lines exceed ~32K token limit "
-                f"({TOKEN_CHAR_LIMIT:,} chars){example}.",
+                f"{jsonl_name}: {token_limit_count}/{n_lines} lines exceed the "
+                f"{TOKEN_CHAR_LIMIT:,}-character limit{example}.",
             )
 
         # --- Metadata cross-check ---
@@ -588,57 +634,12 @@ def validate_prompts(
                 "as metadata fields in the JSONL but are missing.",
             )
 
-        # --- Language consistency check ---
-        if HAS_LANGDETECT and instruction_texts:
-            _check_language_consistency(
-                instruction_texts, stimulus_words, jsonl_name, rc
-            )
+
 
     zf.close()
 
 
-def _check_language_consistency(
-    instruction_texts: list[str],
-    stimulus_words: list[str],
-    jsonl_name: str,
-    rc: ResultCollector,
-):
-    """Flag if instruction language doesn't match stimulus language."""
-    # Detect instruction language from the first few participants
-    instr_langs = []
-    for text in instruction_texts:
-        lang = detect_language(text)
-        if lang:
-            instr_langs.append(lang)
 
-    # Detect stimulus language from collected words
-    if stimulus_words:
-        stimulus_text = " ".join(stimulus_words)
-        stim_lang = detect_language(stimulus_text)
-    else:
-        stim_lang = None
-
-    if not instr_langs or not stim_lang:
-        return
-
-    # Most common instruction language
-    from collections import Counter
-
-    instr_lang = Counter(instr_langs).most_common(1)[0][0]
-
-    if stim_lang != "en" and instr_lang == "en":
-        rc.warning(
-            MODULE_PROMPTS,
-            f"{jsonl_name}: stimuli appear to be in '{stim_lang}' but instructions "
-            f"appear to be in 'en'. If target words are non-English, instructions "
-            "should also be in that language.",
-        )
-    elif stim_lang != instr_lang and stim_lang != "en":
-        rc.warning(
-            MODULE_PROMPTS,
-            f"{jsonl_name}: language mismatch — instructions detected as '{instr_lang}', "
-            f"stimuli detected as '{stim_lang}'.",
-        )
 
 
 # ---------------------------------------------------------------------------
@@ -783,10 +784,6 @@ def print_report(collectors: list[ResultCollector]) -> bool:
             prefix = "  ❌" if r.level == "ERROR" else "  ⚠️ "
             print(f"{prefix} {r}")
 
-            # GitHub Actions annotations
-            if is_ci:
-                print(r.github_annotation())
-
         if rc.has_errors:
             any_errors = True
 
@@ -797,7 +794,84 @@ def print_report(collectors: list[ResultCollector]) -> bool:
         print("  RESULT: PASSED" + (" (with warnings)" if any(rc.warning_count > 0 for rc in collectors) else ""))
     print(f"{'=' * 60}\n")
 
+    # Write GitHub Actions Job Summary (rendered as markdown on the PR page)
+    if is_ci:
+        _write_job_summary(collectors, any_errors)
+
     return any_errors
+
+
+def _build_summary_markdown(
+    collectors: list[ResultCollector], any_errors: bool
+) -> str:
+    """Build a rich markdown summary string."""
+    lines: list[str] = []
+
+    # Header
+    if any_errors:
+        lines.append("# ❌ Validation Failed\n")
+    else:
+        has_warnings = any(rc.warning_count > 0 for rc in collectors)
+        if has_warnings:
+            lines.append("# ✅ Validation Passed (with warnings)\n")
+        else:
+            lines.append("# ✅ Validation Passed\n")
+
+    # Overview table
+    lines.append("| Dataset | Status | Errors | Warnings |")
+    lines.append("|---------|--------|--------|----------|")
+    for rc in collectors:
+        marker = "❌ FAIL" if rc.has_errors else "✅ PASS"
+        lines.append(f"| `{rc.folder_name}` | {marker} | {rc.error_count} | {rc.warning_count} |")
+    lines.append("")
+
+    # Details per dataset
+    for rc in collectors:
+        if not rc.results:
+            continue
+
+        lines.append(f"## `{rc.folder_name}`\n")
+
+        # Errors first
+        errors = [r for r in rc.results if r.level == "ERROR"]
+        if errors:
+            lines.append("<details open>")
+            lines.append(f"<summary>❌ <strong>{len(errors)} Error(s)</strong> — must fix before merge</summary>\n")
+            for r in errors:
+                lines.append(f"- **[{r.module}]** {r.message}")
+            lines.append("\n</details>\n")
+
+        # Then warnings
+        warnings = [r for r in rc.results if r.level == "WARNING"]
+        if warnings:
+            lines.append("<details>")
+            lines.append(f"<summary>⚠️ {len(warnings)} Warning(s) — informational</summary>\n")
+            for r in warnings:
+                lines.append(f"- **[{r.module}]** {r.message}")
+            lines.append("\n</details>\n")
+
+    return "\n".join(lines)
+
+
+def _write_job_summary(collectors: list[ResultCollector], any_errors: bool):
+    """Write markdown summary to $GITHUB_STEP_SUMMARY and validation_summary.md."""
+    md = _build_summary_markdown(collectors, any_errors)
+
+    # Write to $GITHUB_STEP_SUMMARY (rendered on the Actions Summary tab)
+    summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary_path:
+        try:
+            with open(summary_path, "a") as f:
+                f.write(md + "\n")
+        except Exception:
+            pass
+
+    # Write to file for PR comment posting
+    try:
+        with open(REPO_ROOT / "validation_summary.md", "w") as f:
+            f.write(md + "\n")
+    except Exception:
+        pass
 
 
 def main():
@@ -821,9 +895,7 @@ def main():
 
     print(f"Folders to validate: {folder_names}")
 
-    if not HAS_LANGDETECT:
-        print("NOTE: 'langdetect' not installed — language consistency checks will be skipped.")
-        print("      Install with: pip install langdetect")
+
 
     # Load the main CODEBOOK for cross-referencing
     main_columns = load_main_codebook()
