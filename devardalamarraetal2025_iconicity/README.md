@@ -27,7 +27,7 @@ Trial {trial_idx}. La parola italiana è: '{stimulus}'. Quanto è iconica questa
 - **Language:** Italian (stimuli); instructions in Italian and English
 
 ## Exclusion Criteria
-In a prescreening study, only participants who obtained a score over an established threshold (score ≥ 26, average B1 proficient participants’ score at LexIta) were selected for the iconicity rating task. Then, a leave-one-out (LOO) reliability check was applied to filter out unreliable raters. For each participant, their ratings were correlated with the mean ratings of all other participants who rated the same words. Only participants with a positive and significant correlation (r > 0, p < .05) were retained. Out of 59 L1 participants, 54 passed (91.53%); out of 69 L2 participants, 57 passed (82.61%).
+A leave-one-out (LOO) reliability check was applied to filter out unreliable raters. For each participant, their ratings were correlated with the mean ratings of all other participants who rated the same words. Only participants with a positive and significant correlation (r > 0, p < .05) were retained. Out of 59 L1 participants, 54 passed (91.53%); out of 69 L2 participants, 57 passed (82.61%).
 
 ## Files
 
