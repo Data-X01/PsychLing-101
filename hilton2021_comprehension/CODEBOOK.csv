@@ -15,3 +15,4 @@ gender,Self-reported or observed gender identity of the participant.
 first_language,Participant's native or first-acquired language.
 age,Age of the participant at the time of the experiment (in years)
 country_of_residence,Participant's current country of residence.
+other_languages,"Languages learned after the first language, optionally with proficiency level."
