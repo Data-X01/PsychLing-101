@@ -1,0 +1,13 @@
+column_name,description
+participant_id,Unique identifier assigned to each participant.
+trial_id,Unique identifier for a single trial within a session or condition.
+phase_id,Experimental block of 250 trials (block_1 to block_8 across two sessions) seperated by 5-min breaks.
+accuracy,Binary indicator of whether the participant's response was correct.
+condition,"Stimulus type: mot = word, nonmot = nonword"
+stimulus,The linguistic or visual stimulus presented to the participant in a given trial.
+response,"Participant's response (Is the stimulus a word?): oui = yes, non = no "
+rt,"Time taken by the participant to respond, in milliseconds."
+is_rt_outlier,"Flag RT outliers like in the paper: RT < 200 ms, RT > 2000 ms, or rt-zscore > 3."
+item_id,Unique identifier for each stimulus item.
+session_id,Experimental session (session_1 or session_2). Sessions were run on different days separated by no more than 1 week.
+rt_zscore,Z-scored RT within each participant. Minimizes influence of individual differences in processing speed.
