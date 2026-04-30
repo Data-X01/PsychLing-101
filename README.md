@@ -14,7 +14,7 @@ PsychLing-101 will be open for contributions until May 1st, 2026. Future project
 
 > **Current coverage** 
 >
-> *13* studies | *‎‎4,658* participants | *‎‎277,927* data points
+> *20* studies | *32,241* participants | *4,179,557‎* data points
 
 ---
 
@@ -67,7 +67,8 @@ Open your command-line interface (Terminal, Git Bash, or PowerShell).
 
 # 1. Clone your fork to the local machine
 # This creates a folder named 'PsychLing-101'. Remember to replace YOUR-USERNAME with your GitHub handle.
-git clone https://github.com/YOUR-USERNAME/PsychLing-101.git
+Please clone the repository with LFS files untracked. 
+GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/YOUR-USERNAME/PsychLing-101.git
 
 # 2. Move into the cloned repository folder
 cd PsychLing-101
@@ -130,7 +131,7 @@ In Steps 3.1 – 3.4 you transform the raw files of the original_data into stand
 In resulting `prompts.jsonl.zip` each line should have the following three fields:
 - `"text"`: Full natural language prompt with instructions, cover story and trial-by-trial data.
 - `"experiment"`: Identifier for the experiment.
-- `"participant"`: Participant ID.
+- `"participant_id"`: Participant ID.
 - Optional metadata fields (if available):
    - `"rt"`: List of reaction times in ms.
    - `"age"`, `"diagnosis"`, `"nationality"`, or questionnaire-derived statistics.
@@ -245,7 +246,7 @@ git add <authorYEAR_title>
 git commit -m "Add <authorYEAR_title> dataset and preprocess scripts"
 
 # 3. Push the branch to your fork on GitHub
-git push -u origin add_<authorYEAR_title>
+git push -u origin <authorYEAR_title>
 ```
 
 Next, navigate to **Your fork on GitHub**. You should see a banner or button prompting you to create a **Pull Request** from your new branch into the main branch of the original **Data-X01/PsychLing-101** repository. Fill in a short description of your contribution and click **Create pull request**.
