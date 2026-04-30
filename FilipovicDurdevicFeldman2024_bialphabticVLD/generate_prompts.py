@@ -14,7 +14,7 @@ print(result)
 
 
 # Load data
-df = pd.read_csv('processed_data/exp1.csv', encoding='utf-8', encoding_errors='replace')
+df = pd.read_csv('processed_data/exp1.csv', encoding='utf-8')
 df['response'] = df['response'].astype(str)
 
 # Sort dataframe by participant ID, phase_id, and trial order
@@ -51,37 +51,33 @@ for participant_id in participants:
 
     # Instruction texts
     prompt_R1 = (
-        'Na ekranu će vam se prikazati niz slova, a vaš zadatak je da odgovorite da li je to reč ili nije reč.<br />'
-        ' Ukoliko se na ekranu pojavi niz slova koji je reč, pritisnite taster ' + choices[0] + ',<br />'
-        ' a ukoliko nije reč, pritisnite taster ' + choices[1] + '.<br />'
-        'Reči se mogu javiti u različitim padežima.<br />'
+        'Na ekranu će vam se prikazati niz slova, a vaš zadatak je da odgovorite da li je to reč ili nije reč.\n'\
+        'Ukoliko se na ekranu pojavi niz slova koji je reč, pritisnite taster ' + choices[0] + ',\n'\
+        'a ukoliko nije reč, pritisnite taster ' + choices[1] + '.\n'\
+        'Reči se mogu javiti u različitim padežima.\n'
         'Trudite se da radite što brže i što tačnije.'
     )
     prompt_C1 = (
-        'На екрану ће вам се приказати низ слова, а ваш задатак је да одговорите да ли је то реч или није реч.<br />'
-        'Уколико се на екрану појави низ слова који је реч, притисните тастер ' + choices[0] + ',<br />'
-        ' а уколико није реч, притисните тастер ' + choices[1] + '.<br />'
-        'Речи се могу јавити у различитим падежима.<br />'
+        'На екрану ће вам се приказати низ слова, а ваш задатак је да одговорите да ли је то реч или није реч.\n'\
+        'Уколико се на екрану појави низ слова који је реч, притисните тастер ' + choices[0] + ',\n'\
+        'а уколико није реч, притисните тастер ' + choices[1] + '.\n'
+        'Речи се могу јавити у различитим падежима.\n'
         'Трудите се да радите што брже и што тачније.'
     )
     prompt_R2 = (
-        'Vaš zadatak će biti potupno isti kao do sada, <br /><br />'
-        's tim što će <br /><br />'
-        'NEKE REČI I PSEUDOREČI BITI NAPISANE ĆIRILICOM, <br /><br />'
-        'A NEKE LATINICOM. <br /><br />'
-        'Ukoliko u bilo kom od ta dva pisma <br />reč može da se pročita tako da ima značenje, <br />odgovorite potvrdno. <br /><br />'
-        ' Primeri potvrdnih odgovora: <br />НАНА (reč napisana ćirilicom), РАРА (reč napisana latinicom).  <br /><br />'
-        ' Ukoliko ni u ćiriličnoj, ni u latiničnoj varijanti <br />reč ne može da se pročita kao reč vašeg jezika, <br />odgovorite odrično.<br /><br />'
+        'Vaš zadatak će biti potupno isti kao do sada, s tim što će\n'\
+        'NEKE REČI I PSEUDOREČI BITI NAPISANE ĆIRILICOM, A NEKE LATINICOM. \n'\
+        'Ukoliko u bilo kom od ta dva pisma reč može da se pročita tako da ima značenje, odgovorite potvrdno. \n'\
+        'Primeri potvrdnih odgovora: НАНА (reč napisana ćirilicom), РАРА (reč napisana latinicom). \n'\
+        'Ukoliko ni u ćiriličnoj, ni u latiničnoj varijanti reč ne može da se pročita kao reč vašeg jezika, odgovorite odrično.\n'\
         'Trudite se da budete što brži, ali i što tačniji u isto vreme.'
     )
     prompt_C2 = (
-        'Ваш задатак ће бити потпуно исти као до сада, <br /><br />'
-        'с тим што ће <br /><br />'
-        'НЕКЕ РЕЧИ И ПСЕУДОРЕЧИ БИТИ НАПИСАНЕ ЋИРИЛИЦОМ, <br /><br />'
-        'А НЕКЕ ЛАТИНИЦОМ. <br /><br />'
-        'Уколико у било ком од та два писма <br />реч може да се прочита тако да има значење, <br />одговорите потврдно. <br /><br />'
-        ' Примери потврдних одговора: <br />НАНА (реч написана ћирилицом), РАРА (реч написана латиницом). <br /><br />'
-        'Уколико ни у ћириличној, ни у латиничној варијанти <br />реч не може да се прочита као реч Вашег језика, <br />одговорите одрично.<br /><br />'
+        'Ваш задатак ће бити потпуно исти као до сада, с тим што ће \n'\
+        'НЕКЕ РЕЧИ И ПСЕУДОРЕЧИ БИТИ НАПИСАНЕ ЋИРИЛИЦОМ, А НЕКЕ ЛАТИНИЦОМ. \n'\
+        'Уколико у било ком од та два писма реч може да се прочита тако да има значење, одговорите потврдно. \n'\
+        'Примери потврдних одговора: НАНА (реч написана ћирилицом), РАРА (реч написана латиницом). \n'\
+        'Уколико ни у ћириличној, ни у латиничној варијанти реч не може да се прочита као реч вашег језика, одговорите одрично.\n'\
         'Трудите се да будете што бржи, али и што тачнији у исто време.'
     )
 
