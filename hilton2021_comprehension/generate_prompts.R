@@ -85,7 +85,7 @@ prompts <- map(participant_ids, \(.participant_id) {
 
 jsonlite::stream_out(
   prompts,
-  file("prompts.jsonl.zip"),
+  file("prompts.jsonl"), # NOTE: need to zip this separately...
   verbose = FALSE
 )
 
