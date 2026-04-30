@@ -35,6 +35,9 @@ df <- df %>%
     condition  = V6,
     )
 
+# Fix Encoding
+df <- df %>% mutate(stimulus = iconv(stimulus, from = "latin1", to = "UTF-8"))
+
 # Fix broken rows
 df <- df %>%
   mutate(condition = if_else(stimulus %in% c("choque", "conducteurs", "rêvez", "quelles", "hebdo") & 
