@@ -13,8 +13,8 @@ names(original_data)
 codebook <- read_csv("CODEBOOK.csv")
 print(codebook$`Recommended Column Name`)
 
-## required variables added previously to codebook
 library(dplyr)
+
 # codebook_new <- codebook %>%
 #   add_row(
 #     `Recommended Column Name` = c(
@@ -70,9 +70,11 @@ library(dplyr)
 #     )
 #   )
 # 
-# write.csv(codebook_new, "CODEBOOK.csv", row.names = FALSE)
+# # save with explicit UTF-8 encoding to avoid github errors
+# write.csv(codebook_new, "CODEBOOK.csv", row.names = FALSE, fileEncoding = "UTF-8")
 
 
+library(dplyr)
 processed_data <- original_data %>% 
   rename(participant_id = participant, 
          stimulus = word,
