@@ -1,7 +1,3 @@
-column_name,description
-participant_id,Anonymized participant ID
-age,Participant age in years
-trial_id,Trial order index (factorized from raw trial_id)
-stimulus,Sentence string (from 'sentence')
-response,"Grammaticality judgment (e.g., 'c' / 'n')"
-rt,Response time in ms (from 'rt')
+version https://git-lfs.github.com/spec/v1
+oid sha256:7032380821a4a68f1f3748c6b82f788e3c721b42785f1d43eec7eb81fa456b03
+size 290

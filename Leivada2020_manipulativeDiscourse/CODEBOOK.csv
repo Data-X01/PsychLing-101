@@ -1,12 +1,3 @@
-Recommended Column Name,Description
-participant_number,The number of participant 
-participant_id,Unique identifier assigned to each participant.
-age,Age of the participant at the time of the experiment.
-gender,Self-reported or observed gender identity of the participant.
-education,Highest completed education level of the participant.
-years_spent_in_countries_of_residence,How many years the participant spent in the country of residence.
-country_of_residence,Participant's current country of residence.
-handedness,If participant is right or left handed
-stimulus ,The linguistic or visual stimulus presented to the participant in a given trial.
-response,Participant's response
-rt,"Time taken by the participant to respond, in milliseconds."
+version https://git-lfs.github.com/spec/v1
+oid sha256:3790cbc7bdafb82c85ca679c33dc052703460344c79bcc58686e8cf3a8b7e13f
+size 754

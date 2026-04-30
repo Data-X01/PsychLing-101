@@ -1,15 +1,3 @@
-column_name,description
-participant_id,Anonymized participant ID (numeric)
-age,Participant age in years
-trial_id,0-based index of cue within participant
-stimulus,Cue word (lowercased)
-response1,First association response (lowercased)
-response2,Second association response (lowercased)
-response3,Third association response (lowercased)
-response4,Fourth association response (lowercased)
-response5,Fifth association response (lowercased)
-response6,Sixth association response (lowercased)
-response7,Seventh association response (lowercased)
-response8,Eighth association response (lowercased)
-response9,Ninth association response (lowercased)
-response10,Tenth association response (lowercased)
+version https://git-lfs.github.com/spec/v1
+oid sha256:b778d5aa622db5c0d032ec8fbcbb61e53be4b262ebdfd51e9e5bd52227ed7fc6
+size 705

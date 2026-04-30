@@ -1,13 +1,3 @@
-Recommended Column Name,Description
-participant_id,Unique identifier assigned to each participant.
-age,Age of the participant at the time of the experiment.
-gender,Self-reported or observed gender identity of the participant.
-education,Highest completed education level of the participant.
-clinical_diagnoses,Any reported or documented clinical conditions relevant to cognitive, language, or psychological functioning.
-first_language,Participant's native or first-acquired language.
-other_languages,Languages learned after the first language, optionally with proficiency level.
-nationality,Participant's self-reported nationality.
-trial_id,Unique identifier for a single trial within a session or condition.
-accuracy,Binary indicator of whether the participant's response was correct, 1 for correct 0 for incorrect
-stimulus,The linguistic or visual stimulus presented to the participant in a given trial.
-response,Participant's response
+version https://git-lfs.github.com/spec/v1
+oid sha256:4bef0881f9bce29026ffec7bb662ad79109b8a2be1cc08036d265970aea2352a
+size 950

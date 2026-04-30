@@ -1,6 +1,3 @@
-column_name,description
-participant_id,Anonymized participant ID
-trial_id,Trial order index (factorized from raw trial_id)
-stimulus,Four options concatenated as 'opt1; opt2; opt3; opt4'
-best,Participant's 'best' choice string
-worst,Participant's 'worst' choice string
+version https://git-lfs.github.com/spec/v1
+oid sha256:175e119626cb4e41d889bed829f766de7dea0cea4b2ce20a02177870f193a923
+size 274
