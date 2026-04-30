@@ -75,8 +75,35 @@ data_clean <- map(participant_ids, \(.participant_id) {
     country_of_residence = "Australia"
   )
 
+annotate_stresses <- function(s, start = 2, step = 3) {
+  # parse string into vector
+  x <- strsplit(gsub("\\[|\\]|'", "", s), ",\\s*")[[1]]
+  
+  # apply transformation
+  idx <- seq(start, length(x), by = step)
+  x[idx] <- toupper(x[idx])
+  
+  # reassemble back to original format
+  paste0("['", paste(x, collapse = "', '"), "']")
+}
+
+data_clean <- data_clean |> 
+  rowwise() |> 
+  mutate(
+    stimulus = case_when(
+      condition == "congruent" & sentence_extraction == "object" ~ capitalize_every_n_string(stimulus, start = 2, step = 3),
+      condition == "incongruent" & sentence_extraction == "object" ~ capitalize_every_n_string(stimulus, start = 1, step = 3),
+      condition == "congruent" & sentence_extraction == "subject" ~ capitalize_every_n_string(stimulus, start = 2, step = 2),
+      condition == "incongruent" & sentence_extraction == "subject" ~ capitalize_every_n_string(stimulus, start = 1, step = 2),
+      condition == "other" ~ capitalize_every_n_string(stimulus, start = 2, step = 2),
+      .default = stimulus
+    )
+  )
+
+
+
 # save data ---------------------------------------------------------------
 
-write_csv(data_clean, file = here("exp1.csv"))
+write_csv(data_clean, file = here("processed_data", "exp1.csv"))
 
 # -------------------------------------------------------------------------
