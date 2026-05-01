@@ -47,7 +47,7 @@ for participant_id in participants:
     prompt = 'Na ekranu će biti izlagani nizovi slova u formi reči. Neki od njih će zaista biti reči vašeg jezika, dok će neki drugi samo ličiti na reči.\n'\
     'Vaš zadatak će biti da, za svaki prikazani niz, prepoznate da li predstavlja reč vašeg jezika, odnosno da li za vas nosi značenje kakvo nose reči.\n'\
         'Ukoliko smatrate da prikazani niz predstavlja reč vašeg jezika, pritisnite ' + choices[0] + ' a pritisnite ' + choices[1] + ' ukoliko vam prikazani niz samo liči na reč, ali nema značenje, odnosno ukoliko smatrate da je prikazani niz pseudoreč.\n'\
-        'MEĐUTIM: neke reči su napisane obrnutim redosledom slova, a kao reč se tretira sve što ima značenje u bilo kom smeru da se pročita. Npr. reč je SVILA, alii ALIVS.\n'\
+        'MEĐUTIM: neke reči su napisane obrnutim redosledom slova, a kao reč se tretira sve što ima značenje u bilo kom smeru da se pročita. Npr. reč je SVILA, ali je i ALIVS reč u ovom zadatku.\n'\
         'Trudite se da radite što brže i što tačnije, ali ništa od ta dva po svaku cenu.\n'\
         'Da li je ovo reč vašeg jezika, u bilo kom smeru da se pročita?\n'\
         'Pritisnite ' + choices[0] + ' ako je reč, a ' + choices[1] + ' ako je pseudoreč.\n'
