@@ -1,3 +1,4 @@
+
 input_folder <- "original_data"
 output_folder <- "processed_data"
 
@@ -26,7 +27,7 @@ standardize_gender <- function(x) {
   standardized
 }
 
-standardize_rating_file <- function(filename, experiment, task, scale_label) {
+standardize_rating_file <- function(filename) {
   df <- read_raw(filename)
 
   if ("workerid" %in% names(df)) {
@@ -40,56 +41,29 @@ standardize_rating_file <- function(filename, experiment, task, scale_label) {
   df$gender <- standardize_gender(df$gender)
   df$stimulus <- df$item
   df$response <- df$rating
-  df$experiment <- experiment
-  df$task <- task
-  df$rating_scale <- scale_label
 
-  if (!"context" %in% names(df)) {
-    df$context <- NA
-  }
-  if (!"sentence" %in% names(df)) {
-    df$sentence <- NA
+  keep <- c("participant_id", "age", "gender", "trial_id", "trial_order", "stimulus", "response")
+
+  if ("sentence" %in% names(df)) {
+    df$target_word <- df$item
+    df$stimulus <- df$sentence
+    keep <- append(keep, "target_word", after = match("stimulus", keep))
   }
 
-  keep <- c(
-    "experiment", "task", "participant_id", "age", "gender", "trial_id", "trial_order",
-    "stimulus", "sentence", "context", "response", "rating_scale"
-  )
+  if ("context" %in% names(df)) {
+    df$condition <- df$context
+    keep <- c(keep, "condition")
+  }
 
   df[keep]
 }
 
 experiments <- list(
-  exp1 = standardize_rating_file(
-    "df_apt.csv",
-    "exp1_aptness",
-    "aptness rating",
-    "1 = not apt; 7 = very apt"
-  ),
-  exp2 = standardize_rating_file(
-    "df_con.csv",
-    "exp2_concreteness",
-    "concreteness rating",
-    "1 = very abstract; 7 = very concrete"
-  ),
-  exp3 = standardize_rating_file(
-    "df_cons.csv",
-    "exp3_constituency",
-    "constituency rating",
-    "-3 = definitely the first word; 0 = both words equally metaphorical; +3 = definitely the second word"
-  ),
-  exp4 = standardize_rating_file(
-    "df_fam.csv",
-    "exp4_familiarity",
-    "familiarity rating",
-    "1 = not familiar; 7 = very familiar"
-  ),
-  exp5 = standardize_rating_file(
-    "df_met.csv",
-    "exp5_metaphoricity",
-    "metaphoricity rating",
-    "1 = very literal; 7 = very metaphorical"
-  )
+  exp1 = standardize_rating_file("df_apt.csv"),
+  exp2 = standardize_rating_file("df_con.csv"),
+  exp3 = standardize_rating_file("df_cons.csv"),
+  exp4 = standardize_rating_file("df_fam.csv"),
+  exp5 = standardize_rating_file("df_met.csv")
 )
 
 for (name in names(experiments)) {
@@ -100,3 +74,4 @@ for (name in names(experiments)) {
     na = ""
   )
 }
+
