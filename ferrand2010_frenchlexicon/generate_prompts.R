@@ -71,18 +71,20 @@ main <- function() {
   trial_indices <- 0:max(df$trial_id)
   
   con <- file("prompts.jsonl", open = "wb")
-  on.exit(close(con), add = TRUE)
-  
-  # loop over sessions to make 2 shorter prompts per participant 
+
+  # Loop over sessions to make 2 shorter prompts per participant 
   for (p in participants) {
     for (s in c("session_1", "session_2")) {
       df_p   <- df[df$participant_id == p & df$session_id == s, , drop = FALSE]
+      if (nrow(df_p) == 0) next # Skip session 2 if there is none (df participant 919)
       prompt <- build_participant_prompt(df_p, trial_indices)
       line   <- format_jsonl_line(prompt, EXPERIMENT_NAME, p, df_p$rt)
       writeLines(line, con, sep = "\n")
     }
   }
   
+  flush(con) # Manually close and flush to fix last line
+  close(con)
   zip("prompts.jsonl.zip", "prompts.jsonl")
   file.remove("prompts.jsonl")
   cat("Done. Written", length(participants)*2, "prompts to prompts.jsonl.zip\n")
