@@ -1,1 +1,5 @@
 brysbaert2014_Concreteness/processed_data/exp1.csv filter=lfs diff=lfs merge=lfs -text
+hutchison2013_semantic/processed_data/exp1.csv filter=lfs diff=lfs merge=lfs -text
+hutchison2013_semantic/processed_data/exp2.csv filter=lfs diff=lfs merge=lfs -text
+hutchison2013_semantic/original_data/*.xlsx filter=lfs diff=lfs merge=lfs -text
+hutchison2013_semantic/original_data/*.xls filter=lfs diff=lfs merge=lfs -text
