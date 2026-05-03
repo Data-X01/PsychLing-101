@@ -1,0 +1,12 @@
+column_name,Description
+participant_id,Session-level identifier (from exp_id); each participant may have multiple sessions
+gender,Gender (Male/Female/NA)
+age,Age (numeric)
+first_language,first language (dutch for all participants)
+handedness,Dominant Hand (Left/Right/NA)
+trial_order,Position of the trial within the session (0-indexed)
+stimulus,Dutch word or nonword presented to the participant (from spelling)
+lexicality,Whether the stimulus is a real word (W) or nonword (N) (from lexicality)
+response,Participant's response: W (word) or N (nonword)
+rt,Response time in milliseconds from stimulus onset to response
+accuracy,Whether the response was correct (1) or incorrect (0)
