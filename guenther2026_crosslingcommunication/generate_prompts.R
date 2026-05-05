@@ -6,7 +6,7 @@ rm(list=ls())
 library(tidyverse)
 library(jsonlite)
 
-setwd("C:/Users/tscha/Desktop/HU/PsychLing-101/Fritz paper/guenther2026_crosslingcommunication")
+setwd("guenther2026_crosslingcommunication")
 
 df_phase1 <- read_csv2("processed_data/exp1.csv")
 df_phase2 <- read_csv2("processed_data/exp2.csv")

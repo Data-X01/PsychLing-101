@@ -13,7 +13,7 @@ library(reshape2)
 ###############################################
 
 ### set the folder 
-setwd("C:/Users/tscha/PsychLing-101/guenther2026_crosslingcommunication")
+setwd("guenther2026_crosslingcommunication")
 
 ### list all the .csv files in the data folder
 folder <- "original_data"
