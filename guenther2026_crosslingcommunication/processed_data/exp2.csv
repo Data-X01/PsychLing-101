@@ -104,6 +104,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 115768;KOER;koffer;9;response1;13883,00000000000;male;24;english
 115768;KOER;kopf;9;response2;13883,00000000000;male;24;english
 115768;KOER;körper;9;response3;13883,00000000000;male;24;english
+115768;KREFER;krehfeld;11;response1;23801,00000000000;male;24;english
 115768;KREFER;credo;11;response2;23801,00000000000;male;24;english
 115768;KREFER;krähe;11;response3;23801,00000000000;male;24;english
 115768;KULFEF;kuhle;4;response1;15415,00000000000;male;24;english
@@ -182,6 +183,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 118510;FANESTEN;essen;9;response2;10648,90000000037;male;27;english
 118510;FANESTEN;feiern;9;response3;10648,90000000037;male;27;english
 118510;JUWEHL;juwel;11;response1;12524,19999999925;male;27;english
+118510;JUWEHL;jubbeln;11;response2;12524,19999999925;male;27;english
 118510;JUWEHL;wehleidig;11;response3;12524,19999999925;male;27;english
 118510;LIENT;liegen;3;response1;14396,09999999963;male;27;english
 118510;LIENT;leinen;3;response2;14396,09999999963;male;27;english
@@ -286,6 +288,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 11983;DRUSKE;dreck;2;response2;22865,50000000000;female;28;english
 11983;DRUSKE;reste;2;response3;22865,50000000000;female;28;english
 11983;FESKEN;nahrung;5;response1;14638,20000000019;female;28;english
+11983;FESKEN;tellre;5;response2;14638,20000000019;female;28;english
 11983;FESKEN;fisch;5;response3;14638,20000000019;female;28;english
 11983;IELLO;himmel;10;response1;14768,50000000000;female;28;english
 11983;IELLO;blume;10;response2;14768,50000000000;female;28;english
@@ -490,6 +493,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 129957;URTAD;urteil;8;response3;41849,69999998808;male;27;english
 130357;ARCONTEN;narkose;9;response1;41794,00000000000;female;NA;english, french, spanish
 130357;ARCONTEN;konzern;9;response2;41794,00000000000;female;NA;english, french, spanish
+130357;ARCONTEN;auschlussgremium;9;response3;41794,00000000000;female;NA;english, french, spanish
 130357;CORTUKE;türke;6;response1;24953,00000000000;female;NA;english, french, spanish
 130357;CORTUKE;cortison;6;response2;24953,00000000000;female;NA;english, french, spanish
 130357;CORTUKE;tücke;6;response3;24953,00000000000;female;NA;english, french, spanish
@@ -505,8 +509,10 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 130357;FRINA;dna;8;response1;15922,00000000000;female;NA;english, french, spanish
 130357;FRINA;frau;8;response2;15922,00000000000;female;NA;english, french, spanish
 130357;FRINA;rama;8;response3;15922,00000000000;female;NA;english, french, spanish
+130357;GNIEV;genieschtreich;3;response1;31115,00000000000;female;NA;english, french, spanish
 130357;GNIEV;genervt;3;response2;31115,00000000000;female;NA;english, french, spanish
 130357;GNIEV;nie;3;response3;31115,00000000000;female;NA;english, french, spanish
+130357;JUWEHL;juweel;14;response1;17876,00000000000;female;NA;english, french, spanish
 130357;JUWEHL;jude;14;response2;17876,00000000000;female;NA;english, french, spanish
 130357;JUWEHL;wahl;14;response3;17876,00000000000;female;NA;english, french, spanish
 130357;OKKE;glocke;2;response1;14371,00000000000;female;NA;english, french, spanish
@@ -520,6 +526,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 130357;PFLICHD;lichterkette;12;response3;14641,00000000000;female;NA;english, french, spanish
 130357;POMA;puma;0;response1;65502,00000000000;female;NA;english, french, spanish
 130357;POMA;oma;0;response2;65502,00000000000;female;NA;english, french, spanish
+130357;POMA;patenoma;0;response3;65502,00000000000;female;NA;english, french, spanish
 130357;SPIETEN;bieten;11;response1;18736,00000000000;female;NA;english, french, spanish
 130357;SPIETEN;nieten;11;response2;18736,00000000000;female;NA;english, french, spanish
 130357;SPIETEN;spezialnieten;11;response3;18736,00000000000;female;NA;english, french, spanish
@@ -756,6 +763,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 165364;SWIEBEL;kochen;13;response3;13922,19999998808;female;27;english, spanish
 165376;BREUN;braun;7;response1;12187,00000000000;female;27;english
 165376;BREUN;bräune;7;response2;12187,00000000000;female;27;english
+165376;BREUN;brä;7;response3;12187,00000000000;female;27;english
 165376;DERF;zwerg;1;response1;21701,00000000000;female;27;english
 165376;DERF;werft;1;response2;21701,00000000000;female;27;english
 165376;DERF;derb;1;response3;21701,00000000000;female;27;english
@@ -767,6 +775,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 165376;JUWEHL;smaragd;13;response3;14686,00000000000;female;27;english
 165376;KLAVEN;sklaven;11;response1;26921,00000000000;female;27;english
 165376;KLAVEN;klauen;11;response2;26921,00000000000;female;27;english
+165376;KLAVEN;klabe;11;response3;26921,00000000000;female;27;english
 165376;KLEN;klein;8;response1;23186,00000000000;female;27;english
 165376;KLEN;fan;8;response2;23186,00000000000;female;27;english
 165376;KLEN;clan;8;response3;23186,00000000000;female;27;english
@@ -804,16 +813,10 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 166929;CAVAK;auto;6;response2;15564,00000000000;genderqueer;29;english, turkish
 166929;CAVAK;messer;6;response3;15564,00000000000;genderqueer;29;english, turkish
 166929;DONK;dumm;2;response1;15686,00000000000;genderqueer;29;english, turkish
-166929;DONK;dumm;2;response1;15686,00000000000;genderqueer;29;english, turkish
-166929;DONK;umfallen;2;response2;15686,00000000000;genderqueer;29;english, turkish
 166929;DONK;umfallen;2;response2;15686,00000000000;genderqueer;29;english, turkish
 166929;DONK;esel;2;response3;15686,00000000000;genderqueer;29;english, turkish
-166929;DONK;esel;2;response3;15686,00000000000;genderqueer;29;english, turkish
-166929;DONK;dumm;5;response3;17336,00000000000;genderqueer;29;english, turkish
 166929;DONK;dumm;5;response3;17336,00000000000;genderqueer;29;english, turkish
 166929;DONK;frau;5;response1;17336,00000000000;genderqueer;29;english, turkish
-166929;DONK;frau;5;response1;17336,00000000000;genderqueer;29;english, turkish
-166929;DONK;esel;5;response2;17336,00000000000;genderqueer;29;english, turkish
 166929;DONK;esel;5;response2;17336,00000000000;genderqueer;29;english, turkish
 166929;FOIZ;furz;9;response1;28551,00000000000;genderqueer;29;english, turkish
 166929;FOIZ;weg;9;response2;28551,00000000000;genderqueer;29;english, turkish
@@ -912,6 +915,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 176756;GARAM;indien;7;response2;10009,00000000000;female;25;english
 176756;GARAM;gewürz;7;response3;10009,00000000000;female;25;english
 176756;ILAM;wille;2;response1;20435,00000000000;female;25;english
+176756;ILAM;elahn;2;response2;20435,00000000000;female;25;english
 176756;ILAM;wollen;2;response3;20435,00000000000;female;25;english
 176756;JUWEHL;juwel;13;response1;21630,00000000000;female;25;english
 176756;JUWEHL;schmuck;13;response2;21630,00000000000;female;25;english
@@ -999,7 +1003,9 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 179982;CHIELA;posaune;4;response3;12165,59999999963;male;23;english
 179982;CRUSKA;hefe;5;response1;23582,59999999963;male;23;english
 179982;CRUSKA;hafer;5;response2;23582,59999999963;male;23;english
+179982;CRUSKA;cerialien;5;response3;23582,59999999963;male;23;english
 179982;DRUSKE;wasser;8;response1;19060,00000000000;male;23;english
+179982;DRUSKE;flüssikeit;8;response2;19060,00000000000;male;23;english
 179982;DRUSKE;trinken;8;response3;19060,00000000000;male;23;english
 179982;FESKEN;fisch;9;response1;16540,40000000037;male;23;english
 179982;FESKEN;lachs;9;response2;16540,40000000037;male;23;english
@@ -1024,6 +1030,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 179982;SWIEBEL;gesund;14;response3;19050,69999999925;male;23;english
 179982;VERZEN;essen;10;response1;10976,00000000000;male;23;english
 179982;VERZEN;nahrung;10;response2;10976,00000000000;male;23;english
+179982;VERZEN;verzähren;10;response3;10976,00000000000;male;23;english
 181920;DANK;tank;6;response1;29779,50000000000;female;24;spanish
 181920;DANK;dänemark;6;response2;29779,50000000000;female;24;spanish
 181920;DANK;bank;6;response3;29779,50000000000;female;24;spanish
@@ -1117,6 +1124,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 220598;CRAVIEN;gravieren;5;response1;14799,29999995232;female;25;english, french
 220598;CRAVIEN;narben;5;response2;14799,29999995232;female;25;english, french
 220598;CRAVIEN;verlockungen;5;response3;14799,29999995232;female;25;english, french
+220598;GASTREWUEN;gastgebig;8;response1;25731,89999985695;female;25;english, french
 220598;GASTREWUEN;wunsch;8;response2;25731,89999985695;female;25;english, french
 220598;GASTREWUEN;restaraunt;8;response3;25731,89999985695;female;25;english, french
 220598;GLASWON;stadt;11;response1;15265,70000004768;female;25;english, french
@@ -1125,6 +1133,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 220598;GOUTE;gehweg;7;response1;21663,89999985695;female;25;english, french
 220598;GOUTE;warmherzig;7;response2;21663,89999985695;female;25;english, french
 220598;GOUTE;ente;7;response3;21663,89999985695;female;25;english, french
+220598;GOUTEVERZ;großzügich;3;response1;29097,20000004768;female;25;english, french
 220598;GOUTEVERZ;glücklich;3;response2;29097,20000004768;female;25;english, french
 220598;GOUTEVERZ;zufällig;3;response3;29097,20000004768;female;25;english, french
 220598;GUSTREPEN;eisen;9;response1;17280,50000000000;female;25;english, french
@@ -1175,6 +1184,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 226473;GRETHUM;mutter;5;response1;50273,00000000000;male;25;english
 226473;GRETHUM;regenwurm;5;response2;50273,00000000000;male;25;english
 226473;GRETHUM;turm;5;response3;50273,00000000000;male;25;english
+226473;JERUHM;jehre;0;response1;35295,00000000000;male;25;english
 226473;JERUHM;anerkennung;0;response2;35295,00000000000;male;25;english
 226473;JERUHM;wertschätzung;0;response3;35295,00000000000;male;25;english
 226473;JUKA;jura;10;response1;11440,00000000000;male;25;english
@@ -1229,6 +1239,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 239836;PFLICHD;recht;12;response2;22285,00000000000;female;27;english
 239836;PFLICHD;regel;12;response3;22285,00000000000;female;27;english
 239836;PORTKENAN;hafen;5;response1;12755,00000000000;female;27;english
+239836;PORTKENAN;krand;5;response2;12755,00000000000;female;27;english
 239836;PORTKENAN;porzellan;5;response3;12755,00000000000;female;27;english
 239836;REGNEZ;regen;4;response1;10753,00000000000;female;27;english
 239836;REGNEZ;rechen;4;response2;10753,00000000000;female;27;english
@@ -1282,6 +1293,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 246103;PUTETSPECK;butter;7;response2;36101,30000001192;male;30;english, spanish
 246103;PUTETSPECK;hähnchenbrust;7;response3;36101,30000001192;male;30;english, spanish
 246103;SHUFERUSS;zuckerguss;5;response1;590940,20000000298;male;30;english, spanish
+246103;SHUFERUSS;schulöffel;5;response2;590940,20000000298;male;30;english, spanish
 246103;SHUFERUSS;schiene;5;response3;590940,20000000298;male;30;english, spanish
 246103;SOGHERVENHER;staubsauger;0;response1;96898,59999999404;male;30;english, spanish
 246103;SOGHERVENHER;fernseher;0;response2;96898,59999999404;male;30;english, spanish
@@ -1331,6 +1343,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 261764;SWIEBEL;zwiebel;11;response1;12185,29999995232;male;26;english
 261764;SWIEBEL;knoblauch;11;response2;12185,29999995232;male;26;english
 261764;SWIEBEL;fisch;11;response3;12185,29999995232;male;26;english
+281466;BOIZER;boizen;7;response1;28690,19999992847;female;27;english, latin, russian
 281466;BOIZER;metall;7;response2;28690,19999992847;female;27;english, latin, russian
 281466;BOIZER;baumarkt;7;response3;28690,19999992847;female;27;english, latin, russian
 281466;BROZUEN;bronze;9;response1;32180,60000002384;female;27;english, latin, russian
@@ -1343,6 +1356,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 281466;FRATZEL;fratz;3;response2;71311,10000002384;female;27;english, latin, russian
 281466;FRATZEL;ratte;3;response3;71311,10000002384;female;27;english, latin, russian
 281466;FUZEN;fusel;5;response1;50388,29999995232;female;27;english, latin, russian
+281466;FUZEN;zufen;5;response2;50388,29999995232;female;27;english, latin, russian
 281466;FUZEN;zufuhr;5;response3;50388,29999995232;female;27;english, latin, russian
 281466;GARUST;gast;11;response1;25192,39999997616;female;27;english, latin, russian
 281466;GARUST;gerüst;11;response2;25192,39999997616;female;27;english, latin, russian
@@ -1354,6 +1368,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 281466;HIPPEGEN;epigene;6;response2;77711,89999997616;female;27;english, latin, russian
 281466;HIPPEGEN;epigen;6;response3;77711,89999997616;female;27;english, latin, russian
 281466;JUWEHL;juwel;14;response1;67581,19999992847;female;27;english, latin, russian
+281466;JUWEHL;juwellen;14;response2;67581,19999992847;female;27;english, latin, russian
 281466;JUWEHL;zubehör;14;response3;67581,19999992847;female;27;english, latin, russian
 281466;NOIZEN;noiz;10;response1;49376,79999995232;female;27;english, latin, russian
 281466;NOIZEN;geräusch;10;response2;49376,79999995232;female;27;english, latin, russian
@@ -1684,6 +1699,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 321738;ZARNK;zahnrad;1;response3;41270,09999999963;male;30;english
 321738;ZUGGHITIEN;zucchini;9;response1;32215,19999999925;male;30;english
 321738;ZUGGHITIEN;ziegenkäse;9;response2;32215,19999999925;male;30;english
+321738;ZUGGHITIEN;kisuaeli;9;response3;32215,19999999925;male;30;english
 339631;CROINKUFF;croissant;11;response1;34927,60000002384;male;25;english
 339631;CROINKUFF;kernkraftwerk;11;response2;34927,60000002384;male;25;english
 339631;CROINKUFF;konzentration;11;response3;34927,60000002384;male;25;english
@@ -1795,6 +1811,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 345660;LANK;lang;8;response1;23677,00000000000;female;27;english
 345660;LANK;blank;8;response2;23677,00000000000;female;27;english
 345660;LANK;länge;8;response3;23677,00000000000;female;27;english
+345660;PFANT;pflasche;0;response1;37819,00000000000;female;27;english
 345660;PFANT;recycling;0;response2;37819,00000000000;female;27;english
 345660;PFANT;plastik;0;response3;37819,00000000000;female;27;english
 345660;PFLICHD;pflicht;14;response1;18395,00000000000;female;27;english
@@ -1922,6 +1939,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 368719;KOSKPORS;kachel;2;response3;30344,70000004768;female;26;english, french
 368719;KRAPET;tapete;0;response1;21799,60000002384;female;26;english, french
 368719;KRAPET;teppich;0;response2;21799,60000002384;female;26;english, french
+368719;KRAPET;packett;0;response3;21799,60000002384;female;26;english, french
 368719;LAGHEN;lachen;6;response1;17742,39999997616;female;26;english, french
 368719;LAGHEN;legen;6;response2;17742,39999997616;female;26;english, french
 368719;LAGHEN;bett;6;response3;17742,39999997616;female;26;english, french
@@ -2043,9 +2061,17 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 388889;CASVEC;access;6;response2;12996,00000000000;NA;23;english
 388889;CASVEC;access;6;response3;12996,00000000000;NA;23;english
 388889;DUNAMER;maurer;9;response1;30280,00000000000;NA;23;english
+388889;DUNAMER;dunamer;9;response2;30280,00000000000;NA;23;english
+388889;DUNAMER;dunamer;9;response3;30280,00000000000;NA;23;english
 388889;FRETINECH;frechheit;1;response1;18566,00000000000;NA;23;english
 388889;FRETINECH;frechheit;1;response2;18566,00000000000;NA;23;english
 388889;FRETINECH;frechheit;1;response3;18566,00000000000;NA;23;english
+388889;FRISTECH;keineahnung;4;response1;42883,00000000000;NA;23;english
+388889;FRISTECH;keineahnung;4;response2;42883,00000000000;NA;23;english
+388889;FRISTECH;keineahnung;4;response3;42883,00000000000;NA;23;english
+388889;JITAREREHER;jagtleiter;8;response1;10675,00000000000;NA;23;english
+388889;JITAREREHER;jagtleiter;8;response2;10675,00000000000;NA;23;english
+388889;JITAREREHER;jagtleiter;8;response3;10675,00000000000;NA;23;english
 388889;JUWEHL;juwel;11;response1;14437,00000000000;NA;23;english
 388889;JUWEHL;juwel;11;response2;14437,00000000000;NA;23;english
 388889;JUWEHL;juwel;11;response3;14437,00000000000;NA;23;english
@@ -2118,18 +2144,21 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 392790;BALEZ;ballet;5;response1;28440,50000000000;male;23;english
 392790;BALEZ;ballern;5;response2;28440,50000000000;male;23;english
 392790;BALEZ;balliste;5;response3;28440,50000000000;male;23;english
+392790;BATANKE;bazoka;7;response1;24997,70000004768;male;23;english
 392790;BATANKE;tankstelle;7;response2;24997,70000004768;male;23;english
 392790;BATANKE;baden;7;response3;24997,70000004768;male;23;english
 392790;JAGS;jaguar;9;response1;31874,79999995232;male;23;english
 392790;JAGS;kot;9;response2;31874,79999995232;male;23;english
 392790;JAGS;rucksack;9;response3;31874,79999995232;male;23;english
 392790;JUWEHL;juwel;14;response1;18645,29999995232;male;23;english
+392790;JUWEHL;kritall;14;response2;18645,29999995232;male;23;english
 392790;JUWEHL;wertvoll;14;response3;18645,29999995232;male;23;english
 392790;KUKEN;schauen;0;response1;35763,70000004768;male;23;english
 392790;KUKEN;sehen;0;response2;35763,70000004768;male;23;english
 392790;KUKEN;beobachten;0;response3;35763,70000004768;male;23;english
 392790;KVAZEN;katze;10;response1;11952,70000004768;male;23;english
 392790;KVAZEN;qualle;10;response2;11952,70000004768;male;23;english
+392790;KVAZEN;quaseln;10;response3;11952,70000004768;male;23;english
 392790;MERZ;politik;4;response1;16061,79999995232;male;23;english
 392790;MERZ;bundeskanzler;4;response2;16061,79999995232;male;23;english
 392790;MERZ;märz;4;response3;16061,79999995232;male;23;english
@@ -2139,6 +2168,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 392790;PFLICHD;pflicht;12;response1;18833,89999985695;male;23;english
 392790;PFLICHD;licht;12;response2;18833,89999985695;male;23;english
 392790;PFLICHD;gesetz;12;response3;18833,89999985695;male;23;english
+392790;PORTKENAN;portmonee;8;response1;26127,29999995232;male;23;english
 392790;PORTKENAN;flughafen;8;response2;26127,29999995232;male;23;english
 392790;PORTKENAN;kanal;8;response3;26127,29999995232;male;23;english
 392790;REGNEZ;reckless;2;response1;44776,00000000000;male;23;english
@@ -2146,6 +2176,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 392790;REGNEZ;regenieren;2;response3;44776,00000000000;male;23;english
 392790;SAINZ;samstag;11;response1;23656,70000004768;male;23;english
 392790;SAINZ;sein;11;response2;23656,70000004768;male;23;english
+392790;SAINZ;samms;11;response3;23656,70000004768;male;23;english
 392790;SUBAKEN;durchbacken;3;response1;135907,30000019073;male;23;english
 392790;SUBAKEN;subway;3;response2;135907,30000019073;male;23;english
 392790;SUBAKEN;hacken;3;response3;135907,30000019073;male;23;english
@@ -2154,6 +2185,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 392790;SWIEBEL;trauer;13;response3;14715,10000014305;male;23;english
 392790;ZAINZ;zahn;1;response1;34376,79999995232;male;23;english
 392790;ZAINZ;sein;1;response2;34376,79999995232;male;23;english
+392790;ZAINZ;samms;1;response3;34376,79999995232;male;23;english
 397093;ARCONTEN;kontinent;10;response1;15651,10000002384;male;28;english
 397093;ARCONTEN;länder;10;response2;15651,10000002384;male;28;english
 397093;ARCONTEN;beherrschen;10;response3;15651,10000002384;male;28;english
@@ -2322,6 +2354,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 425269;SATURURG;stau;3;response1;38325,50000000000;female;23;english, latin, spanish
 425269;SATURURG;samstag;3;response2;38325,50000000000;female;23;english, latin, spanish
 425269;SATURURG;schloss;3;response3;38325,50000000000;female;23;english, latin, spanish
+425269;SWIEBEL;ziebel;13;response1;22827,39999999851;female;23;english, latin, spanish
 425269;SWIEBEL;messer;13;response2;22827,39999999851;female;23;english, latin, spanish
 425269;SWIEBEL;träne;13;response3;22827,39999999851;female;23;english, latin, spanish
 425269;VOICH;vogel;5;response1;17089,50000000000;female;23;english, latin, spanish
@@ -2339,6 +2372,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 427206;CUCKLE;kugel;4;response1;31282,00000000000;male;22;english
 427206;CUCKLE;gucken;4;response2;31282,00000000000;male;22;english
 427206;CUCKLE;gurke;4;response3;31282,00000000000;male;22;english
+427206;DISPIEZI;divisi;0;response1;190056,00000000000;male;22;english
 427206;DISPIEZI;notiz;0;response2;190056,00000000000;male;22;english
 427206;DISPIEZI;distel;0;response3;190056,00000000000;male;22;english
 427206;FINENKU;innen;7;response1;88076,00000000000;male;22;english
@@ -2360,6 +2394,8 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 427206;PARTENHU;partien;2;response2;54471,00000000000;male;22;english
 427206;PARTENHU;partner;2;response3;54471,00000000000;male;22;english
 427206;PFLICHD;pflicht;12;response1;17676,00000000000;male;22;english
+427206;PFLICHD;pflechten;12;response2;17676,00000000000;male;22;english
+427206;PFLICHD;pflechtend;12;response3;17676,00000000000;male;22;english
 427206;PLAIZ;platz;3;response1;12183,00000000000;male;22;english
 427206;PLAIZ;palais;3;response2;12183,00000000000;male;22;english
 427206;PLAIZ;plaza;3;response3;12183,00000000000;male;22;english
@@ -2502,6 +2538,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 442516;SALMER;sammeln;3;response2;48238,00000000000;male;25;english
 442516;SALMER;hose;3;response3;48238,00000000000;male;25;english
 442516;SIGRER;sieger;2;response1;12451,00000000000;male;25;english
+442516;SIGRER;sähge;2;response2;12451,00000000000;male;25;english
 442516;SIGRER;salz;2;response3;12451,00000000000;male;25;english
 442516;SUMMEN;sommer;11;response1;7878,00000000000;male;25;english
 442516;SUMMEN;biene;11;response2;7878,00000000000;male;25;english
@@ -2555,9 +2592,11 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 452602;VRANZEN;frankreich;3;response2;23223,80000000075;male;28;english, japanese
 452602;VRANZEN;franz;3;response3;23223,80000000075;male;28;english, japanese
 453222;CHAUNT;channel;11;response1;17054,50000000000;male;29;english, spanish
+453222;CHAUNT;charkol;11;response2;17054,50000000000;male;29;english, spanish
 453222;CHAUNT;chauffeur;11;response3;17054,50000000000;male;29;english, spanish
 453222;CUK;karte;5;response1;15656,39999985695;male;29;english, spanish
 453222;CUK;kalt;5;response2;15656,39999985695;male;29;english, spanish
+453222;CUK;kobolt;5;response3;15656,39999985695;male;29;english, spanish
 453222;EGNUL;engel;6;response1;13468,70000004768;male;29;english, spanish
 453222;EGNUL;egel;6;response2;13468,70000004768;male;29;english, spanish
 453222;EGNUL;extern;6;response3;13468,70000004768;male;29;english, spanish
@@ -2613,6 +2652,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 465490;FRUMENN;flamme;9;response2;11888,00000000000;female;24;english, french, spanish
 465490;FRUMENN;flackern;9;response3;11888,00000000000;female;24;english, french, spanish
 465490;GNOSECH;freund;8;response1;14450,00000000000;female;24;english, french, spanish
+465490;GNOSECH;kommrad;8;response2;14450,00000000000;female;24;english, french, spanish
 465490;GNOSECH;genosse;8;response3;14450,00000000000;female;24;english, french, spanish
 465490;GROFFEN;tür;11;response1;31507,00000000000;female;24;english, french, spanish
 465490;GROFFEN;tor;11;response2;31507,00000000000;female;24;english, french, spanish
@@ -2637,6 +2677,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 465490;SHIRUXEN;wegwerfen;3;response3;22114,00000000000;female;24;english, french, spanish
 465490;SWIEBEL;zwiebel;13;response1;16600,00000000000;female;24;english, french, spanish
 465490;SWIEBEL;gemüse;13;response2;16600,00000000000;female;24;english, french, spanish
+465490;SWIEBEL;scharlotte;13;response3;16600,00000000000;female;24;english, french, spanish
 465490;VURMINN;fahren;1;response1;32145,00000000000;female;24;english, french, spanish
 465490;VURMINN;bringen;1;response2;32145,00000000000;female;24;english, french, spanish
 465490;VURMINN;rennen;1;response3;32145,00000000000;female;24;english, french, spanish
@@ -2711,6 +2752,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 47118;NOHTEN;musik;3;response3;9763,79999995232;male;26;english, french
 47118;PAICIN;medizin;6;response1;35875,30000001192;male;26;english, french
 47118;PAICIN;nahrung;6;response2;35875,30000001192;male;26;english, french
+47118;PAICIN;paracetemol;6;response3;35875,30000001192;male;26;english, french
 47118;PFLICHD;pflicht;14;response1;12738,89999997616;male;26;english, french
 47118;PFLICHD;verpflichtung;14;response2;12738,89999997616;male;26;english, french
 47118;PFLICHD;aufgabe;14;response3;12738,89999997616;male;26;english, french
@@ -2913,16 +2955,10 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 507073;CAVAK;kayak;6;response2;16702,59999999963;male;29;english
 507073;CAVAK;carport;6;response3;16702,59999999963;male;29;english
 507073;DONK;esel;3;response1;14729,30000000075;male;29;english
-507073;DONK;esel;3;response1;14729,30000000075;male;29;english
-507073;DONK;schlag;3;response2;14729,30000000075;male;29;english
 507073;DONK;schlag;3;response2;14729,30000000075;male;29;english
 507073;DONK;aufprall;3;response3;14729,30000000075;male;29;english
-507073;DONK;aufprall;3;response3;14729,30000000075;male;29;english
-507073;DONK;schlag;5;response2;17403,00000000000;male;29;english
 507073;DONK;schlag;5;response2;17403,00000000000;male;29;english
 507073;DONK;aufprall;5;response3;17403,00000000000;male;29;english
-507073;DONK;aufprall;5;response3;17403,00000000000;male;29;english
-507073;DONK;sonntag;5;response1;17403,00000000000;male;29;english
 507073;DONK;sonntag;5;response1;17403,00000000000;male;29;english
 507073;FOIZ;frucht;0;response1;111019,50000000000;male;29;english
 507073;FOIZ;furz;0;response2;111019,50000000000;male;29;english
@@ -3316,6 +3352,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 528488;WEISCHAT;schatten;10;response3;25552,00000000000;female;24;english
 564424;APTFEN;apfel;5;response1;11543,00000000000;male;23;english
 564424;APTFEN;affen;5;response2;11543,00000000000;male;23;english
+564424;APTFEN;aften;5;response3;11543,00000000000;male;23;english
 564424;DUNKEN;tunken;1;response1;14495,60000002384;male;23;english
 564424;DUNKEN;dunkel;1;response2;14495,60000002384;male;23;english
 564424;DUNKEN;denken;1;response3;14495,60000002384;male;23;english
@@ -3327,6 +3364,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 564424;FLOT;flog;4;response3;9391,70000004768;male;23;english
 564424;GUD;gut;7;response1;41647,00000000000;male;23;english
 564424;GUD;güte;7;response2;41647,00000000000;male;23;english
+564424;GUD;gösser;7;response3;41647,00000000000;male;23;english
 564424;JUWEHL;juwelier;13;response1;385978,50000000000;male;23;english
 564424;JUWEHL;juwel;13;response2;385978,50000000000;male;23;english
 564424;JUWEHL;jubel;13;response3;385978,50000000000;male;23;english
@@ -3374,10 +3412,12 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 573716;GRUNTZEN;tier;1;response3;24077,00000000000;male;24;english
 573716;JUWEHL;juwel;14;response1;17093,00000000000;male;24;english
 573716;JUWEHL;schmuck;14;response2;17093,00000000000;male;24;english
+573716;JUWEHL;accessoir;14;response3;17093,00000000000;male;24;english
 573716;KANEN;krankenhaus;10;response1;67093,00000000000;male;24;english
 573716;KANEN;ambulanz;10;response2;67093,00000000000;male;24;english
 573716;KANEN;rettung;10;response3;67093,00000000000;male;24;english
 573716;MENST;periode;0;response1;94820,00000000000;male;24;english
+573716;MENST;mestruation;0;response2;94820,00000000000;male;24;english
 573716;MENST;periodenblut;0;response3;94820,00000000000;male;24;english
 573716;PFLICHD;pflicht;13;response1;12975,00000000000;male;24;english
 573716;PFLICHD;aufgabe;13;response2;12975,00000000000;male;24;english
@@ -3420,6 +3460,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 580187;GUT;ordentlich;9;response3;25659,89999997616;female;23;english
 580187;JUWEHL;juwel;14;response1;15227,00000000000;female;23;english
 580187;JUWEHL;wählen;14;response2;15227,00000000000;female;23;english
+580187;JUWEHL;juchtzen;14;response3;15227,00000000000;female;23;english
 580187;KAEN;kann;6;response1;15627,80000001192;female;23;english
 580187;KAEN;kenn;6;response2;15627,80000001192;female;23;english
 580187;KAEN;können;6;response3;15627,80000001192;female;23;english
@@ -3436,12 +3477,15 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 580187;PFLICHD;licht;12;response2;13372,00000000000;female;23;english
 580187;PFLICHD;richter;12;response3;13372,00000000000;female;23;english
 580187;STROBER;räuber;5;response1;25673,59999996424;female;23;english
+580187;STROBER;stoh;5;response2;25673,59999996424;female;23;english
 580187;STROBER;rocker;5;response3;25673,59999996424;female;23;english
 580187;SWIEBEL;zwiebel;13;response1;8550,80000001192;female;23;english
+580187;SWIEBEL;sebel;13;response2;8550,80000001192;female;23;english
 580187;SWIEBEL;sieben;13;response3;8550,80000001192;female;23;english
 580187;ZASS;zaster;8;response1;13071,00000000000;female;23;english
 580187;ZASS;brasse;8;response2;13071,00000000000;female;23;english
 580187;ZASS;zauber;8;response3;13071,00000000000;female;23;english
+586081;ALTHENSKIS;griechendland;7;response1;19131,89999997616;male;29;dutch, english, french
 586081;ALTHENSKIS;gyros;7;response2;19131,89999997616;male;29;dutch, english, french
 586081;ALTHENSKIS;altersheim;7;response3;19131,89999997616;male;29;dutch, english, french
 586081;DASTIBISH;staub;5;response1;19602,19999992847;male;29;dutch, english, french
@@ -3555,8 +3599,10 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 599856;POULINCH;huhn;4;response1;31303,00000000000;female;28;english, french
 599856;POULINCH;längenmaß;4;response2;31303,00000000000;female;28;english, french
 599856;POULINCH;pool;4;response3;31303,00000000000;female;28;english, french
+599856;SCHRAINZ;schrain;6;response1;11906,00000000000;female;28;english, french
 599856;SCHRAINZ;schreiben;6;response2;11906,00000000000;female;28;english, french
 599856;SCHRAINZ;schwanz;6;response3;11906,00000000000;female;28;english, french
+599856;SULLING;ikeabett;9;response1;15094,00000000000;female;28;english, french
 599856;SULLING;ikea;9;response2;15094,00000000000;female;28;english, french
 599856;SULLING;schweden;9;response3;15094,00000000000;female;28;english, french
 599856;SWIEBEL;zwiebel;14;response1;24225,00000000000;female;28;english, french
@@ -3646,6 +3692,8 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 630246;PFLICHD;pflicht;11;response1;10909,00000000000;male;27;english, french, russian
 630246;PFLICHD;wahrheit;11;response2;10909,00000000000;male;27;english, french, russian
 630246;PFLICHD;gabel;11;response3;10909,00000000000;male;27;english, french, russian
+630246;REPOKRET;terkoper;0;response1;44692,00000000000;male;27;english, french, russian
+630246;REPOKRET;hypokrit;0;response2;44692,00000000000;male;27;english, french, russian
 630246;REPOKRET;körper;0;response3;44692,00000000000;male;27;english, french, russian
 630246;SLORET;tirol;6;response1;10574,00000000000;male;27;english, french, russian
 630246;SLORET;gebirge;6;response2;10574,00000000000;male;27;english, french, russian
@@ -3658,6 +3706,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 630246;SWIEBEL;schicht;13;response3;7499,00000000000;male;27;english, french, russian
 630246;VIRTEL;viertel;1;response1;12867,00000000000;male;27;english, french, russian
 630246;VIRTEL;virtuell;1;response2;12867,00000000000;male;27;english, french, russian
+630246;VIRTEL;letriv;1;response3;12867,00000000000;male;27;english, french, russian
 632531;ARENVOG;zäh;2;response1;27874,00000000000;female;23;english, french
 632531;ARENVOG;eisig;2;response2;27874,00000000000;female;23;english, french
 632531;ARENVOG;dürr;2;response3;27874,00000000000;female;23;english, french
@@ -3876,6 +3925,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 642795;STIANZEN;stiehl;10;response3;69498,09999990463;male;25;english
 642795;SWIEBEL;zwiebel;14;response1;93532,00000000000;male;25;english
 642795;SWIEBEL;siebel;14;response2;93532,00000000000;male;25;english
+642795;SWIEBEL;schwiebel;14;response3;93532,00000000000;male;25;english
 642795;ZURCASUS;circus;7;response1;177308,59999990463;male;25;english
 642795;ZURCASUS;zurück;7;response2;177308,59999990463;male;25;english
 642795;ZURCASUS;kurz;7;response3;177308,59999990463;male;25;english
@@ -3961,6 +4011,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 651661;PFLICHD;licht;13;response2;9247,10000000894;female;26;dutch, english, french
 651661;PFLICHD;pferd;13;response3;9247,10000000894;female;26;dutch, english, french
 651661;PRAIETZ;beten;8;response1;219692,89999999106;female;26;dutch, english, french
+651661;PRAIETZ;pairie;8;response2;219692,89999999106;female;26;dutch, english, french
 651661;PRAIETZ;brei;8;response3;219692,89999999106;female;26;dutch, english, french
 651661;SWIEBEL;zwiebel;12;response1;16651,59999999404;female;26;dutch, english, french
 651661;SWIEBEL;besen;12;response2;16651,59999999404;female;26;dutch, english, french
@@ -4114,6 +4165,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 657914;GESTOPANKE;gestolpere;3;response3;34566,00000000000;female;25;english, spanish, swedish
 657914;GETE;geste;8;response1;17669,00000000000;female;25;english, spanish, swedish
 657914;GETE;gebet;8;response2;17669,00000000000;female;25;english, spanish, swedish
+657914;GETE;gehte;8;response3;17669,00000000000;female;25;english, spanish, swedish
 657914;HOLFE;hilfe;11;response1;31672,00000000000;female;25;english, spanish, swedish
 657914;HOLFE;floh;11;response2;31672,00000000000;female;25;english, spanish, swedish
 657914;HOLFE;elfe;11;response3;31672,00000000000;female;25;english, spanish, swedish
@@ -4216,6 +4268,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 673726;NIEZ;niesen;2;response1;33153,00000000000;male;30;none
 673726;NIEZ;schnupfen;2;response2;33153,00000000000;male;30;none
 673726;NIEZ;nase;2;response3;33153,00000000000;male;30;none
+673726;NOIZZEN;schneutzen;3;response1;30093,00000000000;male;30;none
 673726;NOIZZEN;zugezogen;3;response2;30093,00000000000;male;30;none
 673726;NOIZZEN;spazieren;3;response3;30093,00000000000;male;30;none
 673726;PFLICHD;pflicht;14;response1;34647,00000000000;male;30;none
@@ -4256,6 +4309,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 67866;NIEBE;niederlande;6;response3;47412,00000000000;male;27;english
 67866;ONIRICOL;medizin;8;response1;12397,00000000000;male;27;english
 67866;ONIRICOL;zwiebel;8;response2;12397,00000000000;male;27;english
+67866;ONIRICOL;mundspüulung;8;response3;12397,00000000000;male;27;english
 67866;PFLICHD;pflicht;12;response1;15531,00000000000;male;27;english
 67866;PFLICHD;scheinwerfer;12;response2;15531,00000000000;male;27;english
 67866;PFLICHD;licht;12;response3;15531,00000000000;male;27;english
@@ -4355,6 +4409,8 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 69208;KHOUT;fuß;5;response1;47021,10000002384;male;21;english, french
 69208;KHOUT;gut;5;response2;47021,10000002384;male;21;english, french
 69208;KHOUT;monat;5;response3;47021,10000002384;male;21;english, french
+69208;KURET;püret;4;response1;101758,19999992847;male;21;english, french
+69208;KURET;kurrier;4;response2;101758,19999992847;male;21;english, french
 69208;KURET;burek;4;response3;101758,19999992847;male;21;english, french
 69208;PFLICHD;pflicht;14;response1;20904,09999990463;male;21;english, french
 69208;PFLICHD;genau;14;response2;20904,09999990463;male;21;english, french
@@ -4369,16 +4425,10 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 69208;WURDEMAIL;brief;0;response2;43738,50000000000;male;21;english, french
 69208;WURDEMAIL;wunderbar;0;response3;43738,50000000000;male;21;english, french
 694676;BEIN;fuß;3;response1;92924,00000000000;male;26;english, french
-694676;BEIN;fuß;3;response1;92924,00000000000;male;26;english, french
-694676;BEIN;knie;3;response2;92924,00000000000;male;26;english, french
 694676;BEIN;knie;3;response2;92924,00000000000;male;26;english, french
 694676;BEIN;wade;3;response3;92924,00000000000;male;26;english, french
-694676;BEIN;wade;3;response3;92924,00000000000;male;26;english, french
-694676;BEIN;wein;9;response3;43766,00000000000;male;26;english, french
 694676;BEIN;wein;9;response3;43766,00000000000;male;26;english, french
 694676;BEIN;fuß;9;response1;43766,00000000000;male;26;english, french
-694676;BEIN;fuß;9;response1;43766,00000000000;male;26;english, french
-694676;BEIN;brei;9;response2;43766,00000000000;male;26;english, french
 694676;BEIN;brei;9;response2;43766,00000000000;male;26;english, french
 694676;DOINK;hammer;0;response1;28643,00000000000;male;26;english, french
 694676;DOINK;schläger;0;response2;28643,00000000000;male;26;english, french
@@ -4408,16 +4458,10 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 694676;PFLICHD;aufgabe;13;response2;10836,00000000000;male;26;english, french
 694676;PFLICHD;verantwortung;13;response3;10836,00000000000;male;26;english, french
 694676;PORK;kork;4;response2;20180,00000000000;male;26;english, french
-694676;PORK;kork;4;response2;20180,00000000000;male;26;english, french
-694676;PORK;schwein;4;response1;20180,00000000000;male;26;english, french
 694676;PORK;schwein;4;response1;20180,00000000000;male;26;english, french
 694676;PORK;fleisch;5;response3;10473,00000000000;male;26;english, french
-694676;PORK;fleisch;5;response3;10473,00000000000;male;26;english, french
-694676;PORK;fleisch;4;response3;20180,00000000000;male;26;english, french
 694676;PORK;fleisch;4;response3;20180,00000000000;male;26;english, french
 694676;PORK;fett;5;response1;10473,00000000000;male;26;english, french
-694676;PORK;fett;5;response1;10473,00000000000;male;26;english, french
-694676;PORK;schwein;5;response2;10473,00000000000;male;26;english, french
 694676;PORK;schwein;5;response2;10473,00000000000;male;26;english, french
 694676;STRUFS;strafe;11;response1;43705,00000000000;male;26;english, french
 694676;STRUFS;haus;11;response2;43705,00000000000;male;26;english, french
@@ -4545,6 +4589,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 703165;SWIEBEL;zwiebel;13;response1;10356,30000000005;male;23;english
 703165;SWIEBEL;gemüse;13;response2;10356,30000000005;male;23;english
 703165;SWIEBEL;paprika;13;response3;10356,30000000005;male;23;english
+703165;TEINDUM;tantrum;4;response1;12719,10000000003;male;23;english
 703165;TEINDUM;tandem;4;response2;12719,10000000003;male;23;english
 703165;TEINDUM;tatsächlich;4;response3;12719,10000000003;male;23;english
 703165;TRAINAF;zug;9;response1;11252,40000000002;male;23;english
@@ -4558,6 +4603,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 703165;VAININSKEN;insekten;5;response3;31428,60000000003;male;23;english
 716648;FALLEN;herbst;11;response1;9663,50000000000;male;25;english
 716648;FALLEN;herunterfallen;11;response2;9663,50000000000;male;25;english
+716648;FALLEN;failen;11;response3;9663,50000000000;male;25;english
 716648;FLATTEN;flattern;9;response1;11183,80000001192;male;25;english
 716648;FLATTEN;flügel;9;response2;11183,80000001192;male;25;english
 716648;FLATTEN;klacken;9;response3;11183,80000001192;male;25;english
@@ -4687,6 +4733,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 718711;TREICHNEIT;einheit;11;response1;19453,89999997616;male;25;english
 718711;TREICHNEIT;armee;11;response2;19453,89999997616;male;25;english
 718711;TREICHNEIT;bewaffnet;11;response3;19453,89999997616;male;25;english
+738109;CRUSK;knus;8;response1;13210,20000000298;male;30;english
 738109;CRUSK;krusch;8;response2;13210,20000000298;male;30;english
 738109;CRUSK;kruste;8;response3;13210,20000000298;male;30;english
 738109;DOICH;dolch;2;response1;11580,90000000596;male;30;english
@@ -4838,6 +4885,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 749904;KHRIFTEIN;bauer;7;response3;28758,80000000075;female;23;dutch, english
 749904;KRISTEIN;kirsten;10;response1;8584,69999999925;female;23;dutch, english
 749904;KRISTEIN;christ;10;response2;8584,69999999925;female;23;dutch, english
+749904;KRISTEIN;glaubigern;10;response3;8584,69999999925;female;23;dutch, english
 749904;KURL;karl;8;response1;33979,20000000112;female;23;dutch, english
 749904;KURL;locke;8;response2;33979,20000000112;female;23;dutch, english
 749904;KURL;kurve;8;response3;33979,20000000112;female;23;dutch, english
@@ -4851,9 +4899,11 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 749904;STUFF;zeug;11;response2;11794,00000000000;female;23;dutch, english
 749904;STUFF;dinge;11;response3;11794,00000000000;female;23;dutch, english
 749904;SWIEBEL;zwiebel;13;response1;12476,29999999888;female;23;dutch, english
+749904;SWIEBEL;schalfrucht;13;response2;12476,29999999888;female;23;dutch, english
 749904;SWIEBEL;erdfrucht;13;response3;12476,29999999888;female;23;dutch, english
 749904;TRISTOFFEN;pantoffel;4;response1;36789,00000000000;female;23;dutch, english
 749904;TRISTOFFEN;kartoffel;4;response2;36789,00000000000;female;23;dutch, english
+749904;TRISTOFFEN;krisscross;4;response3;36789,00000000000;female;23;dutch, english
 749904;WISSENSTEIN;glaskugel;1;response1;56157,90000000037;female;23;dutch, english
 749904;WISSENSTEIN;hexenkugel;1;response2;56157,90000000037;female;23;dutch, english
 749904;WISSENSTEIN;kenntnisglas;1;response3;56157,90000000037;female;23;dutch, english
@@ -4994,6 +5044,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 769238;SWIEBEL;gemüse;14;response3;14489,90000003576;male;26;english, french
 769238;WOIBEN;welpen;11;response1;66919,50000000000;male;26;english, french
 769238;WOIBEN;bienenstock;11;response2;66919,50000000000;male;26;english, french
+769238;WOIBEN;wuppern;11;response3;66919,50000000000;male;26;english, french
 769238;WUNTER;winter;2;response1;25972,50000000000;male;26;english, french
 769238;WUNTER;schnee;2;response2;25972,50000000000;male;26;english, french
 769238;WUNTER;wunder;2;response3;25972,50000000000;male;26;english, french
@@ -5078,6 +5129,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 780223;TOIZ;toilette;5;response1;22136,09999990463;female;28;english, french
 780223;TOIZ;unternehmen;5;response2;22136,09999990463;female;28;english, french
 780223;TOIZ;portabel;5;response3;22136,09999990463;female;28;english, french
+780223;TUNACKA;tuhnfisch;2;response1;45909,00000000000;female;28;english, french
 780223;TUNACKA;ackern;2;response2;45909,00000000000;female;28;english, french
 780223;TUNACKA;knacken;2;response3;45909,00000000000;female;28;english, french
 780223;UDDEN;bodden;1;response1;24741,60000038147;female;28;english, french
@@ -5222,14 +5274,10 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 793610;SWIEBEL;gemüse;12;response2;9801,60000000149;male;23;english
 793610;SWIEBEL;gesund;12;response3;9801,60000000149;male;23;english
 813359;BEIN;extremität;0;response1;21943,50000000000;female;27;english
-813359;BEIN;extremität;0;response1;21943,50000000000;female;27;english
 813359;BEIN;arm;0;response2;21943,50000000000;female;27;english
-813359;BEIN;arm;0;response2;21943,50000000000;female;27;english
-813359;BEIN;arm;9;response3;13837,60000002384;female;27;english
+813359;BEIN;gließmaße;0;response3;21943,50000000000;female;27;english
 813359;BEIN;arm;9;response3;13837,60000002384;female;27;english
 813359;BEIN;extremität;9;response1;13837,60000002384;female;27;english
-813359;BEIN;extremität;9;response1;13837,60000002384;female;27;english
-813359;BEIN;gliedmaß;9;response2;13837,60000002384;female;27;english
 813359;BEIN;gliedmaß;9;response2;13837,60000002384;female;27;english
 813359;DOINK;laut;1;response2;14281,00000000000;female;27;english
 813359;DOINK;geräusch;1;response3;14281,00000000000;female;27;english
@@ -5259,16 +5307,10 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 813359;PFLICHD;pferd;13;response2;20903,80000001192;female;27;english
 813359;PFLICHD;fleisch;13;response3;20903,80000001192;female;27;english
 813359;PORK;keule;4;response2;15307,00000000000;female;27;english
-813359;PORK;keule;4;response2;15307,00000000000;female;27;english
-813359;PORK;schwein;4;response1;15307,00000000000;female;27;english
 813359;PORK;schwein;4;response1;15307,00000000000;female;27;english
 813359;PORK;essen;5;response3;13688,00000000000;female;27;english
-813359;PORK;essen;5;response3;13688,00000000000;female;27;english
-813359;PORK;essen;4;response3;15307,00000000000;female;27;english
 813359;PORK;essen;4;response3;15307,00000000000;female;27;english
 813359;PORK;schwein;5;response1;13688,00000000000;female;27;english
-813359;PORK;schwein;5;response1;13688,00000000000;female;27;english
-813359;PORK;keule;5;response2;13688,00000000000;female;27;english
 813359;PORK;keule;5;response2;13688,00000000000;female;27;english
 813359;STRUFS;stauss;7;response2;31439,50000000000;female;27;english
 813359;STRUFS;trüffel;7;response1;31439,50000000000;female;27;english
@@ -5369,6 +5411,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 834215;CIAV;virus;0;response1;65955,20000000019;male;29;english, latin
 834215;CIAV;krankheit;0;response2;65955,20000000019;male;29;english, latin
 834215;CIAV;tierkrankheit;0;response3;65955,20000000019;male;29;english, latin
+834215;CUNEM;cuniform;4;response1;74976,09999999963;male;29;english, latin
 834215;CUNEM;keilschrift;4;response2;74976,09999999963;male;29;english, latin
 834215;CUNEM;schrift;4;response3;74976,09999999963;male;29;english, latin
 834215;HUMBARGEN;burger;5;response1;64647,59999999963;male;29;english, latin
@@ -5385,6 +5428,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 834215;MARUH;bekleidung;8;response3;48101,89999999944;male;29;english, latin
 834215;MORMEN;mormone;2;response1;56509,59999999963;male;29;english, latin
 834215;MORMEN;fanatiker;2;response2;56509,59999999963;male;29;english, latin
+834215;MORMEN;relogiös;2;response3;56509,59999999963;male;29;english, latin
 834215;NAV;zielführung;6;response1;101963,70000000019;male;29;english, latin
 834215;NAV;wegbeschreibung;6;response2;101963,70000000019;male;29;english, latin
 834215;NAV;karte;6;response3;101963,70000000019;male;29;english, latin
@@ -5408,8 +5452,11 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 834215;SOCHOM;amerika;9;response3;227274,29999999981;male;29;english, latin
 834215;SWIEBEL;zwiebel;13;response1;41257,90000000037;male;29;english, latin
 834215;SWIEBEL;silberzwiebel;13;response2;41257,90000000037;male;29;english, latin
+834215;SWIEBEL;speißezwiebel;13;response3;41257,90000000037;male;29;english, latin
+842679;JUWEHL;juwehl;13;response1;10418,79999999702;male;22;english, french, turkish
 842679;JUWEHL;edelstein;13;response2;10418,79999999702;male;22;english, french, turkish
 842679;JUWEHL;schmuck;13;response3;10418,79999999702;male;22;english, french, turkish
+842679;KEDARMINZ;kerzenachs;4;response1;12590,39999999851;male;22;english, french, turkish
 842679;KEDARMINZ;kamin;4;response2;12590,39999999851;male;22;english, french, turkish
 842679;KEDARMINZ;ski;4;response3;12590,39999999851;male;22;english, french, turkish
 842679;KERTANZ;ballet;0;response1;25274,89999999851;male;22;english, french, turkish
@@ -5434,6 +5481,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 842679;LAZERNEN;lazarette;6;response2;14218,60000000149;male;22;english, french, turkish
 842679;LAZERNEN;kerzen;6;response3;14218,60000000149;male;22;english, french, turkish
 842679;NEZENEN;neunzehn;1;response1;21945,60000000149;male;22;english, french, turkish
+842679;NEZENEN;menemen;1;response2;21945,60000000149;male;22;english, french, turkish
 842679;NEZENEN;insekten;1;response3;21945,60000000149;male;22;english, french, turkish
 842679;PFLICHD;pflicht;14;response1;12947,50000000000;male;22;english, french, turkish
 842679;PFLICHD;gebot;14;response2;12947,50000000000;male;22;english, french, turkish
@@ -5502,6 +5550,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 848447;DOUSCH;essen;3;response2;11578,30000000075;female;23;english
 848447;DOUSCH;mahlzeit;3;response3;11578,30000000075;female;23;english
 848447;FARUNCHEN;mädchen;11;response1;9717,09999999963;female;23;english
+848447;FARUNCHEN;farunkel;11;response2;9717,09999999963;female;23;english
 848447;FARUNCHEN;farn;11;response3;9717,09999999963;female;23;english
 848447;FIER;tier;6;response1;5307,10000000149;female;23;english
 848447;FIER;frieren;6;response2;5307,10000000149;female;23;english
@@ -5510,13 +5559,17 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 848447;FROUNT;respektlos;2;response2;24112,00000000000;female;23;english
 848447;FROUNT;fronten;2;response3;24112,00000000000;female;23;english
 848447;GREUS;greis;10;response1;16044,10000000149;female;23;english
+848447;GREUS;greisig;10;response2;16044,10000000149;female;23;english
+848447;GREUS;miesgrämig;10;response3;16044,10000000149;female;23;english
 848447;HURSEN;siedlung;1;response1;129516,40000000037;female;23;english
 848447;HURSEN;haus;1;response2;129516,40000000037;female;23;english
+848447;HURSEN;hürse;1;response3;129516,40000000037;female;23;english
 848447;JUWEHL;juwel;12;response1;10757,39999999851;female;23;english
 848447;JUWEHL;edelstein;12;response2;10757,39999999851;female;23;english
 848447;JUWEHL;schmuck;12;response3;10757,39999999851;female;23;english
 848447;KARNHEN;fisch;7;response1;6184,00000000000;female;23;english
 848447;KARNHEN;feiern;7;response2;6184,00000000000;female;23;english
+848447;KARNHEN;karnival;7;response3;6184,00000000000;female;23;english
 848447;MELEN;banane;0;response1;32618,00000000000;female;23;english
 848447;MELEN;zitrone;0;response2;32618,00000000000;female;23;english
 848447;MELEN;gelb;0;response3;32618,00000000000;female;23;english
@@ -5531,6 +5584,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 848447;SUNDASCHEN;gebäck;9;response3;10309,29999999888;female;23;english
 848447;SWIEBEL;zwiebel;14;response1;37960,40000000037;female;23;english
 848447;SWIEBEL;sieb;14;response2;37960,40000000037;female;23;english
+848447;SWIEBEL;swivel;14;response3;37960,40000000037;female;23;english
 848447;VEGENTANFEN;vegetarisch;8;response1;34032,79999999888;female;23;english
 848447;VEGENTANFEN;fleischlos;8;response2;34032,79999999888;female;23;english
 848447;VEGENTANFEN;gemüse;8;response3;34032,79999999888;female;23;english
@@ -5549,8 +5603,10 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 85183;JITAREREHER;lehrer;7;response1;26051,40000000037;female;24;english, latin, spanish
 85183;JITAREREHER;arzt;7;response2;26051,40000000037;female;24;english, latin, spanish
 85183;JITAREREHER;pferd;7;response3;26051,40000000037;female;24;english, latin, spanish
+85183;JUWEHL;juwehl;11;response1;13332,50000000000;female;24;english, latin, spanish
 85183;JUWEHL;edelstein;11;response2;13332,50000000000;female;24;english, latin, spanish
 85183;JUWEHL;schatz;11;response3;13332,50000000000;female;24;english, latin, spanish
+85183;KISTACHKER;karminfeger;2;response1;29451,00000000000;female;24;english, latin, spanish
 85183;KISTACHKER;kiste;2;response2;29451,00000000000;female;24;english, latin, spanish
 85183;KISTACHKER;kern;2;response3;29451,00000000000;female;24;english, latin, spanish
 85183;LAKERME;laterne;9;response1;20848,19999999925;female;24;english, latin, spanish
@@ -5586,6 +5642,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 858845;EVANKRO;religion;3;response1;28626,20000004768;female;30;english
 858845;EVANKRO;evangelium;3;response2;28626,20000004768;female;30;english
 858845;EVANKRO;krone;3;response3;28626,20000004768;female;30;english
+858845;JUWEHL;juwehl;13;response1;15380,39999997616;female;30;english
 858845;JUWEHL;edelstein;13;response2;15380,39999997616;female;30;english
 858845;JUWEHL;reichtum;13;response3;15380,39999997616;female;30;english
 858845;NAVIZ;kompass;4;response1;22815,39999997616;female;30;english
@@ -5686,6 +5743,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 864314;PFLICHD;tisch;12;response3;11877,69999980927;male;23;english, latin
 864314;SENKERDAI;denker;6;response1;34284,10000038147;male;23;english, latin
 864314;SENKERDAI;huhn;6;response2;34284,10000038147;male;23;english, latin
+864314;SENKERDAI;radiesschen;6;response3;34284,10000038147;male;23;english, latin
 864314;SHREIDER;schreiber;2;response1;17649,09999942780;male;23;english, latin
 864314;SHREIDER;schreiner;2;response2;17649,09999942780;male;23;english, latin
 864314;SHREIDER;schneider;2;response3;17649,09999942780;male;23;english, latin
@@ -5693,6 +5751,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 864314;SINKEZEN;käse;8;response2;15511,69999980927;male;23;english, latin
 864314;SINKEZEN;kerze;8;response3;15511,69999980927;male;23;english, latin
 864314;SWIEBEL;zwiebel;14;response1;15526,90000057220;male;23;english, latin
+864314;SWIEBEL;swiesel;14;response2;15526,90000057220;male;23;english, latin
 864314;SWIEBEL;sieben;14;response3;15526,90000057220;male;23;english, latin
 864314;WERTHAIN;besonders;11;response1;40230,70000076294;male;23;english, latin
 864314;WERTHAIN;vertan;11;response2;40230,70000076294;male;23;english, latin
@@ -5826,6 +5885,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 881421;POTATRE;kartoffel;4;response1;44328,00000000000;male;28;english
 881421;POTATRE;portal;4;response2;44328,00000000000;male;28;english
 881421;POTATRE;kunst;4;response3;44328,00000000000;male;28;english
+881421;PREKEN;treken;3;response1;45095,00000000000;male;28;english
 881421;PREKEN;erschrecken;3;response2;45095,00000000000;male;28;english
 881421;PREKEN;packen;3;response3;45095,00000000000;male;28;english
 881421;SKIENZE;skifahren;10;response1;11838,00000000000;male;28;english
@@ -5840,6 +5900,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 905485;BORNSH;bauer;8;response1;23431,80000001192;male;25;english, spanish
 905485;BORNSH;schwamm;8;response2;23431,80000001192;male;25;english, spanish
 905485;BORNSH;bonbon;8;response3;23431,80000001192;male;25;english, spanish
+905485;FEMMEN;flemmen;7;response1;9502,60000002384;male;25;english, spanish
 905485;FEMMEN;flamme;7;response2;9502,60000002384;male;25;english, spanish
 905485;FEMMEN;feuer;7;response3;9502,60000002384;male;25;english, spanish
 905485;FOREN;pferd;9;response1;17615,30000001192;male;25;english, spanish
@@ -5895,7 +5956,10 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 905826;JUWEHL;juden;12;response3;16486,50000000000;male;25;english, french, spanish
 905826;KIVEN;kiefer;7;response1;29061,20000000298;male;25;english, french, spanish
 905826;KIVEN;weinen;7;response2;29061,20000000298;male;25;english, french, spanish
+905826;KIVEN;geifzen;7;response3;29061,20000000298;male;25;english, french, spanish
 905826;KOOLPE;kolben;0;response1;57601,40000000224;male;25;english, french, spanish
+905826;KOOLPE;kohltulpe;0;response2;57601,40000000224;male;25;english, french, spanish
+905826;KOOLPE;kolaborieren;0;response3;57601,40000000224;male;25;english, french, spanish
 905826;KURTEN;gurt;10;response1;37371,30000000075;male;25;english, french, spanish
 905826;KURTEN;gerichte;10;response2;37371,30000000075;male;25;english, french, spanish
 905826;KURTEN;marmelade;10;response3;37371,30000000075;male;25;english, french, spanish
@@ -5920,6 +5984,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 905826;VOLLEN;gefüllt;1;response1;35966,19999999925;male;25;english, french, spanish
 905826;VOLLEN;ausgelasteten;1;response2;35966,19999999925;male;25;english, french, spanish
 905826;VOLLEN;überfüllt;1;response3;35966,19999999925;male;25;english, french, spanish
+908207;APREIS;apresski;1;response1;54946,70000004768;male;28;english
 908207;APREIS;abreißen;1;response2;54946,70000004768;male;28;english
 908207;APREIS;abriss;1;response3;54946,70000004768;male;28;english
 908207;CUCKLE;hahn;4;response1;15363,20000004768;male;28;english
@@ -5988,6 +6053,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 923622;NERKMEIN;niere;3;response1;40505,20000001788;female;24;english, french
 923622;NERKMEIN;kerker;3;response2;40505,20000001788;female;24;english, french
 923622;NERKMEIN;nerd;3;response3;40505,20000001788;female;24;english, french
+923622;PARCKOFEN;backoffen;9;response1;11266,79999998212;female;24;english, french
 923622;PARCKOFEN;küche;9;response2;11266,79999998212;female;24;english, french
 923622;PARCKOFEN;kochen;9;response3;11266,79999998212;female;24;english, french
 923622;PFLICHD;pflicht;14;response1;19601,50000000000;female;24;english, french
@@ -6034,6 +6100,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 942597;HORS;schlauch;5;response3;12170,79999923706;female;26;english, polish, spanish, swedish
 942597;IREN;irena;1;response1;28477,29999923706;female;26;english, polish, spanish, swedish
 942597;IREN;irene;1;response2;28477,29999923706;female;26;english, polish, spanish, swedish
+942597;IREN;ireni;1;response3;28477,29999923706;female;26;english, polish, spanish, swedish
 942597;JUWEHL;juwel;11;response1;9048,60000038147;female;26;english, polish, spanish, swedish
 942597;JUWEHL;jubel;11;response2;9048,60000038147;female;26;english, polish, spanish, swedish
 942597;JUWEHL;juwelier;11;response3;9048,60000038147;female;26;english, polish, spanish, swedish
@@ -6048,8 +6115,10 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 942597;STRUD;plunder;3;response3;12237,09999847412;female;26;english, polish, spanish, swedish
 942597;SWIEBEL;zwiebel;13;response1;14272,90000152588;female;26;english, polish, spanish, swedish
 942597;SWIEBEL;schalotte;13;response2;14272,90000152588;female;26;english, polish, spanish, swedish
+942597;SWIEBEL;zweiebeln;13;response3;14272,90000152588;female;26;english, polish, spanish, swedish
 958670;ARMENOLEN;salmonellen;7;response1;7656,00000000000;female;28;english, french, spanish
 958670;ARMENOLEN;allergie;7;response2;7656,00000000000;female;28;english, french, spanish
+958670;ARMENOLEN;annemone;7;response3;7656,00000000000;female;28;english, french, spanish
 958670;BECNET;bett;2;response1;8189,20000004768;female;28;english, french, spanish
 958670;BECNET;bettdecke;2;response2;8189,20000004768;female;28;english, french, spanish
 958670;BECNET;becken;2;response3;8189,20000004768;female;28;english, french, spanish
@@ -6137,8 +6206,12 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 965002;VEORDIC;wörtlich;2;response1;42030,00000000000;male;30;english, french, spanish
 965002;VEORDIC;schnell;2;response2;42030,00000000000;male;30;english, french, spanish
 965002;VEORDIC;wendig;2;response3;42030,00000000000;male;30;english, french, spanish
+972850;CIAV;varan;11;response1;159407,00000000000;male;27;english
 972850;CIAV;seife;11;response2;159407,00000000000;male;27;english
 972850;CIAV;auto;11;response3;159407,00000000000;male;27;english
+972850;CUNEM;memcu;0;response1;16253,00000000000;male;27;english
+972850;CUNEM;solma;0;response2;16253,00000000000;male;27;english
+972850;CUNEM;rancu;0;response3;16253,00000000000;male;27;english
 972850;HUMBARGEN;umarmen;2;response1;53864,00000000000;male;27;english
 972850;HUMBARGEN;baumhaus;2;response2;53864,00000000000;male;27;english
 972850;HUMBARGEN;umgarnen;2;response3;53864,00000000000;male;27;english
@@ -6153,6 +6226,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 972850;MARUH;lachs;7;response3;75251,00000000000;male;27;english
 972850;MORMEN;normen;5;response1;31330,00000000000;male;27;english
 972850;MORMEN;murmeln;5;response2;31330,00000000000;male;27;english
+972850;MORMEN;mietnormaden;5;response3;31330,00000000000;male;27;english
 972850;NAV;notarzt;8;response1;57094,00000000000;male;27;english
 972850;NAV;wagen;8;response2;57094,00000000000;male;27;english
 972850;NAV;vandale;8;response3;57094,00000000000;male;27;english
@@ -6382,6 +6456,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 9883;KREN;kran;0;response2;36105,69999998808;female;22;none
 9883;KREN;drehen;0;response3;36105,69999998808;female;22;none
 9883;MELHEN;kneten;2;response1;25043,20000001788;female;22;none
+9883;MELHEN;verarneiten;2;response2;25043,20000001788;female;22;none
 9883;MELHEN;zubereiten;2;response3;25043,20000001788;female;22;none
 9883;MORNEN;trauern;9;response1;40540,40000000596;female;22;none
 9883;MORNEN;hornissen;9;response2;40540,40000000596;female;22;none
@@ -6429,6 +6504,7 @@ participant_id;word;response;trial_order;response_order;rt;gender;age;other_lang
 99029;NEHIMK;essen;7;response2;21495,50000000000;female;25;english
 99029;NEHIMK;bier;7;response3;21495,50000000000;female;25;english
 99029;NIETLE;niedlich;8;response1;12795,79999995232;female;25;english
+99029;NIETLE;nischig;8;response2;12795,79999995232;female;25;english
 99029;NIETLE;klein;8;response3;12795,79999995232;female;25;english
 99029;PFLICHD;pflicht;13;response1;22479,10000002384;female;25;english
 99029;PFLICHD;todo;13;response2;22479,10000002384;female;25;english

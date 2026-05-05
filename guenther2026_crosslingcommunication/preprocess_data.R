@@ -242,16 +242,16 @@ for (i in 1:nrow(dat_new)) {
 dat_new <- dat_new[!dat_new$embedded, ]
 
 
-## exclude Italian word responses
-italist <- read.csv2("resources/subtlex_it.csv", fileEncoding = "Latin1")
-italist <- italist[order(italist$FREQcount, decreasing = TRUE), ]
-italist <- italist[1:50000, ]
-italist <- tolower(italist$Word)
+## exclude Italian word responses (annotated because this step of processing is unnecessary for the prompts)
+#italist <- read.csv2("resources/subtlex_it.csv", fileEncoding = "Latin1")
+#italist <- italist[order(italist$FREQcount, decreasing = TRUE), ]
+#italist <- italist[1:50000, ]
+#italist <- tolower(italist$Word)
 
-unique(dat_new$response[dat_new$response %in% italist])
+#unique(dat_new$response[dat_new$response %in% italist])
 
 
-dat_new <- dat_new[!(dat_new$response %in% italist), ]
+#dat_new <- dat_new[!(dat_new$response %in% italist), ]
 
 # remove another non-compliant participant
 non_compl <- "itde_production_113612.csv"
@@ -358,6 +358,9 @@ df_selected <- df_selected %>%
   rename(trial_order = trial_index)
 
 df_selected$trial_order <- df_selected$trial_order - 5
+
+# Removing duplicate rows (some participants have some rows duplicated for unknown reasons)
+df_selected <- df_selected %>% distinct(participant_id, trial_order, response_order, .keep_all = TRUE)
 
 # Save preprocessed data as .csv
 write_csv2(df_selected, "processed_data/exp1.csv")
@@ -506,9 +509,9 @@ table(dat$language)
 dat2 <- dat[!grepl(dat$which_other,pattern="ital"),]
 table(dat2$which_other)
 
-## manual removal of non-German words
-out <- unlist(read.table("resources/non_German_words.txt"))
-dat2 <- dat2[!(dat2$response %in% out),]
+## manual removal of non-German words (annotated because this step of processing is unnecessary for the prompts)
+#out <- unlist(read.table("resources/non_German_words.txt"))
+#dat2 <- dat2[!(dat2$response %in% out),]
 
 #########################################
 ##### Data cleaning and translating #####
@@ -629,6 +632,9 @@ df_selected$trial_order <- (df_selected$trial_order / 2) - 2
 
 # Rename "target" to "word"
 df_selected <- df_selected %>% rename(word = target)
+
+# Removing duplicate rows (some participants have some rows duplicated for unknown reasons)
+df_selected <- df_selected %>% distinct(participant_id, trial_order, response_order, .keep_all = TRUE)
 
 ### Export
 write_csv2(df_selected, "processed_data/exp2.csv")
