@@ -67,7 +67,7 @@ else:
 
 ## Preprocessing Notes
 
-- `years_of_education`: The variable was supposed to be years of education but some are recorded as years of university. A corrected variable `years_of_education_corrected` was added, to which 12 was added if the original value was smaller than 12 the approximate the correct value.
+- `years_of_education`: The variable was supposed to be years of education but some are recorded as years of university. A corrected variable `years_of_education_corrected` was added, to which 12 was added if the original value was smaller than 12 to approximate the correct value.
 - `rt`: In the data cleaning process of the authors, trials with a reaction time of less than 250 ms or more than 4,000 ms were excluded from the data set. Here, however, only trials with a reaction time of less than 0 ms or more than 4,000 ms were excluded. This applies to 4 trials. The upper bound of 4,000 ms was set because reaction times above this bound were technically impossible due to the program code, i.e., the values must be faulty.
 - `accuracy`: The variable contained values other than 0 or 1. Since the participants' responses had to be inferred from the `accuracy` and `lexicality` variables, the 1,370 trials in question were removed from the data set. This approach is consistent with the authors' preprocessing procedure.
 
