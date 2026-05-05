@@ -2,24 +2,24 @@
 
 ## Citation
 
-Balota, D.A., Yap, M.J., Hutchison, K.A. et al. The English Lexicon Project. Behavior Research Methods 39, 445–459 (2007). https://doi.org/10.3758/BF03193014
+Balota, D. A., Yap, M. J., Hutchison, K. A., Cortese, M. J., Kessler, B., Loftis, B., ... & Treiman, R. (2007). The English lexicon project. Behavior research methods, 39(3), 445-459. https://doi.org/10.3758/BF03193014
 
 ## Data Source
 
 ### Data
-Data collected at 6 private and public universities across the Midwest, Northeast and Southeast regions of the United States. Participants were native English speakers. https://osf.io/n63s2/files/osfstorage
+Data collected at 6 (private and public) universities across the Midwest, Northeast and Southeast regions of the United States between March 2001 and July 2003. Participants were native English speakers. https://osf.io/n63s2/files/osfstorage
 
 ### Authors' Code Base
-Inlcudes code for reading the files, preprocessing and some model estimations in Julia language. https://github.com/dmbates/EnglishLexicon.jl/tree/main
+Includes scripts for reading the files, preprocessing and some model estimations in Julia language. https://github.com/dmbates/EnglishLexicon.jl/tree/main
 
-The authors' code served as the basis for `preprocess_data.py`, although some modifications had been made (see Preprocessing Notes). 
+The authors' code served as a basis for `preprocess_data.py`, although some modifications had been made (see Preprocessing Notes). 
 
 ## Task Description
 
-Participants had to indicate whether a presented stimulus was a word or a non-word, i.e., **Lexical Decision Task (LDT)**
+Participants had to indicate whether a presented stimulus was a word or a nonword, i.e., **Lexical Decision Task (LDT)**.
 
 ### Prompt instruction (freely written)
-In this task, you will see either a word or a nonword. Please press <<`{choice_options[0]}`>> when a word appears and <<`{choice_options[1]}`>> when a nonwords appears. Respond within 4 seconds.
+In this task, you will see either a word or a nonword. Please press '`{choice_options[0]}`' when a word appears and '`{choice_options[1]}`' when a nonwords appears. Respond within 4 seconds.
 
 ### Prompt template
 Trial line:
@@ -62,13 +62,13 @@ else:
 
 - **Total items**: 40,481 english words and 40,481 nonwords
 - **Total participants**: 814
-- **Total data points**: 2,744,582
+- **Total data points**: 2,744,578
 - **Language**: English
 
 ## Preprocessing Notes
 
-- `years_of_education`: The value was supposed to be years of education but some are recorded as years of university. A corrected variable `years_of_education_corrected` was added, to which 12 was added if the original value was smaller than 12.
-- `rt`: In the data cleaning process of the authors, trials with a reaction time of less than 200 ms or more than 4,000 ms were excluded from the data sset. Here, however, only trials with a reaction time of less than 0 ms or more than 4,000 ms were excluded. The upper bound of 4,000 ms was set because reaction times above this bound were technically impossible due to the program code, i.e., the values must be incorrect.
+- `years_of_education`: The variable was supposed to be years of education but some are recorded as years of university. A corrected variable `years_of_education_corrected` was added, to which 12 was added if the original value was smaller than 12 the approximate the correct value.
+- `rt`: In the data cleaning process of the authors, trials with a reaction time of less than 250 ms or more than 4,000 ms were excluded from the data set. Here, however, only trials with a reaction time of less than 0 ms or more than 4,000 ms were excluded. This applies to 4 trials. The upper bound of 4,000 ms was set because reaction times above this bound were technically impossible due to the program code, i.e., the values must be faulty.
 - `accuracy`: The variable contained values other than 0 or 1. Since the participants' responses had to be inferred from the `accuracy` and `lexicality` variables, the 1,370 trials in question were removed from the data set. This approach is consistent with the authors' preprocessing procedure.
 
 ## Files

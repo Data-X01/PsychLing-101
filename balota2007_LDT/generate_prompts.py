@@ -14,7 +14,7 @@ def randomized_choice_options(num_choices):
 #### Read data ####
 script_dir = os.path.dirname(os.path.abspath(__file__))
 file = os.path.join(script_dir, "processed_data/exp1.csv")
-df = pd.read_csv(file)
+df = pd.read_csv(file, na_values = "", keep_default_na=False)
 
 # Group the data by participant
 groups = df.groupby("participant_id")
@@ -33,7 +33,7 @@ for participant_id, df_participant in groups:
 
     # Global instructions (freely written)
     instructions = (
-        f"In this task, you will see either a word or a nonword. Please press <<{choice_options[0]}>> when a word appears and <<{choice_options[1]}>> when a nonwords appears. Respond within 4 seconds."
+        f"In this task, you will see either a word or a nonword. Please press '{choice_options[0]}' when a word appears and '{choice_options[1]}' when a nonwords appears. Respond within 4 seconds."
     )
 
     # subject-level meta data
