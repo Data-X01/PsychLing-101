@@ -6,152 +6,95 @@ rm(list = ls())  # clear environment
 library(readr)
 library(tidyverse)
 
-dat <- as.data.frame(read_csv("original_data/raw_data.csv"))
+df <- as.data.frame(read_csv("original_data/raw_data.csv"))
 
-# rename variables according to the CODEBOOK.csv 
-codebook <- as.data.frame(read_csv("CODEBOOK.csv"))
-
-dat <- dat %>% 
+df <- df %>% 
+  #filter(!is.na(critical_new)) %>% 
   rename(
     participant_id = "participant",
     first_language = "language",
-    phase_id = "type",
     condition = "label_cond",
     list = "listname",
     stimulus1_image = "internal_name",
     stimulus2_label = "label_word",
     image_filename = "picture",
-    response ="critical",
-    response_corrected = "critical_new",
+    response = "critical",
     response_order = "resp.order"
     ) %>% 
-  mutate(stimulus2_present = if_else(is.na(stimulus2_label), "no", "yes"))
+  mutate(stimulus2_present = if_else(is.na(stimulus2_label), "no", "yes")) %>%
+  distinct(participant_id, stimulus1_image, response_order, .keep_all = TRUE)
 
 
-#reorder columns
-dat <- dat %>% 
+# reorder columns
+df <- df %>% 
   select(participant_id, age, gender, first_language, 
-         trial_order, phase_id, condition, list, 
-         stimulus1_image, stimulus2_label, stimulus2_present, 
-         image_filename,
-         response, response_corrected, response_order)
+         trial_order, condition, list, trial_order,
+         stimulus1_image, image_filename,
+         stimulus2_label, stimulus2_present, 
+         response, response_order)
 
 
 #change to trial-level wide format (one row per trial, with separate columns for critical1, critical2, and critical3)
-
-dat_wide <- dat %>%
+df_wide <- df %>%
+  mutate(response_order = gsub("critical", "", response_order)) %>%   
   pivot_wider(
-    id_cols = c(
-      participant_id, age, gender, first_language,
-      trial_order, phase_id, condition, list,
-      stimulus1_image, stimulus2_label, stimulus2_present,
-      image_filename
-    ),
+    id_cols = c(participant_id, age, gender, first_language, 
+                condition, list, trial_order,
+                stimulus1_image, image_filename,
+                stimulus2_label, stimulus2_present),
     names_from = response_order,
-    values_from = response_corrected,
-    values_fn = \(x) x[1],   # handle duplicates
+    values_from = response,
     names_prefix = "response",
-    names_transform = list(response_order = ~ gsub("critical", "", .x))
-  )
+    values_fn = first        # <-- take first value if duplicates exist
+  ) %>%
+  relocate(response1, response2, response3, .after = stimulus2_present)
 
 # save the preprocessed data
-write_csv(dat_wide, "processed_data/tidy_data.csv")
-
-
-# ------------------------------------------------------------
-# 1. Build base codebook from ALL dataset variables
-# ------------------------------------------------------------
-
-codebook_tidy <- tibble(
-  `Recommended Column Name` = names(dat)
-)
+write_csv(df_wide, "processed_data/exp1.csv")
 
 # ------------------------------------------------------------
-# 2. Join old descriptions where they exist
+# 2. Create a codebook
 # ------------------------------------------------------------
 
-codebook_tidy <- codebook_tidy %>%
-  left_join(codebook, by = "Recommended Column Name")
-
-# ------------------------------------------------------------
-# 3. Define NEW variables manually (only missing ones)
-# ------------------------------------------------------------
-
-new_descriptions <- tibble(
-  `Recommended Column Name` = c(
-    "stimulus1_image",
-    "stimulus2_label",
-    "stimulus2_present",
-    "response_order"
-  ),
-  Description = c(
-    "Which image was presented",
-    "Which label (if any) was presented under the image",
-    "Whether stimulus 2 (label) was present (yes/no)",
-    "The order of the responses the participant made"
-  )
-)
-
-# ------------------------------------------------------------
-# 4. Merge new definitions into codebook
-# ------------------------------------------------------------
-
-codebook_tidy <- codebook_tidy %>%
-  left_join(new_descriptions, by = "Recommended Column Name") %>%
-  mutate(
-    Description = coalesce(Description.y, Description.x)
-  ) %>%
-  select(`Recommended Column Name`, Description)
-
-# ------------------------------------------------------------
-# 5. Save final codebook
-# ------------------------------------------------------------
-
-write_csv(codebook_tidy, "processed_data/codebook_tidy.csv")
-
-
-
-
-
-
-# ------------------------------------------------------------
-# CREATE FILTERED CODEBOOK WITH SAME STRUCTURE AS ORIGINAL
-# ------------------------------------------------------------
-
-# get renamed variable mapping (old -> new)
-name_map <- tibble::tibble(
-  old_name = c(
-    "participant",
-    "language",
-    "type",
-    "label_cond",
-    "listname",
-    "internal_name",
-    "label_word",
-    "picture",
-    "critical",
-    "critical_new",
-    "resp.order"
-  ),
-  new_name = c(
+codebook <- data.frame(
+  `Column Name` = c(
     "participant_id",
+    "age",
+    "gender",
     "first_language",
-    "phase_id",
+    
     "condition",
     "list",
+    "trial_order",
+    
     "stimulus1_image",
-    "stimulus2_label",
     "image_filename",
-    "response",
-    "response_corrected",
-    "response_order"
-  )
+    "stimulus2_label",
+    "stimulus2_present",
+    
+    "response"
+    
+  ),
+  Description = c(
+    "Unique identifier assigned to each participant.",
+    "Age of the participant at the time of the experiment.",
+    "Self-reported gender identity of the participant.",
+    "Participant's native language.",
+    
+    "Experimental condition assigned to the trial (positive label/negative label/no label).",
+    "Experimental list number (0-2). Items were distributed across 3 lists.",
+    "Presentation order within the session (0-23). The order in which the participant saw this trial.",
+    
+    "Which image was presented.",
+    "Filename or identifier for the presented image.",
+    "Which label (if any) was presented under the image.",
+    "Whether stimulus 2 (label) was present (yes/no) under the image.",
+
+    "Participant's response. Each participant produced 3 associations for a given stimulus (an image with or witout a label under it)."
+  ),
+  check.names = FALSE
 )
 
-# keep only relevant rows from old codebook
-codebook_tidy <- codebook %>%
-  filter(`Recommended Column Name` %in% names(dat))
-
 # save
-write_csv(codebook_tidy, "processed_data/codebook.csv")
+write_csv(codebook, "CODEBOOK.csv")
 
