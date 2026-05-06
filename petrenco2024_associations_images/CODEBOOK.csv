@@ -1,4 +1,4 @@
-Column Name,Description
+Recommended Column Name,Description
 participant_id,Unique identifier assigned to each participant.
 age,Age of the participant at the time of the experiment.
 gender,Self-reported gender identity of the participant.
@@ -10,4 +10,6 @@ stimulus1_image,Which image was presented.
 image_filename,Filename or identifier for the presented image.
 stimulus2_label,Which label (if any) was presented under the image.
 stimulus2_present,Whether stimulus 2 (label) was present (yes/no) under the image.
-response,Participant's response. Each participant produced 3 associations for a given stimulus (an image with or witout a label under it).
+response1,1st participant's response. Each participant produced 3 associations for a given stimulus (an image with or witout a label under it).
+response2,2nd participant's response. Each participant produced 3 associations for a given stimulus (an image with or witout a label under it).
+response3,3rd participant's response. Each participant produced 3 associations for a given stimulus (an image with or witout a label under it).
