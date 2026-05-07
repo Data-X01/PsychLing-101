@@ -63,7 +63,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent
 PROCESSED_DIR = ROOT / "processed_data"
 
-INPUT_FILE = "data_english.csv"
+INPUT_FILE = "exp1.csv"
 OUTPUT_PATH = ROOT / "prompts.jsonl"
 
 

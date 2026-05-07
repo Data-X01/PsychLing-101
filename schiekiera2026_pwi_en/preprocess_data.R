@@ -2,7 +2,7 @@
 # preprocess_data.R
 # PsychLing-101 preprocessing script for English PWI studies.
 # Reads original_data/, applies feature engineering and column renaming,
-# writes processed_data/data_english.csv.
+# writes processed_data/exp1.csv.
 # =============================================================================
 rm(list = ls())
 
@@ -180,9 +180,9 @@ df <- df %>%
 # 6. Write output
 # ---------------------------------------------------------------------------
 dir.create(here("processed_data"), showWarnings = FALSE)
-out_path <- here("processed_data", "data_english.csv")
+out_path <- here("processed_data", "exp1.csv")
 write.csv(df, out_path, row.names = FALSE)
-message("data_english.csv written to ", out_path)
+message("exp1.csv written to ", out_path)
 message("Rows: ", nrow(df), " | Participants: ",
         length(unique(df$participant_id)),
         " | Studies: ", length(unique(df$study_id)))

@@ -2,7 +2,17 @@
 
 ## Citation
 
-Schiekiera, L., Abdel Rahman, R., Gruber, V., Bürki, A., Stark, K., Lorenz, A., & Guenther, F. (n.d.). A harmonized trial-level dataset of picture-word interference. Retrieved from osf.io/preprints/psyarxiv/xp69t_v1
+```bibtex
+@misc{schiekiera2026pwi_dataset,
+  title        = {A harmonized trial-level dataset of picture-word interference},
+  author       = {Schiekiera, Louis and Abdel Rahman, Rasha and Gruber, Vincent
+                  and B{\"u}rki, Audrey and Lorenz, Antje and Stark, Kirsten
+                  and G{\"u}nther, Fritz},
+  year         = {2026},
+  howpublished = {Preprint, PsyArXiv},
+  url          = {https://osf.io/preprints/psyarxiv/xp69t_v1}
+}
+```
 
 ## References
 - Broos, W. P. J., Duyck, W., & Hartsuiker, R. J. (2018). Are higher-level processes delayed in second language word production? Evidence from picture naming and phoneme monitoring. *Language, Cognition and Neuroscience, 33*(10), 1219–1234. https://doi.org/10.1080/23273798.2018.1457168
