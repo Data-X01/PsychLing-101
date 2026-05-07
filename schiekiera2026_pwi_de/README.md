@@ -2,7 +2,17 @@
 
 ## Citation
 
-Schiekiera, L., Abdel Rahman, R., Gruber, V., Bürki, A., Stark, K., Lorenz, A., & Guenther, F. (n.d.). A harmonized trial-level dataset of picture-word interference. Retrieved from osf.io/preprints/psyarxiv/xp69t_v1.
+```bibtex
+@misc{schiekiera2026pwi_dataset,
+  title        = {A harmonized trial-level dataset of picture-word interference},
+  author       = {Schiekiera, Louis and Abdel Rahman, Rasha and Gruber, Vincent
+                  and B{\"u}rki, Audrey and Lorenz, Antje and Stark, Kirsten
+                  and G{\"u}nther, Fritz},
+  year         = {2026},
+  howpublished = {Preprint, PsyArXiv},
+  url          = {https://osf.io/preprints/psyarxiv/xp69t_v1}
+}
+```
 
 ## References
 
