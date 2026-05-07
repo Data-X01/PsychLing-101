@@ -1,7 +1,7 @@
 Recommended Column Name,Description
 participant_id,Anonymized participant ID
 stimulus,String of letters shown on the screen
-"response,""Response key recorded to 1=a, 2=l"""
+response,"Response key recorded to 1=a, 2=l"
 accuracy,Response accuracy (1=correct, 0=incorrect, 2=timeout) 
 rt,Response time in ms
 trial_id,Trial order index
