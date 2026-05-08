@@ -187,12 +187,24 @@ median(dat$completion_time)
 table(dat2$word) / 3
 length(unique(dat2$participant))
 
-### Import original words
-translations <- read.table("resources/items_Italian_German.txt", header = T)
+### Import original words (used to be a text file, not manually inputed in script)
+
+translations <- data.frame(N = c(1:24),
+                                it = c("cavallo", "aeroporto", "grasso", "mela",
+                                       "scienza", "pesce", "ferro", "bello",
+                                       "morto", "verdura", "sogno", "spiaggia",
+                                       "cucchiaio", "patata", "carne", "chiave",
+                                       "cane", "luna", "farina", "neve",
+                                       "donna", "peccato", "domenica", "legno"),
+                                de = c("pferd", "flughafen", "fett", "apfel",
+                                       "wissenschaft", "fisch", "eisen", "schön",
+                                       "tot", "gemüse", "traum", "strand",
+                                       "löffel", "kartoffel", "fleisch", "schlüssel",
+                                       "hund", "mond", "mehl", "schnee",
+                                       "frau", "sünde", "sonntag", "holz"))
 translations <- translations[, c("it", "de")]
 names(translations) <- c("word", "translation")
 dat2 <- merge(dat2, translations)
-
 
 ### exclusion based on open responses at the end of the experiment
 participants.out <- unique(
