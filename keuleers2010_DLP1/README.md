@@ -53,7 +53,6 @@ Produced by `preprocess_data.R`. Columns are renamed to match `CODEBOOK.csv`:
 
 - **`exp1.csv`** — trial-level data from block 50 (19,500 rows)
   Columns: `participant_id`, `trial_id`, `trial_order`, `phase_id`, `stimulus`, `condition` (word/nonword), `response` (word/nonword), `accuracy` (0/1), `rt` (ms)
-- **`exp1_items.csv`** — item-level aggregate (~28k rows)
   Columns: `stimulus`, `condition`, `rt` (mean), `accuracy` (mean)
 
 We use **block 50** as the basis for the trial-level standardized output. The original authors note that practice effects are minimal, but block 50 represents responses *after* practice has stabilized and is an appropriate slice for evaluating language-model trial-by-trial behaviour. Including the full ~1M-row dataset would inflate prompt sizes well past the 32K token budget per participant.
