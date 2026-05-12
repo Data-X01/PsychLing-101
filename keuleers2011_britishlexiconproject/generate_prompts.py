@@ -4,6 +4,7 @@ import random
 import math
 import os
 import zipfile
+import string
 
 def generate_prompts():
     print("Loading preprocessed dataset")
@@ -26,7 +27,8 @@ def generate_prompts():
 
         group = group.sort_values('trial_order')
 
-        word_key, nonword_key = random.choice([('a', 'l'), ('l', 'a')])
+        # Pick 2 unique, random lowercase letters from the alphabet
+        word_key, nonword_key = random.sample(string.ascii_lowercase, 2)
 
         individual_prompt = base_instruction.format(word_key=word_key, nonword_key=nonword_key)
 
