@@ -21,6 +21,7 @@
 |  Mouse-tracking dataset on spatial associations in language processing   |                        [Link](http://dx.doi.org/10.2139/ssrn.5658577)     | Oksana Tsaregorodtseva     |
 |Lexical decision     |                        [Link]     | Alex Miklashevsky     |
 |Lexical decision (SPALEX, english instruction)        |                        [Link](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02156)      |  Akinloluwa Ajayi     |
+|Italian lexical decision task|       [Link](https://osf.io/sd63u/overview)       |Iva Saban |
 
 
 
@@ -69,7 +70,6 @@
 |The Natural Stories corpus    |                        [Link](https://link.springer.com/article/10.1007/s10579-020-09503-7)       | Kiri Kuroda |
 | Dutch crowdsourcing project    |                        [Link]( https://doi.org/10.5334/pb.491)       | Niklas Jung |
 |The Lancaster Sensorimotor Norms   |                        [Link](https://link.springer.com/article/10.3758/s13428-019-01316-z)       |Jing Chen |
-|Italian lexical decision task|       [Link](https://osf.io/sd63u/overview)       |Iva Saban |
 |Italian Crowdsourcing Project (ICP)|       [Link](https://osf.io/e4x7w/overview?view_only=20c718b7a8594fdba02256b475832597))      |Simona Amenta|
 | Linear Discriminative Learning|       [Link](https://osf.io/hqut8)       |Rolando Bonandrini|
 | Italian Affective Norms |       [Link](https://osf.io/afe26/)      |Marco Petilli, Simona Amenta, Alessandra Vergallito, Marco Marelli|
