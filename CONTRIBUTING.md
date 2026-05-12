@@ -20,7 +20,7 @@
 |  Calgary Project   |                        [Link](https://doi.org/10.3758/s13428-016-0720-6)     | Nicolas Reinecke    |
 |  Mouse-tracking dataset on spatial associations in language processing   |                        [Link](http://dx.doi.org/10.2139/ssrn.5658577)     | Oksana Tsaregorodtseva     |
 |Lexical decision     |                        [Link]     | Alex Miklashevsky     |
-
+|Lexical decision (SPALEX, english instruction)        |                        [Link](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02156)      |  Akinloluwa Ajayi     |
 
 
 
@@ -60,7 +60,6 @@
 |Object and Word Frequency Effects        | [Link](https://pubmed.ncbi.nlm.nih.gov/37155283/)     | Benjamin Gagl      |
 |Iconicity        | [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0337947)       | Chiara Saponaro      |
 |Meter-syntax alignment     |                        [Link](https://www.sciencedirect.com/science/article/pii/S0010027721003012)     | Courtney Hilton      |
-|Lexical decision (Spanish. Megastudy)        |                        [Link](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02156)      |  Akinloluwa Ajayi     |
 |Metaphor norming study|                        [Link](https://pubmed.ncbi.nlm.nih.gov/41491452/)      |  Laura Pissani |
 |Lexical decision (Japanese)        |                        [Link](https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2024.1506509/full)      |  Akinloluwa Ajayi     |
 |Prevalence norms   (Catalan)      |                        [Link](https://link.springer.com/article/10.3758/s13428-022-01959-5)      |  Marc Guasch  |
