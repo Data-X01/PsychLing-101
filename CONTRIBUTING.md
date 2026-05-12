@@ -19,6 +19,8 @@
 |  Semantic Transparency Ratings for Chinese Compounds   |                        [Link](https://doi.org/10.1111/cogs.70194)     | Jing Chen     |
 |  Calgary Project   |                        [Link](https://doi.org/10.3758/s13428-016-0720-6)     | Nicolas Reinecke    |
 |  Mouse-tracking dataset on spatial associations in language processing   |                        [Link](http://dx.doi.org/10.2139/ssrn.5658577)     | Oksana Tsaregorodtseva     |
+|Lexical decision     |                        [Link]     | Alex Miklashevsky     |
+
 
 
 
@@ -57,7 +59,6 @@
 |Lexical decision        |                        [Link](https://doi.org/10.1038/s41539-024-00237-7)      |  Benjamin Gagl     |
 |Object and Word Frequency Effects        | [Link](https://pubmed.ncbi.nlm.nih.gov/37155283/)     | Benjamin Gagl      |
 |Iconicity        | [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0337947)       | Chiara Saponaro      |
-|Lexical decision     |                        [Link]     | Alex Miklashevsky     |
 |Meter-syntax alignment     |                        [Link](https://www.sciencedirect.com/science/article/pii/S0010027721003012)     | Courtney Hilton      |
 |Lexical decision (Spanish. Megastudy)        |                        [Link](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02156)      |  Akinloluwa Ajayi     |
 |Metaphor norming study|                        [Link](https://pubmed.ncbi.nlm.nih.gov/41491452/)      |  Laura Pissani |
