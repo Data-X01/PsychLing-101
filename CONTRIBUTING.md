@@ -22,7 +22,7 @@
 |Lexical decision     |                        [Link]     | Alex Miklashevsky     |
 |Lexical decision (SPALEX, english instruction)        |                        [Link](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02156)      |  Akinloluwa Ajayi     |
 |Italian lexical decision task|       [Link](https://osf.io/sd63u/overview)       |Iva Saban |
-
+|Free word association|       [Link](https://doi.org/10.1016/j.cognition.2025.106127)       |Agata Dymarska|
 
 
 
