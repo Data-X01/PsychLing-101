@@ -23,6 +23,7 @@
 |Lexical decision (SPALEX, english instruction)        |                        [Link](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02156)      |  Akinloluwa Ajayi     |
 |Italian lexical decision task|       [Link](https://osf.io/sd63u/overview)       |Iva Saban |
 |Free word association|       [Link](https://doi.org/10.1016/j.cognition.2025.106127)       |Agata Dymarska|
+|The Semantic Priming Project    |                        [Link](https://link.springer.com/article/10.3758/s13428-012-0304-z)       | Kiri Kuroda |
 
 
 
@@ -66,7 +67,6 @@
 |Prevalence norms   (Catalan)      |                        [Link](https://link.springer.com/article/10.3758/s13428-022-01959-5)      |  Marc Guasch  |
 |British Lexicon Project     |                        [Link](https://link.springer.com/article/10.3758/s13428-011-0118-4)       | Adithya Ananth |
 |English Lexicon Project     |                        [Link](https://link.springer.com/article/10.3758/BF03193014)       | Frederik Wolfert |
-|The Semantic Priming Project    |                        [Link](https://link.springer.com/article/10.3758/s13428-012-0304-z)       | Kiri Kuroda |
 |The Natural Stories corpus    |                        [Link](https://link.springer.com/article/10.1007/s10579-020-09503-7)       | Kiri Kuroda |
 | Dutch crowdsourcing project    |                        [Link]( https://doi.org/10.5334/pb.491)       | Niklas Jung |
 |The Lancaster Sensorimotor Norms   |                        [Link](https://link.springer.com/article/10.3758/s13428-019-01316-z)       |Jing Chen |
