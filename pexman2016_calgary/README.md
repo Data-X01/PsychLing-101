@@ -8,6 +8,4 @@ Pexman, P. M., Heard, A., Lloyd, E., & Yap, M. J. (2017). The Calgary semantic d
 Supplementary files at the article DOI: MOESM2 (item-level), MOESM3 (trial-level).
 
 ## Description
-Participants made concrete/abstract semantic decisions for single words, responding with their dominant hand for concrete words and non-dominant hand for abstract words. Each participant (N=312) saw 1,000 words (500 concrete, 500 abstract) across four blocks of 250 trials.
-
-* `Correct.` feedback added to correct trial prompts for LLM evaluation (not shown to original participants)
+Participants made concrete/abstract semantic decisions for single words, responding with their dominant hand for concrete words and non-dominant hand for abstract words. Each participant (N=312) saw 1,000 words (500 concrete, 500 abstract) across four blocks of 250 trials. Feedback only for incorrect responses or timeouts.
