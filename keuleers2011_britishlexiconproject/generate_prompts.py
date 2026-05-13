@@ -36,10 +36,14 @@ def generate_prompts():
         trial_counter = 1
 
         for _, row in group.iterrows():
+            rt = row['rt']
+
+            if pd.isna(rt):
+                continue
+
             stimulus = row['stimulus']
             resp = row['response']
             acc = row['accuracy']
-            rt = row['rt']
 
             if resp == 'W':
                 pressed_key = word_key
@@ -50,10 +54,7 @@ def generate_prompts():
 
             feedback = "Correct." if acc == 1.0 else "Incorrect."
 
-            if pd.isna(rt):
-                rt_list.append(None)
-            else:
-                rt_list.append(float(rt))
+            rt_list.append(float(rt))
 
             datapoint = f"Trial {trial_counter}: The string is '{stimulus}'. You press <<{pressed_key}>>. {feedback}\n"
             individual_prompt += datapoint
