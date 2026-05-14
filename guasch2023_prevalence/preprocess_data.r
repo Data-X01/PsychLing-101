@@ -1,8 +1,8 @@
 
 library(data.table)
 
-responses  <- fread("original_data/responses.txt")
-sessions   <- fread("original_data/sessions.txt")
+responses  <- fread("original_data/responses.csv")
+sessions   <- fread("original_data/sessions.csv")
 
 responses[, String := as.character(String)]
 
