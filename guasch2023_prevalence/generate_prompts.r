@@ -5,32 +5,39 @@ library(jsonlite)
 df <- fread("processed_data/exp1.csv")
 setorder(df, session_id, trial_order)
 
-df[, response := fifelse(
-  accuracy == 1,
-  fifelse(is_word == 1, "yes", "no"),
-  fifelse(is_word == 1, "no", "yes")
-)]
-
-instructions <- paste0(
-  "En aquesta prova veuràs 120 cadenes de lletres, algunes de les quals són paraules en català, i altres són paraules inventades (pseudoparaules).\n",
-  "La teva tasca consisteix en decidir si cada cadena de lletres és o no una paraula en català.\n",
-  "Si coneixes la paraula prem el botó SÍ i si no la coneixes prem el botó NO.\n",
-  "La prova dura uns 4 minuts. Pots repetir-la tantes vegades com vulguis. Es presentaran noves cadenes de lletres cada vegada que repeteixis la prova.\n",
-  "CONSELL: Respondre SÍ a paraules que no existeixen penalitza molt la teva puntuació.\n"
-)
+randomized_choice_options <- function(num_choices = 2) {
+  possible_keys <- c("q", "w", "e", "r", "t", "y", "u", "i", "o", "p")
+  sample(possible_keys, num_choices)
+}
 
 con <- file("prompts.jsonl", open = "w")
-
 participants <- unique(df$session_id)
 
 for (pid in participants) {
   
   data_p <- df[session_id == pid]
+  choice_options <- randomized_choice_options(num_choices = 2)
+  yes_key <- choice_options[1]
+  no_key  <- choice_options[2]
   
-  trials_text <- paste0(
-    "Trial ", data_p$trial_order,
-    ": The string is '", data_p$stimulus,
-    "'. You press <<", data_p$response, ">>.\n",
+  data_p[, response := fifelse(
+    accuracy == 1,
+    fifelse(is_word == 1, yes_key, no_key),
+    fifelse(is_word == 1, no_key, yes_key)
+  )]
+  
+  instructions <- paste0(
+    "En aquesta prova veuràs 120 cadenes de lletres, algunes de les quals són paraules en català, i altres són paraules inventades (pseudoparaules).\n",
+    "La teva tasca consisteix en decidir si cada cadena de lletres és o no una paraula en català.\n",
+    "Si coneixes la paraula prem <<", yes_key, ">> i si no la coneixes prem <<", no_key, ">>.\n",
+    "La prova dura uns 4 minuts. Pots repetir-la tantes vegades com vulguis. Es presentaran noves cadenes de lletres cada vegada que repeteixis la prova.\n",
+    "CONSELL: Respondre <<", yes_key, ">> a paraules que no existeixen penalitza molt la teva puntuació.\n"
+  )
+  
+    trials_text <- paste0(
+    "Assaig ", data_p$trial_order,
+    ": La cadena és '", data_p$stimulus,
+    "'. Tu prems <<", data_p$response, ">>.\n",
     collapse = ""
   )
   
