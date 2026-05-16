@@ -1,0 +1,16 @@
+column_name	description
+participant_id	Participant identifier from the raw data
+age	Participant age in years
+gender	"Raw gender code from the source file; values observed: FALSE M f"
+hand	Normalized handedness code derived from hand_raw after stripping whitespace and uppercasing
+hand_raw	Original handedness value from the raw data
+city_left	City shown on the left side of the trial
+city_right	City shown on the right side of the trial
+response_raw	"Raw response key from the source file; a=left l=right"
+response_side	Response side derived from response_raw
+correct_response	"Correct response key for the trial; a=left l=right"
+correct_side	Correct side derived from correct_response
+accuracy	"Accuracy field from the raw data; 1=correct 0=incorrect"
+response_correct	Derived correctness based on whether response_raw matches correct_response
+rt_raw	Raw reaction time string from the source file
+rt_ms	Reaction time in milliseconds parsed from rt_raw with decimal comma converted to decimal point
