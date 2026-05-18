@@ -1,0 +1,16 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant.
+trial_id,Unique identifier for a single trial within a session or condition.
+trial_order,Presentation order within the session (0-indexed).
+phase_id,Identifier for the experimental phase or block a trial belongs to.
+stimulus_left,Left-side word shown on the trial.
+stimulus_right,Right-side word shown on the trial.
+response,Chosen word.
+response_side,Side of the chosen word (left or right).
+condition_raw,Original condition code from the source dataset.
+rt,Response time for the trial; available in EXP1 only.
+device,Input device used in EXP2.
+age,Participant age.
+gender,Participant gender normalized to F/M where possible.
+hand,Handedness normalized from the source data; available in EXP1 only.
+experiment,Experiment identifier (EXP1 or EXP2).
