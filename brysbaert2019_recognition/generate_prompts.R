@@ -13,7 +13,8 @@ library(dplyr)
 library(jsonlite)
 library(readr)
 
-exp1 <- read_csv("processed_data/exp1.csv")
+exp1 <- read_csv(unz("processed_data/exp1.zip", "processed_data/exp1.csv"))
+
 
 instructions <- "In this test you get 100 letter sequences, some of which are existing Dutch words and some of which are made-up nonwords. Indicate for each letter sequence whether it is a word you know or not. The test takes about 4 minutes and you can repeat it as often as you want (you will get new letter sequences each time). If you take part, you consent to your data being used for scientific analysis of word knowledge. Do not say yes to words you do not know, because yes-responses to nonwords are penalized heavily!"
 
@@ -27,7 +28,7 @@ exp1 <- exp1 %>%
 # Build trial text per row (vectorized)
 exp1 <- exp1 %>%
   mutate(trial_text = paste0(
-    "The letter sequence is '", stimulus, "'. ",
+    "Trial ", trial_order, ". The letter sequence is '", stimulus, "'. ",
     "You respond <<", response, ">> after <<", rt, ">> ms.\n"
   ))
 
