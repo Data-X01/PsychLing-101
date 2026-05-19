@@ -77,7 +77,7 @@
 |Dutch Lexicon Project 1|[Link](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2010.00174/full#cite)  |Sadaf Valadkhani|
 |Verbal fluency and similarity ratings|[Link](https://doi.org/10.1038/s41598-022-11698-4)  | Samuel Aeschbach|
 |Text processing |[Link](https://www.nature.com/articles/s44271-025-00233-6)  | Seiler, J.PH., Elpelt, J.|
-
+|The French Lexicon Project | [Link](https://link.springer.com/article/10.3758/BRM.42.2.488)  | | 
 ---
 
 ##  List of Open Datasets
@@ -87,7 +87,6 @@
 | MEGALEX: A megastudy of visual and auditory word recognition (only visual recognition data) |[Link](https://link.springer.com/article/10.3758/s13428-017-0943-1)  |
 | A behavioral database for masked form priming.  |[Link](https://link.springer.com/article/10.3758/s13428-013-0442-y)  |
 |Dutch Lexicon Project 2|[Link](https://pubmed.ncbi.nlm.nih.gov/26501839/ )  |
-|The French Lexicon Project|[Link](https://link.springer.com/article/10.3758/BRM.42.2.488)  |
 |The Provo Corpus:A large eye-tracking corpus with predictability norms|[Link](https://link.springer.com/article/10.3758/s13428-017-0908-4  )  |
 |CELER: A 365-Participant Corpus of Eye Movements in L1 and L2 English Reading|[Link](https://link.springer.com/article/10.3758/s13428-017-0908-4  )|
 |OneStop: A 360-Participant Eye Tracking Dataset with Different Reading Regimes| [Link]( https://lacclab.github.io/OneStop-Eye-Movements/) |
