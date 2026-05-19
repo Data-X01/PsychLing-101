@@ -1,0 +1,3 @@
+Filipović Đurđević, D. & Feldman, L. B. (2024). Do readers exert language control when switching alphabets within a language?. Journal of memory and language, 139. https://doi.org/10.1016/j.jml.2024.104546
+
+Visual Lexical Decision data obtained from 368 participants for 180 words and 180 pseudowords of Serbian language presented in two alphabets. Each participant was presented with two blocks: a single alphabet block with 60 words and 60 pseudowords followed by a mixed-alphabet block with 120 words and 120 pseudowords (some of the orthographic forms being phonologically ambiguous with lexical reading only in one alphabet).
