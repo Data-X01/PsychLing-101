@@ -4,7 +4,7 @@ import pandas as pd
 import jsonlines
 
 # Load data
-df = pd.read_csv("/Users/cyhsieh/PsychLing-101/hsieh2025_rating/processed_data:/rating.csv")
+df = pd.read_csv("/Users/cyhsieh/PsychLing-101/hsieh2025_rating/processed_data/exp1.csv")
 
 # create empty list to store all prompts
 all_prompts = []
