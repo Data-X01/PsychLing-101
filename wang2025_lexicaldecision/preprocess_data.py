@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 # Read the raw data
-df = pd.read_csv("/Users/cyhsieh/PsychLing-101/wang2025_lexicaldecision/original_data:/fullresult.csv", encoding="utf-8", index_col=0)
+df = pd.read_csv("/Users/cyhsieh/PsychLing-101/wang2025_lexicaldecision/original_data/fullresult.csv", encoding="utf-8", index_col=0)
 
 # Create variable "trial_id"
 df["trial_id"] = pd.factorize(df["item"])[0] + 1
@@ -42,4 +42,4 @@ df_cleaned = df.rename(columns=rename_map)
 df_cleaned["phase_id"] = df_cleaned["phase_id"].astype("string")
 
 # Export the cleaned file
-df_cleaned.to_csv("/Users/cyhsieh/PsychLing-101/wang2025_lexicaldecision/processed_data:/exp.csv", index=False)
+df_cleaned.to_csv("/Users/cyhsieh/PsychLing-101/wang2025_lexicaldecision/processed_data/exp1.csv", index=False)
