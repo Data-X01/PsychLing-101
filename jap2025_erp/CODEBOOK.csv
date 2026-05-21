@@ -23,3 +23,5 @@ P600_peak_uV,float,"Peak P600 amplitude in microvolts within the 500–800 ms wi
 N400_peak_lat_ms,float,"Latency of peak N400 amplitude in milliseconds relative to word onset. NA for non-target words."
 P600_peak_lat_ms,float,"Latency of peak P600 amplitude in milliseconds relative to word onset. NA for non-target words."
 peak_uV,float,"Absolute peak amplitude in microvolts across the full ERP analysis window. NA for non-target words."
+comp_question,string,"Yes/no comprehension probe presented after the trial as a full sentence; NA if no probe followed this trial."
+comp_answer,string,"Correct answer to the comprehension probe (y = yes / t = tidak/no); NA if no probe for this trial."
