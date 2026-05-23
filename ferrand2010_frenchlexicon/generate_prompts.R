@@ -22,11 +22,11 @@ EXPERIMENT_NAME <- "ferrand2010frenchlexicon"
 # Instructions from paper
 INSTRUCTION <- "Dans cet exercice, une série de chaînes de lettres vous sera présentée. 
 Pour chaque chaîne, vous devez déterminer, le plus rapidement et le plus précisément possible, s'il s'agit d'un vrai mot de la langue française ou non.
-Appuyez sur le bouton « oui » si la chaîne de lettres correspond à un vrai mot.
-Appuyez sur le bouton « non » si la chaîne de lettres ne correspond pas à un vrai mot."
+Appuyez sur le bouton «%s» si la chaîne de lettres correspond à un vrai mot.
+Appuyez sur le bouton «%s» si la chaîne de lettres ne correspond pas à un vrai mot."
 
-# Trial sentence template. `%s` placeholders are filled with the response (oui, non)
-TRIAL_TEMPLATE <- "Essai %d : Le mot est « %s ». Vous appuyez sur <<%s>>.\n"
+# Trial sentence template
+TRIAL_TEMPLATE <- "Essai %d : Le mot est «%s». Vous appuyez sur <<%s>>.\n"
 
 # -----------------------------------------------------------------------------
 # Helpers
@@ -46,12 +46,17 @@ format_jsonl_line <- function(text, experiment, participant_id, rt) {
 
 # Build the full prompt for one participant: instruction + replay of trials.
 build_participant_prompt <- function(df_participant, trial_indices) {
+  # Randomize buttons
+  buttons <- sample(letters, 2)
+  oui_button <- buttons[1]
+  non_button <- buttons[2]
   
-  prompt <- INSTRUCTION
+  prompt <- sprintf(INSTRUCTION, oui_button, non_button)
   for (trial in trial_indices) {
     row <- df_participant[df_participant$trial_id == trial, , drop = FALSE]
     if (nrow(row) > 0) {
-      prompt <- paste0(prompt, sprintf(TRIAL_TEMPLATE, trial + 1, row$stimulus, row$response))
+      button <- ifelse(row$response == "oui", oui_button, non_button)
+      prompt <- paste0(prompt, sprintf(TRIAL_TEMPLATE, trial + 1, row$stimulus, button))
     }
   }
   paste0(prompt, "\n")
