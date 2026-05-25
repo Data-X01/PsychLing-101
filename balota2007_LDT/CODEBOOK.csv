@@ -1,6 +1,6 @@
 Recommended Column Name,Description
 participant_id,Unique identifier assigned to each participant.
-session_no,"Sequential index indicating the session number within each participant. The first session contained 2000 trials and the second either 1,372 or 1,374."
+session_no,"Sequential index indicating the session number within each participant. The first session contained 2,000 trials and the second either 1,372 or 1,374."
 trial_id,Unique identifier for a single trial within a session or condition.
 rt,"Time taken by the participant to respond, in milliseconds."
 stimulus_id,Unique identifier assigned to each stimulus. Note: There are two versions of each stimulus: a word and a nonword. Whether a certain stimulus is a word or a nonword is indicated by the variable 'lexicality'.
@@ -11,8 +11,8 @@ university,University from whose research participant pool the participant was r
 day_of_birth,Participant's day of birth (YYYY-MM-DD).
 age,Age of the participant at the time of the experiment.
 gender,Self-reported or observed gender identity of the participant.
-years_of_education,Participant's years of education.
-years_of_education_corrected,"Corrected variable years_of_education. The value was supposed to be years of education but some are recorded as years of university, so values smaller 12 were replaced with value plus 12."
+years_of_education,Participant's number of years of education.
+years_of_education_corrected,"Corrected variable years_of_education. The value was supposed to be years of education but some are recorded as years of university, so values smaller 12 were replaced with value plus 12 to approximate the correct value."
 first_language,Participant's native or first-acquired language.
 meq_score,"Participant's score on the Morningness-Eveningness Questionaire, a circadian rythm questionnare (Horne & Ostberg, 1976)."
 shipley_numCorrect,"Number of correct answers given by the participant on the vocabulary test of the Shipley Institute of Living Scale, a self-administering scale for measuring intellectual impairment and deterioration (Shipley, 1940)."
