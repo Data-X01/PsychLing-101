@@ -8,110 +8,64 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(script_dir, "original_data/ldt_raw.zip")
 
 #### Read data ####
-def parse_ldt_file(file_obj):
+
+def parse_file(file_obj):
     text = file_obj.read().decode("utf-8")
     lines = text.splitlines()
 
-    # Subject-level information at beginning of block 1
-    session1_cols = lines[0].split(",")
-    session1_vals = lines[1].split(",")
-
-    session1_dict = dict(zip(session1_cols, session1_vals))
-    session1_dict["start_session1_date"] = session1_dict.pop("Date")
-    session1_dict["start_session1_time"] = session1_dict.pop("Time")
-
-    # Subject-level information in last rows
-    footer_lines = lines[lines.index([l for l in lines if l.startswith("===")][0]):]
-    
+    to_delete = []
     footer_dict = {}
 
-    i = 0
-    while i < len(footer_lines):
-        line = footer_lines[i]
+    for i, line in enumerate(lines):
+        # header of sessions
+        if line.startswith("Univ,"):
+            cols = lines[i].split(",")
+            vals = lines[i+1].split(",")
+            to_delete.extend([i, i+1])
+            if i == 0:
+                session1_dict = dict(zip(cols, vals))
+                session1_dict["start_session1_date"] = session1_dict.pop("Date")
+                session1_dict["start_session1_time"] = session1_dict.pop("Time")
+            else:
+                session2_dict = dict(zip(cols, vals))
+                session2_dict["start_session2_date"] = session2_dict.pop("Date")
+                session2_dict["start_session2_time"] = session2_dict.pop("Time")
 
-        if "," in line and not line.startswith("="):
-            cols = line.split(",")
-            if i + 1 < len(footer_lines):
-                vals = footer_lines[i + 1].split(",")
-
-                if len(cols) == len(vals):
-                    footer_dict.update(dict(zip(cols, vals)))
-                    i += 1
-
-        i += 1
+        # empty lines, "==="
+        if not line.strip() or line.startswith("==="):
+            to_delete.extend([i])
+        
+        # footer
+        if line.startswith(("Subject,", "numCorrect,", "presHealth,")):
+            cols = lines[i].split(",")
+            vals = lines[i+1].split(",")
+            to_delete.extend([i, i+1])
+            footer_dict.update(dict(zip(cols, vals)))
 
     footer_dict["start_endblock_date"] = footer_dict.pop("Date")
     footer_dict["start_endblock_time"] = footer_dict.pop("Time")
 
-    # Trial block
-    trial_lines = []
-    session = -1
-    i = 0
+    # Build df with subject-level information
+    subject_dict = {**session1_dict, **session2_dict, **footer_dict}
+    subj_lvl = pd.DataFrame([subject_dict])
 
-    while i < len(lines):
-
-        line = lines[i]
-
-        # Stop when reaching footer
-        if line.startswith("==="):
-            break
-
-        # session start
-        if line.startswith("Univ,Time,Date,Subject"):
-            session += 1
-            
-            session2_cols = lines[i].split(",")
-            session2_vals = lines[i+1].split(",")
-
-            session2_dict = dict(zip(session2_cols, session2_vals))
-            session2_dict["start_session2_date"] = session2_dict.pop("Date")
-            session2_dict["start_session2_time"] = session2_dict.pop("Time")
-            
-            i += 2  # skip header + values line
-            continue
-
-        # Parse trial line
-        if line.strip():
-            parts = line.split(",")
-
-            # Check for validity of lines
-            if len(parts) == 6 and parts[0].isdigit():
-                trial_lines.append(parts + [session])
-
-        i += 1
+    # Delete rows to_delete
+    for i in reversed(to_delete):
+        del lines[i]
 
     # Build df with trial-level information
-    trial_lvl = pd.DataFrame(trial_lines, columns=[
+    trial_lvl = pd.DataFrame([line.split(",") for line in lines])
+    trial_lvl.columns = [
         "TrialOrder",
         "ItemSerialNumber",
         "Lexicality",
         "Accuracy",
         "LDT_RT",
-        "Item",
-        "session",
-    ])
+        "Item"
+    ]
 
-    # Extract subject_id
-    subject_id = footer_dict.get("Subject", session1_dict.get("Subject", session2_dict.get("Subject")))
-
-    # Build df with subject-level information
-    subject_dict = {**session1_dict, **session2_dict, **footer_dict}
-
-    subj_lvl = pd.DataFrame([subject_dict])
-
-    # Finalize subject_lvl
-    subj_lvl = subj_lvl.rename(columns={"Subject": "subject_id"})
-
-    for col in ["Univ", "subject_id", "Education", "MEQ", "numCorrect", "rawScore", "vocabAge", "shipTime", "readTime", "presHealth", "pastHealth", "vision", "hearing"]:
-        subj_lvl[col] = pd.to_numeric(subj_lvl[col], errors="coerce")
-
-    # finalize trial_lvl
-    trial_lvl["subject_id"] = subject_id
-
-    for col in ["TrialOrder", "ItemSerialNumber", "Lexicality", "Accuracy", "LDT_RT", "subject_id"]:
-        trial_lvl[col] = pd.to_numeric(trial_lvl[col], errors="coerce")
-
-    trial_lvl["TrialOrder"] = trial_lvl["TrialOrder"]-1 # 0-indexing
+    trial_lvl["Subject"] = subject_dict.get("Subject")
+    trial_lvl["session_no"] = trial_lvl["TrialOrder"].astype(int) // 2001 #  2,000 trials in first session; TrialOrder is 1-indexed
 
     return trial_lvl, subj_lvl
 
@@ -132,7 +86,7 @@ with zipfile.ZipFile(data_path, "r") as z:
     for file in z.namelist():
         if file not in skiplist:
             with z.open(file) as f:
-                trial_lvl, subj_lvl = parse_ldt_file(f)
+                trial_lvl, subj_lvl = parse_file(f)
 
                 all_trials.append(trial_lvl)
                 all_subjects.append(subj_lvl)
@@ -230,19 +184,11 @@ df_subject["start_session1_datetime"] = df_subject["start_session1_datetime"].dt
 df_subject["start_session2_datetime"] = df_subject["start_session2_datetime"].dt.strftime("%Y-%m-%d %H:%M:%S")
 df_subject["start_endblock_datetime"] = df_subject["start_endblock_datetime"].dt.strftime("%Y-%m-%d %H:%M:%S")
 
-# Map names of universities
-univ_mapping = {
-    1: "morehead_state_university",
-    2: "suny_albany",
-    3: "university_of_kansas",
-    4: "university_of_south_florida",
-    5: "washington_university",
-    6: "wayne_state_university"
-}
+# Cast num varaiables to num
+for col in ["Univ", "Subject", "Education", "MEQ", "numCorrect", "rawScore", "vocabAge", "shipTime", "readTime", "presHealth", "pastHealth", "vision", "hearing"]:
+    df_subject[col] = pd.to_numeric(df_subject[col], errors="coerce")
 
-df_subject["Univ"] = df_subject["Univ"].map(univ_mapping)
-
-## Recoding according to code of authors of English Lexicon Project (see ldt_extract.jl script in original_data folder) ##
+## Data cleaning according to code of authors of English Lexicon Project (see ldt_extract.jl script in original_data folder) ##
 
 # recode gender x to NA
 df_subject["Gender"] = df_subject["Gender"].replace("x", None)
@@ -265,6 +211,18 @@ df_subject.loc[df_subject['MEQ'] < 3, 'MEQ'] = None
 # Comment: recoding of dates and times, e.g., 00-00-0000 to NA, happened implicitely while type casting (see above)
 
 ## Further preprocessing ##
+
+# Map names of universities
+univ_mapping = {
+    1: "morehead_state_university",
+    2: "suny_albany",
+    3: "university_of_kansas",
+    4: "university_of_south_florida",
+    5: "washington_university",
+    6: "wayne_state_university"
+}
+
+df_subject["Univ"] = df_subject["Univ"].map(univ_mapping)
 
 # increase readability of gender values
 df_subject["Gender"] = df_subject["Gender"].replace({
@@ -292,14 +250,9 @@ df_subject = df_subject.drop(columns=[
     "start_endblock_time"
 ])
 
-# Cast to num
-cols_to_num = ['numCorrect', 'rawScore', 'vocabAge', 'shipTime', 'readTime', 'pastHealth', 'presHealth', 'vision', 'hearing']
-
-df_subject[cols_to_num] = df_subject[cols_to_num].apply(pd.to_numeric)
-
 # Reorder cols
 cols = list(df_subject.columns)
-front_cols = ["subject_id", "Univ", "DOB", "age", "Gender", "Education", "Education_corrected", "firstLang"]
+front_cols = ["Subject", "Univ", "DOB", "age", "Gender", "Education", "Education_corrected", "firstLang"]
 
 rest_cols = [c for c in cols if c not in front_cols]
 df_subject = df_subject[front_cols + rest_cols]
@@ -307,7 +260,16 @@ df_subject = df_subject[front_cols + rest_cols]
 # Drop shipTime and readTime due to no information about what variables measure
 df_subject = df_subject.drop(columns=["shipTime", "readTime"])
 
+# remove task because it is a constant
+df_subject = df_subject.drop(columns = [
+    "Task"
+])
+
 ## trial-level data ##
+
+# cast num variables to num
+for col in ["TrialOrder", "ItemSerialNumber", "Lexicality", "Accuracy", "LDT_RT", "Subject"]:
+    df_trial[col] = pd.to_numeric(df_trial[col], errors="coerce")
 
 # In accurary: remove trials with accuracy other than 0 or 1; removes 1,370 values
 valid_values = [0, 1]
@@ -317,19 +279,21 @@ df_trial = df_trial[df_trial["Accuracy"].isin(valid_values)]
 # note: after 4000 ms, the stimulus was removed from the screen and the words "too slow" were presented
 df_trial = df_trial[df_trial['LDT_RT'].between(0, 4000)]
 
-# reset TrialOrder for session 2
+# TrialOrder 0-indexing and reset to 0 for session 2
+df_trial["TrialOrder"] = df_trial["TrialOrder"]-1
+
 df_trial["TrialOrder"] = np.where(
-    df_trial["session"] == 1,
+    df_trial["session_no"] == 1,
     df_trial["TrialOrder"]-2000,
     df_trial["TrialOrder"]
 )
 
 ## merge trial_df and subject_df ##
-df = df_trial.merge(df_subject, on="subject_id", how="left")
+df = df_trial.merge(df_subject, on="Subject", how="left")
 
 # create variable with session start time and remove other time variables
 df["start_time"] = np.where(
-    df["session"] == 0,
+    df["session_no"] == 0,
     df["start_session1_datetime"],
     df["start_session2_datetime"]
 )
@@ -339,21 +303,15 @@ df = df.drop(columns = [
     "start_session2_datetime",
 ])
 
-# remove task constant
-df = df.drop(columns = [
-    "Task"
-])
-
 ## Rename and reorder variables
 df = df.rename(columns={
-    "subject_id": "participant_id",
+    "Subject": "participant_id",
     "TrialOrder": "trial_id",
     "ItemSerialNumber": "stimulus_id",
     "Lexicality": "lexicality",
     "Accuracy": "accuracy",
     "LDT_RT": "rt",
     "Item": "stimulus",
-    "session": "session_no",
     "Univ": "university",
     "DOB": "day_of_birth",
     "Gender": "gender",
@@ -389,11 +347,11 @@ codebook = codebook[codebook["Recommended Column Name"].isin(df.columns)]
 add_to_codebook = pd.DataFrame([
     ["stimulus_id", "Unique identifier assigned to each stimulus. Note: There are two versions of each stimulus: a word and a nonword. Whether a certain stimulus is a word or a nonword is indicated by the variable 'lexicality'."],
     ["lexicality", "Binary indicator of whether a stimulus is a word or a nonword."],
-    ["session_no", "Sequential index indicating the session number within each participant. The first session contained 2000 trials and the second either 1,372 or 1,374."],
+    ["session_no", "Sequential index indicating the session number within each participant. The first session contained 2,000 trials and the second either 1,372 or 1,374."],
     ["university", "University from whose research participant pool the participant was recruited."],
     ["day_of_birth", "Participant's day of birth (YYYY-MM-DD)."],
-    ["years_of_education", "Participant's years of education."],
-    ["years_of_education_corrected", "Corrected variable years_of_education. The value was supposed to be years of education but some are recorded as years of university, so values smaller 12 were replaced with value plus 12."],
+    ["years_of_education", "Participant's number of years of education."],
+    ["years_of_education_corrected", "Corrected variable years_of_education. The value was supposed to be years of education but some are recorded as years of university, so values smaller 12 were replaced with value plus 12 to approximate the correct value."],
     ["meq_score", "Participant's score on the Morningness-Eveningness Questionaire, a circadian rythm questionnare (Horne & Ostberg, 1976)."],
     ["shipley_numCorrect", "Number of correct answers given by the participant on the vocabulary test of the Shipley Institute of Living Scale, a self-administering scale for measuring intellectual impairment and deterioration (Shipley, 1940)."],
     ["shipley_rawScore", "Participant's raw score on the vocabulary test of the Shipley Institute of Living Scale, a self-administering scale for measuring intellectual impairment and deterioration (Shipley, 1940)."],
