@@ -14,7 +14,7 @@ PsychLing-101 will be open for contributions until May 1st, 2026. Future project
 
 > **Current coverage** 
 >
-> *37* studies | *‎268.737* participants | *‎‎61.702.081* data points
+> *38* studies | *‎268.937* participants | *‎61.715.125* data points
 
 ---
 
