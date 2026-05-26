@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2c7a1fc3c9bf163efba8784c4f6459a12531b6f5dd3b0c4c0515c538e1a82064
-size 2561
+Recommended Column Name,Description
+study_id,Unique identifier for the source study .
+experiment_id,Unique identifier for a single experiment within a study.
+participant_id,Unique identifier assigned to each participant.
+trial_order,Presentation order within the session (0-indexed). The order in which the participant saw this trial.
+target_word_pwi,The intended word of the picture presented on the trial; participants were instructed to produce this word as their response.
+distractor_word_pwi,The distractor word presented together with the target picture in the picture-word interference paradigm.
+rt,"Time taken by the participant to respond, in milliseconds."
+accuracy,Binary indicator of whether the participant's response was correct.
+exp_language,"Language of the experimental materials and task instructions: ""EN"" (English) or ""DE"" (German)."
+first_language,Participant's native or first-acquired language.
+familiarization,"Whether the experiment included a familiarization phase in which participants were exposed to the target pictures before the main task: ""yes"" or ""no""."
+soa,"Stimulus onset asynchrony between distractor and target-picture onset, in milliseconds (negative values indicate that the distractor preceded the picture)."
+naming_condition,"Whether participant responses were produced overtly (spoken aloud) or covertly (silently identified, indicated by button press): ""overt"" or ""covert""."
+has_additional_tasks,"Whether participants performed additional tasks beyond picture naming in the same session: ""yes"" or ""no""."
+is_gamified,"Whether the picture-naming task was embedded in a gamified interface: ""yes"" or ""no""."
+collection_setting,"Data collection modality: ""online"" or ""offline"" (in-person lab)."
+congruency,"Congruency between target and distractor: ""congruent"" (distractor is the target word itself) or ""incongruent""."
+categorical_relation,"Categorical (semantic) relationship between target and distractor: ""related"", ""unrelated"", or NA when the contrast was not manipulated in this experiment."
+associative_relation,"Associative relationship between target and distractor: ""related"", ""unrelated"", or NA when the contrast was not manipulated in this experiment."
+phonological_relation,"Phonological relationship between target and distractor: ""related"", ""unrelated"", or NA when the contrast was not manipulated in this experiment."
+distractor_modality,"Presentation modality of the distractor word: ""text"" (visually superimposed or adjacent to the picture) or ""audio"" (spoken)."
