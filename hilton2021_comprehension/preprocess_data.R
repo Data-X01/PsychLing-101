@@ -6,6 +6,7 @@
 
 library(tidyverse)
 library(here)
+here::i_am("preprocess_data.R")
 
 # load and format data ----------------------------------------------------
 
@@ -99,8 +100,6 @@ data_clean <- data_clean |>
       .default = stimulus
     )
   )
-
-
 
 # save data ---------------------------------------------------------------
 
