@@ -13,7 +13,7 @@ codebook <- read_csv("../CODEBOOK.csv")
 
 # Convert study data -----------------------------------------------------------
 
-exp1 <- study1_fluency |> 
+exp1 <- study1_fluency |>
   rename(
     participant_id = id,
     stimulus = cat,
@@ -23,11 +23,19 @@ exp1 <- study1_fluency |>
     trial_order = round,
     participant_age_group = group, # new
     gender = sex
-  ) |> 
-  mutate(trial_order = trial_order - 1) |> 
+  ) |>
+  mutate(
+    stimulus = case_when(
+      stimulus == "animal" ~ "Tiere",
+      stimulus == "country" ~ "Länder"
+    )
+  ) |>
+  mutate(trial_order = trial_order - 1) |>
   mutate(
     participant_age_group = if_else(
-      participant_age_group == "young", "younger", "older"
+      participant_age_group == "young",
+      "younger",
+      "older"
     )
   )
 
@@ -40,6 +48,7 @@ exp2 <- study2_fluency |>
     participant_age_group = group,
     gender = sex
   ) |> 
+  mutate(stimulus = "Tiere", .before = rt) |> 
   mutate(
     participant_age_group = if_else(
       participant_age_group == "young", "younger", "older"
