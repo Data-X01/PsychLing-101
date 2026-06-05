@@ -124,34 +124,47 @@ exp2_tbl <- exp2_tbl |>
 exp3_tbl <- tibble(
   text = NA_character_,
   experiment = "Wulff2022_StructuralDifferences/Study2_SimilarityJudgements",
-  participant_id = unique(exp3$participant_id),
-  rt = NA
+  participant_id = rep(unique(exp3$participant_id), each = 2),
+  rt = NA,
+  batch = rep(c(1, 2), times = length(unique(exp3$participant_id)))
 )
 
 for (p in exp3 |> pull(participant_id) |> unique()) {
   
-  this_p <- exp3 |> filter(participant_id == p)
+  this_p <- exp3 |>
+    filter(participant_id == p) 
+  this_p <- this_p |>
+    mutate(
+      batch = c(
+        rep(1, times = ceiling(nrow(this_p) / 2)),
+        rep(2, times = floor(nrow(this_p) / 2))
+      )
+    )
   
   instructions <- "In dieser Aufgabe werden Sie die Ähnlichkeit von Tierpaaren bewerten. Antworten Sie jeweils auf einer Skala von 1 (extrem unähnlich) bis 20 (extrem ähnlich)!"
   
-  responses <- paste(
-    sprintf(
-      "Trial %d: Wie ähnlich sind '%s' und '%s'? <<%d>>",
-      seq_along(this_p$response),
-      this_p$stimulus_left,
-      this_p$stimulus_right,
-      this_p$response
-    ),
-    collapse = "\n"
-  )
-  
-  prompt_participant <- paste(
-    c(instructions, responses, "Gut, danke, die Zeit ist abgelaufen."),
-    collapse = "\n\n"
-  )
-
-  exp3_tbl$text[exp3_tbl$participant_id == p] <- prompt_participant
-  exp3_tbl$rt[exp3_tbl$participant_id == p] <- list(this_p$rt)
+  for (b in c(1, 2)) {
+    
+    responses <- paste(
+      sprintf(
+        "Trial %d: Wie ähnlich sind '%s' und '%s'? <<%d>>",
+        seq_along(this_p[this_p$batch == b, ]$response),
+        this_p[this_p$batch == b, ]$stimulus_left,
+        this_p[this_p$batch == b, ]$stimulus_right,
+        this_p[this_p$batch == b, ]$response
+      ),
+      collapse = "\n"
+    )
+    
+    prompt_participant <- paste(
+      c(instructions, responses, "Gut, danke, die Zeit ist abgelaufen."),
+      collapse = "\n\n"
+    )
+    
+    exp3_tbl$text[exp3_tbl$participant_id == p & exp3_tbl$batch == b] <- prompt_participant
+    exp3_tbl$rt[exp3_tbl$participant_id == p & exp3_tbl$batch == b] <- list(this_p[this_p$batch == b, ]$rt)
+    
+  }
   
 }
 
