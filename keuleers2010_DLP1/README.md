@@ -66,7 +66,7 @@ Produced by `generate_prompts.R`. One JSON object per line, one line per partici
 - `participant_id` — Integer ID matching the original DLP1 numbering
 - `rt` — List of reaction times (ms) corresponding to the trials included in `text`
 
-Per the contribution guide, the response keys (`"a"` and `"l"`) are **randomly assigned per participant** to discourage models from relying on a memorized key mapping. Each prompt covers ~500 trials from block 50 and stays under ~10,400 tokens (well below the 32K cap).
+Per the contribution guide, each participant is assigned a **unique random pair of letters** drawn from the full alphabet (one letter mapped to "word", the other to "nonword") to discourage models from relying on a memorized key mapping, following the `binz2022heuristics` example. Each prompt covers ~500 trials from block 50 and stays under ~10,400 tokens (well below the 32K cap).
 
 ## Reproducing the processing
 
