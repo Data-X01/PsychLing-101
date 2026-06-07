@@ -137,7 +137,7 @@ on.exit(if (isOpen(con)) close(con), add = TRUE)
 for (pid in participants) {
 
   # Per-participant random key assignment.
-  keys <- sample(c("a", "l"))
+  keys <- sample(letters, 2)
   word_key    <- keys[1]
   nonword_key <- keys[2]
 
