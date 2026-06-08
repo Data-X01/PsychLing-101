@@ -1,0 +1,13 @@
+Recommended Column Name,Description
+participant_id,Anonymous ID assigned to each participant.
+session_id,Unique Qualtrics response ID identifying the participant's survey session.
+gender,Participant's self-reported gender.
+age,Participant's self-reported age in years.
+part_of_speech,"Part of speech of the rated word: Adj = adjective, Nou = noun, Ver = verb."
+list_id,Experimental list version presented to the participant.
+trial_id,"Synthetic unique identifier for a single word-presentation trial. It combines the first source-file row of the participant-session-list block and the source-file stimulus-column index. It does not encode the temporal order in which stimuli were presented."
+stimulus,Italian word presented to the participant.
+valence,"Participant's valence rating on a 1–9 scale: 1 = exclusively negative feelings, 5 = neutral feelings, 9 = exclusively positive feelings. An empty cell indicates that no response was recorded for the presented item."
+arousal,"Participant's arousal rating on a 1–9 scale: 1 = calm or low activation, 5 = medium activation, 9 = high activation. An empty cell indicates that no response was recorded for the presented item."
+dominance,"Participant's dominance rating on a 1–9 scale: 1 = powerlessness or low sense of control, 5 = medium control, 9 = high sense of control. An empty cell indicates that no response was recorded for the presented item."
+unknown_word,"Indicator for the checkbox 'Clicca qui se non conosci il significato di questa parola': 0 = not selected, 1 = selected."
