@@ -11,9 +11,9 @@ from typing import Any
 BASE_DIR = Path(__file__).resolve().parent
 PROCESSED_DIR = BASE_DIR / "processed_data"
 
-RATINGS_INPUT = PROCESSED_DIR / "exp1_perceptual_ratings.csv"
-LEXICAL_DECISION_INPUT = PROCESSED_DIR / "exp2_lexical_decision.csv"
-NAMING_INPUT = PROCESSED_DIR / "exp3_naming.csv"
+RATINGS_INPUT = PROCESSED_DIR / "exp1.csv"
+LEXICAL_DECISION_INPUT = PROCESSED_DIR / "exp2.csv"
+NAMING_INPUT = PROCESSED_DIR / "exp3.csv"
 
 JSONL_OUTPUT = BASE_DIR / "prompts.jsonl"
 ZIP_OUTPUT = BASE_DIR / "prompts.jsonl.zip"

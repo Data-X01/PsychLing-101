@@ -32,9 +32,9 @@ vergallito2020_ipsn/
 │   ├── Italian_ANEW_Lexical_Decision_raw.txt
 │   └── Italian_ANEW_Naming_raw.txt
 └── processed_data/
-    ├── exp1_perceptual_ratings.csv
-    ├── exp2_lexical_decision.csv
-    └── exp3_naming.csv
+    ├── exp1.csv
+    ├── exp2.csv
+    └── exp3.csv
 ```
 
 ## Raw files
@@ -55,9 +55,9 @@ Raw trial-level word-naming data. Each row corresponds to one presented word. Ac
 
 The script `preprocess_data.py` converts the three raw files into standardized UTF-8 CSV files:
 
-- `processed_data/exp1_perceptual_ratings.csv`
-- `processed_data/exp2_lexical_decision.csv`
-- `processed_data/exp3_naming.csv`
+- `processed_data/exp1.csv`
+- `processed_data/exp2.csv`
+- `processed_data/exp3.csv`
 
 The processed files use English variable names and retain the original trial-level observations.
 
@@ -79,9 +79,9 @@ Expected output dimensions:
 
 | Processed file | Participants | Sessions | Rows |
 |---|---:|---:|---:|
-| `exp1_perceptual_ratings.csv` | 57 | — | 63,516 |
-| `exp2_lexical_decision.csv` | 30 in the released raw file | 60 | 67,260 |
-| `exp3_naming.csv` | 28 | 56 | 31,388 |
+| `exp1.csv` | 57 | — | 63,516 |
+| `exp2.csv` | 30 in the released raw file | 60 | 67,260 |
+| `exp3.csv` | 28 | 56 | 31,388 |
 
 For the perceptual-strength ratings, 180 rows contain at least one missing sensory rating. Missing values are preserved as empty cells in the standardized CSV.
 
