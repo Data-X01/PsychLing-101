@@ -14,9 +14,9 @@ RATINGS_INPUT = ORIGINAL_DIR / "Italian_Perceptual_Rating_raw.txt"
 LEXICAL_DECISION_INPUT = ORIGINAL_DIR / "Italian_ANEW_Lexical_Decision_raw.txt"
 NAMING_INPUT = ORIGINAL_DIR / "Italian_ANEW_Naming_raw.txt"
 
-RATINGS_OUTPUT = OUTPUT_DIR / "exp1_perceptual_ratings.csv"
-LEXICAL_DECISION_OUTPUT = OUTPUT_DIR / "exp2_lexical_decision.csv"
-NAMING_OUTPUT = OUTPUT_DIR / "exp3_naming.csv"
+RATINGS_OUTPUT = OUTPUT_DIR / "exp1.csv"
+LEXICAL_DECISION_OUTPUT = OUTPUT_DIR / "exp2.csv"
+NAMING_OUTPUT = OUTPUT_DIR / "exp3.csv"
 
 MISSING_VALUES = {"", "nan", "na", "n/a", "null", "none"}
 
