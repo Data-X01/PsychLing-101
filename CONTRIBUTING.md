@@ -1,8 +1,11 @@
 ##  List of Completed Datasets
 
+##  List of Completed Datasets
+
 | Task | Link | Contributor |
 |------|------|--------|
-|Cloze responses and Predictability ratings       |  [Link](https://link.springer.com/article/10.3758/s13428-023-02261-8)      | Andrea de Varda      |
+|Cloze probability task       |  [Link](https://doi.org/10.3758/s13428-024-02379-9)      | Andrea de Varda      |
+|Predictability rating task       |  [Link](https://doi.org/10.3758/s13428-024-02379-9)      | Andrea de Varda      |
 | Lexical decision    |  [Link](https://doi.org/10.1177/1747021820902019)      | Louis Schiekiera|
 | Semantic Relation   |  [Link](https://doi.org/10.1016/j.jml.2020.104104)      | Louis Schiekiera|
 | Semantic Relation   |  [Link]( https://doi.org/10.1016/j.cogpsych.2022.101471)      | Louis Schiekiera|
@@ -26,7 +29,8 @@
 |The Semantic Priming Project    |                        [Link](https://link.springer.com/article/10.3758/s13428-012-0304-z)       | Kiri Kuroda |
 |Prevalence norms (Catalan)      |  [Link](https://link.springer.com/article/10.3758/s13428-022-01959-5)      | Marc Guasch |
 |British Lexicon Project         |  [Link](https://link.springer.com/article/10.3758/s13428-011-0118-4)      | Adithya Ananth |
-|English Lexicon Project (LDT + naming) |  [Link](https://doi.org/10.3758/BF03193014)      | Frederik Wolfert |
+|Lexical decision (English Lexicon Project) |  [Link](https://doi.org/10.3758/BF03193014)      | Frederik Wolfert |
+|Naming (English Lexicon Project) |  [Link](https://doi.org/10.3758/BF03193014)      | Frederik Wolfert |
 |The Natural Stories corpus      |  [Link](https://link.springer.com/article/10.1007/s10579-020-09503-7)      | Kiri Kuroda |
 |Linear Discriminative Learning  |  [Link](https://osf.io/hqut8)      | Rolando Bonandrini |
 |Dutch Lexicon Project 1         |  [Link](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2010.00174/full#cite)      | Sadaf Valadkhani |
@@ -42,7 +46,6 @@
 |Word associations (individual differences) |  [Link](https://osf.io/preprints/psyarxiv/2xbuh_v1)      | Louis Schiekiera |
 |Continued free association to AI-generated images |  [Link]      | Aliona Petrenco |
 |Cross-linguistic zero-shot communication via pseudowords |  [Link](https://doi.org/10.1016/j.cognition.2026.106440)      | Thelonious Schairer-Penny |
-
 
 ##  List of Datasets in Progress
 
