@@ -24,6 +24,24 @@
 |Italian lexical decision task|       [Link](https://osf.io/sd63u/overview)       |Iva Saban |
 |Free word association|       [Link](https://doi.org/10.1016/j.cognition.2025.106127)       |Agata Dymarska|
 |The Semantic Priming Project    |                        [Link](https://link.springer.com/article/10.3758/s13428-012-0304-z)       | Kiri Kuroda |
+|Prevalence norms (Catalan)      |  [Link](https://link.springer.com/article/10.3758/s13428-022-01959-5)      | Marc Guasch |
+|British Lexicon Project         |  [Link](https://link.springer.com/article/10.3758/s13428-011-0118-4)      | Adithya Ananth |
+|English Lexicon Project (LDT + naming) |  [Link](https://doi.org/10.3758/BF03193014)      | Frederik Wolfert |
+|The Natural Stories corpus      |  [Link](https://link.springer.com/article/10.1007/s10579-020-09503-7)      | Kiri Kuroda |
+|Linear Discriminative Learning  |  [Link](https://osf.io/hqut8)      | Rolando Bonandrini |
+|Dutch Lexicon Project 1         |  [Link](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2010.00174/full#cite)      | Sadaf Valadkhani |
+|Verbal fluency and similarity ratings |  [Link](https://doi.org/10.1038/s41598-022-11698-4)      | Samuel Aeschbach |
+|Text processing                 |  [Link](https://www.nature.com/articles/s44271-025-00233-6)      | Seiler, J.PH., Elpelt, J. |
+|Meter-syntax alignment          |  [Link](https://www.sciencedirect.com/science/article/pii/S0010027721003012)      | Courtney Hilton |
+|Metaphor norming study          |  [Link](https://pubmed.ncbi.nlm.nih.gov/41491452/)      | Laura Pissani |
+|Iconicity                       |  [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0337947)      | Chiara Saponaro |
+|Timed picture-naming norms for 800 photographs |  [Link](https://doi.org/10.3758/s13428-024-02380-w)      | Taisiia Tikhomirova |
+|ERP study of verb bias & thematic role assignment (Indonesian) |  [Link](https://doi.org/10.1038/s41598-025-96240-y)      | Bernard Jap |
+|Picture-word interference (German) |  [Link](https://osf.io/preprints/psyarxiv/xp69t_v1)      | Vincent Gruber |
+|Picture-word interference (English) |  [Link](https://osf.io/preprints/psyarxiv/xp69t_v1)      | Vincent Gruber |
+|Word associations (individual differences) |  [Link](https://osf.io/preprints/psyarxiv/2xbuh_v1)      | Louis Schiekiera |
+|Continued free association to AI-generated images |  [Link]      | Aliona Petrenco |
+|Cross-linguistic zero-shot communication via pseudowords |  [Link](https://doi.org/10.1016/j.cognition.2026.106440)      | Thelonious Schairer-Penny |
 
 
 ##  List of Datasets in Progress
@@ -59,24 +77,13 @@
 |Visual Lexical decision       |                        [Link](http://www.nature.com/articles/srep20369)      | Dušica Filipović Đurđević      |
 |Lexical decision        |                        [Link](https://doi.org/10.1038/s41539-024-00237-7)      |  Benjamin Gagl     |
 |Object and Word Frequency Effects        | [Link](https://pubmed.ncbi.nlm.nih.gov/37155283/)     | Benjamin Gagl      |
-|Iconicity        | [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0337947)       | Chiara Saponaro      |
-|Meter-syntax alignment     |                        [Link](https://www.sciencedirect.com/science/article/pii/S0010027721003012)     | Courtney Hilton      |
-|Metaphor norming study|                        [Link](https://pubmed.ncbi.nlm.nih.gov/41491452/)      |  Laura Pissani |
 |Lexical decision (Japanese)        |                        [Link](https://www.frontiersin.org/journals/language-sciences/articles/10.3389/flang.2024.1506509/full)      |  Akinloluwa Ajayi     |
-|Prevalence norms   (Catalan)      |                        [Link](https://link.springer.com/article/10.3758/s13428-022-01959-5)      |  Marc Guasch  |
-|British Lexicon Project     |                        [Link](https://link.springer.com/article/10.3758/s13428-011-0118-4)       | Adithya Ananth |
-|English Lexicon Project     |                        [Link](https://link.springer.com/article/10.3758/BF03193014)       | Frederik Wolfert |
-|The Natural Stories corpus    |                        [Link](https://link.springer.com/article/10.1007/s10579-020-09503-7)       | Kiri Kuroda |
 | Dutch crowdsourcing project    |                        [Link]( https://doi.org/10.5334/pb.491)       | Niklas Jung |
 |The Lancaster Sensorimotor Norms   |                        [Link](https://link.springer.com/article/10.3758/s13428-019-01316-z)       |Jing Chen |
 |Italian Crowdsourcing Project (ICP)|       [Link](https://osf.io/e4x7w/overview?view_only=20c718b7a8594fdba02256b475832597))      |Simona Amenta|
-| Linear Discriminative Learning|       [Link](https://osf.io/hqut8)       |Rolando Bonandrini|
 | Italian Affective Norms |       [Link](https://osf.io/afe26/)      |Marco Petilli, Simona Amenta, Alessandra Vergallito, Marco Marelli|
 |Italian Perceptual Strength Norms |       [Link](https://osf.io/zdg59/)       |Alessandra Vergallito|
 |Word-association (STEM) |       [Link](https://arxiv.org/abs/2502.19529)       |Massimo Stel|
-|Dutch Lexicon Project 1|[Link](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2010.00174/full#cite)  |Sadaf Valadkhani|
-|Verbal fluency and similarity ratings|[Link](https://doi.org/10.1038/s41598-022-11698-4)  | Samuel Aeschbach|
-|Text processing |[Link](https://www.nature.com/articles/s44271-025-00233-6)  | Seiler, J.PH., Elpelt, J.|
 |The French Lexicon Project | [Link](https://link.springer.com/article/10.3758/BRM.42.2.488)  | | 
 ---
 
