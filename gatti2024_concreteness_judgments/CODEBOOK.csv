@@ -8,7 +8,7 @@ stimulus_right,Right-side word shown on the trial.
 response,Chosen word.
 response_side,Side of the chosen word (left or right).
 condition_raw,Original condition code from the source dataset.
-rt,Response time for the trial; available in EXP1 only.
+rt,Response time for the trial in milliseconds; available in EXP1 only.
 device,Input device used in EXP2.
 age,Participant age.
 gender,Participant gender normalized to F/M where possible.
