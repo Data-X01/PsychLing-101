@@ -1,0 +1,15 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant.
+age,Age of the participant at the time of the experiment.
+gender,Self-reported gender identity of the participant.
+first_language,Participant's native language.
+condition,Experimental condition assigned to the trial (positive label/negative label/no label).
+list,Experimental list number (0-2). Items were distributed across 3 lists.
+trial_order,Presentation order within the session (0-23). The order in which the participant saw this trial.
+stimulus1_image,Which image was presented.
+image_filename,Filename or identifier for the presented image.
+stimulus2_label,Which label (if any) was presented under the image.
+stimulus2_present,Whether stimulus 2 (label) was present (yes/no) under the image.
+response1,1st participant's response. Each participant produced 3 associations for a given stimulus (an image with or witout a label under it).
+response2,2nd participant's response. Each participant produced 3 associations for a given stimulus (an image with or witout a label under it).
+response3,3rd participant's response. Each participant produced 3 associations for a given stimulus (an image with or witout a label under it).
