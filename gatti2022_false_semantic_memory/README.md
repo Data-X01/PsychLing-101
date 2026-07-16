@@ -35,4 +35,6 @@ This folder contains the first processed dataset for the false semantic memory s
 ## Notes
 - Metadata and variable names are documented in English, as required by the project.
 - Prompts include the study phase followed by the recognition phase, so each participant record represents the full session.
+- The participant-facing text in `prompts.jsonl.zip` is in Italian, matching the language of the experiment.
+- Each JSONL line contains exactly one participant and uses the top-level field `participant_id`.
 - This version preserves the true-vs-false recognition distinction as the main recognition condition.
