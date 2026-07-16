@@ -1,0 +1,8 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant.
+trial_id,Unique identifier for a single trial within a session or condition.
+stimulus,The linguistic stimulus presented to the participant in a given trial.
+response_option_1,Response option 1 in each trial.
+response_option_2,Response option 2 in each trial.
+response,Participant's response
+accuracy,Binary indicator of whether the participant's response was correct.

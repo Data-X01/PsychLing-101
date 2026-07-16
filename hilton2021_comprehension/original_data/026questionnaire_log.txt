@@ -1,0 +1,39 @@
+Question_num	Question	Response
+1	I spend a lot of my free time doing music-related activities.	Disagree
+2	I sometimes choose music that can trigger shivers down my spine.	Completely Disagree
+3	I enjoy writing about music, for example on blogs and forums.	Completely Disagree
+4	If somebody starts singing a song I don’t know, I can usually join in.	Agree
+5	I am able to judge whether someone is a good singer or not.	Completely Agree
+6	I usually know when I’m hearing a song for the first time.	Agree
+7	I can sing or play music from memory.	Completely Agree
+8	I’m intrigued by musical styles I’m not familiar with and want to find out more.	Completely Agree
+9	Pieces of music rarely evoke emotions for me.	Disagree
+10	I am able to hit the right notes when I sing along with a recording.	Strongly Agree
+11	I find it difficult to spot mistakes in a performance of a song even if I know the tune.	Completely Disagree
+12	I can compare and discuss differences between two performances or versions of the same piece of music.	Completely Agree
+13	I have trouble recognizing a familiar song when played in a different way or by a different performer.	Completely Disagree
+14	I have never been complimented for my talents as a musical performer.	Completely Disagree
+15	I often read or search the internet for things related to music.	Strongly Agree
+16	I often pick certain music to motivate or excite me.	Neither Agree or Disagree
+17	I am not able to sing in harmony when somebody is singing a familiar tune.	Disagree
+18	I can tell when people sing or play out of time with the beat.	Completely Agree
+19	I am able to identify what is special about a given musical piece.	Strongly Agree
+20	I am able to talk about the emotions that a piece of music evokes for me.	Agree
+21	I don’t spend much of my disposable income on music.	Agree
+22	I can tell when people sing or play out of tune.	Completely Agree
+23	When I sing, I have no idea whether I’m in tune or not.	Completely Disagree
+24	Music is kind of an addiction for me - I couldn’t live without it.	Neither Agree or Disagree
+25	I don’t like singing in public because I’m afraid that I would sing wrong notes.	Strongly Disagree
+26	When I hear a piece of music I can usually identify its genre.	Strongly Agree
+27	I would not consider myself a musician.	Completely Disagree
+28	I keep track of new music that I come across (e.g. new artists or recordings).	Disagree
+29	After hearing a new song two or three times, I can usually sing it by myself.	Agree
+30	I only need to hear a new tune once and I can sing it back hours later.	Disagree
+31	Music can evoke my memories of past people and places.	Strongly Agree
+32	I engaged in regular, daily practice of a musical instrument (including voice) for ____ years.	10+
+33	At the peak of my interest, I practiced ____ or more hours per day on my primary instrument.	2
+34	I have attended ____ live music events as an audience member in the past twelve months.	4-6
+35	I have had formal training in music theory for ____ years.	7+
+36	I have had ____ years of formal training on a musical instrument (including voice) during my lifetime.	10+
+37	I can play ____ musical instruments.	3
+38	I listen attentively to music for ____ per day.	0-15mins
