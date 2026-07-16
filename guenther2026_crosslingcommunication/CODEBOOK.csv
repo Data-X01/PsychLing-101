@@ -1,0 +1,10 @@
+Recommended Column Name;Description
+age;Age of the participant at the time of the experiment.
+gender;Self-reported or observed gender identity of the participant.
+other_languages;Languages learned after the first language, optionally with proficiency level.
+participant_id;Unique identifier assigned to each participant.
+trial_order;Presentation order within the session (0-indexed). The order in which the participant saw this trial.
+response;Participant's response
+response_order;Order in which the participants gave the responses. 
+rt;Time taken by the participant to respond, in milliseconds.
+word;Word with which the participant was presented.

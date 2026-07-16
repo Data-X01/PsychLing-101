@@ -1,0 +1,7 @@
+"Recommended Column Name", Description,experiment
+participant_id,Participant number (anonymized from MTurk WorkerId),exp1
+item,Story number (1–10),exp1
+word_position,Position of this word within the story (1-indexed; zone in original data),exp1
+word,The word text as displayed in the self-paced reading experiment,exp1
+rt,Self-paced reading time in ms (time from word reveal until SPACE press),exp1
+comprehension_correct,"Number of comprehension questions answered correctly for this story (out of 6; same value for all rows of a given participant × story)",exp1
