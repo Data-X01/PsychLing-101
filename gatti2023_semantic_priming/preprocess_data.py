@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 
-DATASET_DIR = Path("gatti2023_semantic_priming")
+DATASET_DIR = Path(__file__).resolve().parent
 RAW_FILE = DATASET_DIR / "original_data" / "data_acc.csv"
 OUT_DIR = DATASET_DIR / "processed_data"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -35,7 +35,8 @@ def main():
     df["gender"] = df["gender"].apply(normalize_gender)
     df["hand"] = df["hand"].apply(normalize_hand)
 
-    df["rt"] = pd.to_numeric(
+    # The source values are in seconds; standardize reaction times to milliseconds.
+    df["rt"] = 1000 * pd.to_numeric(
         df["rt_raw"].astype(str).str.replace(",", ".", regex=False),
         errors="coerce"
     )
