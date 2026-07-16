@@ -1,5 +1,9 @@
 column_name	description
+experiment	Experiment identifier for this dataset
 participant_id	Participant identifier from the raw data
+trial_id	Unique identifier for a single trial within a participant session
+trial_order	Presentation order within the participant session (0-indexed)
+phase_id	Identifier for the experimental phase
 age	Participant age in years
 gender	"Raw gender code from the source file; values observed: FALSE M f"
 hand	Normalized handedness code derived from hand_raw after stripping whitespace and uppercasing

@@ -25,6 +25,7 @@ The raw file is semicolon-delimited and contains the following columns:
 `preprocess_data.py`:
 - reads `original_data/time_data.csv` with `;` as delimiter
 - preserves participant-level fields from the raw file
+- preserves the raw presentation order within participant in `trial_order`
 - renames `Cit1` and `Cit2` as `city_left` and `city_right`
 - preserves the raw response key in `response_raw`
 - derives `response_side` from the response key (`a` = left, `l` = right)
@@ -39,7 +40,11 @@ The raw file is semicolon-delimited and contains the following columns:
 - `processed_data/exp1.csv`
 
 Columns in the processed file:
+- `experiment`
 - `participant_id`
+- `trial_id`
+- `trial_order`
+- `phase_id`
 - `age`
 - `gender`
 - `hand`
@@ -60,3 +65,5 @@ Columns in the processed file:
 - The raw `hand` field contains formatting variation (`DX`, `DX `, `dx`, `SX`); `hand` is a normalized version and `hand_raw` preserves the source value.
 - Response keys are kept in the original coding: `a` for left and `l` for right.
 - Participant-facing prompt text should contain only task-relevant content. Task metadata such as response side, correctness, and participant attributes belong in metadata fields rather than prompt text.
+- The participant-facing text in `prompts.jsonl.zip` is in Italian, matching the language of the experiment.
+- Each JSONL line contains exactly one participant. Reaction times are stored once per participant in the top-level `rt` list in milliseconds and are aligned with trial order.
