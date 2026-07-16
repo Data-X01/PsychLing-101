@@ -8,7 +8,7 @@ target,Target word presented on the trial.
 response,Participant's binary response.
 response_correct,Correct binary response from the source data.
 accuracy,Binary indicator of whether the participant's response was correct.
-rt,Response time converted to numeric seconds from the source RTs column.
+rt,Response time converted to numeric milliseconds from the source RTs column.
 age,Participant age.
 gender,Participant gender normalized to uppercase.
 hand,Handedness normalized to left/right.

@@ -25,7 +25,7 @@ This folder contains trial-level semantic priming data.
 - `response` <- `resp`
 - `response_correct` <- `resp_corr`
 - `accuracy` <- `accuracy`
-- `rt` <- `RTs` converted from decimal-comma strings to numeric seconds
+- `rt` <- `RTs` converted from decimal-comma seconds to numeric milliseconds
 - `age` <- `age`
 - `gender` <- `gender` normalized to uppercase
 - `hand` <- `hand` normalized to `right` / `left`
@@ -35,3 +35,5 @@ This folder contains trial-level semantic priming data.
 ## Notes
 - This processed file preserves the source trial structure.
 - Responses are binary and the source file already includes both the correct response and trial accuracy.
+- The participant-facing text in `prompts.jsonl.zip` is in Italian, matching the language of the experiment.
+- Each JSONL line contains exactly one participant. Reaction times are stored once per participant in the top-level `rt` list and are aligned with trial order.
