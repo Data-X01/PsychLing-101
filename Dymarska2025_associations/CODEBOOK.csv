@@ -1,0 +1,45 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant.
+trial_id,Unique identifier for a single trial for each participant (1 trial being 1 cue)
+cue_id,Unique identifier of each cue
+stimulus,The linguistic or visual stimulus presented to the participant in a given trial.
+response1,First association response; spelling-corrected where required (lowercased).
+response2,Second association response; spelling-corrected where required (lowercased).
+response3,Third association response; spelling-corrected where required (lowercased).
+response4,Fourth association response; spelling-corrected where required (lowercased).
+response5,Fifth association response; spelling-corrected where required (lowercased).
+response6,Sixth association response; spelling-corrected where required (lowercased).
+response7,Seventh association response; spelling-corrected where required (lowercased).
+response8,Eighth association response; spelling-corrected where required (lowercased).
+response9,Ninth association response; spelling-corrected where required (lowercased).
+response10,Tenth association response; spelling-corrected where required (lowercased).
+response11,Eleventh association response; spelling-corrected where required (lowercased).
+response12,Twelfth association response; spelling-corrected where required (lowercased).
+response13,Thirteenth association response; spelling-corrected where required (lowercased).
+response14,Fourteenth association response; spelling-corrected where required (lowercased).
+response15,Fifteenth association response; spelling-corrected where required (lowercased).
+response16,Sixteenth association response; spelling-corrected where required (lowercased).
+response17,Seventeenth association response; spelling-corrected where required (lowercased).
+response18,Eighteenth association response; spelling-corrected where required (lowercased).
+response19,Nineteenth association response; spelling-corrected where required (lowercased).
+response20,Twentieth association response; spelling-corrected where required (lowercased).
+first_key_RT1,Time until first key press when typing response1
+first_key_RT2,Time until first key press when typing response2
+first_key_RT3,Time until first key press when typing response3
+first_key_RT4,Time until first key press when typing response4
+first_key_RT5,Time until first key press when typing response5
+first_key_RT6,Time until first key press when typing response6
+first_key_RT7,Time until first key press when typing response7
+first_key_RT8,Time until first key press when typing response8
+first_key_RT9,Time until first key press when typing response9
+first_key_RT10,Time until first key press when typing response10
+first_key_RT11,Time until first key press when typing response11
+first_key_RT12,Time until first key press when typing response12
+first_key_RT13,Time until first key press when typing response13
+first_key_RT14,Time until first key press when typing response14
+first_key_RT15,Time until first key press when typing response15
+first_key_RT16,Time until first key press when typing response16
+first_key_RT17,Time until first key press when typing response17
+first_key_RT18,Time until first key press when typing response18
+first_key_RT19,Time until first key press when typing response19
+first_key_RT20,Time until first key press when typing response20
