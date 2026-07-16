@@ -1,0 +1,16 @@
+Legend for participant-level data in Brysbaert et al. (2013) "Concreteness ratings for 40 thousand generally known English word lemmas" (Behavioral Research Methods)
+
+ColumnName	Description	Values
+Worker_code	Code replacing Unique Amazon Mechanical Turk personal ID
+WorkTimeInSeconds	Time between accepting and submitting the assignment
+LifetimeApprovalRate	Prior assignments approved
+Last30DaysApprovalRate	Prior assignments approved in the last 30 days
+Last7DaysApprovalRate	Prior assignments approved in the last 7 days
+Answer.QAge	Responder's age
+Answer.QEducation	Choose level of education that describes you best	Some high school; high school graduate; some college-no degree; Associates degree; Bachelors degree; Masters degree; Doctorate; Unspecified
+Answer.QGender	Responder's gender	Female; Male; Unspecified
+Answer.QHand	Responder's dominant hand	Left; Right; Unspecified
+Answer.QLang	Responder's language(s)
+Answer.QRaised	State where the responder lived most of the time before the age of 7	US states
+Word	stimulus word
+Rating	rating	1-5 or "n"/"N" for unknown word             
