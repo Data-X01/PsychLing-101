@@ -1,7 +1,7 @@
 # gatti2024_concreteness_judgments
 
 ## Citation
-Gatti, D., Rinaldi, L., Marelli, M., Mazzoni, G., & Vecchi, T. (2024). Predicting hand movements with distributional semantics. *Cognitive Science*. https://doi.org/10.1111/cogs.13399
+Gatti, D., Marelli, M., Rinaldi, L. (2024). Predicting hand movements with distributional semantics. *Cognitive Science*. https://doi.org/10.1111/cogs.13399
 
 ## Data source
 Original data files:
@@ -28,7 +28,7 @@ This folder contains two concreteness-judgment datasets derived from the source 
 - `response` <- `resp`
 - `response_side` = whether `response` matches `stimulus_left` or `stimulus_right`
 - `condition_raw` <- `condition`
-- `rt` <- `RTs` normalized to numeric
+- `rt` <- `RTs` normalized to numeric milliseconds
 - `age` <- `age`
 - `gender` <- `gender` normalized to `F`/`M` where possible
 - `hand` <- `hand` normalized to `right` where possible
@@ -52,3 +52,5 @@ This folder contains two concreteness-judgment datasets derived from the source 
 - The task is a two-alternative forced-choice lexical judgment task.
 - The prompt text should reflect the participant experience by presenting the two words shown on each trial and the chosen response.
 - Metadata can store side, RT, device, age, gender, handedness, and original condition labels.
+- The participant-facing text in `prompts.jsonl.zip` is in Italian, matching the language of the experiments.
+- Each JSONL line contains exactly one participant from one experiment. EXP1 reaction times are stored once per participant in the top-level `rt` list and are aligned with trial order.
