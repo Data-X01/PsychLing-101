@@ -1,82 +1,94 @@
 from pathlib import Path
 import json
+import zipfile
+
 import pandas as pd
 
 
 DATASET_DIR = Path(__file__).resolve().parent
 INPUT_PATH = DATASET_DIR / "processed_data" / "exp1.csv"
 OUTPUT_PATH = DATASET_DIR / "prompts.jsonl"
+ZIP_PATH = DATASET_DIR / "prompts.jsonl.zip"
+
+INSTRUCTIONS = (
+    "In questo compito vedrai i nomi di due città italiane, una a sinistra e una "
+    "a destra. Indica quale città è geograficamente più vicina a Milano. Premi A "
+    "per scegliere la città a sinistra oppure L per scegliere la città a destra. "
+    "Rispondi nel modo più rapido e accurato possibile."
+)
 
 
-def build_text(row):
-    return (
-        "Task: decide which city is geographically closer to Milan.\n"
-        f"Left city: {row['city_left']}\n"
-        f"Right city: {row['city_right']}\n"
-        "Response options: a = left, l = right.\n"
-        f"Participant response: {row['response_raw']}\n"
-        f"Reaction time (ms): {row['rt_ms']}"
-    )
+def json_scalar(value):
+    if pd.isna(value):
+        return None
+    if hasattr(value, "item"):
+        value = value.item()
+    if isinstance(value, float) and value.is_integer():
+        return int(value)
+    return value
+
+
+def format_rt_list(values):
+    result = []
+    for value in values:
+        if pd.isna(value):
+            result.append(None)
+            continue
+        value = round(float(value), 3)
+        result.append(int(value) if value.is_integer() else value)
+    return result
+
+
+def build_text(pdf: pd.DataFrame) -> str:
+    pdf = pdf.sort_values("trial_order").reset_index(drop=True)
+    lines = [INSTRUCTIONS]
+    for i, row in enumerate(pdf.itertuples(index=False), start=1):
+        lines.append(
+            f"Prova {i}: A sinistra compare '{row.city_left}' e a destra compare "
+            f"'{row.city_right}'. Premi <<{row.response_raw}>>."
+        )
+    return "\n".join(lines)
 
 
 def main():
     df = pd.read_csv(INPUT_PATH)
 
     required_cols = [
+        "experiment",
         "participant_id",
+        "trial_order",
         "age",
         "gender",
         "hand",
-        "hand_raw",
         "city_left",
         "city_right",
         "response_raw",
-        "response_side",
-        "correct_response",
-        "correct_side",
-        "accuracy",
-        "response_correct",
-        "rt_raw",
         "rt_ms",
     ]
-    missing = [c for c in required_cols if c not in df.columns]
+    missing = [column for column in required_cols if column not in df.columns]
     if missing:
         raise ValueError(f"Missing required columns: {missing}")
 
-    records = []
-    for row in df.to_dict(orient="records"):
-        record = {
-            "text": build_text(row),
-            "metadata": {
-                "dataset": "gatti2024_geographical",
-                "subset": "exp1",
-                "participant_id": row["participant_id"],
-                "age": None if pd.isna(row["age"]) else int(row["age"]),
-                "gender": row["gender"],
-                "hand": row["hand"],
-                "hand_raw": row["hand_raw"],
-                "city_left": row["city_left"],
-                "city_right": row["city_right"],
-                "response_raw": row["response_raw"],
-                "response_side": row["response_side"],
-                "correct_response": row["correct_response"],
-                "correct_side": row["correct_side"],
-                "accuracy": None if pd.isna(row["accuracy"]) else int(row["accuracy"]),
-                "response_correct": None if pd.isna(row["response_correct"]) else int(row["response_correct"]),
-                "rt_raw": row["rt_raw"],
-                "rt_ms": None if pd.isna(row["rt_ms"]) else float(row["rt_ms"]),
-            },
-        }
-        records.append(record)
-
     with OUTPUT_PATH.open("w", encoding="utf-8") as f:
-        for record in records:
+        for participant_id, pdf in df.groupby("participant_id", sort=True):
+            pdf = pdf.sort_values("trial_order").reset_index(drop=True)
+            record = {
+                "text": build_text(pdf),
+                "experiment": str(pdf["experiment"].iloc[0]),
+                "participant_id": json_scalar(participant_id),
+                "age": json_scalar(pdf["age"].iloc[0]),
+                "gender": json_scalar(pdf["gender"].iloc[0]),
+                "hand": json_scalar(pdf["hand"].iloc[0]),
+                "rt": format_rt_list(pdf["rt_ms"]),
+            }
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
-    print(f"Wrote: {OUTPUT_PATH}")
-    print(f"Rows: {len(records)}")
-    print("\nFIRST_RECORD:")
-    print(json.dumps(records[0], ensure_ascii=False, indent=2))
+    with zipfile.ZipFile(ZIP_PATH, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+        zf.write(OUTPUT_PATH, arcname="prompts.jsonl")
+
+    print("Wrote:", OUTPUT_PATH)
+    print("Wrote:", ZIP_PATH)
+    print("Participants:", df["participant_id"].nunique())
 
 
 if __name__ == "__main__":

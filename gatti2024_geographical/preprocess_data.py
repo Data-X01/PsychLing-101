@@ -75,6 +75,12 @@ def main():
         }
     ).copy()
 
+    # Preserve the presentation order from the raw file within each participant.
+    df["trial_order"] = df.groupby("participant_id").cumcount()
+    df["trial_id"] = "exp1_t" + df["trial_order"].astype(str)
+    df["experiment"] = "geographical_judgment"
+    df["phase_id"] = "judgment"
+
     df["age"] = pd.to_numeric(df["age"], errors="raise").astype("Int64")
     df["accuracy"] = pd.to_numeric(df["accuracy"], errors="raise").astype("Int64")
 
@@ -119,7 +125,11 @@ def main():
         )
 
     out_cols = [
+        "experiment",
         "participant_id",
+        "trial_id",
+        "trial_order",
+        "phase_id",
         "age",
         "gender",
         "hand",
@@ -137,7 +147,7 @@ def main():
     ]
 
     df = df[out_cols].sort_values(
-        ["participant_id", "city_left", "city_right"], kind="stable"
+        ["participant_id", "trial_order"], kind="stable"
     ).reset_index(drop=True)
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
