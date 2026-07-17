@@ -93,8 +93,7 @@ di presentazione.
         start=1,
     ):
         records.append(
-            f'Record {index}: parola "{row["stimulus"]}" '
-            f'({row["part_of_speech"]}). '
+            f'Record {index}: parola "{row["stimulus"]}". '
             f'Valenza <<{row["valence"]}>>; '
             f'arousal <<{row["arousal"]}>>; '
             f'dominanza <<{row["dominance"]}>>; '
@@ -256,6 +255,10 @@ def main():
                 "experiment": EXPERIMENT,
                 "participant_id": participant_id,
                 "session_id": session_id,
+                "part_of_speech": [
+                    row["part_of_speech"]
+                    for row in rows
+                ],
             }
 
             gender = rows[0]["gender"]
