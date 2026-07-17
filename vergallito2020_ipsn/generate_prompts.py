@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
+import random
+import string
 import zipfile
 from collections import defaultdict
 from pathlib import Path
@@ -51,12 +54,20 @@ In che misura puoi avere esperienza di [PAROLA] attraverso: l'udito, il gusto, i
 
 """
 
-EXP2_INSTRUCTIONS = """Buongiorno e grazie per la tua partecipazione a questo studio.
-In questo compito ti verrà chiesto di scegliere il più velocemente possibile se la stringa di lettere che ti verrà presentata è una parola oppure no.
-Premi il tasto N per le parole, il tasto C per le non parole.
-Ti chiediamo di essere il più accurato e veloce possibile.
+def lexical_decision_instructions(
+    word_key: str,
+    pseudoword_key: str,
+) -> str:
+    return (
+        "Buongiorno e grazie per la tua partecipazione a questo studio.\n"
+        "In questo compito ti verrà chiesto di scegliere il più velocemente "
+        "possibile se la stringa di lettere che ti verrà presentata è una "
+        "parola oppure no.\n"
+        f"Premi il tasto {word_key} per le parole, il tasto "
+        f"{pseudoword_key} per le non parole.\n"
+        "Ti chiediamo di essere il più accurato e veloce possibile.\n\n"
+    )
 
-"""
 
 EXP3_INSTRUCTIONS = """Buongiorno e grazie per la tua partecipazione a questo studio.
 In questo compito ti verrà chiesto di leggere il più velocemente possibile la parola presentata sullo schermo.
@@ -152,29 +163,54 @@ def generate_perceptual_rating_prompts() -> list[dict[str, Any]]:
     return records
 
 
-def opposite_key(key: str) -> str:
-    if key == "N":
-        return "C"
-    if key == "C":
-        return "N"
-    raise ValueError(f"Unexpected lexical-decision key: {key}")
+def participant_choice_options(
+    participant_id: str,
+) -> tuple[str, str]:
+    """Assign a reproducible randomized key pair to one participant.
+
+    The first key corresponds to WORD and the second to PSEUDOWORD.
+    Because the seed depends only on participant_id, the same participant
+    receives the same pair in both sessions and across repeated script runs.
+    """
+    seed_text = f"vergallito2020_ipsn:{participant_id}"
+    digest = hashlib.sha256(seed_text.encode("utf-8")).digest()
+    seed = int.from_bytes(
+        digest[:8],
+        byteorder="big",
+        signed=False,
+    )
+
+    rng = random.Random(seed)
+    word_key, pseudoword_key = rng.sample(
+        list(string.ascii_uppercase),
+        2,
+    )
+
+    return word_key, pseudoword_key
 
 
-def infer_lexical_decision_key(stimulus_type: str, accuracy: str) -> str:
+def infer_lexical_decision_key(
+    stimulus_type: str,
+    accuracy: str,
+    word_key: str,
+    pseudoword_key: str,
+) -> str:
     stimulus_type = clean_text(stimulus_type).lower()
     accuracy = clean_text(accuracy)
 
     if stimulus_type == "word":
-        correct_key = "N"
+        correct_key = word_key
+        incorrect_key = pseudoword_key
     elif stimulus_type == "pseudoword":
-        correct_key = "C"
+        correct_key = pseudoword_key
+        incorrect_key = word_key
     else:
         raise ValueError(f"Unexpected stimulus type: {stimulus_type}")
 
     if accuracy == "1":
         return correct_key
     if accuracy == "0":
-        return opposite_key(correct_key)
+        return incorrect_key
     if accuracy == "":
         return "missing"
 
@@ -191,15 +227,27 @@ def generate_lexical_decision_prompts() -> list[dict[str, Any]]:
     records: list[dict[str, Any]] = []
 
     for (participant_id, session_id), session_rows in grouped.items():
-        lines = [EXP2_INSTRUCTIONS, ORDER_NOTE]
+        word_key, pseudoword_key = participant_choice_options(
+            participant_id
+        )
+
+        lines = [
+            lexical_decision_instructions(
+                word_key,
+                pseudoword_key,
+            ),
+            ORDER_NOTE,
+        ]
 
         for row in session_rows:
             response_key = infer_lexical_decision_key(
-                row["stimulus_type"], row["accuracy"]
+                row["stimulus_type"],
+                row["accuracy"],
+                word_key,
+                pseudoword_key,
             )
             lines.append(
                 f"{row['stimulus']}. Premi {marked(response_key)}. "
-                f"Accuratezza {marked(row['accuracy'])}. "
                 f"RT {marked(row['rt'])} ms.\n"
             )
 
@@ -210,6 +258,8 @@ def generate_lexical_decision_prompts() -> list[dict[str, Any]]:
             "session_id": session_id,
             "rt": [row["rt"] for row in session_rows],
             "accuracy": [row["accuracy"] for row in session_rows],
+            "word_key": word_key,
+            "pseudoword_key": pseudoword_key,
         }
         add_optional_metadata(
             record,
@@ -237,7 +287,6 @@ def generate_naming_prompts() -> list[dict[str, Any]]:
         for row in session_rows:
             lines.append(
                 f"{row['stimulus']}. "
-                f"Accuratezza {marked(row['accuracy'])}. "
                 f"Latenza di onset vocale {marked(row['rt'])} ms.\n"
             )
 
