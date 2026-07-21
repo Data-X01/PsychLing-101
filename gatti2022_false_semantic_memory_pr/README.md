@@ -44,3 +44,4 @@ This folder contains the cleaned recognition dataset for the false semantic memo
 - The prompt text includes a study phase built from all words in `liste.xls`; this study sequence is shared across participants.
 - The participant-facing text in `prompts.jsonl.zip` is in Italian, matching the language of the experiment.
 - Each JSONL line contains exactly one participant. Reaction times are stored once per participant in the top-level `rt` list and are aligned with recognition-trial order.
+- Prompt-generation keys are two distinct random uppercase letters sampled once per participant and mapped consistently to `old` / `new` for that participant.
