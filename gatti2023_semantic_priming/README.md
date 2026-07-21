@@ -35,5 +35,6 @@ This folder contains trial-level semantic priming data.
 ## Notes
 - This processed file preserves the source trial structure.
 - Responses are binary and the source file already includes both the correct response and trial accuracy.
+- Prompt-generation keys are two distinct random uppercase letters sampled once per participant and mapped consistently to the two response options for that participant.
 - The participant-facing text in `prompts.jsonl.zip` is in Italian, matching the language of the experiment.
 - Each JSONL line contains exactly one participant. Reaction times are stored once per participant in the top-level `rt` list and are aligned with trial order.
