@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 import zipfile
 
+import numpy as np
 import pandas as pd
 
 
@@ -15,11 +16,17 @@ STUDY_INSTRUCTIONS = (
     "Cerca di ricordarle per una successiva prova di memoria."
 )
 
-RECOGNITION_INSTRUCTIONS = (
-    "Fase di riconoscimento. Ora vedrai una parola alla volta. "
-    "Decidi se la parola è stata presentata in precedenza. "
-    "Rispondi 1 per VECCHIA e 0 per NUOVA."
-)
+def randomized_choice_options(num_choices: int):
+    choice_options = list(map(chr, range(65, 91)))
+    return np.random.choice(choice_options, num_choices, replace=False)
+
+
+def recognition_instructions(choice_options) -> str:
+    return (
+        "Fase di riconoscimento. Ora vedrai una parola alla volta. "
+        "Decidi se la parola è stata presentata in precedenza. "
+        f"Rispondi {choice_options[1]} per VECCHIA e {choice_options[0]} per NUOVA."
+    )
 
 
 def json_scalar(value):
@@ -28,7 +35,7 @@ def json_scalar(value):
     return value
 
 
-def build_prompt(pdf: pd.DataFrame) -> str:
+def build_prompt(pdf: pd.DataFrame, choice_options) -> str:
     pdf = pdf.sort_values("trial_order").reset_index(drop=True)
     study_df = pdf[pdf["phase_id"] == "study"]
     recog_df = pdf[pdf["phase_id"] == "recognition"]
@@ -37,11 +44,11 @@ def build_prompt(pdf: pd.DataFrame) -> str:
     for i, row in enumerate(study_df.itertuples(index=False), start=1):
         lines.append(f"Prova di studio {i}: La parola è '{row.stimulus}'.")
 
-    lines.extend(["", RECOGNITION_INSTRUCTIONS])
+    lines.extend(["", recognition_instructions(choice_options)])
     for i, row in enumerate(recog_df.itertuples(index=False), start=1):
         lines.append(
             f"Prova di riconoscimento {i}: La parola è '{row.stimulus}'. "
-            f"Rispondi <<{int(row.response)}>>."
+            f"Rispondi <<{choice_options[int(row.response)]}>>."
         )
 
     return "\n".join(lines)
@@ -52,8 +59,9 @@ def main():
 
     with JSONL.open("w", encoding="utf-8") as f:
         for participant_id, pdf in df.groupby("participant_id", sort=True):
+            choice_options = randomized_choice_options(num_choices=2)
             record = {
-                "text": build_prompt(pdf),
+                "text": build_prompt(pdf, choice_options),
                 "experiment": str(pdf["experiment"].iloc[0]),
                 "participant_id": json_scalar(participant_id),
             }
