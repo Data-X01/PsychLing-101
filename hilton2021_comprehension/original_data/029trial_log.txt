@@ -1,0 +1,74 @@
+Trial	Beat	Sentence	Sentence_extraction	Congruency	Probe	Probe_clause	Response	Accuracy	RT
+1	binary	['The', 'whale', 'that', 'bit', 'the', 'shark', 'won the', 'fight', 'in the', 'end']	subject	congruent	The whale won the fight?	main_clause	y	1	2.125701321987435
+2	binary	['The', 'cup', 'was', 'made', 'from green', 'plastic', 'and was', 'filled', 'with', 'juice']	assorted	other	The cup was full of green juice?	other	n	1	2.1091753079963382
+3	binary	['The', 'prince', 'that', 'helped', 'the', 'girl', 'had a', 'head', 'of blonde', 'hair']	subject	incongruent	The prince had blonde hair?	main_clause	y	1	1.1897592280001845
+4	ternary	['The', 'cat', 'that the', 'dog', 'fought', 'licked', 'its', 'wounds', 'in', 'the', 'corner']	object	congruent	The dog fought the cat?	relative_clause	y	1	2.4099782400007825
+5	binary	['The', 'owl', 'that', 'scared', 'the', 'bat', 'made a', 'loop', 'in the', 'air']	subject	incongruent	The owl scared the bat? 	relative_clause	y	1	1.6911142009776086
+6	ternary	['The', 'priest', 'that the', 'cook', 'paid', 'signed', 'the', 'check', 'at', 'the', 'bank']	object	congruent	The priest paid the cook?	relative_clause	n	1	3.3256068699993193
+7	binary	['The', 'man', 'was very', 'hungry', 'after the', 'meeting', 'so', 'had', 'lunch', 'early']	assorted	other	The boy was hungry?	other	n	1	0.9890056090080179
+8	binary	['The', 'girl', 'on', 'the', 'school', 'trip', 'saw a', 'frog', 'and', 'later', 'she', 'saw', 'a', 'mouse']	assorted	other	The girl saw a frog?	other	y	1	1.4052093449863605
+9	binary	['The', 'boy', 'who', 'had', 'a', 'birthday', 'called', 'his', 'best', 'friend', 'for a', 'chat']	assorted	other	The friend called the boy?	other	n	1	1.7583386079932097
+10	binary	['The', 'dog', 'that', 'barked', 'is very', 'big', 'and very', 'friendly', 'but', 'doesn’t', 'like', 'cats']	assorted	other	The dog is very big?	other	y	1	1.2062717899971176
+11	binary	['The', 'job', 'that was', 'given', 'was', 'different', 'to', 'what', 'she', 'expected']	assorted	other	The job was unexpected?	other	n	0	1.6073330240033101
+12	ternary	['The', 'clerk', 'that the', 'boss', 'liked', 'had', 'a', 'desk', 'by', 'the', 'window']	object	incongruent	The boss had a desk by the window?	main_clause	n	1	2.9277710989990737
+13	binary	['The', 'crook', 'that', 'warned', 'the', 'thief', 'fled the', 'town', 'the next', 'morning']	subject	incongruent	The crook warned the thief?	relative_clause	d	0	5.250965184008237
+14	binary	['The', 'thief', 'that', 'saw', 'the', 'guard', 'had a', 'gun', 'in his', 'holster']	subject	incongruent	The guard saw the thief?	relative_clause	n	1	2.6597679799888283
+15	binary	['The', 'bike', 'that was', 'yellow', 'and', 'shiny', 'belonged', 'to', 'the', 'boy', 'with the', 'hat']	assorted	other	The bike was red?	other	n	1	1.123150910018012
+16	binary	['The', 'concert', 'started', 'later', 'than', 'what', 'the', 'lady', 'told the', 'traveler']	assorted	other	The concert started later than the travellers expected?	other	y	1	3.5799812719924375
+17	binary	['The', 'girl', 'that', 'pushed', 'the', 'nerd', 'broke the', 'vase', 'with the', 'flowers']	subject	incongruent	The girl broke the vase?	main_clause	y	1	1.7408668360149022
+18	ternary	['The', 'niece', 'that the', 'aunt', 'kissed', 'sang', 'a', 'song', 'for', 'the', 'guests']	object	congruent	The aunt sang a song?	main_clause	y	0	1.15528817899758
+19	binary	['The', 'desk', 'was', 'new', 'but', 'dusty', 'and', 'covered', 'with old', 'books']	assorted	other	The desk was new?	other	y	1	1.1743076239945367
+20	binary	['The', 'chief', 'that', 'thanked', 'the', 'girl', 'was too', 'late', 'for the', 'bus']	subject	congruent	The girl was too late?	main_clause	n	1	1.4546568109944928
+21	binary	['The', 'dessert', 'was', 'served', 'with', 'custard', 'and', 'fruit', 'then', 'there', 'was', 'coffee']	assorted	other	The coffee was before dessert?	other	n	1	1.406809218984563
+22	binary	['The', 'rod', 'that', 'bent', 'the', 'pipe', 'had a', 'hole', 'in the', 'middle']	subject	incongruent	The pipe bent the rod?	relative_clause	n	1	1.5564472940168343
+23	binary	['The', 'truck', 'that', 'bumped', 'the', 'car', 'had a', 'man', 'at the', 'wheel']	subject	congruent	The truck had a man at the wheel?	main_clause	y	1	2.3593604350171518
+24	ternary	['The', 'maid', 'that the', 'chef', 'loved', 'quit', 'the', 'job', 'at', 'the', 'house']	object	congruent	The maid quit the job?	main_clause	y	1	1.3375567129987758
+25	ternary	['The', 'desk', 'that the', 'bed', 'scratched', 'was', 'too', 'old', 'to', 'be', 'moved']	object	congruent	The desk was too old?	main_clause	y	1	1.3230823230114765
+26	binary	['The', 'cop', 'that', 'met', 'the', 'spy', 'wrote a', 'book', 'about the', 'case']	subject	congruent	The cop met the spy?	relative_clause	y	1	1.4064224660105538
+27	binary	['The', 'dean', 'that', 'called', 'the', 'boy', 'had a', 'voice', 'full of', 'anger']	subject	incongruent	The dean called the boy?	relative_clause	y	1	1.0560416319931392
+28	ternary	['The', 'bloke', 'that the', 'mum', 'helped', 'gave', 'a', 'gift', 'to', 'say', 'thanks']	object	congruent	The mum gave a gift?	main_clause	n	1	1.5077391770028044
+29	ternary	['The', 'fruit', 'that the', 'cake', 'squashed', 'made', 'a', 'mess', 'in', 'the', 'bag']	object	incongruent	The cake squashed the fruit?	relative_clause	n	0	1.5411122319928836
+30	ternary	['The', 'kid', 'that the', 'dad', 'followed', 'had', 'some', 'mud', 'on', 'his', 'shoes']	object	incongruent	The dad followed the kid?	relative_clause	d	0	3.64576820799266
+31	binary	['The', 'priest', 'that', 'thanked', 'the', 'nun', 'left the', 'church', 'in a', 'hurry']	subject	incongruent	The priest left the church?	main_clause	y	1	1.9243298939836677
+32	binary	['The', 'man', 'who was', 'short', 'gave his', 'wife', 'some red', 'candles', 'for her', 'birthday']	assorted	other	The man was short?	other	y	1	1.7888559919956606
+33	ternary	['The', 'shelf', 'that the', 'piano', 'bumped', 'had', 'some', 'dust', 'on', 'its', 'top']	object	congruent	The shelf bumped the piano?	relative_clause	y	0	2.2423270260042045
+34	ternary	['The', 'tradie', 'that the', 'man', 'thanked', 'left', 'his', 'wallet', 'in', 'the', 'car']	object	incongruent	The man left his wallet?	main_clause	y	0	2.742991726991022
+35	binary	['The', 'apples', 'that', 'the', 'couple', 'bought', 'at the', 'market', 'were', 'red']	assorted	other	The couple bought green apples?	other	n	1	1.9246734099870082
+36	binary	['The', 'fish', 'was', 'caught', 'by the', 'girl', 'on the', 'boat', 'on a', 'Friday']	assorted	other	The fish was caught by the boy?	other	n	1	1.7749805470230058
+37	binary	['The', 'count', 'that', 'knew', 'the', 'queen', 'owned a', 'castle', 'by the', 'lake']	subject	congruent	The count owned a castle?	main_clause	y	1	1.7586578319896944
+38	binary	['The', 'boss', 'was', 'happy', 'to', 'see', 'the', 'work', 'that', 'the', 'two', 'girls', 'had', 'done']	assorted	other	The girls were happy?	other	n	1	2.0413950810034294
+39	binary	['The', 'hat', 'that was', 'worn', 'by the', 'boy', 'with a', 'jacket', 'was too', 'small', 'for the', 'man']	assorted	other	The hat was too small?	other	y	1	1.874943615985103
+40	ternary	['The', 'dancer', 'that the', 'guy', 'liked', 'was', 'a', 'chef', 'in', 'the', 'city']	object	incongruent	The guy liked the dancer?	relative_clause	y	1	1.4066652009787504
+41	ternary	['The', 'fox', 'that the', 'wolf', 'chased', 'hurt', 'its', 'paws', 'on', 'the', 'way']	object	incongruent	The fox hurt its paws?	main_clause	y	1	1.7404681959887967
+42	ternary	['The', 'cook', 'that the', 'maid', 'hugged', 'had', 'a', 'tear', 'on', 'her', 'cheek']	object	incongruent	The cook hugged the maid? 	relative_clause	y	0	2.657740885973908
+43	binary	['The', 'colour', 'of the', 'house', 'was', 'brighter', 'than the', 'men', 'who travelled', 'expected']	assorted	other	The men travelled?	other	y	1	2.7948217110242695
+44	binary	['The', 'girl', 'and the', 'boy', 'that', 'owned', 'the', 'horse', 'had', 'mud', 'on their', 'clothes']	assorted	other	The boy and girl own a horse?	other	n	0	2.1758057230035774
+45	binary	['The', 'girl', 'kicked the', 'ball', 'into the', 'window', 'but it', 'did', 'not', 'break']	assorted	other	The girl kicked the ball?	other	y	1	1.8754671399947256
+46	ternary	['The', 'king', 'that the', 'guest', 'pleased', 'poured', 'the', 'wine', 'from', 'the', 'jug']	object	incongruent	The king pleased the guest?	relative_clause	n	1	2.7433561910002027
+47	binary	['The', 'bug', 'that', 'attacked', 'the', 'ant', 'was as', 'big', 'as a', 'coin']	subject	congruent	The bug attacked the ant?	relative_clause	y	1	1.389705440000398
+48	binary	['The', 'groom', 'that', 'charmed', 'the', 'aunt', 'raised a', 'toast', 'to the', 'parents']	subject	incongruent	The aunt raised a toast?	main_clause	n	1	1.2238449089927599
+49	binary	['The', 'dad', 'that', 'knew', 'the', 'chef', 'had a', 'son', 'with a', 'limp']	subject	congruent	The chef knew the dad?	relative_clause	n	1	3.660395968006924
+50	binary	['The', 'thug', 'that', 'saw', 'the', 'man', 'had a', 'hat', 'on his', 'head']	subject	incongruent	The man saw the thug?	relative_clause	d	0	4.9165734499983955
+51	binary	['The', 'dean', 'that', 'heard', 'the', 'guard', 'made a', 'call', 'about the', 'matter']	subject	incongruent	The guard made a call?	main_clause	n	1	1.2901097950234544
+52	binary	['The', 'guest', 'that', 'kissed', 'the', 'host', 'brought a', 'cake', 'to the', 'party']	subject	congruent	The host brought a cake?	main_clause	n	1	2.8412311669962946
+53	binary	['The', 'wine', 'that was', 'fancy', 'was', 'kept', 'in the', 'cellar', 'for', 'nearly', 'ten', 'years', 'and five', 'months']	assorted	other	The wine was bad?	other	n	1	1.1724554809916299
+54	binary	['The', 'box', 'was', 'made', 'from', 'wood', 'and was', 'full', 'of', 'things', 'that', 'shined']	assorted	other	The box was shiny?	other	n	1	1.2055158189905342
+55	binary	['The', 'book', 'that the', 'lady', 'with a', 'tattoo', 'had', 'written', 'was her', 'best', 'book', 'yet']	assorted	other	The lady wrote a book?	other	d	0	2.6428352419752628
+56	binary	['The', 'cat', 'chased the', 'bird', 'but', 'it', 'flew', 'away', 'into the', 'sunset']	assorted	other	The cat chased the bird?	other	y	1	1.2065634409955237
+57	binary	['The', 'man', 'that', 'phoned', 'the', 'nurse', 'left his', 'pills', 'at the', 'office']	subject	congruent	The man phoned the nurse?	relative_clause	y	1	1.0533520499884617
+58	ternary	['The', 'car', 'that the', 'truck', 'pulled', 'had', 'a', 'scratch', 'on', 'the', 'door']	object	congruent	The truck had a scratch?	main_clause	y	0	3.7791935320128687
+59	binary	['The', 'hat', 'that', 'matched', 'the', 'skirt', 'had a', 'bow', 'in the', 'back']	subject	congruent	The skirt had a bow?	main_clause	y	0	2.6440442879975308
+60	binary	['The', 'ring', 'that', 'was', 'sadly', 'lost', 'was', 'found', 'by the', 'fat', 'and', 'very', 'happy', 'priest']	assorted	other	The priest found the ring?	other	y	1	1.7416578000120353
+61	ternary	['The', 'guy', 'that the', 'judge', 'thanked', 'left', 'the', 'room', 'with', 'a', 'smile']	object	congruent	The judge thanked the guy?	relative_clause	y	1	4.214320358005352
+62	ternary	['The', 'sailor', 'that the', 'banker', 'pushed', 'hurt', 'his', 'foot', 'in', 'the', 'brawl']	object	incongruent	The sailor hurt his foot?	main_clause	y	1	2.477188846998615
+63	binary	['The', 'knight', 'that', 'helped', 'the', 'king', 'sent a', 'gift', 'from his', 'castle']	subject	congruent	The king helped the knight?	relative_clause	n	1	2.2421205249847844
+64	binary	['The', 'boat', 'that', 'chased', 'the', 'yacht', 'made a', 'turn', 'at the', 'boathouse']	subject	incongruent	The yacht made a turn?	main_clause	y	0	1.3377672060159966
+65	ternary	['The', 'friend', 'that the', 'bride', 'teased', 'told', 'a', 'joke', 'about', 'the', 'past']	object	congruent	The bride teased the friend?	relative_clause	y	1	3.529946581023978
+66	binary	['The', 'nun', 'that', 'blessed', 'the', 'monk', 'lit a', 'candle', 'on the', 'table']	subject	congruent	The monk blessed the nun?	relative_clause	n	1	2.059018728992669
+67	ternary	['The', 'nurse', 'that the', 'coach', 'blamed', 'checked', 'the', 'file', 'of', 'the', 'gymnast']	object	congruent	The nurse checked the file?	main_clause	y	1	1.2571578949864488
+68	ternary	['The', 'boy', 'that the', 'girl', 'helped', 'got', 'an', 'A', 'on', 'the', 'test']	object	incongruent	The boy helped the girl?	relative_clause	n	1	4.179767435998656
+69	ternary	['The', 'bum', 'that the', 'cop', 'scared', 'crossed', 'the', 'street', 'at', 'the', 'light']	object	incongruent	The cop crossed the street?	main_clause	n	1	4.030192371021258
+70	binary	['The', 'car', 'that was', 'new', 'had', 'just', 'been', 'cleaned', 'by', 'the', 'old', 'lady']	assorted	other	The car was old?	other	y	0	3.362438083975576
+71	binary	['The', 'piano', 'was well', 'played', 'by', 'the', 'old', 'lady', 'but', 'it', 'was', 'not', 'in', 'tune']	assorted	other	The piano was badly played?	other	n	1	1.6574912659998517
+72	ternary	['The', 'boss', 'that the', 'clerk', 'mocked', 'had', 'a', 'crush', 'on', 'the', 'intern']	object	incongruent	The boss had a crush?	main_clause	d	0	5.9186913820158225
+73	ternary	['The', 'scout', 'that the', 'coach', 'punched', 'had', 'a', 'fight', 'with', 'a', 'manager']	object	congruent	The scout punched the coach?	relative_clause	y	0	3.0271895779878832

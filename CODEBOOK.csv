@@ -66,3 +66,11 @@ valence,Participant's affective valence rating for the stimulus.
 arousal,Participant's arousal or activation rating for the stimulus.
 dominance,Participant's dominance or perceived-control rating for the stimulus.
 unknown_word,Binary indicator of whether the participant reported not knowing the meaning of the stimulus.
+handedness,Participant's self-reported handedness.
+stimulus_type,"Type or category of the presented stimulus, such as word or pseudoword."
+stimulus_translation,"English translation of the presented Italian stimulus, when applicable."
+visual_rating,Participant's visual perceptual-strength rating for the stimulus.
+auditory_rating,Participant's auditory perceptual-strength rating for the stimulus.
+haptic_rating,Participant's haptic perceptual-strength rating for the stimulus.
+olfactory_rating,Participant's olfactory perceptual-strength rating for the stimulus.
+gustatory_rating,Participant's gustatory perceptual-strength rating for the stimulus.
