@@ -37,4 +37,5 @@ This folder contains the first processed dataset for the false semantic memory s
 - Prompts include the study phase followed by the recognition phase, so each participant record represents the full session.
 - The participant-facing text in `prompts.jsonl.zip` is in Italian, matching the language of the experiment.
 - Each JSONL line contains exactly one participant and uses the top-level field `participant_id`.
+- Prompt-generation keys are two distinct random uppercase letters sampled once per participant and mapped consistently to `old` / `new` for that participant.
 - This version preserves the true-vs-false recognition distinction as the main recognition condition.
