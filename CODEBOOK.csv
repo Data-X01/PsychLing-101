@@ -60,3 +60,12 @@ query_c2,Full original Chinese question text asking about constituent_2 contribu
 c2_contribution,Raw constituent_2 contribution rating as recorded in the original data (same scale as constituent_2_contribution).
 query_comp,Full original Chinese question text asking about predictability.
 comp,Raw predictability rating as recorded in the original data (same scale as predictability).
+session_id,Unique identifier for an experimental or survey session.
+handedness,Participant's self-reported handedness.
+stimulus_type,"Type or category of the presented stimulus, such as word or pseudoword."
+stimulus_translation,"English translation of the presented Italian stimulus, when applicable."
+visual_rating,Participant's visual perceptual-strength rating for the stimulus.
+auditory_rating,Participant's auditory perceptual-strength rating for the stimulus.
+haptic_rating,Participant's haptic perceptual-strength rating for the stimulus.
+olfactory_rating,Participant's olfactory perceptual-strength rating for the stimulus.
+gustatory_rating,Participant's gustatory perceptual-strength rating for the stimulus.
