@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 import zipfile
 
+import numpy as np
 import pandas as pd
 
 
@@ -10,12 +11,19 @@ INFILE = DATASET_DIR / "processed_data" / "exp1.csv"
 JSONL = DATASET_DIR / "prompts.jsonl"
 ZIPFILE = DATASET_DIR / "prompts.jsonl.zip"
 
-INSTRUCTIONS = (
-    "Compito di priming semantico. In ogni prova leggerai prima una parola e poi "
-    "una seconda sequenza di lettere. Decidi se la seconda sequenza è una parola "
-    "italiana esistente oppure una pseudoparola. Rispondi 1 per una parola "
-    "esistente e 0 per una pseudoparola. Rispondi nel modo più rapido e accurato possibile."
-)
+def randomized_choice_options(num_choices: int):
+    choice_options = list(map(chr, range(65, 91)))
+    return np.random.choice(choice_options, num_choices, replace=False)
+
+
+def build_instructions(choice_options) -> str:
+    return (
+        "Compito di priming semantico. In ogni prova leggerai prima una parola e poi "
+        "una seconda sequenza di lettere. Decidi se la seconda sequenza è una parola "
+        f"italiana esistente oppure una pseudoparola. Rispondi {choice_options[1]} per "
+        f"una parola esistente e {choice_options[0]} per una pseudoparola. Rispondi "
+        "nel modo più rapido e accurato possibile."
+    )
 
 
 def json_scalar(value):
@@ -26,10 +34,10 @@ def json_scalar(value):
     return value
 
 
-def format_response(value):
+def format_response(value, choice_options):
     if pd.isna(value):
         return "nessuna risposta"
-    return str(int(value))
+    return choice_options[int(value)]
 
 
 def format_rt_list(values):
@@ -43,14 +51,14 @@ def format_rt_list(values):
     return result
 
 
-def build_prompt(pdf: pd.DataFrame) -> str:
+def build_prompt(pdf: pd.DataFrame, choice_options) -> str:
     pdf = pdf.sort_values("trial_order").reset_index(drop=True)
-    lines = [INSTRUCTIONS]
+    lines = [build_instructions(choice_options)]
 
     for i, row in enumerate(pdf.itertuples(index=False), start=1):
         lines.append(
             f"Prova {i}: Leggi prima la parola '{row.prime}' e poi la sequenza "
-            f"'{row.target}'. Rispondi <<{format_response(row.response)}>>."
+            f"'{row.target}'. Rispondi <<{format_response(row.response, choice_options)}>>."
         )
 
     return "\n".join(lines)
@@ -62,8 +70,9 @@ def main():
     with JSONL.open("w", encoding="utf-8") as f:
         for participant_id, pdf in df.groupby("participant_id", sort=True):
             pdf = pdf.sort_values("trial_order").reset_index(drop=True)
+            choice_options = randomized_choice_options(num_choices=2)
             record = {
-                "text": build_prompt(pdf),
+                "text": build_prompt(pdf, choice_options),
                 "experiment": str(pdf["experiment"].iloc[0]),
                 "participant_id": json_scalar(participant_id),
                 "age": json_scalar(pdf["age"].iloc[0]),
