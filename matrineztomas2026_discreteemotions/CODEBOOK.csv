@@ -7,9 +7,9 @@ phase_id,"Task phase: production, word_decoding, or emotion_decoding."
 stimulus,"Participant-visible stimulus: an existing Spanish word in Experiment 1 and a novel Spanish letter string in Experiments 2 and 3."
 target_word,Original Spanish source word from which the novel string was derived; available in Experiments 2 and 3 and not displayed to participants.
 response,"Participant response: a generated novel word in Experiment 1, a guessed Spanish word in Experiment 2, or a selected emotion label in Experiment 3."
-response_correct,Correct emotion category for Experiment 3.
-accuracy,Binary indicator of whether the Experiment 3 emotion response matched response_correct.
+response_correct,Correct emotion category; available in Experiment 3 only.
+accuracy,Binary indicator of whether response matched response_correct; available in Experiment 3 only.
 emotion,"Discrete emotion category associated with the source word: anger, disgust, fear, happiness, or sadness."
-rt,Response time in milliseconds.
+rt,Response time in milliseconds; derived from source timing fields as documented in README.md.
 age,Participant age in years.
 gender,"Normalized participant gender: female, male, or unspecified."
