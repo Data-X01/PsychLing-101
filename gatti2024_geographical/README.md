@@ -30,7 +30,8 @@ The raw file is semicolon-delimited and contains the following columns:
 - preserves the raw response key in `response_raw`
 - derives `response_side` from the response key (`a` = left, `l` = right)
 - parses reaction times from `rt_raw` into numeric milliseconds in `rt_ms` by converting decimal commas to decimal points
-- normalizes handedness into `hand` by stripping whitespace and uppercasing, while preserving `hand_raw`
+- normalizes the source gender codes into `gender` (`F` / `M`), while preserving `gender_raw`
+- normalizes handedness into `hand` (`right` / `left`), while preserving `hand_raw`
 - infers `correct_response` and `correct_side` at the ordered city-pair level
 - derives `response_correct` from `response_raw` and `correct_response`
 - verifies that `response_correct` matches the raw `accuracy` field
@@ -47,6 +48,7 @@ Columns in the processed file:
 - `phase_id`
 - `age`
 - `gender`
+- `gender_raw`
 - `hand`
 - `hand_raw`
 - `city_left`
@@ -61,9 +63,10 @@ Columns in the processed file:
 - `rt_ms`
 
 ## Notes
-- The raw `gender` field is preserved as-is. Observed values are `FALSE`, `M`, and `f`.
-- The raw `hand` field contains formatting variation (`DX`, `DX `, `dx`, `SX`); `hand` is a normalized version and `hand_raw` preserves the source value.
+- The raw `gender` field contains `FALSE`, `M`, and `f`; these are standardized to `F` / `M` in `gender`, and the source value is retained in `gender_raw`.
+- The raw `hand` field contains formatting variation (`DX`, `DX `, `dx`, `SX`); these are standardized to `right` / `left` in `hand`, and the source value is retained in `hand_raw`.
 - Response keys are kept in the original coding: `a` for left and `l` for right.
+- Prompt-generation keys are two distinct random uppercase letters sampled once per participant and mapped consistently to the two answer options for that participant.
 - Participant-facing prompt text should contain only task-relevant content. Task metadata such as response side, correctness, and participant attributes belong in metadata fields rather than prompt text.
 - The participant-facing text in `prompts.jsonl.zip` is in Italian, matching the language of the experiment.
 - Each JSONL line contains exactly one participant. Reaction times are stored once per participant in the top-level `rt` list in milliseconds and are aligned with trial order.
