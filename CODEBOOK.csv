@@ -61,6 +61,11 @@ c2_contribution,Raw constituent_2 contribution rating as recorded in the origina
 query_comp,Full original Chinese question text asking about predictability.
 comp,Raw predictability rating as recorded in the original data (same scale as predictability).
 session_id,Unique identifier for an experimental or survey session.
+part_of_speech,Part of speech of the presented stimulus.
+valence,Participant's affective valence rating for the stimulus.
+arousal,Participant's arousal or activation rating for the stimulus.
+dominance,Participant's dominance or perceived-control rating for the stimulus.
+unknown_word,Binary indicator of whether the participant reported not knowing the meaning of the stimulus.
 handedness,Participant's self-reported handedness.
 stimulus_type,"Type or category of the presented stimulus, such as word or pseudoword."
 stimulus_translation,"English translation of the presented Italian stimulus, when applicable."
