@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 import zipfile
 
+import numpy as np
 import pandas as pd
 
 
@@ -10,12 +11,19 @@ INPUT_PATH = DATASET_DIR / "processed_data" / "exp1.csv"
 OUTPUT_PATH = DATASET_DIR / "prompts.jsonl"
 ZIP_PATH = DATASET_DIR / "prompts.jsonl.zip"
 
-INSTRUCTIONS = (
-    "In questo compito vedrai i nomi di due città italiane, una a sinistra e una "
-    "a destra. Indica quale città è geograficamente più vicina a Milano. Premi A "
-    "per scegliere la città a sinistra oppure L per scegliere la città a destra. "
-    "Rispondi nel modo più rapido e accurato possibile."
-)
+def randomized_choice_options(num_choices: int):
+    choice_options = list(map(chr, range(65, 91)))
+    return np.random.choice(choice_options, num_choices, replace=False)
+
+
+def build_instructions(choice_options) -> str:
+    return (
+        "In questo compito vedrai i nomi di due città italiane, una a sinistra e una "
+        "a destra. Indica quale città è geograficamente più vicina a Milano. "
+        f"Premi {choice_options[0]} per scegliere la città a sinistra oppure "
+        f"{choice_options[1]} per scegliere la città a destra. Rispondi nel modo "
+        "più rapido e accurato possibile."
+    )
 
 
 def json_scalar(value):
@@ -39,13 +47,14 @@ def format_rt_list(values):
     return result
 
 
-def build_text(pdf: pd.DataFrame) -> str:
+def build_text(pdf: pd.DataFrame, choice_options) -> str:
     pdf = pdf.sort_values("trial_order").reset_index(drop=True)
-    lines = [INSTRUCTIONS]
+    lines = [build_instructions(choice_options)]
+    side_to_choice = {"left": choice_options[0], "right": choice_options[1]}
     for i, row in enumerate(pdf.itertuples(index=False), start=1):
         lines.append(
             f"Prova {i}: A sinistra compare '{row.city_left}' e a destra compare "
-            f"'{row.city_right}'. Premi <<{row.response_raw}>>."
+            f"'{row.city_right}'. Premi <<{side_to_choice[row.response_side]}>>."
         )
     return "\n".join(lines)
 
@@ -72,8 +81,9 @@ def main():
     with OUTPUT_PATH.open("w", encoding="utf-8") as f:
         for participant_id, pdf in df.groupby("participant_id", sort=True):
             pdf = pdf.sort_values("trial_order").reset_index(drop=True)
+            choice_options = randomized_choice_options(num_choices=2)
             record = {
-                "text": build_text(pdf),
+                "text": build_text(pdf, choice_options),
                 "experiment": str(pdf["experiment"].iloc[0]),
                 "participant_id": json_scalar(participant_id),
                 "age": json_scalar(pdf["age"].iloc[0]),

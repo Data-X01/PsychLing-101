@@ -7,6 +7,35 @@ INPUT_PATH = DATASET_DIR / "original_data" / "time_data.csv"
 OUTPUT_PATH = DATASET_DIR / "processed_data" / "exp1.csv"
 
 
+def normalize_gender(values: pd.Series) -> pd.Series:
+    mapping = {
+        "false": "F",
+        "f": "F",
+        "female": "F",
+        "m": "M",
+        "male": "M",
+    }
+    cleaned = values.astype("string").str.strip().str.lower()
+    normalized = cleaned.map(mapping)
+    invalid = sorted(cleaned[normalized.isna()].dropna().unique())
+    if invalid:
+        raise ValueError(f"Unexpected gender codes: {invalid}")
+    return normalized
+
+
+def normalize_hand(values: pd.Series) -> pd.Series:
+    mapping = {
+        "dx": "right",
+        "sx": "left",
+    }
+    cleaned = values.astype("string").str.strip().str.lower()
+    normalized = cleaned.map(mapping)
+    invalid = sorted(cleaned[normalized.isna()].dropna().unique())
+    if invalid:
+        raise ValueError(f"Unexpected hand codes: {invalid}")
+    return normalized
+
+
 def infer_correct_response(df: pd.DataFrame) -> pd.DataFrame:
     rows = []
 
@@ -84,8 +113,10 @@ def main():
     df["age"] = pd.to_numeric(df["age"], errors="raise").astype("Int64")
     df["accuracy"] = pd.to_numeric(df["accuracy"], errors="raise").astype("Int64")
 
+    df["gender_raw"] = df["gender"]
+    df["gender"] = normalize_gender(df["gender"])
     df["hand_raw"] = df["hand"]
-    df["hand"] = df["hand"].str.strip().str.upper()
+    df["hand"] = normalize_hand(df["hand"])
 
     df["rt_ms"] = pd.to_numeric(df["rt_raw"].str.replace(",", ".", regex=False), errors="raise")
 
@@ -132,6 +163,7 @@ def main():
         "phase_id",
         "age",
         "gender",
+        "gender_raw",
         "hand",
         "hand_raw",
         "city_left",
