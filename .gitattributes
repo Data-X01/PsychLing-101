@@ -1,0 +1,4 @@
+lynott2020lancaster/original_data/sm_norms_trial_level.csv filter=lfs diff=lfs merge=lfs -text
+lynott2020lancaster/processed_data/exp1.csv filter=lfs diff=lfs merge=lfs -text
+lynott2020lancaster/processed_data/exp2.csv filter=lfs diff=lfs merge=lfs -text
+lynott2020lancaster/prompts.jsonl.zip filter=lfs diff=lfs merge=lfs -text

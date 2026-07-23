@@ -1,0 +1,18 @@
+column_name,file,description
+participant_id,exp1.csv / exp2.csv,Globally unique participant identifier (source: participant_ID in original data; e.g. Perception_ID_0001)
+age,exp1.csv / exp2.csv,Participant age in years (source: Age in original data)
+gender,exp1.csv / exp2.csv,Participant self-reported gender (source: Sex in original data)
+stimulus,exp1.csv / exp2.csv,The English word being rated (source: Word in original data)
+trial_id,exp1.csv / exp2.csv,1-based index of the word within the participant's session within the norming component
+Auditory,exp1.csv,Rating of how strongly the word is experienced by hearing (0 = not at all; 5 = greatly; NA = no response recorded)
+Gustatory,exp1.csv,Rating of how strongly the word is experienced by tasting (0 = not at all; 5 = greatly; NA = no response recorded)
+Haptic,exp1.csv,Rating of how strongly the word is experienced by feeling through touch (0 = not at all; 5 = greatly; NA = no response recorded)
+Interoceptive,exp1.csv,Rating of how strongly the word is experienced by sensations inside the body (0 = not at all; 5 = greatly; NA = no response recorded)
+Olfactory,exp1.csv,Rating of how strongly the word is experienced by smelling (0 = not at all; 5 = greatly; NA = no response recorded)
+Visual,exp1.csv,Rating of how strongly the word is experienced by seeing (0 = not at all; 5 = greatly; NA = no response recorded)
+Foot_leg,exp2.csv,Rating of how strongly the word is experienced by performing an action with the foot or leg (0 = not at all; 5 = greatly; NA = no response recorded)
+Hand_arm,exp2.csv,Rating of how strongly the word is experienced by performing an action with the hand or arm (0 = not at all; 5 = greatly; NA = no response recorded)
+Head,exp2.csv,Rating of how strongly the word is experienced by performing an action with the head excluding mouth (0 = not at all; 5 = greatly; NA = no response recorded)
+Mouth,exp2.csv,Rating of how strongly the word is experienced by performing an action with the mouth or throat (0 = not at all; 5 = greatly; NA = no response recorded)
+Torso,exp2.csv,Rating of how strongly the word is experienced by performing an action with the torso (0 = not at all; 5 = greatly; NA = no response recorded)
+unknown_word,exp1.csv / exp2.csv,Whether the participant indicated not knowing the meaning of the word (0 = knows the word; 1 = does not know the word; source: Dont_know_word in original data)
