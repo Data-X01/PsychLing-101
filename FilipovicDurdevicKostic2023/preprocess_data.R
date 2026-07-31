@@ -44,12 +44,13 @@ dat3=read.csv("original_data/matrica.round3x.csv",T)
 dim(dat3)
 colnames(dat3)
 
+dat3$Trial_order_corrected = as.numeric(dat3$Trial_order) + 1
 
 #dat3$list = dat3$exp_title
 dat3$participant_id = dat3$subject_code
 dat3$trial_id = dat3$trial_number
 dat3$stimulus = dat3$rec
-dat3$trial_order = dat3$Trial_order
+dat3$trial_order = dat3$Trial_order_corrected
 dat3$lexicality = dat3$leksikalnost
 dat3$response = dat3$response
 dat3$accuracy = dat3$correct
@@ -65,12 +66,13 @@ dat4=read.csv("original_data/matrica.round4x.csv",T)
 dim(dat4)
 colnames(dat4)
 
+dat4$Trial_order_corrected = as.numeric(dat4$Trial_order) + 1
 
 #dat4$list = dat4$exp_title
 dat4$participant_id = dat4$subject_code
 dat4$trial_id = dat4$trial_number
 dat4$stimulus = dat4$rec
-dat4$trial_order = dat4$Trial_order
+dat4$trial_order = dat4$Trial_order_corrected
 dat4$lexicality = dat4$leksikalnost
 dat4$response = dat4$response
 dat4$accuracy = dat4$correct

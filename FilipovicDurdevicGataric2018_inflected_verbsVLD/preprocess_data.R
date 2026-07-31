@@ -3,10 +3,12 @@ dat=read.csv("original_data/FilipovicDurdevicGataric2018_inflected_verbs_VLD.csv
 dim(dat)
 colnames(dat)
 
+dat$count_exp_sequence_corrected = as.numeric(dat$count_exp_sequence) - 10
+
 dat$participant_id = dat$naziv_fajla
 dat$trial_id = dat$trial_number
 dat$stimulus = dat$rec
-dat$trial_order = dat$count_exp_sequence
+dat$trial_order = dat$count_exp_sequence_corrected
 dat$lexicality = dat$leksikalnost
 dat$response = dat$response
 dat$accuracy = dat$correct

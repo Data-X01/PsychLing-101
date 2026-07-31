@@ -57,14 +57,15 @@ for participant_id in participants:
         df_trial = df_participant_id.loc[df_participant_id['trial_order'] == trial]
         if not df_trial.empty:
             # Extract word and participant's response
+            trial_order_number = df_trial['trial_order'].iloc[0]  # <-- new line
             word = df_trial['stimulus'].iloc[0]
             response = df_trial['response'].iloc[0]
             accuracy = df_trial['accuracy'].iloc[0]
-            if pd.isna(df_trial['response'].iloc[0]) or response.strip() == '':
-                datapoint = f'{word}. You press nothing.\n'
+            if pd.isna(df_trial['response'].iloc[0]) or response.strip() in ('', 'None', 'none', 'nan', 'NaN'):
+                datapoint = f'{trial_order_number}. {word}. You press nothing.\n'   # <-- added ""{trial_order_number}. "
             else:
                 feedback = 'Correct.' if accuracy == 1 else 'Incorrect.'
-                datapoint = f'{word}. You press <<{response}>>. {feedback}\n'
+                datapoint = f'{trial_order_number}. {word}. You press <<{response}>>. {feedback}\n'   # <-- added ""{trial_order_number}. "
             prompt += datapoint
             # reaction time
             rt = df_trial['rt'].iloc[0].item()
