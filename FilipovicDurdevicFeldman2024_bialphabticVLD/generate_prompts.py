@@ -106,10 +106,10 @@ for participant_id in participants:
 
             #if pd.isna(df_trial['response'].iloc[0]) or response.strip() == '':
             if response.strip() in ('', 'None', 'none', 'nan', 'NaN'):
-                datapoint = f'{trial}. {word}. You press nothing.\n'  # <-- added "{trial}. "
+                datapoint = f'Trial {trial}: {word}. You press nothing.\n'  # <-- added "{trial}. "
             else:
                 feedback  = 'Correct.' if accuracy == 1 else 'Incorrect.'
-                datapoint = f'{trial}. {word}. You press <<{response}>>. {feedback}\n'   # <-- added "{trial}. "
+                datapoint = f'Trial {trial}: {word}. You press <<{response}>>. {feedback}\n'   # <-- added "{trial}. "
 
             prompt += datapoint
 
