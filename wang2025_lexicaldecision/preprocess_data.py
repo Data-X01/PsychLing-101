@@ -33,7 +33,8 @@ rename_map = {
     "lexicality": "condition",
     "accuracy": "accuracy",
     "rt": "rt",
-    "respons": "response"
+    "respons": "response",
+    "image_filename": "image_filename",
 }
 
 df_cleaned = df.rename(columns=rename_map)
