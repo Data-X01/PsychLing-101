@@ -43,4 +43,4 @@ df_cleaned = df.rename(columns=rename_map)
 df_cleaned["phase_id"] = df_cleaned["phase_id"].astype("string")
 
 # Export the cleaned file
-df_cleaned.to_csv("/Users/cyhsieh/PsychLing-101/wang2025_lexicaldecision/processed_data/exp.csv", index=False)
+df_cleaned.to_csv("/Users/cyhsieh/PsychLing-101/wang2025_lexicaldecision/processed_data/exp1.csv", index=False)
