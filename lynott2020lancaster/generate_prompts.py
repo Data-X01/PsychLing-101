@@ -188,7 +188,7 @@ def build_prompts(
             entry: dict = {
                 "text":           text,
                 "experiment":     exp_name,
-                "participant_id":  f"{pid}_part{chunk_idx}",
+                "participant":    f"{pid}_part{chunk_idx}",
             }
             if pd.notna(age):
                 entry["age"] = int(age)
