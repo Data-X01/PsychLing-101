@@ -1,0 +1,28 @@
+dat=read.csv("original_data/FilipovicDurdevicMilin2019.csv",T)
+
+dim(dat)
+colnames(dat)
+
+library(dplyr)
+
+dat <- dat %>%
+  group_by(naziv_fajla) %>%
+  mutate(count_exp_sequence_corrected = dense_rank(count_exp_sequence)) %>%
+  ungroup()
+
+
+dat$list = dat$exp_title
+dat$participant_id = dat$naziv_fajla
+dat$trial_id = dat$trial_number
+dat$stimulus = dat$rec
+dat$trial_order = dat$count_exp_sequence_corrected
+dat$lexicality = dat$leksikalnost
+dat$response = dat$response
+dat$accuracy = dat$correct
+dat$rt = dat$response_time
+
+df <- dat[, c("list", "participant_id", "trial_id", "stimulus", "trial_order", "lexicality", "response", "accuracy", "rt")]
+write.csv(df, "processed_data/exp1.csv", row.names = FALSE)
+
+
+

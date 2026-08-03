@@ -1,0 +1,13 @@
+Recommended Column Name,Description
+phase_id,Identifier for the experimental phase or block a trial belongs to (e.g., practice, test, recall).
+list,Experimental list number (1-8). Items were distributed across 8 lists.
+participant_id,Unique identifier assigned to each participant.
+trial_id,Unique identifier for a single trial within a session or condition.
+stimulus,The linguistic stimulus presented to the participant in a given trial.
+trial_order,Presentation order within the session (0-indexed). The order in which the participant saw this trial.
+lexicality,Variable with two levels denoting lexical status of the sequence of letters (word and pseudoword).
+target_alphabet,Alphabet of target presentation.
+phonological_ambiguity,Feature of the orthographic sequence having phonological mapping in two alphabets.
+response,Participant's response
+accuracy,Binary indicator of whether the participant's response was correct.
+rt,Time taken by the participant to respond, in milliseconds.
