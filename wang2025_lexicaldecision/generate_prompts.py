@@ -3,6 +3,7 @@
 # Load libararies
 import pandas as pd
 import jsonlines
+import numpy as np
 
 # Load data
 df = pd.read_csv("/Users/cyhsieh/PsychLing-101/wang2025_lexicaldecision/processed_data/exp1.csv")
@@ -10,14 +11,20 @@ df = pd.read_csv("/Users/cyhsieh/PsychLing-101/wang2025_lexicaldecision/processe
 # create empty list to store all prompts
 all_prompts = []
 
+# Randomization Function
+def randomized_choice_options(num_choices):
+    choice_options = list(map(chr, range(65, 91)))
+    return np.random.choice(choice_options, num_choices, replace=False)
+
 ###########################
 # Megastudy #
 ###########################
 
-# Generate individual prompts for participants with batching
+# Generate individual prompts for participants with randomised options and batching
 
 participant_list = df['participant_id'].unique()
 trial_num = range(df['trial_id'].max() + 1)
+
 max_chars = 50000
 
 for participant in participant_list:
@@ -25,20 +32,25 @@ for participant in participant_list:
     #############################
     # Randomise options per participant
     #############################
-    keys = ['j', 'f']
-    np.random.shuffle(keys)
-    real_word_key = keys[0]
-    fake_word_key = keys[1]
+    choice_options = randomized_choice_options(num_choices=2)
+    # Assign meanings to options
+    real_word_option = choice_options[0]
+    fake_word_option = choice_options[1]
+    #############################
     # Participant-specific instruction
+    #############################
     instruction = (
         f"每次试验包括一个注视标记和一个刺激（真字或假字）。"
         f"首先，屏幕中央呈现注视标记500毫秒，120毫秒后呈现刺激。"
-        f"如果你认为该刺激是真字，请按 {real_word_key} 键；"
-        f"如果认为是假字，请按 {fake_word_key} 键。"
+        f"如果你认为该刺激是真字，请按 <<{real_word_option}>> 键；"
+        f"如果认为是假字，请按 <<{fake_word_option}>> 键。"
         f"虽然没有反应时间限制，但请尽可能快速并尽最大准确性作答。"
         f"如果你曾经见过或认识这些刺激，那么它很有可能是真字；"
         f"如果你没有见过，那么它很可能不是真字。\n"
     )
+    #############################
+    # Batching
+    #############################
     batch_text = instruction
     batch_num = 1
     last_rt = None
@@ -53,12 +65,13 @@ for participant in participant_list:
             accuracy = exp_trial['accuracy'].iloc[0]
             rt = exp_trial['rt'].iloc[0]
             #############################
-            # Convert response using participant mapping
+            # Convert original response
+            # to randomised option label
             #############################
             if response == 'j':
-                randomized_response = real_word_key
+                randomized_response = real_word_option
             elif response == 'f':
-                randomized_response = fake_word_key
+                randomized_response = fake_word_option
             else:
                 randomized_response = response
             datapoint = (
@@ -68,7 +81,7 @@ for participant in participant_list:
                 f'反应时间为 {rt} 毫秒。\n'
             )
             #############################
-            # Batch by character length
+            # Check character limit
             #############################
             if len(batch_text) + len(datapoint) > max_chars:
                 all_prompts.append({
@@ -79,11 +92,12 @@ for participant in participant_list:
                     'rt': last_rt
                 })
                 batch_num += 1
+                # New batch keeps same participant instruction
                 batch_text = instruction + datapoint
             else:
                 batch_text += datapoint
             last_rt = rt
-    # Save remaining text in final batch
+    # Save final batch
     if batch_text != instruction:
         all_prompts.append({
             'text': batch_text,
