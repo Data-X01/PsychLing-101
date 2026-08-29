@@ -74,3 +74,12 @@ auditory_rating,Participant's auditory perceptual-strength rating for the stimul
 haptic_rating,Participant's haptic perceptual-strength rating for the stimulus.
 olfactory_rating,Participant's olfactory perceptual-strength rating for the stimulus.
 gustatory_rating,Participant's gustatory perceptual-strength rating for the stimulus.
+dmdx_item_code,"Item code assigned by the DMDX presentation software, encoding the experimental list, the design factors and the item number in its digits."
+exposure_duration_ms,Duration in milliseconds for which the stimulus was presented.
+stimulus_length,Number of characters in the presented stimulus.
+letter_position,Position of the probed letter within the presented letter string (1-indexed; counted from the left).
+position_type,Whether the probed letter sat inside the letter string (internal) or at one of its ends (external).
+target_letter,The letter that actually occurred at the probed position of the stimulus; the correct alternative in a forced choice between two letters.
+distractor_letter,The incorrect alternative in a forced choice between two letters.
+letter_similarity_human,Human-rated visual similarity of a pair of letters; higher values indicate greater similarity.
+letter_similarity_hmax,Visual similarity of a pair of letters derived from an HMAX computational model of visual cortex; runs from 0 to 1 and reaches 1 for a letter compared with itself.

@@ -1,0 +1,20 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant.
+trial_id,Unique identifier for a single trial within a session or condition.
+dmdx_item_code,The full five-digit DMDX item code of the trial: digit 1 the counterbalancing list; digit 2 the orthographic status (1 word; 2 pseudoword; 3 consonant string); digit 3 the visual overlap (1 low; 2 high); digits 4-5 the item number. trial_id is this code without its leading list digit.
+trial_order,Presentation order within the session (0-indexed). The order in which the participant saw this trial.
+exposure_duration_ms,Duration in milliseconds for which the letter string was presented; thresholded individually for each participant in a preliminary task and therefore constant within a participant (33 | 50 | 67 | 83).
+list,Experimental list number (1-4). Items were distributed across 4 lists; each participant saw exactly one list.
+stimulus_type,"Type or category of the presented stimulus, such as word or pseudoword."
+condition,Experimental condition assigned to the trial.
+stimulus,The linguistic or visual stimulus presented to the participant in a given trial.
+stimulus_length,Number of characters in the presented letter string (4-6).
+letter_position,Position of the probed letter within the presented letter string (1-indexed; counted from the left).
+position_type,Whether the probed letter sat inside the letter string (internal) or in its final position (external). The first position is never probed; external trials are always the last letter of a 4- or 5-letter string.
+target_letter,The letter that actually occurred at letter_position in the presented string; the correct alternative of the two-alternative forced choice.
+distractor_letter,The incorrect alternative of the two-alternative forced choice; the letter that occupies letter_position in the foil string selected by the trial's visual-overlap condition.
+letter_similarity_human,Mean human rating of the visual similarity between target_letter and distractor_letter on a seven-point scale; higher values indicate greater similarity (observed range 1.07-5.53).
+letter_similarity_hmax,Visual similarity between target_letter and distractor_letter derived from an HMAX computational model of visual cortex; the underlying scale runs from 0 to 1 and reaches 1 for a letter compared with itself (observed range 0.37-0.87).
+response,The letter the participant reported. Not recorded in the source data; reconstructed from accuracy because the two-alternative forced choice records only correctness: target_letter on a correct trial and distractor_letter on an incorrect one. Carries no information beyond accuracy.
+accuracy,Binary indicator of whether the participant's response was correct.
+rt,"Time taken by the participant to respond, in milliseconds."
