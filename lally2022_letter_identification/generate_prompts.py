@@ -27,6 +27,11 @@ take in: 'snow' really was presented, and that it went by too fast to read is a
 fact about their perception rather than about the display. This is the same
 reasoning that keeps the button box and the spacebar in the instructions.
 
+Both measured quantities are marked with << >>: the letter the participant
+chose and the time they took. The exposure duration is constant within a
+session, so it is stated once between the instruction and the first trial
+instead of being repeated on every line.
+
 No feedback is shown after a trial. The DMDX script sets <nfb>, so participants
 were never told whether a response was correct, and the prompts must not tell a
 model either. This departs from the worked example in the repository README,
@@ -61,8 +66,11 @@ N_TRIALS_PER_PARTICIPANT = 144
 N_TRIALS = N_PARTICIPANTS * N_TRIALS_PER_PARTICIPANT
 TOKEN_LIMIT = 32000
 
+# Both measured quantities are marked: the letter chosen and the time taken.
 TRIAL_TEMPLATE = ("Trial %d: The letter string was '%s'. The letters '%s' and '%s' "
-                  "appeared above and below the %s position. You press <<%s>>.")
+                  "appeared above and below the %s position. You press <<%s>>. "
+                  "RT: <<%d>> ms.")
+MARKERS_PER_TRIAL = 2
 # The probed position is named in words, the way the display would be described.
 # The table covers every position a 4- to 6-letter string has, not only the ones
 # this data set happens to probe (positions 2 to 5), so that the lookup stays
@@ -91,6 +99,12 @@ INSTRUCTION_LINES = (
     "Press the SPACEBAR to begin the experiment.",
 )
 INSTRUCTION = "\n".join(INSTRUCTION_LINES)
+
+# Exposure duration is constant within a session and differs between participants,
+# so it is stated once after the instruction rather than repeated on every trial.
+# It is kept out of the instruction itself because the original screen never
+# mentions it, and that screen is reproduced unaltered.
+EXPOSURE_NOTE = "In this session each letter string was shown for %d ms."
 
 
 def require(condition, message):
@@ -135,14 +149,16 @@ def participant_rng(participant_id):
 def build_prompt(participant_trials):
     """Render one participant's whole session as a single prompt."""
     rng = participant_rng(participant_trials["participant_id"].iloc[0])
+    exposure = int(participant_trials["exposure_duration_ms"].iloc[0])
 
-    lines = [INSTRUCTION, ""]
+    lines = [INSTRUCTION, "", EXPOSURE_NOTE % exposure, ""]
     for number, trial in enumerate(participant_trials.itertuples(index=False), start=1):
         options = [trial.target_letter, trial.distractor_letter]
         rng.shuffle(options)
         lines.append(TRIAL_TEMPLATE % (
             number, trial.stimulus, options[0], options[1],
-            ordinal(trial.letter_position), trial.response))
+            ordinal(trial.letter_position), trial.response,
+            round(float(trial.rt))))
     return "\n".join(lines)
 
 
@@ -196,11 +212,26 @@ def check_records(records, trials):
         require(len(trial_lines) == N_TRIALS_PER_PARTICIPANT,
                 "participant %s has %d trial lines, expected %d"
                 % (participant_id, len(trial_lines), N_TRIALS_PER_PARTICIPANT))
-        require(text.count("<<") == N_TRIALS_PER_PARTICIPANT
-                and text.count(">>") == N_TRIALS_PER_PARTICIPANT,
+        expected_markers = N_TRIALS_PER_PARTICIPANT * MARKERS_PER_TRIAL
+        require(text.count("<<") == expected_markers and text.count(">>") == expected_markers,
                 "participant %s has %d/%d << >> markers, expected %d of each"
-                % (participant_id, text.count("<<"), text.count(">>"),
-                   N_TRIALS_PER_PARTICIPANT))
+                % (participant_id, text.count("<<"), text.count(">>"), expected_markers))
+
+        # The instruction screen must survive assembly unaltered, and the exposure
+        # duration must be stated once, with this participant's own value.
+        require(text.startswith(INSTRUCTION + "\n\n"),
+                "participant %s: the prompt does not open with the instruction screen"
+                % participant_id)
+        exposure = int(participant_trials["exposure_duration_ms"].iloc[0])
+        note = EXPOSURE_NOTE % exposure
+        require(text.count(note) == 1,
+                "participant %s: %r appears %d times, expected once"
+                % (participant_id, note, text.count(note)))
+        require(text.startswith(INSTRUCTION + "\n\n" + note + "\n\n"),
+                "participant %s: the exposure note is not between the instruction "
+                "and the first trial" % participant_id)
+        require(sum(line.startswith("In this session") for line in text.split("\n")) == 1,
+                "participant %s: more than one exposure note" % participant_id)
 
         # No feedback was given in the experiment, so none may leak into the prompt.
         for word in ("Correct", "Incorrect"):
@@ -226,6 +257,11 @@ def check_records(records, trials):
                     "participant %s: %r does not name position %d as %r"
                     % (participant_id, line, trial.letter_position,
                        ordinal(trial.letter_position)))
+            # The second marked value is this trial's reaction time, rounded to a
+            # whole millisecond.
+            require("RT: <<%d>> ms." % round(float(trial.rt)) in line,
+                    "participant %s: %r does not carry the reaction time %r"
+                    % (participant_id, line, trial.rt))
             # The response is one of the two candidates, and it agrees with accuracy.
             require(trial.response in (trial.target_letter, trial.distractor_letter),
                     "participant %s, string %r: the response %r is neither candidate"

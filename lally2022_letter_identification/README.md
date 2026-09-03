@@ -77,9 +77,17 @@ One JSON object per line, one line per participant. Fields: `text`, `experiment`
 Prompt template:
 
 ```
+[the eleven instruction lines, verbatim]
+
+In this session each letter string was shown for {exposure_duration_ms} ms.
+
 Trial {n}: The letter string was '{stimulus}'. The letters '{option_a}' and '{option_b}'
-appeared above and below the {ordinal} position. You press <<{response}>>.
+appeared above and below the {ordinal} position. You press <<{response}>>. RT: <<{rt}>> ms.
 ```
+
+Both quantities the experiment measured are marked with `<< >>`: the letter the participant chose and the time they took to choose it, following the lexical-decision contributions such as `hutchison2013_semantic`, which mark the response and the reaction time on the same trial line.
+
+The individually calibrated exposure duration is stated on its own line between the instruction and the first trial, rather than written into the instruction, because the original instruction screen never mentions it and that screen is reproduced unaltered. This follows the convention set out in `schiekiera2026_pwi_en/generate_prompts.py`: parameters that are constant within a session belong to the instruction block instead of being repeated on every trial line.
 
 The presented string is given in full, because the prompt transcribes the display rather than the participant's perception of it: the string really was shown, and that it went by too fast to read is a fact about the reader, not the screen. One consequence is worth stating plainly: reading the string off the page is easy, so a prompt reproduces the stimulus and the response but not the perceptual difficulty the participant faced at a threshold exposure under masking. The visual-similarity manipulation likewise has no textual counterpart.
 
