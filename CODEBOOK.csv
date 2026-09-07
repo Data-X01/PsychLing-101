@@ -74,3 +74,9 @@ auditory_rating,Participant's auditory perceptual-strength rating for the stimul
 haptic_rating,Participant's haptic perceptual-strength rating for the stimulus.
 olfactory_rating,Participant's olfactory perceptual-strength rating for the stimulus.
 gustatory_rating,Participant's gustatory perceptual-strength rating for the stimulus.
+experiment_group,"Which of the pooled experiments the participant took part in. Experiments differ in their category sets, in the number of rounds and in the time allowed per round."
+fluency_list_id,"Fluency round a response belongs to, numbered from 0 within each participant. One round is one timed attempt at one category cue."
+cumulative_rt,"Time from the onset of the round to this response, in milliseconds; the running total of rt within the round."
+round_time_limit,"Time allowed for one round, in milliseconds. Documented where the task code was published, and otherwise reconstructed from the data as the smallest whole-minute deadline no response of that participant exceeds."
+is_repeated_response,Flag marking a response already given earlier in the same round (a perseveration).
+is_category_mismatch,"Flag marking a response whose category label disagrees with the majority label of the round it is stored in, i.e. one filed under the wrong round. The label itself is left as recorded."
