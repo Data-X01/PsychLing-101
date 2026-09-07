@@ -1,0 +1,15 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant (original session labels remapped to integers 1-1015).
+lab,"Data collection site (one of 14 universities: Arizona, Bristol, Colby, MARCS, Macquarie, Melbourne, Nebraska, Plymouth, RHUL, Singapore, Skidmore, UWO, WUSTL, Warwick)."
+trial_order,"Presentation order within the session (1-840). The 28 practice trials that preceded these are not distributed, so the source trial numbers 29-868 are renumbered from 1."
+stimulus,The target letter string presented in upper case for the lexical decision.
+prime,"The prime shown in lower case for 50 ms immediately before the target, after a forward mask."
+condition,"Prime type abbreviation (28 levels), e.g. ID = identity, SN-M = medial substitution, ALD-ARB = unrelated arbitrary. See README.md for the full list."
+prime_code,"Positional code describing how the prime was derived from the target relative to 123456, e.g. 123d56 = a random letter substituted at position 4. 'd' denotes a random letter not present in the target."
+stimulus_type,"Type of the target: word or nonword."
+response,"The participant's decision (word or nonword). Empty when the response deadline elapsed without a response. The source data records only accuracy, so the response is recovered from accuracy and stimulus_type; the task had exactly two alternatives."
+accuracy,Binary indicator of whether the participant's response was correct.
+rt,"Time taken by the participant to respond, in milliseconds. For timeouts this is the 2000 ms deadline."
+is_timeout,Binary indicator of whether the 2000 ms response deadline elapsed without a response.
+vocabulary_score,"Participant's proportion correct on the 40-item Shipley (1940) vocabulary test administered after the main task. Empty where not recorded."
+spelling_score,"Participant's proportion correct on the 82-item spelling lexical decision block administered after the main task. Empty where not recorded."
