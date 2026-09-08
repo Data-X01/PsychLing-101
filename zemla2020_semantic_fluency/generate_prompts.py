@@ -5,16 +5,16 @@ session: the on-screen instructions, then every round in order, then every item
 they named inside each round, with the feedback screen the task showed between
 rounds.
 
-Input : processed_data/exp1.csv (written by preprocess_data.py)
-Output: prompts.jsonl.zip, holding prompts.jsonl
+Input : processed_data/exp1.csv and processed_data/exp2.csv (from preprocess_data.py)
+Output: prompts.jsonl.zip, holding prompts.jsonl -- both files' participants in
+        one archive, told apart by the `experiment` field.
 
-All wording shown to the participant is taken verbatim from the published task,
-original_data/from_github/fluency_task/web_version/main.html. Only two values
-are substituted -- the time limit and the number of rounds -- because those
-differ between the three pooled experiments while the HTML hard-codes the values
-of Experiment1. A built-in check re-inserts the original values and compares the
-result against the HTML, so the claim of verbatim wording is verified on
-every run.
+Every word shown to the participant is taken verbatim from the published task,
+original_data/from_github/fluency_task/web_version/main.html. Nothing is
+substituted into it: both collections here ran the parameters the HTML
+hard-codes, three minutes and nine rounds. A built-in check compares the
+templates against that HTML on every run, so the claim of verbatim wording is
+verified rather than asserted.
 
 Run from the contribution folder:  python3 generate_prompts.py
 """
@@ -28,15 +28,20 @@ import zipfile
 import pandas as pd
 
 BASE = Path(__file__).resolve().parent
-INPUT_FILE = BASE / "processed_data" / "exp1.csv"
+PROCESSED_DIR = BASE / "processed_data"
 TASK_HTML = BASE / "original_data" / "from_github" / "fluency_task" / "web_version" / "main.html"
 JSONL_FILE = BASE / "prompts.jsonl"
 ZIP_FILE = BASE / "prompts.jsonl.zip"
 
-EXPERIMENT = "zemla2020_semantic_fluency/exp1"
-
-EXPECTED_N_PARTICIPANTS = 82
-EXPECTED_N_RESPONSES = 24572
+# One processed file per collection, in the order their prompts are written.
+# exp2.csv holds the collection the source calls Experiment3; there is no file
+# for Experiment2, which preprocess_data.py excludes.
+INPUTS = [
+    ("exp1.csv", "zemla2020_semantic_fluency/exp1", 20, 4335),
+    ("exp2.csv", "zemla2020_semantic_fluency/exp2", 50, 13264),
+]
+EXPECTED_N_PARTICIPANTS = 70
+EXPECTED_N_RESPONSES = 17599
 
 # PsychLing-101 budget for one prompt.
 TOKEN_LIMIT = 32_000
@@ -49,38 +54,44 @@ TOKENS_PER_CHAR = 0.30
 ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
 ZIP_MEMBER_NAME = "prompts.jsonl"
 
-NUMBER_WORDS = {
-    2: "two", 3: "three", 4: "four", 8: "eight", 9: "nine",
-    10: "ten", 12: "twelve", 18: "eighteen",
-}
+# How many rounds a participant was told to expect: app.js runs
+# `categories.length * numx` = 3 x 3, and when a round is replayed it decrements
+# its counter so the extra round does not raise the total. A participant who
+# replayed a round therefore contributes ten lists but was told about nine
+# throughout. Both retained collections ran this design; the value is checked
+# against the task's own screens in check_wording_is_verbatim().
+DESIGN_ROUNDS = 9
+
+# Round length in minutes. The instructions below quote the task verbatim and
+# state this in words, so unlike the round header -- which is this script's own
+# scaffolding and reads the value from the data -- it cannot adapt to a
+# participant who ran at some other limit. Every participant is therefore
+# required to match it, or the two would contradict each other silently.
+INSTRUCTION_MINUTES = 3
+
+# The task replayed any round with this many responses or fewer (app.js:126).
+REPLAY_THRESHOLD = 5
+
+NUMBER_WORDS = {3: "three", 9: "nine"}
 
 # --------------------------------------------------------------------------
 # Wording, transcribed from main.html
 # --------------------------------------------------------------------------
-# The instructions screen. "three minutes" and "nine times" are the only
-# substituted spans; everything else is the published text.
+# The instructions screen, word for word. Both collections ran three minutes and
+# nine rounds, the values the HTML states, so nothing is parameterised.
 INSTRUCTIONS = (
     "Instructions\n"
     "For each round in this task, you will be given a category and asked to "
     "list as many items from that category as you can. For instance, if the "
     "category is instruments, you should list as many instruments as you can "
     "recall.\n"
-    "- You will have {minutes} minutes to list as many items from the category "
+    "- You will have three minutes to list as many items from the category "
     "as possible.\n"
     "- Please rely only on memory, and do not search the Internet for answers.\n"
     "- Do not enter the same item twice in a round, or list two items with the "
     'same suffix. For example if you list "guitar", do not list "guitars" in '
     "the same round.\n"
-    "You will be asked to do this {rounds} times in total."
-)
-
-# Shown on both feedback screens. Experiment2 alternated two categories rather
-# than sampling from three, so this notice is dropped for that group: whether
-# participants were told a category could repeat is not established for them.
-REPEAT_NOTICE = (
-    "The next round may or may not be a category you have already done. If it "
-    "is a category you've already done, it's OK to list items you've listed "
-    "before, but you may also list new items."
+    "You will be asked to do this nine times in total."
 )
 
 # Shown after a round that met the response threshold and was not the last.
@@ -90,8 +101,10 @@ BETWEEN_ROUNDS = (
     "\n"
     "You have completed {done} of {total} rounds.\n"
     "\n"
-    "{repeat_notice}Please try to list as many items as possible, but only "
-    "list an item once per round."
+    "The next round may or may not be a category you have already done. If it "
+    "is a category you've already done, it's OK to list items you've listed "
+    "before, but you may also list new items. Please try to list as many items "
+    "as possible, but only list an item once per round."
 )
 
 # Shown after a round with five or fewer responses, which the task replayed.
@@ -101,18 +114,10 @@ TOO_FEW = (
     "\n"
     "Let's try that round again! Please use the entire allotted time to try "
     "and generate as many items as possible, listing each item once per "
-    "round.{repeat_notice}"
+    "round. The next round may or may not be a category you have already done. "
+    "If it is a category you've already done, it's OK to list items you've "
+    "listed before, but you may also list new items."
 )
-
-# The task replayed any round with this many responses or fewer (app.js:126).
-REPLAY_THRESHOLD = 5
-
-# How many rounds a participant was told to expect. This is a property of the
-# design, not of the delivered data: app.js ran `categories.length * numx` = 3 x 3
-# rounds and, when a round was replayed, decremented its counter so the extra
-# round did not raise the total. A participant who replayed a round therefore
-# contributes ten lists to the data but was told about nine throughout.
-DESIGN_ROUNDS = {"Experiment1": 9, "Experiment3": 9}
 
 ROUND_HEADER = "Round {number}. Category: {category}. You have {minutes} minutes."
 RESPONSE_LINE = "You say <<{item}>> after <<{rt}>> ms."
@@ -148,9 +153,7 @@ def screen_text(markup, div_id):
     placeholders such as {game.category} are left in place, so that the
     templates above can be checked against them.
     """
-    match = re.search(
-        rf'<div id="{div_id}">(.*?)</div>', markup, flags=re.DOTALL
-    )
+    match = re.search(rf'<div id="{div_id}">(.*?)</div>', markup, flags=re.DOTALL)
     require(match, f"Screen '{div_id}' not found in {TASK_HTML.name}.")
     body = re.sub(r"<a\b.*?</a>", " ", match.group(1), flags=re.DOTALL)
     return html_module.unescape(re.sub(r"<[^>]+>", " ", body))
@@ -162,12 +165,26 @@ def normalise(text):
 
 
 def check_wording_is_verbatim():
-    """Confirm the templates reproduce the published screens word for word."""
+    """Confirm the templates reproduce the published screens word for word.
+
+    Because nothing is substituted into the instructions any more, this also
+    pins DESIGN_ROUNDS: the between-round screen states the total in digits and
+    the instructions state it in words, and both are compared here.
+    """
     markup = TASK_HTML.read_text(encoding="utf-8")
 
-    # main.html hard-codes the parameters of Experiment1, so put those back.
-    rebuilt_instructions = INSTRUCTIONS.format(minutes="three", rounds="nine")
-    rebuilt_instructions = rebuilt_instructions.replace("- ", " ")
+    rebuilt_instructions = INSTRUCTIONS.replace("- ", " ")
+    require(
+        f"{number_word(DESIGN_ROUNDS)} times in total" in INSTRUCTIONS,
+        f"The instructions do not announce {number_word(DESIGN_ROUNDS)} rounds, "
+        f"which is what DESIGN_ROUNDS = {DESIGN_ROUNDS} claims.",
+    )
+    require(
+        f"You will have {number_word(INSTRUCTION_MINUTES)} minutes" in INSTRUCTIONS,
+        f"The instructions do not state "
+        f"{number_word(INSTRUCTION_MINUTES)} minutes, which is what "
+        f"INSTRUCTION_MINUTES = {INSTRUCTION_MINUTES} claims.",
+    )
 
     # The screens carry the task's own placeholders; fill the templates with the
     # very same strings so the two sides can be compared directly.
@@ -175,13 +192,10 @@ def check_wording_is_verbatim():
         count="{ game.items | length }",
         category="{game.category}",
         done="{ game.gamenum }",
-        total="9",
-        repeat_notice=REPEAT_NOTICE + " ",
+        total=DESIGN_ROUNDS,
     )
     rebuilt_too_few = TOO_FEW.format(
-        count="{ game.items | length }",
-        category="{game.category}",
-        repeat_notice=" " + REPEAT_NOTICE,
+        count="{ game.items | length }", category="{game.category}"
     )
 
     for div_id, rebuilt in [
@@ -203,34 +217,10 @@ def check_wording_is_verbatim():
 # Building one prompt
 # --------------------------------------------------------------------------
 def participant_sort_key(participant_id):
-    """Order A101 < A102 < ... < B1 < B2 < ... < B10, not lexicographically."""
+    """Order A101 < A102 < ... < C101 < C102, not lexicographically."""
     match = re.fullmatch(r"([A-Za-z]+)(\d+)", participant_id)
-    require(
-        match, f"Participant id '{participant_id}' is not a letter-plus-number id."
-    )
+    require(match, f"Participant id '{participant_id}' is not a letter-plus-number id.")
     return match.group(1), int(match.group(2))
-
-
-def design_round_count(participant_id, group_name, round_sizes):
-    """How many rounds the participant was told the task would have.
-
-    Experiment1 and Experiment3 ran the published task, whose total is fixed at
-    nine and is unaffected by replays. No task code was published for
-    Experiment2, so its total is read off the data; that is only sound because
-    no Experiment2 round fell to the replay threshold, which is asserted here.
-    """
-    if group_name in DESIGN_ROUNDS:
-        return DESIGN_ROUNDS[group_name]
-
-    short = [n for n in round_sizes if n <= REPLAY_THRESHOLD]
-    require(
-        not short,
-        f"Participant {participant_id} is in {group_name}, whose design total is "
-        f"taken from the data, but has {len(short)} round(s) at or below the "
-        f"replay threshold. Replays make the number of lists larger than the "
-        f"number of rounds announced, so the total cannot be read off the data.",
-    )
-    return len(round_sizes)
 
 
 def build_prompt(participant_id, rows):
@@ -250,13 +240,17 @@ def build_prompt(participant_id, rows):
         f"which is not a whole number of minutes.",
     )
     minutes = limit_ms // 60_000
+    require(
+        minutes == INSTRUCTION_MINUTES,
+        f"Participant {participant_id} ran at {minutes} minutes per round, but "
+        f"the instructions are quoted verbatim and say "
+        f"{number_word(INSTRUCTION_MINUTES)}. A participant on a different limit "
+        f"cannot be described by this wording.",
+    )
 
     groups = list(rows.groupby("fluency_list_id", sort=True))
     n_lists = len(groups)
     round_sizes = [len(round_rows) for _, round_rows in groups]
-
-    group_name = rows["experiment_group"].iloc[0]
-    design_total = design_round_count(participant_id, group_name, round_sizes)
     require(
         round_sizes[-1] > REPLAY_THRESHOLD,
         f"Participant {participant_id} ends on a round of {round_sizes[-1]} "
@@ -264,15 +258,7 @@ def build_prompt(participant_id, rows):
         f"truncated in a way this script cannot narrate.",
     )
 
-    # Experiment2 alternated two categories; the notice about a category
-    # possibly repeating is not established for that design, so it is dropped.
-    repeat_notice = "" if group_name == "Experiment2" else REPEAT_NOTICE
-
-    parts = [
-        INSTRUCTIONS.format(
-            minutes=number_word(minutes), rounds=number_word(design_total)
-        )
-    ]
+    parts = [INSTRUCTIONS]
 
     latencies = []
     # Mirrors app.js `gamenum`: incremented when a round starts and decremented
@@ -283,9 +269,7 @@ def build_prompt(participant_id, rows):
         block = [
             # Rounds are numbered over the lists in the data, so that a replayed
             # round and its retry never share a number.
-            ROUND_HEADER.format(
-                number=position, category=category, minutes=minutes
-            )
+            ROUND_HEADER.format(number=position, category=category, minutes=minutes)
         ]
         for _, row in round_rows.iterrows():
             rt = int(row["rt"])
@@ -301,30 +285,23 @@ def build_prompt(participant_id, rows):
             continue  # the last round is followed by the end of the session
 
         if replayed:
-            parts.append(
-                TOO_FEW.format(
-                    count=len(round_rows),
-                    category=category,
-                    repeat_notice=f" {repeat_notice}" if repeat_notice else "",
-                )
-            )
+            parts.append(TOO_FEW.format(count=len(round_rows), category=category))
         else:
             parts.append(
                 BETWEEN_ROUNDS.format(
                     count=len(round_rows),
                     category=category,
                     done=completed,
-                    total=design_total,
-                    repeat_notice=f"{repeat_notice} " if repeat_notice else "",
+                    total=DESIGN_ROUNDS,
                 )
             )
 
     require(
-        completed <= design_total,
+        completed <= DESIGN_ROUNDS,
         f"Participant {participant_id} completed {completed} rounds, more than "
-        f"the {design_total} the instructions announce.",
+        f"the {DESIGN_ROUNDS} the instructions announce.",
     )
-    return "\n\n".join(parts), latencies, n_lists, design_total, minutes
+    return "\n\n".join(parts), latencies
 
 
 # --------------------------------------------------------------------------
@@ -337,17 +314,22 @@ def count_tokens(text, encoder):
     return int(len(text) * TOKENS_PER_CHAR) + 1
 
 
-def check_prompts(prompts, df):
+def check_prompts(prompts, frames):
     """Verify every prompt against the table it was built from."""
     require(
         len(prompts) == EXPECTED_N_PARTICIPANTS,
         f"Built {len(prompts)} prompts, expected {EXPECTED_N_PARTICIPANTS} "
-        f"(one per participant).",
+        f"(one per participant across {len(frames)} files).",
+    )
+    require(
+        len({record["participant_id"] for record in prompts}) == len(prompts),
+        "Two prompts share a participant id; ids must be unique across the files.",
     )
 
     total_responses = 0
     for record in prompts:
         participant_id = record["participant_id"]
+        df = frames[record["experiment"]]
         rows = df[df["participant_id"] == participant_id]
         n_responses = len(rows)
         total_responses += n_responses
@@ -355,8 +337,7 @@ def check_prompts(prompts, df):
 
         # Every response contributes one marked item and one marked latency.
         require(
-            text.count("<<") == 2 * n_responses
-            and text.count(">>") == 2 * n_responses,
+            text.count("<<") == 2 * n_responses and text.count(">>") == 2 * n_responses,
             f"Participant {participant_id}: found {text.count('<<')} '<<' and "
             f"{text.count('>>')} '>>', expected {2 * n_responses} of each for "
             f"{n_responses} responses.",
@@ -367,13 +348,9 @@ def check_prompts(prompts, df):
             f"Participant {participant_id}: rt holds {len(record['rt'])} values "
             f"for {n_responses} responses.",
         )
-        expected_rt = (
-            rows.sort_values(["fluency_list_id", "trial_order"], kind="stable")["rt"]
-            .astype(int)
-            .tolist()
-        )
+        ordered = rows.sort_values(["fluency_list_id", "trial_order"], kind="stable")
         require(
-            record["rt"] == expected_rt,
+            record["rt"] == ordered["rt"].astype(int).tolist(),
             f"Participant {participant_id}: rt is not the presentation-order "
             f"sequence of the rt column.",
         )
@@ -398,23 +375,10 @@ def check_prompts(prompts, df):
 
         # The announced total comes from the design instead, so that a replay
         # does not inflate it -- exactly as the task's own counter behaved.
-        round_sizes = [
-            len(group)
-            for _, group in rows.sort_values(
-                ["fluency_list_id", "trial_order"], kind="stable"
-            ).groupby("fluency_list_id", sort=True)
-        ]
-        design_total = design_round_count(
-            participant_id, rows["experiment_group"].iloc[0], round_sizes
-        )
-        announced = re.search(
-            r"You will be asked to do this (\w+) times in total\.", text
-        )
         require(
-            announced and announced.group(1) == number_word(design_total),
-            f"Participant {participant_id}: the instructions announce "
-            f"'{announced.group(1) if announced else None}' rounds, expected "
-            f"'{number_word(design_total)}' for the design.",
+            f"do this {number_word(DESIGN_ROUNDS)} times in total." in text,
+            f"Participant {participant_id}: the instructions do not announce "
+            f"{number_word(DESIGN_ROUNDS)} rounds.",
         )
 
         progress = [
@@ -424,18 +388,18 @@ def check_prompts(prompts, df):
             )
         ]
         require(
-            all(total == design_total for _, total in progress),
+            all(total == DESIGN_ROUNDS for _, total in progress),
             f"Participant {participant_id}: a progress line states a total other "
-            f"than the design total of {design_total}: "
-            f"{sorted({total for _, total in progress})}.",
+            f"than {DESIGN_ROUNDS}: {sorted({total for _, total in progress})}.",
         )
         counted = [done for done, _ in progress]
         require(
-            counted == sorted(set(counted)) and all(d <= design_total for d in counted),
+            counted == list(range(1, len(counted) + 1))
+            and all(done <= DESIGN_ROUNDS for done in counted),
             f"Participant {participant_id}: the completed-round counter is not "
-            f"strictly increasing within 1..{design_total}: {counted}.",
+            f"strictly increasing within 1..{DESIGN_ROUNDS}: {counted}.",
         )
-        # A replayed round must not advance the counter.
+        round_sizes = [len(group) for _, group in ordered.groupby("fluency_list_id", sort=True)]
         n_replays = sum(1 for size in round_sizes if size <= REPLAY_THRESHOLD)
         require(
             len(counted) == n_lists - 1 - n_replays,
@@ -456,9 +420,7 @@ def check_prompts(prompts, df):
         # Each header's category must match the list it stands for.
         by_round = [
             group["stimulus"].iloc[0]
-            for _, group in rows.sort_values(
-                ["fluency_list_id", "trial_order"], kind="stable"
-            ).groupby("fluency_list_id", sort=True)
+            for _, group in ordered.groupby("fluency_list_id", sort=True)
         ]
         require(
             [category for _, category, _ in headers] == by_round,
@@ -476,8 +438,7 @@ def check_prompts(prompts, df):
 
     require(
         total_responses == EXPECTED_N_RESPONSES,
-        f"Prompts cover {total_responses} responses, expected "
-        f"{EXPECTED_N_RESPONSES}.",
+        f"Prompts cover {total_responses} responses, expected {EXPECTED_N_RESPONSES}.",
     )
     return total_responses
 
@@ -498,26 +459,10 @@ def write_reproducible_zip(jsonl_path, zip_path):
 # Main
 # --------------------------------------------------------------------------
 def main():
-    require(
-        INPUT_FILE.exists(),
-        f"Input file not found: {INPUT_FILE}. Run preprocess_data.py first, "
-        f"from the contribution folder.",
-    )
-    df = pd.read_csv(INPUT_FILE, encoding="utf-8")
-    require(
-        len(df) == EXPECTED_N_RESPONSES,
-        f"{INPUT_FILE.name} has {len(df)} rows, expected {EXPECTED_N_RESPONSES}.",
-    )
-    require(
-        int(df["is_invalid"].sum()) == 0,
-        f"{int(df['is_invalid'].sum())} response(s) are flagged is_invalid. "
-        f"Decide how to render them before generating prompts; this script "
-        f"assumes every response can be stated as given.",
-    )
-
     check_wording_is_verbatim()
     print(f"Wording verified verbatim against {TASK_HTML.name} "
-          f"(instructions, between_categories, too_few).")
+          f"(instructions, between_categories, too_few); "
+          f"the task's own screens confirm {DESIGN_ROUNDS} rounds.")
 
     try:
         import tiktoken
@@ -528,22 +473,44 @@ def main():
         encoder = None
         token_method = f"estimate, {TOKENS_PER_CHAR} tokens per character"
 
+    frames = {}
     prompts = []
-    for participant_id in sorted(df["participant_id"].unique(), key=participant_sort_key):
-        rows = df[df["participant_id"] == participant_id]
-        text, latencies, n_lists, design_total, minutes = build_prompt(
-            participant_id, rows
+    for filename, experiment, n_participants, n_rows in INPUTS:
+        path = PROCESSED_DIR / filename
+        require(
+            path.exists(),
+            f"Input file not found: {path}. Run preprocess_data.py first, from "
+            f"the contribution folder.",
         )
-        prompts.append(
-            {
-                "text": text,
-                "experiment": EXPERIMENT,
-                "participant_id": participant_id,
-                "rt": latencies,
-            }
+        df = pd.read_csv(path, encoding="utf-8")
+        require(
+            len(df) == n_rows and df["participant_id"].nunique() == n_participants,
+            f"{filename} has {len(df)} rows and "
+            f"{df['participant_id'].nunique()} participants, expected {n_rows} "
+            f"and {n_participants}.",
         )
+        require(
+            int(df["is_invalid"].sum()) == 0,
+            f"{filename}: {int(df['is_invalid'].sum())} response(s) are flagged "
+            f"is_invalid. Decide how to render them before generating prompts; "
+            f"this script assumes every response can be stated as given.",
+        )
+        frames[experiment] = df
 
-    total_responses = check_prompts(prompts, df)
+        for participant_id in sorted(df["participant_id"].unique(), key=participant_sort_key):
+            text, latencies = build_prompt(
+                participant_id, df[df["participant_id"] == participant_id]
+            )
+            prompts.append(
+                {
+                    "text": text,
+                    "experiment": experiment,
+                    "participant_id": participant_id,
+                    "rt": latencies,
+                }
+            )
+
+    total_responses = check_prompts(prompts, frames)
 
     with JSONL_FILE.open("w", encoding="utf-8", newline="\n") as handle:
         for record in prompts:
@@ -556,41 +523,17 @@ def main():
           f"(member: {ZIP_MEMBER_NAME}, fixed timestamp for reproducibility)")
     print(f"Responses covered: {total_responses:,} of {EXPECTED_N_RESPONSES:,}")
 
-    by_group = df.groupby("experiment_group").agg(
-        participants=("participant_id", "nunique"),
-        responses=("response", "size"),
-    )
     print()
     print("By experiment:")
-    for group, row in by_group.iterrows():
-        rounds = sorted(
-            df[df["experiment_group"] == group]
-            .groupby("participant_id")["fluency_list_id"]
-            .nunique()
-            .unique()
-        )
-        minutes = sorted(
-            m // 60_000
-            for m in df[df["experiment_group"] == group]["round_time_limit"].unique()
-        )
-        announced = sorted(
-            {
-                design_round_count(
-                    pid,
-                    group,
-                    list(
-                        df[df["participant_id"] == pid]
-                        .groupby("fluency_list_id")
-                        .size()
-                    ),
-                )
-                for pid in df[df["experiment_group"] == group]["participant_id"].unique()
-            }
-        )
+    for filename, experiment, _, _ in INPUTS:
+        df = frames[experiment]
+        records = [r for r in prompts if r["experiment"] == experiment]
+        rounds = sorted(df.groupby("participant_id")["fluency_list_id"].nunique().unique())
         print(
-            f"  {group:<12} {row['participants']:>2} participants, "
-            f"{row['responses']:>6,} responses, lists per participant {rounds}, "
-            f"rounds announced {announced}, minutes per round {minutes}"
+            f"  {experiment:<38} {len(records):>2} prompts, "
+            f"{len(df):>6,} responses, lists per participant {rounds}, "
+            f"rounds announced [{DESIGN_ROUNDS}], "
+            f"minutes per round {sorted(df['round_time_limit'].unique() // 60_000)}"
         )
 
     lengths = [len(record["text"]) for record in prompts]
@@ -609,24 +552,24 @@ def main():
     print(f"Within the {TOKEN_LIMIT:,}-token limit, with "
           f"{TOKEN_LIMIT - max(tokens):,} tokens to spare.")
 
-    # Flags travel with processed_data/exp1.csv rather than with the prompts;
+    # Flags travel with the processed files rather than with the prompts;
     # report how much flagged material the prompts contain.
     print()
     print("Flagged responses reproduced in the prompts "
-          "(see processed_data/exp1.csv to filter them):")
+          "(see processed_data/ to filter them):")
     for flag in ["is_rt_outlier", "is_repeated_response", "is_category_mismatch"]:
-        print(f"  {flag:<22} {int(df[flag].sum()):>6,} responses")
-    replays = df.groupby(["participant_id", "fluency_list_id"]).size()
-    replayed = replays[replays <= REPLAY_THRESHOLD]
-    print(f"  rounds replayed        {len(replayed):>6,} "
+        per_file = {
+            filename: int(frames[experiment][flag].sum())
+            for filename, experiment, _, _ in INPUTS
+        }
+        print(f"  {flag:<22} {sum(per_file.values()):>6,} responses  {per_file}")
+    replayed = sum(
+        int((frames[experiment].groupby(["participant_id", "fluency_list_id"]).size()
+             <= REPLAY_THRESHOLD).sum())
+        for _, experiment, _, _ in INPUTS
+    )
+    print(f"  rounds replayed        {replayed:>6,} "
           f"(five or fewer responses, so the task showed the replay screen)")
-    for (participant_id, list_id), size in replayed.items():
-        print(f"    {participant_id}/{list_id}: {size} responses. That participant "
-              f"contributes "
-              f"{df[df['participant_id'] == participant_id]['fluency_list_id'].nunique()} "
-              f"lists but was told about "
-              f"{DESIGN_ROUNDS[df[df['participant_id'] == participant_id]['experiment_group'].iloc[0]]} "
-              f"rounds, and the counter did not advance across the replay.")
 
     return prompts
 

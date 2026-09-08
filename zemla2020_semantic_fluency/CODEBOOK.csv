@@ -1,13 +1,12 @@
 Recommended Column Name,Description
 participant_id,Unique identifier assigned to each participant.
-experiment_group,"Which of the three pooled experiments the participant took part in: Experiment1 (animals, fruits, vegetables), Experiment2 (animals, supermarket items) or Experiment3 (animals, foods, tools). The experiments differ in their category sets, in the number of rounds and in the time allowed per round."
 fluency_list_id,"Fluency round a response belongs to, numbered from 0 within each participant. One round is one timed attempt at one category cue."
 trial_order,Presentation order within the session (0-indexed). The order in which the participant saw this trial.
 stimulus,The linguistic or visual stimulus presented to the participant in a given trial.
 response,Participant's response
 rt,"Time taken by the participant to respond, in milliseconds."
 cumulative_rt,"Time from the onset of the round to this response, in milliseconds; the running total of rt within the round."
-round_time_limit,"Time allowed for one round, in milliseconds. Documented for Experiment1 and Experiment3: both published versions of the task set timeperlist = 180 seconds. RECONSTRUCTED for Experiment2, for which no task code was published -- 120000 ms for the five participants who completed 18 rounds and 240000 ms for the seven who completed 12, derived as the smallest whole-minute deadline that none of that participant's responses exceeds. The Experiment2 values are an inference from the data, not a reported parameter."
+round_time_limit,"Time allowed for one round, in milliseconds. Documented by the published task, which sets timeperlist = 180 seconds; the value is 180000 for every participant in both files."
 is_invalid,Flag marking invalid responses (missing/non-word/timed-out).
 is_rt_outlier,Flag marking RT outliers removed from RT analyses.
 is_repeated_response,Flag marking a response already given earlier in the same round (a perseveration).
