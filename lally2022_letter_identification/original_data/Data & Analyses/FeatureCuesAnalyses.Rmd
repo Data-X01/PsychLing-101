@@ -1,0 +1,284 @@
+---
+title: "Orthographic and feature-level contributions to letter identification"
+output: html_document
+---
+
+**Author:** Clare Lally <br>
+**Date:** `r format(Sys.Date(), "%d %B %Y")` `r format(Sys.time(), "%H:%M")` <br>
+**Version:** `r R.version$version.string` <br>
+  
+```{r analysis, include=FALSE}
+# Set up RMarkDown options
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(include = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+
+# Load relevant packages
+rm(list = ls(all = TRUE))
+library(dplyr)
+library(ggplot2)
+library(lme4)
+library(sjPlot)
+library(brms)
+library(bayestestR)
+library(BayesFactor)
+options(scipen = 999)
+
+###########################
+#LOAD THE DATA
+###########################
+
+# Read in raw data
+Data <- read.csv("FeatureCuesResults.csv")
+
+# Set up the data
+Data$SubID <- as.factor(Data$SubID)
+Data$Exposure <- as.numeric(Data$Exposure)
+Data$List <- as.factor(Data$List)
+Data$Trial <- as.numeric(Data$Trial)
+Data$DMDX <- as.factor(Data$DMDX)
+Data$Item <- as.factor(Data$Item)
+Data$OrthographicStatus <- as.factor(Data$OrthographicStatus)
+Data$VisualOverlap <- as.factor(Data$VisualOverlap)
+Data$Acc <- as.integer(Data$Acc)
+Data$RT <- as.numeric(Data$RT)
+Data$OrthographicStatus <- gsub("Pseudo-Word", "Pseudoword", Data$OrthographicStatus)
+
+###########################
+#DESCRIPTIVE STATISTICS
+###########################
+
+# Calculate subject means
+SubAcc <- Data %>%
+  group_by(SubID, OrthographicStatus, VisualOverlap) %>%
+  summarise(mean_acc = mean(Acc))
+
+# Calculate group means
+GroupAcc <- SubAcc %>%
+    dplyr::group_by(SubID) %>%
+    dplyr::summarise(subject_mean = mean(mean_acc)) %>%
+    dplyr::ungroup() %>%
+    dplyr::inner_join(SubAcc, by = "SubID") %>%
+    dplyr::mutate(norm = mean_acc - subject_mean + mean(subject_mean)) %>%
+    dplyr::group_by(OrthographicStatus, VisualOverlap) %>%
+    dplyr::summarise(group_mean = mean(mean_acc),
+                     between_se = sd(mean_acc) / sqrt(n()),
+                     within_se = sd(norm) / sqrt(n()))
+
+###########################
+#PLOT RESULTS
+###########################
+acc_violin <- ggplot(data = GroupAcc, aes(x = VisualOverlap, y = group_mean, fill = OrthographicStatus))+
+  geom_tile(data = GroupAcc, aes(y = group_mean, height = (within_se * 2), colour = OrthographicStatus), size=0.2, width=1, position=position_dodge(0.9), alpha = 0.05)+
+  geom_violin(data = SubAcc, aes(x = VisualOverlap, y = mean_acc), alpha=0.4, weight = 0.8)+
+  geom_crossbar(aes(ymin= group_mean, ymax = group_mean, colour = OrthographicStatus), width = 1, size = 0.8)+
+  geom_jitter(data= SubAcc, aes(x = VisualOverlap, y = mean_acc), shape = 1, width = .1, alpha = 0.4)+
+  xlab(" ")+ ylab("Proportion Accuracy")+
+  coord_cartesian(clip = "off")+
+  scale_y_continuous(expand = c(0,0), limits = c(0,1.1), breaks=c(0, 0.25, 0.5, 0.75, 1)) +
+  scale_fill_manual(values=c("#0057e7",  "#d62d20", "#ffa700"), guide = "none")+  
+  scale_colour_manual(values=c("#0057e7",  "#d62d20", "#ffa700"), guide = "none")+
+  facet_wrap(.~OrthographicStatus, ncol = 3)+
+  geom_hline(yintercept = 0.5, linetype="dashed", size = 0.2, colour="black")+
+  theme_bw()+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_blank(),
+        legend.position = "right",
+        axis.line.x = element_line(color='black'),
+        axis.line.y = element_line(color='black'),
+        axis.text.y=element_text(color = 'black'),
+        axis.text.x=element_text(color = 'black'),
+        strip.text.x = element_text(face="bold", size = 10, margin = margin(b = 10)),
+        strip.background = element_blank())
+
+print(acc_violin)
+
+############################
+#LINEAR MIXED EFFECTS MODELS
+############################
+
+# Set reference level for visual similarity factor (low = reference)
+Data$VisualOverlap <- as.character(Data$VisualOverlap)
+Data$VisualOverlap <- factor(Data$VisualOverlap, levels=c("Low", "High"))
+
+# Center continuous variables
+center_scale <- function(x) {scale(x, scale = FALSE)}
+Data$CentredExposure <- center_scale(Data$Exposure)
+
+### MODEL FITTING - CATEGORICAL
+LME0 <- glmer(Acc ~ (1|Item), family=binomial, data = Data)
+LME1 <- glmer(Acc ~ (1|SubID), family=binomial, data = Data)
+LME2 <- glmer(Acc ~ (1|SubID) + (1|Item), family=binomial, data = Data)
+LME3 <- glmer(Acc ~ CentredExposure + (1|SubID) + (1|Item), family=binomial, data = Data)
+LME4 <- glmer(Acc ~ OrthographicStatus+CentredExposure + (1|SubID) + (1|Item), family=binomial, data = Data)
+LME5 <- glmer(Acc ~ VisualOverlap+OrthographicStatus+CentredExposure + (1|SubID) + (1|Item), family=binomial, data = Data)
+LME6 <- glmer(Acc ~ (VisualOverlap*OrthographicStatus)+CentredExposure + (1|SubID) + (1|Item), family=binomial, data = Data)
+
+# Test whether both random effects improved model fit
+anova(LME0, LME2)
+anova(LME1, LME2)
+
+# Test whether fixed effects improved model fit (additive)
+anova(LME2, LME3)
+anova(LME3, LME4)
+anova(LME4, LME5)
+
+# Test whether including the interaction term improved model fit (additive)
+anova(LME5, LME6)
+
+### ACCURACY
+
+# Run model - consonant string as reference level for orthographic status
+accLME1 <- glmer(Acc ~ VisualOverlap*OrthographicStatus+CentredExposure + (1|SubID) + (1|Item), family=binomial, data = Data)
+output1 <- summary(accLME1)
+
+# Re-set levels for comparison -  pseudoword as reference level for orthographic status
+Data$OrthographicStatus <- as.character(Data$OrthographicStatus)
+Data$OrthographicStatus <- factor(Data$OrthographicStatus, levels=c("Pseudoword", "Word", "Consonant String"))
+
+accLME2 <- glmer(Acc ~ VisualOverlap*OrthographicStatus+CentredExposure + (1|SubID) + (1|Item), family=binomial, data = Data)
+output2 <- summary(accLME2)
+
+# Re-set levels for comparison - word as reference level for orthographic status
+Data$OrthographicStatus <- as.character(Data$OrthographicStatus)
+Data$OrthographicStatus <- factor(Data$OrthographicStatus, levels=c("Word", "Consonant String", "Pseudoword"))
+
+accLME3 <- glmer(Acc ~ VisualOverlap*OrthographicStatus+CentredExposure + (1|SubID) + (1|Item), family=binomial, data = Data)
+output3 <- summary(accLME3)
+
+```
+
+```{r analysis bayes, include=FALSE}
+# Get Bayes factors using Silvey, Dienes & Wonnacott (2021)
+
+# Function for Bayesian analysis (Silvey et al., 2021) - available: https://n400peanuts.github.io/languagelearninglab/usefulFunctions-explained.html
+
+Bf<- function(sd, obtained, dfdata = 1, likelihood = c("normal", "t"), 
+               modeloftheory = c("normal", "t", "cauchy", "uniform"), uniform, 
+               lower=0, upper=1, meanoftheory=0, sdtheory=1, modeoftheory =0, scaleoftheory = 1, 
+               dftheory = 1, tail=1, method = "old"){
+  if (method == "old") {
+    area <- 0
+    if(identical(uniform, 1)){
+      theta <- lower
+      range <- upper - lower
+      incr <- range / 2000
+      for (A in -1000:1000){
+        theta <- theta + incr
+        dist_theta <- 1 / range
+        height <- dist_theta * dnorm(obtained, theta, sd)
+        area <- area + height * incr
+      }
+    }else
+    {theta <- meanoftheory - 5 * sdtheory
+    incr <- sdtheory / 200
+    for (A in -1000:1000){
+      theta <- theta + incr
+      dist_theta <- dnorm(theta, meanoftheory, sdtheory)
+      if(identical(tail, 1)){
+        if (theta <= 0){
+          dist_theta <- 0
+        } else {
+          dist_theta <- dist_theta * 2
+        }
+      }
+      height <- dist_theta * dnorm(obtained, theta, sd)
+      area <- area + height * incr
+    }
+    }
+    LikelihoodTheory <- area
+    Likelihoodnull <- dnorm(obtained, 0, sd)
+    BayesFactor <- LikelihoodTheory / Likelihoodnull
+    ret <- list("LikelihoodTheory" = LikelihoodTheory,"Likelihoodnull" = Likelihoodnull, "BayesFactor" = BayesFactor)
+    ret
+  } else if (method == "new") {
+    if(likelihood=="normal"){
+      dfdata=10^10
+    }
+  if(modeloftheory=="normal"){
+    dftheory = 10^10
+  } else if(modeloftheory=="cauchy"){
+    dftheory = 1
+  }
+  area <- 0
+  normarea <- 0
+  if(modeloftheory=="uniform"){
+    theta <- lower
+    range <- upper - lower
+    incr <- range / 2000
+    for (A in -1000:1000){
+      theta <- theta + incr
+      dist_theta <- 1 / range
+      height <- dist_theta * dt((obtained-theta)/sd, df=dfdata)
+      area <- area + height * incr
+    }
+    LikelihoodTheory <- area
+  }else{
+    theta <- modeoftheory - 10 * scaleoftheory
+    incr <- scaleoftheory/200
+    for (A in -2000:2000){
+      theta <- theta + incr
+      dist_theta <- dt((theta-modeoftheory)/scaleoftheory, df=dftheory)
+      if(identical(tail, 1)){
+        if (theta <= modeoftheory){
+          dist_theta <- 0
+        } else {
+          dist_theta <- dist_theta * 2
+        }
+      }
+      height <- dist_theta * dt((obtained-theta)/sd, df = dfdata)
+      area <- area + height * incr
+      normarea <- normarea + dist_theta*incr
+    }
+    LikelihoodTheory <- area/normarea
+  }
+  Likelihoodnull <- dt(obtained/sd, df = dfdata)
+  BayesFactor <- LikelihoodTheory/Likelihoodnull
+  BayesFactor
+  }
+}
+
+intercept <- output1$coefficients["(Intercept)", "Estimate"]
+
+# Get Bayes Factors for interaction estimates
+# Interaction (pseudoword vs. consonant string)
+mean_effect <- output1$coefficients["VisualOverlapHigh:OrthographicStatusPseudoword", "Estimate"]
+se_effect <- output1$coefficients["VisualOverlapHigh:OrthographicStatusPseudoword", "Std. Error"]
+bf<- Bf(sd = se_effect, obtained = mean_effect, likelihood = "normal",modeloftheory= "normal", modeoftheory = 0,scaleoftheory = intercept, tail = 1, method = "new")
+bf_pw_cs_int<-c(bf, se_effect)
+
+# Interaction (word vs. consonant string)
+mean_effect <- output1$coefficients["VisualOverlapHigh:OrthographicStatusWord", "Estimate"]
+se_effect <- output1$coefficients["VisualOverlapHigh:OrthographicStatusWord", "Std. Error"]
+bf<- Bf(sd = se_effect, obtained = mean_effect, likelihood = "normal",modeloftheory= "normal", modeoftheory = 0,scaleoftheory = intercept, tail = 1, method = "new")
+bf_cs_w_int<-c(bf, se_effect)
+
+# Interaction (pseudoword vs. word)
+intercept <- output3$coefficients["(Intercept)", "Estimate"]
+mean_effect <- output3$coefficients["VisualOverlapHigh:OrthographicStatusPseudoword", "Estimate"]
+se_effect <- output3$coefficients["VisualOverlapHigh:OrthographicStatusPseudoword", "Std. Error"]
+bf<- Bf(sd = se_effect, obtained = mean_effect, likelihood = "normal",modeloftheory= "normal", modeoftheory = 0,scaleoftheory = intercept, tail = 1, method = "new")
+bf_w_pw_int <- c(bf, se_effect)
+
+# Output Bayes Factor and standard error for each interaction estimate
+bf_pw_cs_int
+bf_cs_w_int
+bf_w_pw_int
+```
+
+<br><br>
+```{r plot, include=TRUE, fig.height = 5, fig.width = 5, fig.align="center", fig.show='hold'}
+
+print(acc_violin)
+
+```
+<br><br>
+
+``` {r model summary, include=TRUE}
+tab_model(accLME1, accLME2, accLME3, transform = NULL, show.ci = FALSE, show.se = TRUE, string.est = "Estimate", string.se = "SE", show.stat = TRUE)
+
+tab_model(accLME1, accLME2, accLME3, show.ci = FALSE, show.se = TRUE, string.est = "Estimate", string.se = "SE", show.stat=TRUE)
+
+```
