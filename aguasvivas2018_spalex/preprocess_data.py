@@ -219,10 +219,6 @@ def preprocess(base_dir: Path) -> None:
     df["best_foreign_language"] = df["best_foreign_language"].map(LANGUAGE_MAP).fillna(df["best_foreign_language"])
     df["country_of_birth"] = df["country_of_birth"].map(COUNTRY_MAP).fillna(df["country_of_birth"])
 
-    # Factorize trial_id to integers starting at 1
-    if "trial_id" in df.columns:
-        df["trial_id"] = pd.factorize(df["trial_id"])[0] + 1
-
     cols = [
         "participant_id",
         "age",
@@ -239,8 +235,9 @@ def preprocess(base_dir: Path) -> None:
         "rt",
         "accuracy",
     ]
+    sort_columns = [c for c in ["participant_id", "exp_id", "trial_order"] if c in df.columns]
+    df = df.sort_values(by=sort_columns)
     df_out = df.loc[:, [c for c in cols if c in df.columns]].copy()
-    df_out = df_out.sort_values(by=[c for c in ["participant_id", "trial_order"] if c in df_out.columns])
     df_out = df_out.loc[:, ~df_out.columns.duplicated()]
 
     df_out.to_csv(processed_dir / "exp1.csv", index=False)

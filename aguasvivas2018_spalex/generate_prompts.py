@@ -6,7 +6,7 @@ import jsonlines
 
 
 INSTRUCTIONS = (
-    "¡Hola! En este test verás 100 secuencias de letras, algunas de las cuales son "
+    "En este test verás 100 secuencias de letras, algunas de las cuales son "
     "palabras existentes en español y otras son pseudopalabras inventadas. "
     "Indica para cada secuencia de letras si es una palabra que conoces o no "
     "presionando la tecla F o J.\n"
@@ -20,8 +20,6 @@ INSTRUCTIONS = (
 def generate_prompts(base_dir: Path) -> None:
     processed_path = base_dir / "processed_data" / "exp1.csv"
     df = pd.read_csv(processed_path)
-
-    df = df.sort_values(by=["participant_id", "trial_order"])
 
     all_prompts = []
 
