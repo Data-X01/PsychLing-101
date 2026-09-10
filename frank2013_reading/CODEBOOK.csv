@@ -1,0 +1,18 @@
+column_name,description,experiments
+participant_id,Participant number (from subj_nr in original data),exp1 exp2
+age,Participant age in years,exp1 exp2
+gender,Participant gender recoded from sex field (f → female; m → male),exp1 exp2
+first_language,Native language: 'English' for native speakers (age_en == 0); NaN for non-native speakers (native language not recorded),exp1 exp2
+monolingual,"1 if monolingual, 0 if multilingual (from monoling in original data)",exp2
+trial_id,Sentence number (sent_nr) — uniquely identifies each sentence stimulus,exp1 exp2
+trial_order,Position of sentence in the presentation sequence for this participant (sent_pos),exp1 exp2
+stimulus,Full sentence text (from stimuli.txt joined on sent_nr),exp1 exp2
+word,The specific word on this row (one row per word per participant),exp1 exp2
+word_position,Position of this word within the sentence (1-indexed; word_pos in original data),exp1 exp2
+question,Comprehension question presented after the sentence; NaN if no question was asked,exp1 exp2
+response,"Participant's inferred response to the comprehension question: 'y' (yes) or 'n' (no), NaN if no question. Inferred from the correct-answer field (stimuli.txt) and trial accuracy (correct field in RT files).",exp1 exp2
+rt,"Reading time in ms (exp1: key-press RT from self-paced reading; exp2: first fixation duration on this word). 0 ms replaced with NaN in exp2 (word not fixated before a rightward saccade).",exp1 exp2
+first_pass_duration,"First-pass reading time in ms: total fixation time on this word before first fixation on any other word. 0 replaced with NaN (word skipped on first pass).",exp2
+right_bounded_duration,"Right-bounded reading time in ms: total fixation time before first fixation on any word to the right. 0 replaced with NaN.",exp2
+go_past_duration,"Go-past reading time in ms: total fixation time from first fixation on this word until first fixation on any word to the right (includes regressions). 0 replaced with NaN.",exp2
+accuracy,"Accuracy on the comprehension question for this sentence: 1.0 (correct), 0.0 (error), NaN if no question (from 'correct' column in RT files: c → 1.0, e → 0.0, - → NaN)",exp1 exp2

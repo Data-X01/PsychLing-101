@@ -1,0 +1,19 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant.
+age,Age of the participant at the time of the experiment.
+gender,Participant gender recoded in English.
+education,Number of years of education reported by the participant.
+handedness,Participant handedness reported as right left or ambidextrous.
+session_id,Identifier for the experimental session completed by the participant.
+trial_id,Technical identifier generated during preprocessing for a single row. The numeric suffix does not represent the real presentation order.
+condition,Experimental task completed in the current trial.
+stimulus_type,Type of presented string coded as word or pseudoword.
+stimulus,Italian word or pseudoword presented to the participant.
+stimulus_translation,English translation of the Italian word when available.
+accuracy,Binary indicator of whether the participant response was correct.
+rt,Time taken by the participant to respond in milliseconds.
+visual_rating,Participant rating of the extent to which the word referent is experienced through vision on a scale from 0 to 5.
+gustatory_rating,Participant rating of the extent to which the word referent is experienced through taste on a scale from 0 to 5.
+haptic_rating,Participant rating of the extent to which the word referent is experienced through touch on a scale from 0 to 5.
+olfactory_rating,Participant rating of the extent to which the word referent is experienced through smell on a scale from 0 to 5.
+auditory_rating,Participant rating of the extent to which the word referent is experienced through hearing on a scale from 0 to 5.

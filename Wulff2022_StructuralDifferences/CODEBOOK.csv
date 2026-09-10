@@ -1,0 +1,15 @@
+column_name,description
+participant_id,Unique identifier assigned to each participant.
+age,Age of the participant at the time of the experiment.
+gender,Self-reported or observed gender identity of the participant.
+trial_order,Presentation order within the session (0-indexed). The order in which the participant saw this trial.
+phase_id,"Identifier for the experimental phase or block a trial belongs to (e.g., practice, test, recall)."
+stimulus,The linguistic or visual stimulus presented to the participant in a given trial.
+response,Participant's response
+response_corrected,Cleaned / corrected response (spelling normalized).
+rt,"Time taken by the participant to respond, in milliseconds."
+participant_age_group,Age group label: younger or older
+stimulus_pair_id,Unique id of the stimulus pair.
+stimulus_left,Word (animal) presented on the left side of the rating screen.
+stimulus_right,Word (animal) presented on the right side of the rating screen.
+stimulus_is_reversed,"In retest phase, is this stimulus reversed (TRUE), or not (FALSE). NA in test phase."

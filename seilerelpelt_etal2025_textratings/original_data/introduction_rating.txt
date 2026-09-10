@@ -1,0 +1,16 @@
+Introduction: 
+'Im letzten Versuchsschritt werden Ihnen nacheinander einige kurze Texte präsentiert, die Sie sorgfältig lesen und anschließend in einigen Punkten bewerten sollen.
+Bitte lesen Sie die Texte sorgfältig und bewerten Sie diese im Anschluss ohne zu lange über die Fragen nachzudenken.'
+
+
+Questions: 
+'Wie angenehm finden Sie den eben gelesenen Text?'
+'Wie aufregend finden Sie den eben gelesenen Text?'
+'Wie kreativ finden Sie den eben gelesenen Text?'
+'Wie langweilig finden Sie den eben gelesenen Text?'
+'Bewerten Sie bitte den Informationsgehalt des eben gelesenen Texts. Wie informativ finden Sie den Text?'
+
+
+Response labels: 
+'1) überhaupt nicht', '2)', '3)', '4) neutral', '5)', '6)', '7) voll und ganz'
+

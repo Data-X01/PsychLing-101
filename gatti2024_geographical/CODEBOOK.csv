@@ -1,0 +1,21 @@
+column_name	description
+experiment	Experiment identifier for this dataset
+participant_id	Participant identifier from the raw data
+trial_id	Unique identifier for a single trial within a participant session
+trial_order	Presentation order within the participant session (0-indexed)
+phase_id	Identifier for the experimental phase
+age	Participant age in years
+gender	Participant gender standardized to F or M
+gender_raw	Original gender value from the raw data
+hand	Participant handedness standardized to right or left
+hand_raw	Original handedness value from the raw data
+city_left	City shown on the left side of the trial
+city_right	City shown on the right side of the trial
+response_raw	"Raw response key from the source file; a=left l=right"
+response_side	Response side derived from response_raw
+correct_response	"Correct response key for the trial; a=left l=right"
+correct_side	Correct side derived from correct_response
+accuracy	"Accuracy field from the raw data; 1=correct 0=incorrect"
+response_correct	Derived correctness based on whether response_raw matches correct_response
+rt_raw	Raw reaction time string from the source file
+rt_ms	Reaction time in milliseconds parsed from rt_raw with decimal comma converted to decimal point

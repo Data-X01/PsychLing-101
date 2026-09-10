@@ -1,0 +1,11 @@
+# R session artifacts
+.Rhistory
+.RData
+.Ruserdata
+.Rapp.history
+
+# macOS
+.DS_Store
+
+# Editor swap files
+*~

@@ -1,0 +1,19 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant.
+source_file,Original raw data filename from which this observation was derived.
+age,Age of the participant at the time of the experiment.
+gender,Self-reported or observed gender identity of the participant.
+nationality,Participant's self-reported nationality.
+first_language,Participant's native or first-acquired language.
+occupation,"Participant's self-reported occupation, role, or student status."
+stem_background,Raw participant STEM/background group code as recorded in the original data.
+trial_id,Unique identifier for a single trial within a session or condition.
+trial_order,Presentation order within the session (0-indexed). The order in which the participant saw this trial.
+stimulus,The linguistic or visual stimulus presented to the participant in a given trial.
+response1,First association response for the trial.
+response2,Second association response for the trial.
+response3,Third association response for the trial.
+stimulus_valence,"Participant's valence rating for the stimulus on the 1–5 scale, where 3 is neutral."
+response1_valence,"Participant's valence rating for response1 on the 1–5 scale, where 3 is neutral."
+response2_valence,"Participant's valence rating for response2 on the 1–5 scale, where 3 is neutral."
+response3_valence,"Participant's valence rating for response3 on the 1–5 scale, where 3 is neutral."
