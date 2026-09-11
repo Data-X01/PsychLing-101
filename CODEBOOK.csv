@@ -88,3 +88,25 @@ target_letter,The letter that actually occurred at the probed position of the st
 distractor_letter,The incorrect alternative in a forced choice between two letters.
 letter_similarity_human,Human-rated visual similarity of a pair of letters; higher values indicate greater similarity.
 letter_similarity_hmax,Visual similarity of a pair of letters derived from an HMAX computational model of visual cortex; runs from 0 to 1 and reaches 1 for a letter compared with itself.
+article_id,Identifier of the article or text a passage belongs to.
+paragraph_id,Identifier of a paragraph within its article or text.
+difficulty_level,"Version of the text presented, where a study manipulates text difficulty (e.g. original vs simplified)."
+is_repeated_reading,Binary indicator of whether a trial is a repeated reading of previously presented material.
+question,Comprehension question asked about the preceding stimulus.
+answer_options,"Answer options for a multiple-choice question, in the order they appeared on screen."
+correct_answer_position,On-screen position of the correct answer in a multiple-choice question.
+response_position,On-screen position of the answer the participant selected.
+question_rt,"Time spent reading the question, in milliseconds."
+answer_rt,"Time spent selecting an answer, in milliseconds."
+comprehension_score,Participant's overall proportion or percentage of correct comprehension answers in the session.
+lextale_score,Participant's score on the LexTALE vocabulary test.
+word_position,Position of a word within the text or sentence it belongs to (1-based).
+first_fixation_duration,Duration of the first fixation on a word in milliseconds (eye-tracking).
+gaze_duration,"Sum of fixations on a word during the first run through it, in milliseconds (eye-tracking)."
+go_past_time,"Time from first entering a word until moving past it to the right, including regressions, in milliseconds (eye-tracking)."
+fixation_count,Number of fixations landing on a word (eye-tracking).
+run_count,Number of separate runs of fixations on a word (eye-tracking).
+is_fixated,Binary indicator of whether a word received any fixation at all (eye-tracking).
+is_first_pass_skipped,Binary indicator of whether a word was skipped during first-pass reading. A first-pass skipped word may still be fixated later during a regression.
+is_regressed_into,Binary indicator of whether a regression entered a word (eye-tracking).
+is_regressed_out_of,Binary indicator of whether a regression left a word (eye-tracking).
