@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Naming Task</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" defer></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rivets/0.8.0/rivets.bundled.min.js" defer></script>
+    <script type="text/javascript" src="jquery.transit.min.js" defer></script>
+    <script type="text/javascript" src="app.js" defer></script>
+</head>
+
+<body>
+
+    <!--[if lte IE 8]>
+    <p class="bg-danger">This website was not designed for Internet Explorer 8 or below.
+                             Please upgrade your browser before continuing.</p>
+    <![endif]-->
+
+    <div id="instructions">
+        <h1>Instructions</h1>
+        For each round in this task, you will be given a category and asked to list as many
+        items from that category as you can. For instance, if the category is
+        instruments, you should list as many instruments as you can recall. 
+        <ul>
+            <li> You will have three minutes to list as many items from the category as possible. 
+            <li> Please rely only on memory, and do not search the Internet for answers.
+            <li> Do not enter the same item twice in a round, or list two items with the same suffix.<br>
+                 For example if you list "guitar", do not list "guitars" in the same round.
+        </ul>
+        You will be asked to do this nine times in total.
+        <br><br>
+        <a class="start" href="#">Click here to begin</a>
+    </div>
+
+    <div id="game">
+        <div id="game_top">
+            <div id="game_left">
+                <h2>Name {game.category}</h2>
+                <input id="current" type="text" 
+                    rv-enabled="game.countdown">
+                <br>
+                <span class="subtext">Press enter to submit after each item</span>
+            </div>
+            <div id="timer">{game.countdown | toMinutes}</div>
+        </div>
+        <!-- <div id="items">{game.items | length} {game.category} named</div> -->
+        <div id="items"></div>
+    </div>
+
+    <div id="between_categories">
+        <h1>Times up!</h1>
+        You named { game.items | length } {game.category}.<br><br>
+
+        You have completed { game.gamenum } of 9 rounds.<br><br>
+
+        The next round may or may not be a category you have already done.
+        If it is a category you've already done, it's OK to list items you've
+        listed before, but you may also list new items. Please try to list as
+        many items as possible, but only list an item once per round.<br><br>
+        <a class="start" href="#">Start next round</a>
+    </div>
+
+    <div id="too_few">
+        <h1>Uh-oh...</h1>
+        You only entered { game.items | length } {game.category}!<br><br>
+
+        Let's try that round again! Please use the entire allotted time to try 
+        and generate as many items as possible, listing each item once per round.
+
+        The next round may or may not be a category you have already done.
+        If it is a category you've already done, it's OK to list items you've
+        listed before, but you may also list new items. <br><br>
+        <a class="start" href="#">Start next round</a>
+    </div>
+    
+    <div id="endgame">
+        <h1>Times up!</h1>
+        You named { game.items | length } {game.category}.
+
+        <div id="postExptSurvey">
+            <form action="demographics.php" method="post">
+	    	<h3 id="surveyTitle">Post-Experiment Survey</h3>
+            <span class="subtext">Please complete this survey. NOTE: The HIT is not complete until filling out this survey.</span>
+	    	<ul>
+	    	 <li>
+                Gender<br>
+                <input type="radio" name="gender" value="M"> Male
+                <input type="radio" name="gender" value="F"> Female
+                <input type="radio" name="gender" value="O"> Other
+                <input type="text" name="genderOther" size="15" maxlength="40" id="genderTxt">
+             </li><br>
+	    	 <li> 
+	    	 	Age
+	    	 	<input type="text" name="age" size="3" maxlength="3" id="ageTxt" />
+            </li><br>
+            For the next two questions, please be honest. You will be paid regardless of your response.<br><br>
+	    	 <li><label for="try">Did you try to do the task?</label>
+	    	 	<input type="radio" name="try" value="Y"> Yes
+	    	 	<input type="radio" name="try" value="N"> No
+	    	 </li>
+	    	 	Do you feel like you understood the task?
+	    	 	<input type="radio" name="understand" value="Y"> Yes
+	    	 	<input type="radio" name="understand" value="N"> No
+            <br><br>
+	    	 <li>Comments (optional):
+	    	 	<br />If you were confused, please tell us why you were confused here.<br />
+	    	 	<textarea name="comments" cols="40" rows="8" wrap="hard"> </textarea>
+	    	 </li>
+	    	</ul>	    	 				
+            <input type="submit" value="Submit for your Amazon Mechanical Turk code">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
