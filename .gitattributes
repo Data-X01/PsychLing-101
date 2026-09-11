@@ -33,3 +33,7 @@ berzak2025_onestop/original_data/ia_Paragraph.csv.zip filter=lfs diff=lfs merge=
 berzak2025_onestop/processed_data/*.csv filter=lfs diff=lfs merge=lfs -text
 berzak2025_onestop/prompts.jsonl.zip filter=lfs diff=lfs merge=lfs -text
 *.gz filter=lfs diff=lfs merge=lfs -text
+# LFS tracking for Luke & Christianson 2018 Provo Corpus contribution
+luke2018_provo/original_data/*.csv filter=lfs diff=lfs merge=lfs -text
+luke2018_provo/processed_data/*.csv filter=lfs diff=lfs merge=lfs -text
+luke2018_provo/prompts.jsonl.zip filter=lfs diff=lfs merge=lfs -text

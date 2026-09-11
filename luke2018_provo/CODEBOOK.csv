@@ -1,0 +1,24 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant (original labels Sub01-Sub84 remapped to integers 1-84).
+trial_order,Presentation order of the passage within the session (1-55). Passage order was randomised per participant.
+text_id,Identifier of the passage that was read (1-55). Constant across participants.
+word_position,Position of the word within its passage (1-based; from the DataViewer interest-area index).
+sentence_number,Index of the sentence containing this word within the passage. Empty for the first word of each passage.
+word_in_sentence_number,Position of the word within its sentence. Empty for the first word of each passage.
+stimulus,The word as displayed on screen for this interest area.
+word_length,Number of characters in the word. Empty for the first word of each passage.
+part_of_speech,Part of speech of the presented stimulus.
+word_class,Whether the word is a content or a function word.
+cloze_predictability,"Proportion of norming participants who produced this exact word form in the cloze task (0-1). Empty for the first word of each passage."
+pos_predictability,"Proportion of cloze responses matching this word's part of speech (0-1). Empty for the first word of each passage."
+cloze_certainty,"Certainty of the cloze response distribution for this word (0-1). Empty for the first word of each passage."
+rt,"Total reading time on the word in milliseconds (dwell time summed over all fixations). 0 means the word was never fixated."
+first_fixation_duration,Duration of the first fixation on the word in milliseconds. Empty if the word was never fixated.
+gaze_duration,"Sum of fixations on the word during the first run through it, in milliseconds. Empty if the word was never fixated."
+go_past_time,"Time from first entering the word until moving past it to the right, including regressions, in milliseconds. Empty if the word was never fixated."
+fixation_count,Number of fixations landing on the word.
+run_count,Number of separate runs of fixations on the word.
+is_fixated,Binary indicator of whether the word received any fixation (1) or none at all (0).
+is_first_pass_skipped,"Binary indicator of whether the word was skipped during first-pass reading (1) or not (0). A first-pass skipped word may still be fixated later during a regression."
+is_regressed_into,Binary indicator of whether a regression entered this word. Empty if the word was never fixated.
+is_regressed_out_of,Binary indicator of whether a regression left this word. Empty if the word was never fixated.
