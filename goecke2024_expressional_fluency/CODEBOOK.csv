@@ -1,0 +1,33 @@
+Recommended Column Name,Description
+participant_id,"Pseudonymous vpcode_hd1 preserved exactly, including leading zeros. String. Shared across paradigms; sharing eligibility is unverified."
+session_id,"Within-participant recording-day index, starting at 0. Distinct days are distinct sessions; actual source dates stay in original_data."
+task_run_id,"Within-participant experiment-run index, starting at 0; distinct source file/date/start time/subject combinations remain separate. Order uses source start time, with source filename then subject as tie breakers."
+trial_id,Within-participant event identifier; unique together with participant_id.
+trial_order,Zero-based event order within participant. Runs use recording start time; blocks use administered script order. Source record order is retained within blocks and numbered trial order is validated. Blank-number control records retain their source position.
+fluency_list_id,Zero-based timed response-round index within participant. Each run/item is a separate round. Blank for instruction events.
+response_order,"One-based recorded event order within a timed item, including empty/control events. Blank for instruction events."
+task_type,"English paradigm label: ideational_fluency, word_fluency, or expressional_fluency."
+time_condition,English label short or long. Hard tasks are short with task_variant=hard and 120000 ms limit.
+task_variant,"base or hard, according to the administered script."
+round_time_limit,Script time limit in milliseconds. Blank for instruction events.
+stimulus,Original German task cue from the administered IQX script. Original wording and spelling retained; display newline markers converted to newlines. Blank for instruction events.
+response,Unmodified raw recorded string. One entry stays one entry even if it contains several words. Empty string remains empty.
+rt,"Original latency in milliseconds, including the openended typing/response interval. Blank when unavailable. No exact response timestamp or cumulative time is reconstructed."
+event_type,"typed, empty, or control. Ctrl+B and Ctrl+Q are control records. Empty does not establish timeout."
+source_file,Path relative to original_data for the unmodified raw source.
+source_row,One-based CSV record number with header record=1. A quoted multiline record still counts once.
+source_trialnum,Original trialnum string. Numbering restarts within task blocks; blank instruction values remain blank.
+source_blockcode,Original Inquisit block label.
+source_trialcode,Original Inquisit trial label.
+rater_id,"English initials from the R-selected scoring file name, normalized to uppercase. No rater averaging performed."
+scored_response,Response string in the scoring source; may differ from the raw response. Never replaces events.response.
+fluency_score_raw,Unmodified flu string from the scoring source.
+fluency_score,"Parsed integer count of scored valid entries, possibly greater than 1. Missing and -99 become blank; unresolved strings stay blank."
+fluency_score_status,"numeric, missing, sentinel_missing, or unresolved."
+repetition_score_raw,Unmodified rep string from the scoring source.
+repetition_score,Parsed integer rep; blank/NA maps to 0 following the R scripts. Unresolved strings stay blank. No new repetition detection.
+repetition_score_status,"numeric, missing_as_zero, or unresolved."
+response_differs,1 if scored_response differs exactly from events.response; otherwise 0.
+source_extra_fields,JSON list preserving nonempty unnamed scoring columns by original one-based column_position and unmodified value. Blank when none. Annotation meanings are unverified.
+rating_source_file,Path relative to original_data of the R-selected scoring source.
+rating_source_row,One-based CSV record number including header record=1 in that scoring source.

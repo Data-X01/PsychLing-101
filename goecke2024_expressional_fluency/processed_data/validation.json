@@ -1,0 +1,50 @@
+{
+  "experiment": "goecke2024_expressional_fluency",
+  "raw_rows": 9768,
+  "scored_rows": 19536,
+  "excluded_raw_rows": 98,
+  "excluded_scored_rows": 196,
+  "warnings": [
+    "Consent-withdrawal exclusions and public-sharing permission remain unverified."
+  ],
+  "source_sha256": {
+    "task_materials/synonym_base_long.iqx": "e12acff84450f24a260ae6b18d1d4cfc49557a3e893c9f61331dd0659bcb16e9",
+    "task_materials/InstructionsEnd.htm": "b0a09f12189054d9cd6af015b99c58c9e92e31e0d7150ae2559316a572f552b6",
+    "task_materials/InstructionsSyn_long.htm": "fbff26fdc92f27869923dce02fa6c702b0e67bd296e760a8bbc69aea110150e3",
+    "raw/wilhelm_retrieval_version2_synonym_base_long_raw_2206030851.csv": "691300d2fc695b53517a48245a1125116d03fc9e15819bdb9d4102a83c7b488e",
+    "task_materials/synonym_base_short.iqx": "d80ec6ee26aa7300181224f0ac035299eaa115582f82991b40477de9521c1df5",
+    "task_materials/InstructionsSyn.htm": "c067ffb36bba2988e5324016606001ab4028b420e10575c0daf2f77258990ebd",
+    "raw/wilhelm_retrieval_version2_synonym_base_short_raw_2206030842.csv": "d605e9f9cea8fce783aed09fa39798417f4328ae5e4cb107e3912750499eafe1",
+    "analysis_scripts/23_SynomeLong.R": "75784cffd273bf9f82c747bb19bb342d8eac86ff1c32505885acbc6cf850cd78",
+    "scored/synonym_base_long_JL1_19-04-2022_copy.csv": "41f75a78f1ceeed2b75f4397a9fa72b1210fd17849d4e9dd4c9c4ac8fc67af5f",
+    "scored/synonym_long_JL_full_03-06-2022_snippet2.csv": "ccbd2d8f8ba01cc0b3762115b5881f93f301e33889266d7d2bf4a46e343fe62a",
+    "scored/synonym_base_long_KH1_19-04-2022.csv": "c7ae5b59742c44bc190fac0e4040a5628724e9c305a088982843bd2ea99b33f1",
+    "scored/synonym_long_kh_full_03-06-2022_snippet2.csv": "5f44e6c37529ced571b9d3bf5e81f5b22019d3f1d402480955001e7220792541",
+    "analysis_scripts/24_SynonymeShort.R": "cc7b7b56755ac5318d369900b97b5a7249f4bde0c5537fa77875ea05acbcf7f7",
+    "scored/synonym_base_short_VS1_19-04-2022_copy.csv": "10fe40cd2c99084b6f0250a861d74f8ec23f1226f8327cf528c374c1500f198b",
+    "scored/synonym_short_VS_full_03-06-2022_snippet2.csv": "995ac488bd4080b1fc653af851de062f82f58d929c012ab7a91c8d4b8e8a4bc2",
+    "scored/synonym_base_short_KH1_19-04-2022_copy.csv": "296c85ba348c205bb9def77eafeaacfe1e56a2c94c97465fc177e0b6207fb92b",
+    "scored/synonym_short_kh_full_03-06-2022_snippet2.csv": "64457b417d3da2a67ed80d3b79a5535ea15ca47eff67561e4b33cae2b4ac4588",
+    "analysis_scripts/README_VPCODES.txt": "f653bac49641b67c008f2fc6bc75d6767401be77d863938a13bdd2f0ea1dc4b6"
+  },
+  "participants": 331,
+  "event_rows": 9670,
+  "rating_rows": 19340,
+  "raw_reconciliation_ok": true,
+  "scored_reconciliation_ok": true,
+  "event_types": {
+    "typed": 8803,
+    "empty": 852,
+    "control": 15
+  },
+  "audit_reasons": {
+    "R_test_code_exclusion": 216,
+    "missing_participant_id": 63,
+    "R_subject_exclusion": 15
+  },
+  "response_differences": 736,
+  "unnamed_annotation_rows": 0,
+  "unresolved_scores": 0,
+  "umlaut_event_rows": 1064,
+  "multiple_run_participants": 3
+}

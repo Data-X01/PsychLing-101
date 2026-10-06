@@ -1,0 +1,172 @@
+# Goecke, Weiss, and Wilhelm (2024): ideational fluency
+
+LOCAL PREPARATION. Processed CSVs, validation reports, local audit files, and one complete participant prompt preview have been generated with contributor approval. The reviewed German prompt representation has been approved and prompts.jsonl.zip has been generated and verified. Public sharing remains pending.
+
+Study: Goecke, B., Weiss, S., & Wilhelm, O. (2024). “Driving Factors of Individual Differences in Broad Retrieval Ability: Gr Is More Than the Sum of Its Parts.” Journal of Experimental Psychology: Learning, Memory, and Cognition. [Paper DOI](https://doi.org/10.1037/xlm0001336). German task administration.
+
+The paper identifies [OSF project erdxq](https://osf.io/erdxq/) as the study data and materials repository. Contribution source files were supplied locally by the contributor; the public-link reference does not assert that every local raw/scoring revision is identical to a current OSF file. Maintainers requested a separate contribution per verbal retrieval paradigm and German experiment representations.
+
+## Sources and task mapping
+
+The contributor confirmed the supplied Inquisit scripts as the administered versions. Raw exports supply response text, latency, and event order. Scoring versions are exactly those read by the supplied R widening scripts, with the case-only `Vs`/`VS` filename discrepancy resolved to the available file. Unselected earlier scoring versions are not copied.
+
+| Source task | Condition | Variant | Limit (ms) | Original cues |
+| --- | --- | --- | --- | --- |
+| long_base | long | base | 480000 | Nennen Sie einen Vertreter der folgenden Kategorie: / TIERE; Nennen Sie einen Vertreter der folgenden Kategorie: / LEBENSMITTEL |
+| short_base | short | base | 90000 | Nennen Sie einen Vertreter der folgenden Kategorie: / MÖBELSTÜCKE; Nennen Sie einen Vertreter der folgenden Kategorie: / PFLANZEN; Nennen Sie einen Vertreter der folgenden Kategorie: / LÄNDER |
+| short_hard | short | hard | 120000 | Nennen Sie einen Vertreter der folgenden Kategorie: / LAUBBÄUME; Nennen Sie einen Vertreter der folgenden Kategorie: / FLÜSSE |
+
+For the reported ideational short tasks, the administered mapping is TH1=MÖBELSTÜCKE, TH2=PFLANZEN, TH3=LÄNDER. This differs from the ordering in aggregate study documentation. The administered script mapping controls these drafts. The base long tasks have a cap of 300 submissions per category; base short and hard tasks have a cap of 100.
+
+## Additional hard tasks outside the paper's reported indicators
+
+The contributor clarified that the hard tasks were not part of the indicators reported in Goecke, Weiss, and Wilhelm (2024). They are additional tasks present in the supplied study materials and raw data and are included here with contributor approval. The publication citation describes the parent study; it does not imply that these additional task indicators were reported in the paper.
+
+| Source block | Original German category | Requirement | Time limit per category |
+| --- | --- | --- | --- |
+| TH1_base_hard_s | LAUBBÄUME | Name representatives of the category of broad-leaved trees | 120 seconds |
+| TH2_base_hard_s | FLÜSSE | Name representatives of the category of rivers | 120 seconds |
+
+The supplied task-description document, Retrieval Tasks UUlm.docx, labels these categories hard because they are narrower than the other categories. This is the source's design label; no empirical difficulty estimate is inferred. Operational details are documented in the included [administered script](original_data/task_materials/things_base_short_hard_ges.iqx) and [German instruction page](original_data/task_materials/InstructionsThings_hard.htm). Participants typed an entry and pressed Enter to submit it, continuing with further entries during the timed round. The instructions ask participants to avoid repetitions and to wait for the round to end if no further response comes to mind. Each category has a 120,000 ms block limit and a maximum of 100 openended trials.
+
+These rows are identified by task_variant=hard and time_condition=short. The short label follows the source's short_hard naming and groups the brief time conditions; it does not mean 90 seconds. round_time_limit=120000 distinguishes the hard rounds from the 90,000 ms base short rounds. Duration and task criterion both differ, so these versions should remain distinguishable in subsequent analyses. They have their own fluency_list_id and task_run_id and are not pooled into a base-task round.
+
+Raw response text and submission order come from the hard-task raw export. Rater records come from the AZ and AR source files selected by [32_ThingsHard.R](original_data/analysis_scripts/32_ThingsHard.R). The same conservative event and score-preservation rules described below apply; no additional validity rule is invented. German prompts use the hard-task instructions and cues from the included materials.
+
+
+## Contribution files and local review files
+
+```text
+goecke2024_ideational_fluency/
+  original_data/
+    raw/
+    scored/
+    task_materials/
+    analysis_scripts/
+  processed_data/
+    exp1.csv          # generated and checked
+    exp2.csv         # generated and checked
+    validation.json     # generated and checked
+  CODEBOOK.csv
+  preprocess_data.py
+  generate_prompts.py
+  README.md
+  prompts.jsonl.zip     # generated and checked
+  local_audit.csv       # local review only; exclude from contribution
+  prompt_preview.txt   # local review only; exclude from contribution
+```
+
+## Data model and exclusions
+
+The processed filenames follow the repository's expN.csv convention. exp1.csv is the consolidated event table, with one row per recorded event. exp2.csv is the consolidated rating table, with one row per event and rater. The numbers identify two tables for the same paradigm; exp2.csv is not a second experiment. Long, short and available hard conditions remain identifiable through task metadata. Original raw exports and the scoring files selected by the supplied R scripts are combined reproducibly during preprocessing, including the selected scoring snippets. Individual rater values remain separate; responses are not duplicated into the event table or averaged across raters.
+
+exp1.csv has one row per recorded event, including empty and control records and instruction abort records. Multiword entries stay intact. Repeated runs are retained separately. A session is one recorded day; it does not assert that experiments on that day were contiguous. Actual date/time and numerical subject remain in original_data for joining; processed tables omit them. Source start time orders runs, not individual responses. Within each run the script block sequence orders blocks; original source record order is retained within each block and numbered trial order is checked. Two word-long control events have blank trial numbers and keep their recorded positions. Any equal-start-time ties use filename and subject, so their cross-run order is not independently established.
+
+Explicit R filters exclude 99TEST99, 04TEST04, 00TEST00, empty vpcode_hd1, and subject 811805689. Nonstandard IDs are retained in the local audit and unchanged sources; no IDs are guessed. The two raw code `8` records are instruction aborts. The study's later multivariate outlier selection is not applied. The contributor confirmed that 04VAIN01 is a genuine participant included in the published data. It is retained; the R exclusion of numerical subject 811805689 remains in effect. Consent-withdrawal IDs remain unknown; this preparation does not establish the published N=322 analysis sample.
+
+exp2.csv holds each R-selected rater's event-linked scores and scored response string. The join uses normalized date, run start time, subject, participant code, block and original trial number, never edited response text. An unmatched or ambiguous rating goes to local_audit.csv, with its original values retained in original_data. Numeric flu is a count and can exceed 1; it is not binary accuracy. -99 flu becomes missing. Blank/NA rep becomes 0 following the R convention. Unresolved score strings such as `o` stay unresolved. No rating averaging, semantic recoding, automatic spelling corrections, or newly inferred repetition flags are applied. Blank output fields represent unavailable values except for response, where blank means a recorded empty field.
+
+## Instructions and prompts
+
+Instructions are extracted from the visible HTML body with original German wording; HTML entities and layout whitespace are normalized. IQX cue text preserves spelling, including the original “Synomym” typo. Each participant's complete available paradigm record is represented in one JSONL object with text, experiment, participant_id, and English metadata. Each run begins with its original instructions. Available transition wording precedes the next observed task block. An unavailable InstructionsSynBetween.htm page is omitted with the contributor's approval and documented in expressional metadata. Completion pages are not added because their display is not established by the last response record.
+
+All retained recorded events appear exactly once. Response and available latency are inside the required double-angle delimiters. Empty input is described as “Keine Texteingabe aufgezeichnet”; it is not called a timeout. Control records retain the recorded key string. Ratings are available in the tidy rating table and are omitted from the behavioral prompt. No response is truncated, split, translated or corrected. Whole paradigms may include incomplete runs.
+
+## Validation and supervised execution
+
+Python 3 standard library is sufficient for preprocessing and the conservative prompt length check. The default length measure is UTF-8 byte count, an upper bound for cl100k_base/o200k_base byte-based BPE text token counts. It is reported as a bound, not as an exact token count. Optional exact checks require tiktoken and the selected encoding cache; installing or downloading them requires a separate approved step. The strict limit is below 32,000. Participants at or above the bound/selected tokenizer limit stop archive generation; responses are never silently shortened.
+
+Run only after reviewing these commands with the contributor, in this folder:
+
+```bash
+python3 -B preprocess_data.py
+python3 -B generate_prompts.py
+```
+
+These commands read sources and print validation reports without writing outputs. For complete preview prompts, add `--examples 3` to the second command. Both write commands have already been run with contributor approval. Their outputs now exist, so running either command again in this folder will stop rather than replace files. The commands below document reproduction in a fresh copy; any further file-changing run needs the contributor's approval:
+
+```bash
+python3 -B preprocess_data.py --write
+python3 -B generate_prompts.py --write
+```
+
+Both scripts refuse to overwrite existing files. Prompt generation reads processed_data/exp1.csv directly, preserving each response string and recorded order. It validates CSV fields, numeric values, IDs, event ordering, task labels and participant/event totals against processed_data/validation.json. Original German instruction pages are read from task_materials and checked against their recorded SHA-256 hashes. Raw/scored preprocessing is not rerun by the prompt script; exp2.csv remains separate from the behavioral prompt. Source SHA-256 hashes, encodings, separators, header/row counts, extra fields, missing IDs, exact duplicate source rows, task labels/caps, latency values, German umlauts, unique IDs, order, join ambiguity, row reconciliation and reserved prompt symbols are checked. Unexpected named source columns stop processing. Nonempty unnamed scoring columns are preserved as positional JSON in source_extra_fields with a warning. Three such annotations occur in ideational scoring sources: one `1` and two `xxx`; their meaning is unverified. Dates parse as ISO or explicitly day-first source formats. Source spelling/mojibake in scoring files is preserved and differences are flagged.
+
+## Privacy, scope, and sharing status
+
+No covariates are included: working memory, crystallized intelligence, mental speed, secondary memory, age, and sex/gender are outside the approved contribution scope. Participant codes can link these data to other study files. Original exports contain recording dates/times and subject numbers. Free text needs a manual privacy review; a regex scan cannot establish that it contains no identifiers. Consent-withdrawal exclusions and permission to redistribute the original exports, scoring annotations, and task materials remain unverified. Local draft preparation is not public-release approval. The repository license does not establish source redistribution rights. The paper PDF, XLSX covariate codebook and unrelated tasks are not copied.
+
+Before contribution: review the preserved unresolved scoring annotations; verify eligible participant IDs/public-sharing rights; confirm the exact commit file list and current repository LFS rules. The full German previews have been reviewed and output generation has been approved. No retained rating joins are unmatched or ambiguous. Exclude local_audit.csv and prompt_preview.txt. Git/GitHub actions are executed by the contributor one action at a time. No Git operation has been performed by these scripts.
+
+Repository conventions checked against the current [PsychLing-101 README](https://github.com/Data-X01/PsychLing-101/blob/main/README.md) and [root CODEBOOK](https://github.com/Data-X01/PsychLing-101/blob/main/CODEBOOK.csv). Local CODEBOOK uses its Recommended Column Name,Description convention. Custom fields are documented in this contribution CODEBOOK. The 23 names absent from the repository-wide CODEBOOK need corresponding definitions there; a local CODEBOOK_additions.csv is prepared for the contributor to apply before staging. Existing canonical definitions are retained. Existing LFS rules are path-specific; assess the final outputs before adding any LFS rule.
+
+## Local draft checks, 6 October 2026
+
+The saved processed tables contain 334 participant records, 73,453 events and 187,399 linked rater records. Raw and scored row totals reconcile exactly after the documented exclusions. No unmatched or ambiguous retained ratings and no repeated participant/event/rater keys were found. These counts are local preparation counts; final public-sharing eligibility remains unverified.
+
+Every copied source matched its original SHA-256 digest. Python syntax, unique output IDs, source and response order, task cues, rater joins, German umlauts, JSON serialization, instruction selection and one delimiter pair per recorded event passed the checks. The largest complete prompt was 21,150 UTF-8 bytes. Every prompt was below 32,000 bytes, providing a conservative token bound for the documented byte-based BPE tokenizers. Exact tokenizer counts were not measured. No participant exceeded this bound.
+
+The processed_data directory now contains exp1.csv, exp2.csv, and validation.json. Saved CSV rows were read back and matched against the source-based preparation, including every response, score, and field. One complete prompt_preview.txt is available for local review. prompts.jsonl.zip has been written and independently checked against the saved exp1.csv. One ideational repetition value `o` and three unnamed ideational scoring annotations are preserved with warnings. Word and expressional scoring have no unresolved numeric values. No raw response text was altered.
+
+## Generated files and preview review
+
+| File | Data rows | Size (MB, decimal) | Purpose |
+| --- | ---: | ---: | --- |
+| `processed_data/exp1.csv` | 73,453 | 20.3602 | Recorded task events |
+| `processed_data/exp2.csv` | 187,399 | 22.6737 | Event-linked rater scores |
+| `processed_data/validation.json` | n/a | 0.0043 | Source checks, counts and warnings |
+| `prompts.jsonl.zip` | 334 JSONL records | 0.7150 | Full participant prompts |
+| `local_audit.csv` | 1,273 | 0.1138 | Local exclusion review; do not contribute |
+| `prompt_preview.txt` | n/a | 0.0104 | One full participant prompt; local review only |
+
+The full preview is participant `02YEIZ05`: 205 recorded events in 3 task runs, with conditions short / base, long / base, short / hard. It includes 4 recorded empty entries and no control-key events. The file contains exactly the generator's prompt text, begins with the complete original instructions for the first recorded run, and has no review header, omitted response, or shortened section. Its UTF-8 byte length is 10,379. The preview participant is an illustrative example, not a participant selection rule.
+
+To review the preview:
+
+1. Open prompt_preview.txt and read each instruction section. Compare the German wording and task cues with the supplied task materials.
+2. Check the numbered entries, recorded empty inputs, and latency wording. Confirm that this presentation reflects the task as administered.
+3. Tell the assistant which wording or formatting needs changing, or approve the reviewed representation. The contributor reviewed these previews and approved archive generation. Any later revision still requires explicit approval.
+
+The expressional preview omits the unavailable InstructionsSynBetween.htm page as already agreed. No substitute transition instruction is invented. Existing spelling errors in original cues and participant responses are preserved. Script generation covers every retained participant, not just this preview example.
+
+All current files are below 100 MB. The largest generated file across the three paradigms is the word-fluency exp2.csv at 23,993,370 bytes. Archives have now been measured; check the current repository LFS rules before staging. This local preparation has performed no Git/GitHub action. The contributor will receive one action at a time for the fork, clone, branch, staging, commit, push and pull request, with its purpose and expected result.
+
+## Saved prompt archive checks
+
+The CSV-reading generator was checked against the existing archive: every JSONL byte, participant ID, metadata field and prompt text matched. Existing archives were retained without rewriting. Across the three paradigms this comparison covered 998 participant records. The contributor reviewed the original prompt representation before this change to CSV input.
+
+The archive contains one UTF-8 prompts.jsonl member with 334 JSONL records and 73,453 represented events. Each record contains text, experiment and participant_id, with English metadata. Participant IDs are unique and match the retained processed event participants. Every response and available latency was compared in order with exp1.csv; the archived preview participant matches prompt_preview.txt exactly. ZIP integrity and JSON parsing passed. Archive size is 715,048 bytes; uncompressed JSONL size is 3,971,035 bytes.
+
+The largest prompt is 21,150 UTF-8 bytes. Every record is below the conservative 32,000-token bound for the documented byte-based BPE tokenizers; exact token counts have not been measured. No record was truncated. The required response delimiters each occur once per recorded event.
+
+A separate code audit of all eight raw exports and all uploaded scoring versions found the known codes 99TEST99, 04TEST04 and 00TEST00, with no additional code matching the screened test-like names. There are 503, 21 and 13 original raw rows respectively for these codes. They remain in unchanged original sources and local audit records. All three known test codes, missing IDs and code 8 are absent from the processed tables and archived participant IDs. 04VAIN01 is retained following the contributor's confirmation that it belongs in the published data. This check does not establish the status of every other participant code or resolve the unknown consent-withdrawal IDs.
+
+## Copied source inventory
+
+- `task_materials/things_base_long_ges.iqx`
+- `task_materials/InstructionsWeiter.htm`
+- `task_materials/InstructionsEnd.htm`
+- `task_materials/InstructionsThingsL.htm`
+- `raw/wilhelm_retrieval_version2_things_base_long_ges_raw_2206030901.csv` (utf-8-sig, ',' delimiter, 48999 records)
+- `task_materials/things_base_short_ges.iqx`
+- `task_materials/InstructionsThings.htm`
+- `raw/wilhelm_retrieval_version2_things_base_short_ges_raw_2206030904.csv` (utf-8-sig, ',' delimiter, 17217 records)
+- `task_materials/things_base_short_hard_ges.iqx`
+- `task_materials/InstructionsThings_hard.htm`
+- `raw/wilhelm_retrieval_version2_things_base_short_hard_ges_raw_2206030848.csv` (utf-8-sig, ',' delimiter, 7576 records)
+- `analysis_scripts/13_ThingsLong.R`
+- `scored/things_base_long_JL_19-04-2022.csv` (cp1252, ';' delimiter, 30097 records)
+- `scored/things_base_long_ges_JL_full_03-06-2022_snippet2.csv` (cp1252, ';' delimiter, 18902 records)
+- `scored/things_base_long_VS_19-04-2022.csv` (cp1252, ';' delimiter, 30097 records)
+- `scored/things_base_long_KH_19-04-2022.csv` (cp1252, ';' delimiter, 30097 records)
+- `scored/things_base_long_ges_kh_full_03-06-2022_snippet2.csv` (utf-8-sig, ';' delimiter, 18902 records)
+- `analysis_scripts/19_ThingsShort.R`
+- `scored/things_base_short_JL_19-04-2022.csv` (cp1252, ';' delimiter, 10652 records)
+- `scored/things_base_short_ges_JL_full_03-06-2022_snippet2.csv` (cp1252, ';' delimiter, 6565 records)
+- `scored/things_base_short_VS_19-04-2022.csv` (utf-8-sig, ';' delimiter, 10652 records)
+- `scored/things_base_short_ges_VS_full_03-06-2022_snippet2.csv` (utf-8-sig, ';' delimiter, 6565 records)
+- `scored/things_base_short_KH_19-04-2022.csv` (utf-8-sig, ';' delimiter, 10652 records)
+- `analysis_scripts/32_ThingsHard.R`
+- `scored/things_base_short_hard_az_full_03-06-2022.csv` (utf-8-sig, ';' delimiter, 7576 records)
+- `scored/things_base_short_hard_AR_full_03-06-2022.csv` (utf-8-sig, ';' delimiter, 7576 records)
+- `analysis_scripts/README_VPCODES.txt`

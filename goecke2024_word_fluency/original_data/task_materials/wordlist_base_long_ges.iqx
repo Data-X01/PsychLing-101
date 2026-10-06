@@ -1,0 +1,105 @@
+﻿<data>
+/ columns = [date time subject trialnum blockcode trialcode latency response values.vpcode_hd1]
+/ labels = TRUE
+/ format = TAB
+</data>
+
+*defaults*
+<defaults>
+/ screencolor = (white)
+/ canvasaspectratio = (2560, 1440)
+/ fontstyle = ("Calibri", 3.00%, false, false, false, false, 5, 1) 
+/ canvasposition = (50%, 50%)
+/ canvassize = (100%, 100%)
+/ txcolor = (60,60,60)
+/ txbgcolor = (white)
+</defaults>
+
+<instruct>
+/ nextlabel = "Weiter"
+/ prevlabel = "Zurück "
+/ finishlabel = "Weiter"
+/ inputdevice = mouse
+/ fontstyle = ("Calibri", 3.00%, false, false, false, false, 5, 1) 
+/ windowsize = (95%,95%)
+</instruct>
+
+<values>
+/vpcode_hd1 = 0
+</values>
+
+<parameters>
+/vpcode_hd2 = 0
+</parameters>
+
+<text WL1_base_l>
+/ numitems = 1
+/ items = ("Nennen Sie Worte, die als ERSTEN Buchstaben ein 'S' haben")
+/ size = (80%,20%)
+</text>
+
+<text WL2_base_l>
+/ numitems = 1
+/ items = ("Nennen Sie Worte, die als LETZTEN Buchstaben ein 'N' haben")
+/ size = (80%,20%)
+</text>
+
+<openended WL1_base_l_txt>
+/ stimulusframes = [1=WL1_base_l]
+/ position = (50%, 80%)
+/ linelength = 40
+/ numlines = 1
+/ required = true
+/ buttonlabel = "Drücken Sie die Eingabetaste, wenn Sie ein Wort geschrieben haben"
+</openended>
+
+<openended WL2_base_l_txt>
+/ stimulusframes = [1=WL2_base_l]
+/ position = (50%, 80%)
+/ linelength = 40
+/ numlines = 1
+/ required = true
+/ buttonlabel = "Drücken Sie die Eingabetaste, wenn Sie ein Wort geschrieben haben"
+</openended>
+
+<block instruct_WL1_base_1>
+/ preinstructions = (InstructionsWL)
+</block>
+
+<block WL1_base_l>
+/ trials = [1 - 300 = WL1_base_l_txt]
+/ timeout = 480000
+/ postinstructions = (InstructionsWeiter)
+</block>
+
+<block WL2_base_l>
+/ trials = [1 - 300 = WL2_base_l_txt]
+/ timeout = 480000
+/ postinstructions = (InstructionsEnd)
+</block>
+
+
+<trial start>
+/ inputdevice = keyboard
+/ validresponse = (28)
+</trial>
+
+
+<expt R>
+/ blocks = [1= instruct_WL1_base_1; 2=WL1_base_l; 3=WL2_base_l]
+/ onexptbegin = [values.vpcode_hd1 = parameters.vpcode_hd2;]
+</expt>
+
+
+
+<htmlpage InstructionsWL>
+/ file = "InstructionsWL_long.htm"
+</htmlpage>
+
+<htmlpage InstructionsWeiter>
+/ file = "InstructionsWeiterWL1.htm"
+</htmlpage>
+
+<htmlpage InstructionsEnd>
+/ file = "InstructionsEnd.htm"
+</htmlpage>
