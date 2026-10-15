@@ -1,0 +1,5 @@
+rt;repetition
+trial_num_block = n° d'essai dans le bloc
+correct : 1 = réponse correcte ou 0 incorrecte
+rt = reaction time
+repetition = 

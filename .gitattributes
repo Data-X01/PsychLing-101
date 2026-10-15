@@ -41,6 +41,10 @@ adelman2014_formpriming/prompts.jsonl.zip filter=lfs diff=lfs merge=lfs -text
 luke2018_provo/original_data/*.csv filter=lfs diff=lfs merge=lfs -text
 luke2018_provo/processed_data/*.csv filter=lfs diff=lfs merge=lfs -text
 luke2018_provo/prompts.jsonl.zip filter=lfs diff=lfs merge=lfs -text
+# LFS tracking for Ferrand et al. 2018 MEGALEX contribution
+ferrand2018_megalex/original_data/Visual.WpuispW.essais_ElTec.txt filter=lfs diff=lfs merge=lfs -text
+ferrand2018_megalex/processed_data/*.csv filter=lfs diff=lfs merge=lfs -text
+ferrand2018_megalex/prompts.jsonl.zip filter=lfs diff=lfs merge=lfs -text
 # LFS tracking for Siegelman et al. 2022/2025 MECO L1 contribution
 siegelman2022_meco/original_data/*/*.rda filter=lfs diff=lfs merge=lfs -text
 siegelman2022_meco/processed_data/*.csv filter=lfs diff=lfs merge=lfs -text

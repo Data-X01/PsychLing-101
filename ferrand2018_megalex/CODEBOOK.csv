@@ -1,0 +1,12 @@
+Recommended Column Name,Description
+participant_id,"Unique identifier assigned to each participant (original column subject, 1001-1111)."
+trial_id,Unique identifier for a single trial (original column numinit). It is unique across the whole file and increases with presentation order within each participant; values are not contiguous.
+trial_order,Presentation order within the session (0-indexed). The order in which the participant saw this trial. Derived by sorting each participant's trials on trial_id.
+phase_id,"Block the trial belongs to (original column block, 1-109). A block had 260 positions; sessions normally consisted of two blocks."
+trial_in_block,"Position of the trial within its block (1-indexed; original column trial_num_block). Positions 1-10 of each block were practice trials and are not in the original data, so recorded values start at 11."
+stimulus_type,"Lexicality of the stimulus: word or pseudoword (original column category, w/p)."
+stimulus,The letter string presented to the participant (original column target).
+response,"Participant's response, word or nonword. Not recorded in the original data; derived from stimulus_type and accuracy. Empty for the one incorrect trial at the 2 s response deadline (participant 1006, trial_id 151696, rt 2000.01), which is probably a timeout."
+accuracy,Binary indicator of whether the participant's response was correct (1 = correct; original column correct).
+rt,"Time taken by the participant to respond, in milliseconds, as in the original data."
+repetition,"Flag carried over unchanged from the original data; not documented by the authors. 1 on 1,029 trials, most of which are a second presentation of the same stimulus to the same participant (see README.md)."
