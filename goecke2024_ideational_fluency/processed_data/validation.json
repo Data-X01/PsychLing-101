@@ -1,0 +1,62 @@
+{
+  "experiment": "goecke2024_ideational_fluency",
+  "raw_rows": 73792,
+  "scored_rows": 188333,
+  "excluded_raw_rows": 339,
+  "excluded_scored_rows": 934,
+  "warnings": [
+    "Unnamed scoring annotations preserved as positional JSON; meaning unverified.",
+    "Unresolved scoring strings preserved; no guessed numeric values.",
+    "Consent-withdrawal exclusions and public-sharing permission remain unverified."
+  ],
+  "source_sha256": {
+    "task_materials/things_base_long_ges.iqx": "da930bbf1a4d7c1803cb1f375a5fc77870b095055d89bb56149535533f084a88",
+    "task_materials/InstructionsWeiter.htm": "fcb9e95e2d42b5d39404f2b8eb836ee3b69acea42be5e86c121f1dea3eb052f3",
+    "task_materials/InstructionsEnd.htm": "b0a09f12189054d9cd6af015b99c58c9e92e31e0d7150ae2559316a572f552b6",
+    "task_materials/InstructionsThingsL.htm": "9bb206c5bca4abc168d866b1435849964f0dbc7010755c85af8c49927e35c436",
+    "raw/wilhelm_retrieval_version2_things_base_long_ges_raw_2206030901.csv": "1d7c653134dad52d4090941480d2e799c6fa69f33eb232c204da76005ce0b530",
+    "task_materials/things_base_short_ges.iqx": "a7dd2cddbd9ad382b8e228da7f8496a1ee5cd4daada2dfa18864989853dac5ea",
+    "task_materials/InstructionsThings.htm": "80b6e15f2df6f42942046dd1b46aba9bd2bad3241003617b5bca6456bb8dfa7a",
+    "raw/wilhelm_retrieval_version2_things_base_short_ges_raw_2206030904.csv": "9f63d9ff1755bd5cbbc4a71536f48a939e00a5a5fda46f63d6d20aee20898a12",
+    "task_materials/things_base_short_hard_ges.iqx": "188fb069cf539f97baeda35b0c17122d8088275eda5907c826b693f6f79d813d",
+    "task_materials/InstructionsThings_hard.htm": "aca6e58886c61956cab3ffbb230c18b74e0be34cdbcce551662c3e80ea7669aa",
+    "raw/wilhelm_retrieval_version2_things_base_short_hard_ges_raw_2206030848.csv": "269f3317ff4fa93c0541ebc2b4d16e0e10c736784b842db063d932c3a18f5fe8",
+    "analysis_scripts/13_ThingsLong.R": "fb71a788ac1d7a54fb0e8f563be31028325514200426a0e97036e32da467cbe4",
+    "scored/things_base_long_JL_19-04-2022.csv": "44ab4e1ef393148049ba1c340cdfc8f837a8d52f05de4ad5331a7ef55b671819",
+    "scored/things_base_long_ges_JL_full_03-06-2022_snippet2.csv": "ffcf4c3e9dba7378845396518a7b6f50fe6bcb7de63db68ecb3840da326e7f42",
+    "scored/things_base_long_VS_19-04-2022.csv": "099ed8c5ff9e0b66bb86610f5983ee8f16e7bddc8369f37c4df5e6808ba5a14a",
+    "scored/things_base_long_KH_19-04-2022.csv": "ff683ed2852bad7fb55c3bd81badf7e6d49d33a5a815a88e970c22ed5c7a2e60",
+    "scored/things_base_long_ges_kh_full_03-06-2022_snippet2.csv": "ba43388e17b43c7396288d37bdc42209837af87daf546ac3cef01c16c18e6b3c",
+    "analysis_scripts/19_ThingsShort.R": "c84f38e466325bb4dff20f78218dcd1146555e22f181dc772a61dc7bcca35838",
+    "scored/things_base_short_JL_19-04-2022.csv": "3c959d3748b711c4bfb9dc600f329f6c99b8a740db8b83c3efa4fa9e248a0b87",
+    "scored/things_base_short_ges_JL_full_03-06-2022_snippet2.csv": "c3d6fac3a3af8208ae6131fd43dc04f359386cdad6842abd3ac0308d169eaf2f",
+    "scored/things_base_short_VS_19-04-2022.csv": "a496ec0bd02b9e47962bed9c819ecdf43fba82328853c6be1cd55f7817d631e4",
+    "scored/things_base_short_ges_VS_full_03-06-2022_snippet2.csv": "9acf9f895e4af11932775e5d20c296dccc4e77ad7bffb7dcd78b3f6a5b4a8895",
+    "scored/things_base_short_KH_19-04-2022.csv": "f2e377023e64eb83417a82b6626043d9a4f77ceddc3320cca9c3faf9f3b4525b",
+    "analysis_scripts/32_ThingsHard.R": "b163979c95ec28df4cea4bb2675a50e2dc0a6699bc5211ced7ed12a84ccdb754",
+    "scored/things_base_short_hard_az_full_03-06-2022.csv": "c749e98db06d3e940a66cb2c2fc48206887856646c264d5e135b72ce9bf39a9b",
+    "scored/things_base_short_hard_AR_full_03-06-2022.csv": "fab1046ec9e6ac918991f2305ccde141f1db88072ac85bfb1c231daff61c63a0",
+    "analysis_scripts/README_VPCODES.txt": "f653bac49641b67c008f2fc6bc75d6767401be77d863938a13bdd2f0ea1dc4b6"
+  },
+  "participants": 334,
+  "event_rows": 73453,
+  "rating_rows": 187399,
+  "raw_reconciliation_ok": true,
+  "scored_reconciliation_ok": true,
+  "event_types": {
+    "typed": 71621,
+    "empty": 1782,
+    "control": 50
+  },
+  "audit_reasons": {
+    "R_test_code_exclusion": 1075,
+    "missing_participant_id": 171,
+    "R_subject_exclusion": 23,
+    "unresolved_participant_id": 4
+  },
+  "response_differences": 5803,
+  "unnamed_annotation_rows": 3,
+  "unresolved_scores": 1,
+  "umlaut_event_rows": 7545,
+  "multiple_run_participants": 8
+}

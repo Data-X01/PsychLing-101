@@ -1,0 +1,108 @@
+﻿<data>
+/ columns = [date time subject trialnum blockcode trialcode latency response values.vpcode_hd1]
+/ labels = TRUE
+/ format = TAB
+</data>
+
+*defaults*
+<defaults>
+/ screencolor = (white)
+/ canvasaspectratio = (2560, 1440)
+/ fontstyle = ("Calibri", 3.00%, false, false, false, false, 5, 1) 
+/ canvasposition = (50%, 50%)
+/ canvassize = (100%, 100%)
+/ txcolor = (60,60,60)
+/ txbgcolor = (white)
+</defaults>
+
+<values>
+/vpcode_hd1 = 0
+</values>
+
+<parameters>
+/vpcode_hd2 = 0
+</parameters>
+
+<instruct>
+/ nextlabel = "Weiter"
+/ prevlabel = "Zurück "
+/ finishlabel = "Weiter"
+/ inputdevice = mouse
+/ fontstyle = ("Calibri", 3.00%, false, false, false, false, 5, 1) 
+/ windowsize = (95%,95%)
+</instruct>
+
+<text TH1_base_hard_s>
+/ numitems = 1
+/ items = ("Nennen Sie einen Vertreter der folgenden Kategorie: ~n
+ LAUBBÄUME")
+/ size = (80%,20%)
+</text>
+
+<text TH2_base_hard_s>
+/ numitems = 1
+/ items = ("Nennen Sie einen Vertreter der folgenden Kategorie: ~n
+ FLÜSSE")
+/ size = (80%,20%)
+</text>
+
+<openended TH1_base_hard_s_txt>
+/ stimulusframes = [1=TH1_base_hard_s]
+/ position = (50%, 80%)
+/ linelength = 40
+/ numlines = 1
+/ required = true
+/ buttonlabel = "Drücken Sie die Eingabetaste, wenn Sie ein Wort geschrieben haben"
+</openended>
+
+<openended TH2_base_hard_s_txt>
+/ stimulusframes = [1=TH2_base_hard_s]
+/ position = (50%, 80%)
+/ linelength = 40
+/ numlines = 1
+/ required = true
+/ buttonlabel = "Drücken Sie die Eingabetaste, wenn Sie ein Wort geschrieben haben"
+</openended>
+
+
+
+<block instruct_TH1_base_hard_s>
+/ preinstructions = (InstructionsThings_hard)
+</block>
+
+<block TH1_base_hard_s>
+/ trials = [1 - 100 = TH1_base_hard_s_txt]
+/ timeout = 120000
+/ postinstructions = (InstructionsWeiter)
+</block>
+
+<block TH2_base_hard_s>
+/ trials = [1 - 100 = TH2_base_hard_s_txt]
+/ timeout = 120000
+/ postinstructions = (InstructionsEnd)
+</block>
+
+
+
+<trial start>
+/ inputdevice = keyboard
+/ validresponse = (28)
+</trial>
+
+
+<expt R>
+/ blocks = [1=instruct_TH1_base_hard_s; 2= TH1_base_hard_s; 3= TH2_base_hard_s]
+/ onexptbegin = [values.vpcode_hd1 = parameters.vpcode_hd2;]
+</expt>
+
+<htmlpage InstructionsThings_hard>
+/ file = "InstructionsThings_hard.htm"
+</htmlpage>
+
+<htmlpage InstructionsWeiter>
+/ file = "InstructionsWeiter.htm"
+</htmlpage>
+
+<htmlpage InstructionsEnd>
+/ file = "InstructionsEnd.htm"
+</htmlpage>
