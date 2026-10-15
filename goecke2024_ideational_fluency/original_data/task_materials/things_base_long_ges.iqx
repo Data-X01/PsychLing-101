@@ -1,0 +1,107 @@
+﻿<data>
+/ columns = [date time subject trialnum blockcode trialcode latency response values.vpcode_hd1]
+/ labels = TRUE
+/ format = TAB
+</data>
+
+*defaults*
+<defaults>
+/ screencolor = (white)
+/ canvasaspectratio = (2560, 1440)
+/ fontstyle = ("Calibri", 3.00%, false, false, false, false, 5, 1) 
+/ canvasposition = (50%, 50%)
+/ canvassize = (100%, 100%)
+/ txcolor = (60,60,60)
+/ txbgcolor = (white)
+</defaults>
+
+<instruct>
+/ nextlabel = "Weiter"
+/ prevlabel = "Zurück "
+/ finishlabel = "Weiter"
+/ inputdevice = mouse
+/ fontstyle = ("Calibri", 3.00%, false, false, false, false, 5, 1) 
+/ windowsize = (95%,95%)
+</instruct>
+
+<values>
+/vpcode_hd1 = 0
+</values>
+
+<parameters>
+/vpcode_hd2 = 0
+</parameters>
+
+<text TH1_base_l>
+/ numitems = 1
+/ items = ("Nennen Sie einen Vertreter der folgenden Kategorie: ~n 
+TIERE")
+/ size = (80%,20%)
+</text>
+
+<text TH2_base_l>
+/ numitems = 1
+/ items = ("Nennen Sie einen Vertreter der folgenden Kategorie: ~n 
+LEBENSMITTEL")
+/ size = (80%,20%)
+</text>
+
+<openended TH1_base_l_txt>
+/ stimulusframes = [1=TH1_base_l]
+/ position = (50%, 80%)
+/ linelength = 40
+/ numlines = 1
+/ required = true
+/ buttonlabel = "Drücken Sie die Eingabetaste, wenn Sie ein Wort geschrieben haben"
+</openended>
+
+<openended TH2_base_l_txt>
+/ stimulusframes = [1=TH2_base_l]
+/ position = (50%, 80%)
+/ linelength = 40
+/ numlines = 1
+/ required = true
+/ buttonlabel = "Drücken Sie die Eingabetaste, wenn Sie ein Wort geschrieben haben"
+</openended>
+
+<block instruct_TH1_base_1>
+/ preinstructions = (InstructionsThingsL)
+</block>
+
+<block TH1_base_l>
+/ trials = [1 - 300 = TH1_base_l_txt]
+/ timeout = 480000
+/ postinstructions = (InstructionsWeiter)
+</block>
+
+<block TH2_base_l>
+/ trials = [1 - 300 = TH2_base_l_txt]
+/ timeout = 480000
+/ postinstructions = (InstructionsEnd)
+</block>
+
+
+<trial start>
+/ inputdevice = keyboard
+/ validresponse = (28)
+</trial>
+
+
+<expt R>
+/ blocks = [1= instruct_TH1_base_1; 2=TH1_base_l; 3=TH2_base_l]
+/ onexptbegin = [values.vpcode_hd1 = parameters.vpcode_hd2;]
+</expt>
+
+
+
+<htmlpage InstructionsThingsL>
+/ file = "InstructionsThingsL.htm"
+</htmlpage>
+
+<htmlpage InstructionsWeiter>
+/ file = "InstructionsWeiter.htm"
+</htmlpage>
+
+<htmlpage InstructionsEnd>
+/ file = "InstructionsEnd.htm"
+</htmlpage>

@@ -1,0 +1,83 @@
+﻿<data>
+/ columns = [date time subject trialnum blockcode trialcode latency response values.vpcode_hd1]
+/ labels = TRUE
+/ format = TAB
+</data>
+
+*defaults*
+<defaults>
+/ screencolor = (white)
+/ canvasaspectratio = (2560, 1440)
+/ fontstyle = ("Calibri", 3.00%, false, false, false, false, 5, 1) 
+/ canvasposition = (50%, 50%)
+/ canvassize = (100%, 100%)
+/ txcolor = (60,60,60)
+/ txbgcolor = (white)
+</defaults>
+
+<instruct>
+/ nextlabel = "Weiter"
+/ prevlabel = "Zurück "
+/ finishlabel = "Weiter"
+/ inputdevice = mouse
+/ fontstyle = ("Calibri", 3.00%, false, false, false, false, 5, 1) 
+/ windowsize = (95%,95%)
+</instruct>
+
+<values>
+/vpcode_hd1 = 0
+</values>
+
+<parameters>
+/vpcode_hd2 = 0
+</parameters>
+
+<text FS1_long>
+/ numitems = 1
+/ items = ("Nennen Sie ein Synomym zu dem Begriff: ~n
+ EINSAM")
+/ size = (80%,20%)
+</text>
+
+
+<openended FS1_long_txt>
+/ stimulusframes = [1=FS1_long]
+/ position = (50%, 80%)
+/ linelength = 40
+/ numlines = 1
+/ required = true
+/ buttonlabel = "Drücken Sie die Eingabetaste, wenn Sie fertig sind"
+</openended>
+
+<block instruct>
+/ preinstructions = (InstructionsSyn)
+</block>
+
+<block FS1_long>
+/ trials = [1 = FS1_long_txt; 2=FS1_long_txt; 3=FS1_long_txt; 4=FS1_long_txt; 5=FS1_long_txt; 6=FS1_long_txt; 7=FS1_long_txt; 8=FS1_long_txt; 9=FS1_long_txt; 10=FS1_long_txt; 11 = FS1_long_txt; 12=FS1_long_txt; 13=FS1_long_txt; 
+14=FS1_long_txt; 15=FS1_long_txt; 16=FS1_long_txt; 17=FS1_long_txt; 18=FS1_long_txt; 19=FS1_long_txt; 20=FS1_long_txt; 21=FS1_long_txt; 22=FS1_long_txt; 23=FS1_long_txt; 24=FS1_long_txt;
+25=FS1_long_txt; 26=FS1_long_txt; 27=FS1_long_txt; 28=FS1_long_txt; 29=FS1_long_txt; 30=FS1_long_txt; 31=FS1_long_txt; 32=FS1_long_txt; 33=FS1_long_txt; 34=FS1_long_txt; 35=FS1_long_txt; 36=FS1_long_txt]
+/ timeout = 240000
+/ postinstructions = (InstructionsEnd)
+</block>
+
+<trial start>
+/ inputdevice = keyboard
+/ validresponse = (28)
+</trial>
+
+
+<expt R>
+/ blocks = [1=instruct; 2= FS1_long]
+/ onexptbegin = [values.vpcode_hd1 = parameters.vpcode_hd2;]
+</expt>
+
+<htmlpage InstructionsSyn>
+/ file = "InstructionsSyn_long.htm"
+</htmlpage>
+<htmlpage InstructionsSynBetween>
+/ file = "InstructionsSynBetween.htm"
+</htmlpage>
+<htmlpage InstructionsEnd>
+/ file = "InstructionsEnd.htm"
+</htmlpage>

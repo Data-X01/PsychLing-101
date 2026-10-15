@@ -1,0 +1,60 @@
+{
+  "experiment": "goecke2024_word_fluency",
+  "raw_rows": 75173,
+  "scored_rows": 192036,
+  "excluded_raw_rows": 222,
+  "excluded_scored_rows": 563,
+  "warnings": [
+    "Consent-withdrawal exclusions and public-sharing permission remain unverified."
+  ],
+  "source_sha256": {
+    "task_materials/wordlist_base_long_ges.iqx": "cd9531f9c268a96e4c23f83c0fdc7b0334b08e47002427256a5bec8ff435dec9",
+    "task_materials/InstructionsEnd.htm": "b0a09f12189054d9cd6af015b99c58c9e92e31e0d7150ae2559316a572f552b6",
+    "task_materials/InstructionsWeiterWL1.htm": "4ce67f88679bf7a3994542d56644e2bc955a3b7f18c30bc72306db9d86efaf45",
+    "task_materials/InstructionsWL_long.htm": "1e09fa3d0cc26d7d49b0b0f3ae9e236e55c7ed711f5690bde21ab536c084dbb2",
+    "raw/wilhelm_retrieval_version2_wordlist_base_long_ges_raw_2206030858.csv": "7fe36f3e6f421e91136342dda8a88b6e539034533203998bc47572f0e86ab2cd",
+    "task_materials/wordlist_base_short_ges.iqx": "eff9c3b157714a581299836d1b0c988c0a082d93573207abae1743fdf4c0eb9d",
+    "task_materials/InstructionsWL.htm": "c85eb89c2ff8e0318f6691ba855b346c090fef323bf47a8b1a4e2a40f5948415",
+    "raw/wilhelm_retrieval_version2_wordlist_base_short_ges_raw_2206030847.csv": "0370eb354a457fc9240cde463e945890e304af9f64d5c66d167d90117c313a4e",
+    "task_materials/wordlist_base_short_hard_ges.iqx": "4aab1e0f8f86256e2317cbed74fa51a61ce5b0ce74e3341adb7410caa153ded8",
+    "task_materials/InstructionsWL_hard.htm": "1e31cf54afb045a9a20ac29201bba607d8d73e9896e28d427282f0e554d45113",
+    "raw/wilhelm_retrieval_version2_wordlist_base_short_hard_ges_raw_2206030903.csv": "5225f4c68cdba9a7f7934fe9100324f67feec89290553f5b7b8327a936925c95",
+    "analysis_scripts/20_WordListLong.R": "daa042e50e44fd32708566d262f2d236fb8ea87cfb8e3a6489ac7fb3781a9d3c",
+    "scored/wordlist_base_long_JL1_19-04-2022_copy.csv": "1d92917dfac991cee1312f9b1a9e85e92560c1d557dd372460942a50c61e283b",
+    "scored/wordlist_base_long_ges_JL_full_03-06-2022_snippet2.csv": "42a8968b76b32f6ef78a7c873b783e9361dc1dfc11394ec104563d9b9116a50a",
+    "scored/wordlist_base_long_VS1_19-04-2022_copy.csv": "d879ef4a4150ef4dbcfab86a0bf8c5086a4f7e62e836b5620f13cb0ebb346cc3",
+    "scored/wordlist_base_long_ges_VS_full_03-06-2022_snippet2.csv": "c2a00dbce52a6c46edb0409d0b68fd4f198104248e1f13e5e4bcfc90d5221f2d",
+    "scored/wordlist_base_long_KH1_19-04-2022_copy.csv": "8a2bf0d7e67e59a3185140cbf60f5306cec19aabc6b88de93df6118d5d5fb220",
+    "analysis_scripts/21_WordListShort.R": "a7aa3aa7a5f153f7dc125a865f86ba77b3426114072900c874bcad25a67ad69e",
+    "scored/wordlist_base_short_JL_19-04-2022.csv": "f22e19f566daa28c8d3b5d88422b41bc67ab5341e2cb9f9bfc0815eea0851b69",
+    "scored/wordlist_base_short_VS_19-04-2022.csv": "003e84aa4eaa489332d0ca6367cfbcfdab0ec6fc421a2b7baf596bba844c852d",
+    "scored/wordlist_base_short_VS_full_03-06-2022_snippet2.csv": "fac3b96abfd0be6aa7ae00d4a80cd5652ecd33a74c8239a5a6717f2df6575544",
+    "scored/wordlist_base_short_KH_19-04-2022.csv": "465e5294cc3ffd43aeabb43280243b485047dfdd1e9afe320addc695d0539786",
+    "scored/wordlist_base_short_kh_full_03-06-2022_snippet2.csv": "829554c94360ffc9a2fe2fe91fcc44f3e612e0f3391dc338bc11f48810b803de",
+    "analysis_scripts/33_WordListHard.R": "06f6cd0067d2b1c3b76204eeb2d07b7f163106f3b8c134d2b26d5d112852fc04",
+    "scored/wordlist_base_short_hard_nb_full_03-06-2022.csv": "82de21a41307c3a951113fc50b8fca7f625215072bc71b51700a0697f8c23812",
+    "scored/wordlist_base_short_hard_az_full_03-06-2022.csv": "af8a20bf6519c8647b0622de7db4784efe64a911b4c8e3ef1d48053ef9ae0786",
+    "analysis_scripts/README_VPCODES.txt": "f653bac49641b67c008f2fc6bc75d6767401be77d863938a13bdd2f0ea1dc4b6"
+  },
+  "participants": 333,
+  "event_rows": 74951,
+  "rating_rows": 191473,
+  "raw_reconciliation_ok": true,
+  "scored_reconciliation_ok": true,
+  "event_types": {
+    "typed": 73414,
+    "empty": 1509,
+    "control": 28
+  },
+  "audit_reasons": {
+    "R_test_code_exclusion": 630,
+    "missing_participant_id": 141,
+    "R_subject_exclusion": 11,
+    "unresolved_participant_id": 3
+  },
+  "response_differences": 22,
+  "unnamed_annotation_rows": 0,
+  "unresolved_scores": 0,
+  "umlaut_event_rows": 7089,
+  "multiple_run_participants": 7
+}
