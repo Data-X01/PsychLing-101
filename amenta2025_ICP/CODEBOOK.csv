@@ -1,0 +1,14 @@
+Recommended Column Name,Description
+participant_id,Unique identifier assigned to each participant.
+trial_id,Unique identifier for a single trial within a session or condition.
+trial_order,Presentation order within the session (0-indexed). The order in which the participant saw this trial.
+stimulus,The linguistic or visual stimulus presented to the participant in a given trial.
+lexicality,Whether the linguistic stimulus is a real word (W) or a nonword (N).
+rt,"Time taken by the participant to respond, in milliseconds."
+accuracy,Binary indicator of whether the participant's response was correct.
+response,Participant's response
+gender,Self-reported or observed gender identity of the participant.
+age,Age of the participant at the time of the experiment.
+education,Highest completed education level of the participant.
+first_language,Participant's native or first-acquired language.
+no_foreign_lang,Number of foreign languages the participant reported speaking.
