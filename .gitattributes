@@ -49,3 +49,8 @@ ferrand2018_megalex/prompts.jsonl.zip filter=lfs diff=lfs merge=lfs -text
 siegelman2022_meco/original_data/*/*.rda filter=lfs diff=lfs merge=lfs -text
 siegelman2022_meco/processed_data/*.csv filter=lfs diff=lfs merge=lfs -text
 siegelman2022_meco/prompts.jsonl.zip filter=lfs diff=lfs merge=lfs -text
+amenta2025_ICP/original_data/ICP_raw_data.csv filter=lfs diff=lfs merge=lfs -text
+amenta2025_ICP/original_data/profiles.csv filter=lfs diff=lfs merge=lfs -text
+amenta2025_ICP/original_data/sessions.csv filter=lfs diff=lfs merge=lfs -text
+amenta2025_ICP/processed_data/ICP_L1.csv filter=lfs diff=lfs merge=lfs -text
+amenta2025_ICP/prompts.jsonl.zip filter=lfs diff=lfs merge=lfs -text
