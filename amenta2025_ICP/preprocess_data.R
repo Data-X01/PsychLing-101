@@ -110,8 +110,8 @@ codebook <- codebook[match(colnames(alldata), codebook$`Recommended Column Name`
 out_dir <- "processed_data"
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 
-write_csv(alldata,  file.path(out_dir, "ICP_L1.csv"))
+write_csv(alldata,  file.path(out_dir, "exp1.csv"))
 write_csv(codebook, "CODEBOOK.csv")
 
-cat("ICP_L1.csv:     ", nrow(alldata),  "rows,", ncol(alldata),  "columns\n")
+cat("exp1.csv:     ", nrow(alldata),  "rows,", ncol(alldata),  "columns\n")
 cat("Saved CODEBOOK.csv: ", nrow(codebook), "rows\n")
